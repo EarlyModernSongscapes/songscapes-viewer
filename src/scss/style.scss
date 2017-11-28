@@ -1,0 +1,35 @@
+/* Set custom theme colors */
+$mdc-theme-primary: #225688;
+$mdc-theme-accent: #d2aa28;
+$mdc-theme-background: #fff;
+
+// Styles from MDL not yet implemented in MCW can be added like this
+@import "material-design-lite/src/chip/_chip";
+
+// Styles from MCW. They're modular, so intall separately as you need them
+
+// @import "@material/animation/mdc-animation";
+@import "@material/button/mdc-button";
+@import "@material/card/mdc-card";
+// @import "@material/checkbox/mdc-checkbox";
+// @import "@material/dialog/mdc-dialog";
+// @import "@material/drawer/mdc-drawer";
+// @import "@material/elevation/mdc-elevation";
+// @import "@material/fab/mdc-fab";
+// @import "@material/form-field/mdc-form-field";
+// @import "@material/grid-list/mdc-grid-list";
+// @import "@material/icon-toggle/mdc-icon-toggle";
+// @import "@material/layout-grid/mdc-layout-grid";
+// @import "@material/list/mdc-list";
+// @import "@material/menu/mdc-menu";
+// @import "@material/radio/mdc-radio";
+// @import "@material/ripple/mdc-ripple";
+// @import "@material/select/mdc-select";
+// @import "@material/snackbar/mdc-snackbar";
+// @import "@material/switch/mdc-switch";
+// @import "@material/textfield/mdc-textfield";
+// @import "@material/theme/mdc-theme";
+// @import "@material/toolbar/mdc-toolbar";
+// @import "@material/typography/mdc-typography";
+// @import "@material/tabs/mdc-tabs.scss";
+// @import "@material/linear-progress/mdc-linear-progress";
