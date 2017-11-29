@@ -16,7 +16,7 @@
               <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
               <author role="composer">Henry Lawes</author>
               <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
-              <idno type="wing">L638</idno>
+              <idno type="wing">L638-3</idno>
               <idno type="call_number">Folger L638</idno>
               <biblScope unit="leaf" from="C2r">leaf C2 recto</biblScope>,
               <biblScope unit="page" from="7">page 7</biblScope>
@@ -29,14 +29,14 @@
         <div>
           <head rend="italic">A Complaint against <hi rend="roman">Cupid.</hi></head>
             <notatedMusic>
-              <xi:include href="../mei/AComplaintAgainstCupid.xml"/>
+              <xi:include href="../mei/AComplaintAgainstCupid-S2.xml"/>
             </notatedMusic>
             <ab>
               <supplied reason="underlay">
                 <lg type="stanza">
                   <l><hi rend="italic">Venus,</hi> redress a wrong thats done</l>
                   <l>by that yong sprightful boy thy son;</l>
-                  <l>he wounds, and then laughs at the sore,</l>
+                  <l>he <w xml:id="v1">cuts</w>, and then laughs at the sore,</l>
                   <l>hatred it self coudl do no more;</l>
                   <l>if I pursue, he's smal &amp; light,</l>
                   <l>both seen at once, and out of sight;</l>
