@@ -8,7 +8,7 @@ class AppBody extends Component {
     return (<div className="mdc-typography">
       <div>
         <main>
-          <Route exact path="/:filename" component={Viewer} />
+          <Route exact path="/:song/:source" component={Viewer} />
         </main>
       </div>
     </div>)

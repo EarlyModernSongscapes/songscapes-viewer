@@ -13,6 +13,7 @@ const app = express()
 const port = 3000
 
 app.use('/data', express.static('./test/fakeData'))
+app.use('/lib', express.static('./lib'))
 
 if (isDevelopment) {
   config.devtool = 'inline-source-map'

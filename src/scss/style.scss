@@ -3,14 +3,17 @@ $mdc-theme-primary: #225688;
 $mdc-theme-accent: #d2aa28;
 $mdc-theme-background: #fff;
 
+// CETEIcean
+@import "../../node_modules/CETEIcean/css/CETEIcean.css";
+
 // Styles from MDL not yet implemented in MCW can be added like this
-@import "material-design-lite/src/chip/_chip";
+// @import "material-design-lite/src/chip/_chip";
 
 // Styles from MCW. They're modular, so intall separately as you need them
 
 // @import "@material/animation/mdc-animation";
-@import "@material/button/mdc-button";
-@import "@material/card/mdc-card";
+// @import "@material/button/mdc-button";
+// @import "@material/card/mdc-card";
 // @import "@material/checkbox/mdc-checkbox";
 // @import "@material/dialog/mdc-dialog";
 // @import "@material/drawer/mdc-drawer";
@@ -33,3 +36,31 @@ $mdc-theme-background: #fff;
 // @import "@material/typography/mdc-typography";
 // @import "@material/tabs/mdc-tabs.scss";
 // @import "@material/linear-progress/mdc-linear-progress";
+
+// TEI formatting
+
+tei-supplied > tei-lg > tei-l:first-child:before {
+  content: "[";
+ }
+
+tei-supplied > tei-lg > tei-l:last-child:after {
+  content: "]";
+}
+
+tei-body .variant {
+  text-shadow: 0px 0px 5px #337ab7;
+  cursor: pointer;
+}
+
+tei-body .variant.active {
+  text-shadow: 0px 0px 5px #f80;
+}
+
+svg .musVariant {
+  fill: #337ab7;
+  cursor: pointer;
+}
+
+svg .musVariant.active {
+  fill: #f80;
+}
