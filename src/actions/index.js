@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch'
 export const REQUEST_RESOURCE = 'REQUEST_RESOURCE'
 export const RECEIVE_RESOURCE = 'RECEIVE_RESOURCE'
 export const GET_COLLATION_SOURCES = 'GET_COLLATION_SOURCES'
+export const GET_VARIANTS = 'GET_VARIANTS'
 
 function requestResource(url, docType) {
   return {
@@ -24,6 +25,15 @@ function receiveResource(data, docType) {
 function getCollationSources() {
   return {
     type: GET_COLLATION_SOURCES,
+  }
+}
+
+export function getVariants(app, source, dataType) {
+  return {
+    type: GET_VARIANTS,
+    app,
+    source,
+    dataType
   }
 }
 

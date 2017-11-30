@@ -16,9 +16,9 @@ export default class HomePage extends Component {
 
   componentDidMount() {
     if (!this.props.collation) {
-      this.props.getCollation(`/data/collations/${this.props.song}.xml`)
-      this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
-      this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
+      this.props.getCollation(`/songscapes/data/collations/${this.props.song}.xml`)
+      this.props.getResource(`/songscapes/data/tei/${this.props.source}.xml`, 'tei')
+      this.props.getResource(`/songscapes/data/mei/${this.props.source}.xml`, 'mei')
     }
   }
 
@@ -49,7 +49,9 @@ export default class HomePage extends Component {
           for (const rdg of Array.from(app.getElementsByTagName('rdg'))) {
             const sourceAndId = rdg.children[0].getAttribute('target').split('#')
             if (sourceAndId[0].includes(this.props.source)) {
-              teiData.querySelector(`#${sourceAndId[1]}`).classList.add('variant')
+              const variant = teiData.querySelector(`#${sourceAndId[1]}`)
+              variant.classList.add('variant')
+              variant.onclick = () => { this.props.getVariants(app, this.props.source, 'tei') }
             }
           }
         }
@@ -96,6 +98,7 @@ export default class HomePage extends Component {
 HomePage.propTypes = {
   getCollation: PropTypes.func,
   getResource: PropTypes.func,
+  getVariants: PropTypes.func,
   tei: PropTypes.string,
   mei: PropTypes.string,
   collation: PropTypes.string,

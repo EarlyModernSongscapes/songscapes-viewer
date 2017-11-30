@@ -2,9 +2,9 @@ import { REQUEST_RESOURCE, RECEIVE_RESOURCE, GET_COLLATION_SOURCES } from '../ac
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-function reduceResource(state = {
-  isFetching: false
-}, action) {
+const parser = new window.DOMParser()
+
+function reduceResource(state = {}, action) {
   let newState = {}
   switch (action.type) {
     case REQUEST_RESOURCE:
@@ -25,7 +25,6 @@ function reduceResource(state = {
 }
 
 function getCollationSources(state = {}) {
-  const parser = new window.DOMParser()
   const colDoc = parser.parseFromString(state.data, 'text/xml')
   const rdgs = colDoc.getElementsByTagName('app')[0].getElementsByTagName('rdg')
   const sources = Array.from(rdgs).reduce((srcs, rdg) => {
@@ -50,6 +49,24 @@ function resources(state = {}, action) {
       return state
   }
 }
+
+// function variants(state = {}, action) {
+//   switch (action.type) {
+//     case GET_VARIANTS:
+//       if (action.dataType === 'tei') {
+//         for (const rdg of Array.from(action.app.getElementsByTagName('rdg'))) {
+//           const sourceAndId = rdg.children[0].getAttribute('target').split('#')
+//           fetch(sourceAndId[0])
+//             .then(response => response.text())
+//             .then(text => {
+//               const source = parser.parseFromString(text, 'text/xml')
+//             })
+//         }
+//       }
+//     default:
+//       return state
+//   }
+// }
 
 const emsViewer = combineReducers({
   resources,
