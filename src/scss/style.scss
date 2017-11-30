@@ -64,3 +64,17 @@ svg .musVariant {
 svg .musVariant.active {
   fill: #f80;
 }
+
+ul.sourceList {
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+      color:inherit;
+    }
+  }
+  li.active {
+    color: white;
+    background-color: #337ab7;
+  }
+}

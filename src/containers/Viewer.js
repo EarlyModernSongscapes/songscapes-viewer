@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getResource } from '../actions'
+import { getResource, getCollation } from '../actions'
 import { withRouter } from 'react-router'
 import ViewerBody from '../components/ViewerBody'
 
@@ -25,6 +25,9 @@ const mapStateToProps = (state, ownProps) => {
     if (!state.resources.collation.isFetching) {
       returnProps.collation = state.resources.collation.data
     }
+    if (state.resources.collation.sources) {
+      returnProps.sources = state.resources.collation.sources
+    }
   }
   return returnProps
 }
@@ -34,6 +37,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getResource: (url, type) => {
       dispatch(getResource(url, type))
+    },
+    getCollation: (url) => {
+      dispatch(getCollation(url))
     }
   }
 }

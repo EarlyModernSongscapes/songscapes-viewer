@@ -16,7 +16,7 @@ export default class HomePage extends Component {
 
   componentDidMount() {
     if (!this.props.collation) {
-      this.props.getResource(`/data/collations/${this.props.song}.xml`, 'collation')
+      this.props.getCollation(`/data/collations/${this.props.song}.xml`)
       this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
       this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
     }
@@ -33,7 +33,7 @@ export default class HomePage extends Component {
       scale: 35
     }
     this.state.vrv.setOptions(vrvOptions)
-    if (this.props.collation && this.props.tei && this.props.mei) {
+    if (this.props.collation && this.props.sources && this.props.tei && this.props.mei) {
       // Render TEI with CETEIcean
       const cc = new CETEI()
       cc.makeHTML5(this.props.tei, (teiData) => {
@@ -48,7 +48,6 @@ export default class HomePage extends Component {
         for (const app of Array.from(colDoc.getElementsByTagName('app'))) {
           for (const rdg of Array.from(app.getElementsByTagName('rdg'))) {
             const sourceAndId = rdg.children[0].getAttribute('target').split('#')
-            this.state.sources.push(sourceAndId[0])
             if (sourceAndId[0].includes(this.props.source)) {
               teiData.querySelector(`#${sourceAndId[1]}`).classList.add('variant')
             }
@@ -80,7 +79,7 @@ export default class HomePage extends Component {
       <div className="mdc-layout-grid">
         <div className="mdc-layout-grid__inner">
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-            <Sources sources={this.state.sources}/>
+            <Sources sources={this.props.sources || []} active={this.props.source}/>
           </div>
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
             <div ref="teiData"/>
@@ -95,10 +94,12 @@ export default class HomePage extends Component {
 }
 
 HomePage.propTypes = {
+  getCollation: PropTypes.func,
   getResource: PropTypes.func,
   tei: PropTypes.string,
   mei: PropTypes.string,
   collation: PropTypes.string,
+  sources: PropTypes.array,
   song: PropTypes.string,
   source: PropTypes.string
 }

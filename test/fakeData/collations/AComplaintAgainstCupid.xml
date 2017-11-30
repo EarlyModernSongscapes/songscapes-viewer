@@ -59,7 +59,7 @@
                     <mei:score>
                       <mei:app>
                         <mei:rdg source="#MS1" target="../mei/AComplaintAgainstCupid-S1.xml#m-56" />
-                        <mei:rdg source="#MS2" target="../mei/AComplaintAgainstCupid-S2.xml#m-56" />
+                        <mei:rdg source="#MS2 #MS3" target="../mei/AComplaintAgainstCupid-S2.xml#m-56 ../mei/AComplaintAgainstCupid-S3.xml#m-56" />
                       </mei:app>
                     </mei:score>
                   </mei:mdiv>

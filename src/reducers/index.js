@@ -1,4 +1,4 @@
-import { REQUEST_RESOURCE, RECEIVE_RESOURCE } from '../actions'
+import { REQUEST_RESOURCE, RECEIVE_RESOURCE, GET_COLLATION_SOURCES } from '../actions'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -24,12 +24,27 @@ function reduceResource(state = {
   }
 }
 
+function getCollationSources(state = {}) {
+  const parser = new window.DOMParser()
+  const colDoc = parser.parseFromString(state.data, 'text/xml')
+  const rdgs = colDoc.getElementsByTagName('app')[0].getElementsByTagName('rdg')
+  const sources = Array.from(rdgs).reduce((srcs, rdg) => {
+    srcs.push(rdg.children[0].getAttribute('target').split('#')[0])
+    return srcs
+  }, [])
+  return Object.assign({}, state, {sources})
+}
+
 function resources(state = {}, action) {
   switch (action.type) {
     case RECEIVE_RESOURCE:
     case REQUEST_RESOURCE:
       return Object.assign({}, state,
         reduceResource(state.resources, action)
+      )
+    case GET_COLLATION_SOURCES:
+      return Object.assign({}, state,
+        {collation: getCollationSources(state.collation)}
       )
     default:
       return state

@@ -34,6 +34,6 @@ describe('Test actions', () => {
         done()
       }
     })
-    store.dispatch(actions.getResource('http://localhost:3000/fakeData/tei.xml'))
+    store.dispatch(actions.getResource('http://localhost:3000/fakeData/tei/AComplaintAgainstCupid-S1.xml'))
   })
 })

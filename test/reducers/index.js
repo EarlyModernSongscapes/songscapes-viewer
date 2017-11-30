@@ -33,4 +33,16 @@ describe('Test reducers', () => {
 
     expect(state.resources.tei.data).toEqual(text)
   })
+
+  it('should handle GET_COLLATION_SOURCES', () => {
+    const text = '<TEI><teiHeader/><text><body><schemaSpec></schemaSpec></body></text></TEI>'
+    const newState = Object.assign({}, initialState,
+      { resources: { collation: {data: text} } }
+    )
+    const state = emsViewer(newState, {
+      type: 'GET_COLLATION_SOURCES'
+    })
+    state
+    // expect(state.resources.tei.data).toEqual(text)
+  })
 })
