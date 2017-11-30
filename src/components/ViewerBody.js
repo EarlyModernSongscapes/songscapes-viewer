@@ -1,28 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
+import Sources from './Sources'
 import CETEI from '../../node_modules/CETEIcean/src/CETEI' // :'(
 // NB Verovio must be available as global variable
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props)
-    const e = document.documentElement
-    const g = document.getElementsByTagName('body')[0]
-    const x = window.innerWidth || e.clientWidth || g.clientWidth
-    // const y = window.innerHeight|| e.clientHeight|| g.clientHeight
-    const vrvOptions = {
-      pageWidth: (x - 300) * 100 / 36,
-      pageHeight: 1000 * 100 / 40,
-      ignoreLayout: 1,
-      adjustPageHeight: 1,
-      border: 10,
-      scale: 35
+    this.state = {
+      vrv: new window.verovio.toolkit(),
+      sources: []
     }
-    const vrv = new window.verovio.toolkit()
-    vrv.setOptions(vrvOptions)
-
-    this.state = { vrv }
   }
 
   componentDidMount() {
@@ -34,6 +23,16 @@ export default class HomePage extends Component {
   }
 
   componentDidUpdate() {
+    const x = this.refs.teiData.offsetWidth
+    const vrvOptions = {
+      pageWidth: x * 100 / 35,
+      pageHeight: 1000 * 100 / 35,
+      ignoreLayout: 1,
+      adjustPageHeight: 1,
+      border: 10,
+      scale: 35
+    }
+    this.state.vrv.setOptions(vrvOptions)
     if (this.props.collation && this.props.tei && this.props.mei) {
       // Render TEI with CETEIcean
       const cc = new CETEI()
@@ -49,6 +48,7 @@ export default class HomePage extends Component {
         for (const app of Array.from(colDoc.getElementsByTagName('app'))) {
           for (const rdg of Array.from(app.getElementsByTagName('rdg'))) {
             const sourceAndId = rdg.children[0].getAttribute('target').split('#')
+            this.state.sources.push(sourceAndId[0])
             if (sourceAndId[0].includes(this.props.source)) {
               teiData.querySelector(`#${sourceAndId[1]}`).classList.add('variant')
             }
@@ -71,14 +71,25 @@ export default class HomePage extends Component {
         const xi = teiData.getElementsByTagName('xi:include')[0]
         xi.parentNode.replaceChild(svgDoc.documentElement, xi)
         this.refs.teiData.appendChild(teiData)
-        window.tei = teiData
       })
     }
   }
 
   render() {
     return (
-      <div ref="teiData"/>
+      <div className="mdc-layout-grid">
+        <div className="mdc-layout-grid__inner">
+          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+            <Sources sources={this.state.sources}/>
+          </div>
+          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+            <div ref="teiData"/>
+          </div>
+          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+            <h4>Variant Info</h4>
+          </div>
+        </div>
+      </div>
     )
   }
 }
