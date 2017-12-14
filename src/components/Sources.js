@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class HomePage extends Component {
   render() {
@@ -12,7 +13,7 @@ export default class HomePage extends Component {
           const label = s.split('-')[1].split('.xml')[0]
           const url = s.split('/')[2].split('.xml')[0]
           const active = s.includes(this.props.active) ? 'active' : 'inactive'
-          return <li key={i} className={active}><a href={url}>{label}</a></li>
+          return <li key={i} className={active}><Link to={url}>{label}</Link></li>
         })}
       </ul>)
     }

@@ -16,9 +16,9 @@ export default class HomePage extends Component {
 
   componentDidMount() {
     if (!this.props.collation) {
-      this.props.getCollation(`/songscapes/data/collations/${this.props.song}.xml`)
-      this.props.getResource(`/songscapes/data/tei/${this.props.source}.xml`, 'tei')
-      this.props.getResource(`/songscapes/data/mei/${this.props.source}.xml`, 'mei')
+      this.props.getCollation(`/data/collations/${this.props.song}.xml`)
+      this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
+      this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
     }
   }
 

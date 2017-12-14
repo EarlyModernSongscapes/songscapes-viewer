@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import { routerMiddleware, ConnectedRouter } from 'react-router-redux'
+import { HashRouter } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import emsViewer from './reducers'
 import App from './containers/App'
@@ -24,7 +25,9 @@ const store = createStore(
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App/>
+      <HashRouter>
+        <App/>
+      </HashRouter>
     </ConnectedRouter>
   </Provider>,
   document.getElementById('ems_viewer')
