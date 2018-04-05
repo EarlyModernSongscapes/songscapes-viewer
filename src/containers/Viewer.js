@@ -4,7 +4,6 @@ import { withRouter } from 'react-router'
 import ViewerBody from '../components/ViewerBody'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('h')
   const returnProps = {}
   if (ownProps.match.params.song) {
     returnProps.song = ownProps.match.params.song

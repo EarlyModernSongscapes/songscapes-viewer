@@ -2,78 +2,33 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
 import Sources from './Sources'
-import CETEI from '../../node_modules/CETEIcean/src/CETEI' // :'(
-// NB Verovio must be available as global variable
+import DocumentRenderer from './DocumentRenderer'
 
-export default class HomePage extends Component {
+export default class ViewerBody extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      vrv: new window.verovio.toolkit(),
-      sources: []
+      vrv: new window.verovio.toolkit()
     }
   }
 
   componentDidMount() {
     if (!this.props.collation) {
+      // Only get the collation once
       this.props.getCollation(`/data/collations/${this.props.song}.xml`)
-      this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
-      this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
+      this.getResources()
     }
   }
 
-  componentDidUpdate() {
-    const x = this.refs.teiData.offsetWidth
-    const vrvOptions = {
-      pageWidth: x * 100 / 35,
-      pageHeight: 1000 * 100 / 35,
-      ignoreLayout: 1,
-      adjustPageHeight: 1,
-      border: 10,
-      scale: 35
+  componentDidUpdate(prevProps) {
+    if (prevProps.source !== this.props.source) {
+      this.getResources()
     }
-    this.state.vrv.setOptions(vrvOptions)
-    if (this.props.collation && this.props.sources && this.props.tei && this.props.mei) {
-      // Render TEI with CETEIcean
-      const cc = new CETEI()
-      cc.makeHTML5(this.props.tei, (teiData) => {
-        // Render MEI with Verovio
-        this.state.vrv.loadData( this.props.mei + '\n', '' )
-        const svg = this.state.vrv.renderPage(1)
-        const parser = new window.DOMParser()
-        const svgDoc = parser.parseFromString(svg, 'text/xml')
+  }
 
-        const colDoc = parser.parseFromString(this.props.collation, 'text/xml')
-        // Make links for text variants
-        for (const app of Array.from(colDoc.getElementsByTagName('app'))) {
-          for (const rdg of Array.from(app.getElementsByTagName('rdg'))) {
-            const sourceAndId = rdg.children[0].getAttribute('target').split('#')
-            if (sourceAndId[0].includes(this.props.source)) {
-              const variant = teiData.querySelector(`#${sourceAndId[1]}`)
-              variant.classList.add('variant')
-              variant.onclick = () => { this.props.getVariants(app, this.props.source, 'tei') }
-            }
-          }
-        }
-        // Make links for music variants
-        for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
-          for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
-            const targets = rdg.getAttribute('target').split(/\s+/)
-            for (const target of targets) {
-              const sourceAndId = target.split('#')
-              if (sourceAndId[0].includes(this.props.source)) {
-                svgDoc.querySelector(`#${sourceAndId[1]}`).classList.add('musVariant')
-              }
-            }
-          }
-        }
-
-        // Append to component's DOM
-        const xi = teiData.getElementsByTagName('xi:include')[0]
-        xi.parentNode.replaceChild(svgDoc.documentElement, xi)
-        this.refs.teiData.appendChild(teiData)
-      })
-    }
+  getResources() {
+    this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
+    this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
   }
 
   render() {
@@ -84,7 +39,13 @@ export default class HomePage extends Component {
             <Sources sources={this.props.sources || []} active={this.props.source}/>
           </div>
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
-            <div ref="teiData"/>
+            <DocumentRenderer
+              source={this.props.source}
+              tei={this.props.tei}
+              mei={this.props.mei}
+              collation={this.props.collation}
+              vrv={this.state.vrv}
+              getVariants={this.props.getVariants}/>
           </div>
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
             <h4>Variant Info</h4>
@@ -95,7 +56,7 @@ export default class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
+ViewerBody.propTypes = {
   getCollation: PropTypes.func,
   getResource: PropTypes.func,
   getVariants: PropTypes.func,
