@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Component } from 'react'
 import Sources from './Sources'
+import VariantsContainer from '../containers/VariantsContainer'
 import DocumentRenderer from './DocumentRenderer'
 
 export default class ViewerBody extends Component {
@@ -32,27 +33,26 @@ export default class ViewerBody extends Component {
   }
 
   render() {
-    return (
-      <div className="mdc-layout-grid">
+    return [
+      (<div className="mdc-layout-grid" key="grid">
         <div className="mdc-layout-grid__inner">
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
             <Sources sources={this.props.sources || []} active={this.props.source}/>
           </div>
-          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-8">
+          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-10">
             <DocumentRenderer
               source={this.props.source}
               tei={this.props.tei}
               mei={this.props.mei}
               collation={this.props.collation}
               vrv={this.state.vrv}
+              setPopoutPosition={this.props.setPopoutPosition}
               getVariants={this.props.getVariants}/>
           </div>
-          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-            <h4>Variant Info</h4>
-          </div>
         </div>
-      </div>
-    )
+      </div>),
+      <VariantsContainer vrv={this.state.vrv} key="popout" />
+    ]
   }
 }
 
@@ -65,5 +65,6 @@ ViewerBody.propTypes = {
   collation: PropTypes.string,
   sources: PropTypes.array,
   song: PropTypes.string,
-  source: PropTypes.string
+  source: PropTypes.string,
+  setPopoutPosition: PropTypes.func
 }

@@ -1,4 +1,5 @@
-import { REQUEST_RESOURCE, RECEIVE_RESOURCE, GET_COLLATION_SOURCES } from '../actions'
+import { REQUEST_RESOURCE, RECEIVE_RESOURCE, GET_COLLATION_SOURCES,
+  SET_VARIANTS, SET_POPOUT_POSITION, UNSET_POPOUT_POSITION } from '../actions'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
@@ -50,26 +51,32 @@ function resources(state = {}, action) {
   }
 }
 
-// function variants(state = {}, action) {
-//   switch (action.type) {
-//     case GET_VARIANTS:
-//       if (action.dataType === 'tei') {
-//         for (const rdg of Array.from(action.app.getElementsByTagName('rdg'))) {
-//           const sourceAndId = rdg.children[0].getAttribute('target').split('#')
-//           fetch(sourceAndId[0])
-//             .then(response => response.text())
-//             .then(text => {
-//               const source = parser.parseFromString(text, 'text/xml')
-//             })
-//         }
-//       }
-//     default:
-//       return state
-//   }
-// }
+function variants(state = [], action) {
+  switch (action.type) {
+    case SET_VARIANTS:
+      return action.variants
+    default:
+      return state
+  }
+}
+
+function ui(state = {}, action) {
+  switch (action.type) {
+    case SET_POPOUT_POSITION:
+      return Object.assign({}, state,
+        {popoutPosition: action.rect})
+    case UNSET_POPOUT_POSITION:
+      return Object.assign({}, state,
+        {popoutPosition: undefined})
+    default:
+      return state
+  }
+}
 
 const emsViewer = combineReducers({
   resources,
+  variants,
+  ui,
   router: routerReducer
 })
 

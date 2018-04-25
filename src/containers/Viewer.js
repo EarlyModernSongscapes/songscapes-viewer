@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getResource, getCollation, getVariants } from '../actions'
+import { getResource, getCollation, getVariants, setPopoutPosition } from '../actions'
 import { withRouter } from 'react-router'
 import ViewerBody from '../components/ViewerBody'
 
@@ -33,7 +33,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  dispatch
   return {
     getResource: (url, type) => {
       dispatch(getResource(url, type))
@@ -43,6 +42,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getVariants: (app, source, dataType) => {
       dispatch(getVariants(app, source, dataType))
+    },
+    setPopoutPosition: (rect) => {
+      dispatch(setPopoutPosition(rect))
     }
   }
 }

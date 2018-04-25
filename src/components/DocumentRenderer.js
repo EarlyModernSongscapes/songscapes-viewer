@@ -43,7 +43,10 @@ export default class DocumentRenderer extends Component {
             if (sourceAndId[0].includes(this.props.source)) {
               const variant = teiData.querySelector(`#${sourceAndId[1]}`)
               variant.classList.add('variant')
-              variant.onclick = () => { this.props.getVariants(app, this.props.source, 'tei') }
+              variant.onclick = () => {
+                this.props.getVariants(app, rdg.getAttribute('wit'), 'tei')
+                this.props.setPopoutPosition(variant.getBoundingClientRect())
+              }
             }
           }
         }
@@ -73,6 +76,7 @@ export default class DocumentRenderer extends Component {
 
 DocumentRenderer.propTypes = {
   getVariants: PropTypes.func,
+  setPopoutPosition: PropTypes.func,
   vrv: PropTypes.object,
   source: PropTypes.string,
   tei: PropTypes.string,

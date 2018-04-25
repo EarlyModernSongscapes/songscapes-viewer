@@ -17,13 +17,13 @@ $mdc-theme-background: #fff;
 // @import "@material/checkbox/mdc-checkbox";
 // @import "@material/dialog/mdc-dialog";
 // @import "@material/drawer/mdc-drawer";
-// @import "@material/elevation/mdc-elevation";
+@import "@material/elevation/mdc-elevation";
 // @import "@material/fab/mdc-fab";
 // @import "@material/form-field/mdc-form-field";
 // @import "@material/grid-list/mdc-grid-list";
 // @import "@material/icon-toggle/mdc-icon-toggle";
 @import "@material/layout-grid/mdc-layout-grid";
-// @import "@material/list/mdc-list";
+@import "@material/list/mdc-list";
 // @import "@material/menu/mdc-menu";
 // @import "@material/radio/mdc-radio";
 // @import "@material/ripple/mdc-ripple";
@@ -77,4 +77,9 @@ ul.sourceList {
     color: white;
     background-color: #337ab7;
   }
+}
+
+.variant-popout {
+  position: absolute;
+  background-color: white;
 }
