@@ -14,7 +14,7 @@ export default class DocumentRenderer extends Component {
   }
 
   componentDidUpdate() {
-    this.refs.teiData.innerHTML = ''
+    this.refs.teiData.innerHTML = 'Loading...'
     const x = this.refs.teiData.offsetWidth
     const vrvOptions = {
       pageWidth: x * 100 / 35,
@@ -69,13 +69,14 @@ export default class DocumentRenderer extends Component {
         }
         const xi = teiData.getElementsByTagName('xi:include')[0]
         xi.parentNode.replaceChild(svgDoc.documentElement, xi)
+        this.refs.teiData.innerHTML = ''
         this.refs.teiData.appendChild(teiData)
       })
     }
   }
 
   render() {
-    return (<div ref="teiData" key={this.props.source}/>)
+    return (<div ref="teiData" key={this.props.source}>Loading...</div>)
   }
 }
 
