@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:mei="http://www.music-encoding.org/ns/mei">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Stand-off apparatus for <title>A Complaint Against Cupid</title></title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <listWit>
+              <witness xml:id="S1"/>
+              <witness xml:id="S2"/>
+              <witness xml:id="S3"/>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div>
+          <head>Text Collation</head>
+          <app>
+            <rdg wit="#S1">
+              <ptr target="/data/tei/AComplaintAgainstCupid-S1.xml#v1"/>
+            </rdg>
+            <rdgGrp n="1">
+              <rdg wit="#S2">
+                <ptr target="/data/tei/AComplaintAgainstCupid-S2.xml#v1"/>
+              </rdg>
+              <rdg wit="#S3">
+                <ptr target="/data/tei/AComplaintAgainstCupid-S3.xml#v1"/>
+              </rdg>
+            </rdgGrp>
+          </app>
+          <app>
+            <rdg wit="#S1">
+              <ptr target="/data/tei/AComplaintAgainstCupid-S1.xml#v2"/>
+            </rdg>
+            <rdg wit="#S2">
+              <ptr target="/data/tei/AComplaintAgainstCupid-S2.xml#v2"/>
+            </rdg>
+            <rdg wit="#S3">
+              <ptr target="/data/tei/AComplaintAgainstCupid-S3.xml#v2"/>
+            </rdg>
+          </app>
+        </div>
+        <div>
+          <head>Music Collation</head>
+          <notatedMusic>
+            <mei:mei>
+              <mei:meiHead>
+                <mei:fileDesc>
+                  <mei:titleStmt>
+                    <mei:title></mei:title>
+                  </mei:titleStmt>
+                  <mei:pubStmt></mei:pubStmt>
+                  <mei:sourceDesc>
+                    <mei:source xml:id="MS1"/>
+                    <mei:source xml:id="MS2"/>
+                    <mei:source xml:id="MS3"/>
+                  </mei:sourceDesc>
+                </mei:fileDesc>
+              </mei:meiHead>
+              <mei:music>
+                <mei:body>
+                  <mei:mdiv>
+                    <mei:score>
+                      <mei:app>
+                        <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-56" />
+                        <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-56 /data/mei/AComplaintAgainstCupid-S3.xml#m-56" />
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-424" />
+                        <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-424 /data/mei/AComplaintAgainstCupid-S3.xml#m-424" />
+                      </mei:app>
+                    </mei:score>
+                  </mei:mdiv>
+                </mei:body>
+              </mei:music>
+            </mei:mei>
+          </notatedMusic>
+        </div>
+      </body>
+  </text>
+</TEI>
