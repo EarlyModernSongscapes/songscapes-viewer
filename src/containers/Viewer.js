@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
-import { getResource, getCollation, getVariants, setPopoutPosition } from '../actions'
+import { getResource, getCollation, getVariants, getMusicVariants,
+  setMusicPopoutPosition, setPopoutPosition } from '../actions'
 import { withRouter } from 'react-router'
 import ViewerBody from '../components/ViewerBody'
 
@@ -40,11 +41,17 @@ const mapDispatchToProps = (dispatch) => {
     getCollation: (url) => {
       dispatch(getCollation(url))
     },
-    getVariants: (app, source, dataType) => {
-      dispatch(getVariants(app, source, dataType))
+    getVariants: (app, source) => {
+      dispatch(getVariants(app, source))
+    },
+    getMusicVariants: (app, source) => {
+      dispatch(getMusicVariants(app, source))
     },
     setPopoutPosition: (rect) => {
       dispatch(setPopoutPosition(rect))
+    },
+    setMusicPopoutPosition: (rect) => {
+      dispatch(setMusicPopoutPosition(rect))
     }
   }
 }

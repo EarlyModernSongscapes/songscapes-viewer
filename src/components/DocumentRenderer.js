@@ -44,7 +44,7 @@ export default class DocumentRenderer extends Component {
               const variant = teiData.querySelector(`#${sourceAndId[1]}`)
               variant.classList.add('variant')
               variant.onclick = () => {
-                this.props.getVariants(app, rdg.getAttribute('wit'), 'tei')
+                this.props.getVariants(app, rdg.getAttribute('wit'))
                 this.props.setPopoutPosition(variant.getBoundingClientRect())
               }
             }
@@ -54,10 +54,15 @@ export default class DocumentRenderer extends Component {
         for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
           for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
             const targets = rdg.getAttribute('target').split(/\s+/)
-            for (const target of targets) {
+            for (const [i, target] of targets.entries()) {
               const sourceAndId = target.split('#')
               if (sourceAndId[0].includes(this.props.source)) {
-                svgDoc.querySelector(`#${sourceAndId[1]}`).classList.add('musVariant')
+                const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`)
+                musVariant.classList.add('musVariant')
+                musVariant.onclick = () => {
+                  this.props.getMusicVariants(app, rdg.getAttribute('source').split(/\s+/)[i])
+                  this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                }
               }
             }
           }
@@ -76,7 +81,9 @@ export default class DocumentRenderer extends Component {
 
 DocumentRenderer.propTypes = {
   getVariants: PropTypes.func,
+  getMusicVariants: PropTypes.func,
   setPopoutPosition: PropTypes.func,
+  setMusicPopoutPosition: PropTypes.func,
   vrv: PropTypes.object,
   source: PropTypes.string,
   tei: PropTypes.string,

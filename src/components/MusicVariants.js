@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Component } from 'react'
 // import { Link } from 'react-router-dom'
 
-export default class Variants extends Component {
+export default class MusicVariants extends Component {
   constructor(props) {
     super(props)
     this.handleClickOutside = this.handleClickOutside.bind(this)
@@ -13,12 +13,32 @@ export default class Variants extends Component {
     document.addEventListener('mousedown', this.handleClickOutside)
   }
 
+  componentDidUpdate() {
+    for (const r in this.refs) {
+      if (r.includes('vrv-')) {
+        const x = 250
+        const vrvOptions = {
+          pageWidth: x * 100 / 35,
+          pageHeight: 1000 * 100 / 35,
+          ignoreLayout: 1,
+          adjustPageHeight: 1,
+          border: 10,
+          scale: 35
+        }
+        this.props.vrv.setOptions(vrvOptions)
+        this.props.vrv.loadData( this.refs[r].getAttribute('data-mei') + '\n', '' )
+        const svg = this.props.vrv.renderPage(1)
+        this.refs[r].innerHTML = svg
+      }
+    }
+  }
+
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside)
   }
 
   handleClickOutside(event) {
-    if (this.refs.vpop && !this.refs.vpop.contains(event.target)) {
+    if (this.refs.vpopmus && !this.refs.vpopmus.contains(event.target)) {
       this.props.unsetPopoutPosition()
     }
   }
@@ -31,7 +51,7 @@ export default class Variants extends Component {
             top: this.props.popoutPosition.top + window.pageYOffset + 25,
             left: this.props.popoutPosition.left  + window.pageXOffset
           }}
-          ref="vpop">
+          ref="vpopmus">
           <ul className="mdc-list mdc-list--dense">
             <hr className="mdc-list-divider"/>
             {this.props.variants.map((group) => {
@@ -39,7 +59,7 @@ export default class Variants extends Component {
                 if (!v.isLemma) {
                   return (<li className="mdc-list-item" key={i}>
                     <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
-                    {v.text}
+                    <span ref={`vrv-${i}`} data-mei={v.mei}/>
                   </li>)
                 }
                 return null
@@ -54,8 +74,9 @@ export default class Variants extends Component {
   }
 }
 
-Variants.propTypes = {
+MusicVariants.propTypes = {
   variants: PropTypes.array,
+  vrv: PropTypes.object,
   popoutPosition: PropTypes.object,
   unsetPopoutPosition: PropTypes.func
 }

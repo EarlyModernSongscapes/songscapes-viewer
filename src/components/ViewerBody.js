@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Component } from 'react'
 import Sources from './Sources'
 import VariantsContainer from '../containers/VariantsContainer'
+import MusicVariantsContainer from '../containers/MusicVariantsContainer'
 import DocumentRenderer from './DocumentRenderer'
 
 export default class ViewerBody extends Component {
@@ -47,11 +48,14 @@ export default class ViewerBody extends Component {
               collation={this.props.collation}
               vrv={this.state.vrv}
               setPopoutPosition={this.props.setPopoutPosition}
-              getVariants={this.props.getVariants}/>
+              setMusicPopoutPosition={this.props.setMusicPopoutPosition}
+              getVariants={this.props.getVariants}
+              getMusicVariants={this.props.getMusicVariants}/>
           </div>
         </div>
       </div>),
-      <VariantsContainer vrv={this.state.vrv} key="popout" />
+      <VariantsContainer key="popout" />,
+      <MusicVariantsContainer vrv={this.state.vrv} key="muspopout" />
     ]
   }
 }
@@ -60,11 +64,13 @@ ViewerBody.propTypes = {
   getCollation: PropTypes.func,
   getResource: PropTypes.func,
   getVariants: PropTypes.func,
+  getMusicVariants: PropTypes.func,
   tei: PropTypes.string,
   mei: PropTypes.string,
   collation: PropTypes.string,
   sources: PropTypes.array,
   song: PropTypes.string,
   source: PropTypes.string,
-  setPopoutPosition: PropTypes.func
+  setPopoutPosition: PropTypes.func,
+  setMusicPopoutPosition: PropTypes.func
 }

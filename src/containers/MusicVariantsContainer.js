@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { unsetPopoutPosition } from '../actions'
-import Variants from '../components/Variants'
+import MusicVariants from '../components/MusicVariants'
 
-const mapStateToProps = (state) => {
-  return {variants: state.variants, popoutPosition: state.ui.popoutPosition}
+const mapStateToProps = (state, ownProps) => {
+  return {variants: state.musicVariants, vrv: ownProps.vrv, popoutPosition: state.ui.musicPopoutPosition}
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -15,9 +15,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const VariantsContainer = withRouter(connect(
+const MusicVariantsContainer = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Variants))
+)(MusicVariants))
 
-export default VariantsContainer
+export default MusicVariantsContainer

@@ -61,6 +61,7 @@
                   <mei:sourceDesc>
                     <mei:source xml:id="MS1"/>
                     <mei:source xml:id="MS2"/>
+                    <mei:source xml:id="MS3"/>
                   </mei:sourceDesc>
                 </mei:fileDesc>
               </mei:meiHead>
@@ -71,6 +72,10 @@
                       <mei:app>
                         <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-56" />
                         <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-56 /data/mei/AComplaintAgainstCupid-S3.xml#m-56" />
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-424" />
+                        <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-424 /data/mei/AComplaintAgainstCupid-S3.xml#m-424" />
                       </mei:app>
                     </mei:score>
                   </mei:mdiv>

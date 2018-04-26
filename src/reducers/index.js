@@ -1,9 +1,11 @@
 import { REQUEST_RESOURCE, RECEIVE_RESOURCE, GET_COLLATION_SOURCES,
-  SET_VARIANTS, SET_POPOUT_POSITION, UNSET_POPOUT_POSITION } from '../actions'
+  SET_VARIANTS, SET_MUSIC_VARIANTS,
+  SET_MUSIC_POPOUT_POSITION, SET_POPOUT_POSITION, UNSET_POPOUT_POSITION } from '../actions'
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
 const parser = new window.DOMParser()
+const serializer = new window.XMLSerializer()
 
 function reduceResource(state = {}, action) {
   let newState = {}
@@ -60,14 +62,66 @@ function variants(state = [], action) {
   }
 }
 
+function musicVariants(state = [], action) {
+  switch (action.type) {
+    case SET_MUSIC_VARIANTS:
+      const contextedVariants = []
+      for (const variant of action.variants) {
+        const values = Array.from(variant.values)
+        variant.values = []
+        for (const value of values) {
+          value.mei = `<?xml version="1.0" encoding="UTF-8"?>
+          <mei xmlns="http://www.music-encoding.org/ns/mei">
+              <meiHead>
+                  <fileDesc>
+                      <titleStmt>
+                          <title></title>
+                      </titleStmt>
+                      <pubStmt></pubStmt>
+                  </fileDesc>
+              </meiHead>
+              <music>
+                  <body>
+                      <mdiv>
+                          <score>
+                              ${serializer.serializeToString(value.scoreDef)}
+                              <section>
+                                  <measure>
+                                      <staff>
+                                          <layer>
+                                              ${serializer.serializeToString(value.eventData)}
+                                          </layer>
+                                      </staff>
+                                  </measure>
+                              </section>
+                          </score>
+                      </mdiv>
+                  </body>
+              </music>
+          </mei>
+          `
+          variant.values.push(value)
+        }
+        contextedVariants.push(variant)
+      }
+      return contextedVariants
+    default:
+      return state
+  }
+}
+
 function ui(state = {}, action) {
   switch (action.type) {
+    case SET_MUSIC_POPOUT_POSITION:
+      return Object.assign({}, state,
+        {musicPopoutPosition: action.rect})
     case SET_POPOUT_POSITION:
       return Object.assign({}, state,
         {popoutPosition: action.rect})
     case UNSET_POPOUT_POSITION:
       return Object.assign({}, state,
-        {popoutPosition: undefined})
+        {musicPopoutPosition: undefined,
+          popoutPosition: undefined})
     default:
       return state
   }
@@ -76,6 +130,7 @@ function ui(state = {}, action) {
 const emsViewer = combineReducers({
   resources,
   variants,
+  musicVariants,
   ui,
   router: routerReducer
 })
