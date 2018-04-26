@@ -25,26 +25,26 @@
           <head>Text Collation</head>
           <app>
             <rdg wit="#S1">
-              <ptr target="/data/tei/AComplaintAgainstCupid-S1.xml#v1"/>
+              <ptr target="data/tei/AComplaintAgainstCupid-S1.xml#v1"/>
             </rdg>
             <rdgGrp n="1">
               <rdg wit="#S2">
-                <ptr target="/data/tei/AComplaintAgainstCupid-S2.xml#v1"/>
+                <ptr target="data/tei/AComplaintAgainstCupid-S2.xml#v1"/>
               </rdg>
               <rdg wit="#S3">
-                <ptr target="/data/tei/AComplaintAgainstCupid-S3.xml#v1"/>
+                <ptr target="data/tei/AComplaintAgainstCupid-S3.xml#v1"/>
               </rdg>
             </rdgGrp>
           </app>
           <app>
             <rdg wit="#S1">
-              <ptr target="/data/tei/AComplaintAgainstCupid-S1.xml#v2"/>
+              <ptr target="data/tei/AComplaintAgainstCupid-S1.xml#v2"/>
             </rdg>
             <rdg wit="#S2">
-              <ptr target="/data/tei/AComplaintAgainstCupid-S2.xml#v2"/>
+              <ptr target="data/tei/AComplaintAgainstCupid-S2.xml#v2"/>
             </rdg>
             <rdg wit="#S3">
-              <ptr target="/data/tei/AComplaintAgainstCupid-S3.xml#v2"/>
+              <ptr target="data/tei/AComplaintAgainstCupid-S3.xml#v2"/>
             </rdg>
           </app>
         </div>
@@ -70,12 +70,12 @@
                   <mei:mdiv>
                     <mei:score>
                       <mei:app>
-                        <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-56" />
-                        <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-56 /data/mei/AComplaintAgainstCupid-S3.xml#m-56" />
+                        <mei:rdg source="#MS1" target="data/mei/AComplaintAgainstCupid-S1.xml#m-56" />
+                        <mei:rdg source="#MS2 #MS3" target="data/mei/AComplaintAgainstCupid-S2.xml#m-56 data/mei/AComplaintAgainstCupid-S3.xml#m-56" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#MS1" target="/data/mei/AComplaintAgainstCupid-S1.xml#m-424" />
-                        <mei:rdg source="#MS2 #MS3" target="/data/mei/AComplaintAgainstCupid-S2.xml#m-424 /data/mei/AComplaintAgainstCupid-S3.xml#m-424" />
+                        <mei:rdg source="#MS1" target="data/mei/AComplaintAgainstCupid-S1.xml#m-424" />
+                        <mei:rdg source="#MS2 #MS3" target="data/mei/AComplaintAgainstCupid-S2.xml#m-424 data/mei/AComplaintAgainstCupid-S3.xml#m-424" />
                       </mei:app>
                     </mei:score>
                   </mei:mdiv>

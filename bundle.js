@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 185);
@@ -36671,7 +36671,7 @@ class Sources extends _react.Component {
         this.props.sources.map((s, i) => {
           // TODO fix these string operations
           const label = s.split('-')[1].split('.xml')[0];
-          const url = s.split('/')[3].split('.xml')[0];
+          const url = s.split('/')[2].split('.xml')[0];
           const active = s.includes(this.props.active) ? 'active' : 'inactive';
           return _react2.default.createElement(
             'li',
