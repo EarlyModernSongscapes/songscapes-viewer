@@ -36575,7 +36575,7 @@ class ViewerBody extends _react.Component {
   componentDidMount() {
     if (!this.props.collation) {
       // Only get the collation once
-      this.props.getCollation(`/data/collations/${this.props.song}.xml`);
+      this.props.getCollation(`data/collations/${this.props.song}.xml`);
       this.getResources();
     }
   }
@@ -36587,8 +36587,8 @@ class ViewerBody extends _react.Component {
   }
 
   getResources() {
-    this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei');
-    this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei');
+    this.props.getResource(`data/tei/${this.props.source}.xml`, 'tei');
+    this.props.getResource(`data/mei/${this.props.source}.xml`, 'mei');
   }
 
   render() {
