@@ -3292,7 +3292,9 @@ function getMusicVariants(app, lemma) {
           } else if (isStaff) {
             variant = `<section><measure>${variant}</measure></section>`;
           } else if (isLayer) {
-            variant = `<section><measure><layer>${variant}</layer></measure></section>`;
+            variant = `<section><measure><staff>${variant}</staff<</measure></section>`;
+          } else {
+            variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`;
           }
 
           values.push({
