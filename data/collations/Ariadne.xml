@@ -24,10 +24,10 @@
           <head>Text Collation</head>
           <app>
             <rdg wit="#BL_53723">
-              <ptr target="/data/tei/Ariadne-BL_53723.xml#v1"/>
+              <ptr target="data/tei/Ariadne-BL_53723.xml#v1"/>
             </rdg>
             <rdg wit="#L638_1">
-              <ptr target="/data/tei/Ariadne-L638_1.xml#v1"/>
+              <ptr target="data/tei/Ariadne-L638_1.xml#v1"/>
             </rdg>
           </app>
         </div>
@@ -52,52 +52,52 @@
                   <mei:mdiv>
                     <mei:score>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-101" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-104" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-101" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-104" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-111" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-114" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-111" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-114" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-115 /data/mei/Ariadne-BL_53723.xml#m-118 /data/mei/Ariadne-BL_53723.xml#m-119 /data/mei/Ariadne-BL_53723.xml#m-121 /data/mei/Ariadne-BL_53723.xml#m-123 /data/mei/Ariadne-BL_53723.xml#m-124" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-118 /data/mei/Ariadne-L638_1.xml#m-121 /data/mei/Ariadne-L638_1.xml#m-122 /data/mei/Ariadne-L638_1.xml#m-124" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-115 data/mei/Ariadne-BL_53723.xml#m-118 data/mei/Ariadne-BL_53723.xml#m-119 data/mei/Ariadne-BL_53723.xml#m-121 data/mei/Ariadne-BL_53723.xml#m-123 data/mei/Ariadne-BL_53723.xml#m-124" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-118 data/mei/Ariadne-L638_1.xml#m-121 data/mei/Ariadne-L638_1.xml#m-122 data/mei/Ariadne-L638_1.xml#m-124" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-141" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-141" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-141" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-141" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-205 /data/mei/Ariadne-BL_53723.xml#m-207 /data/mei/Ariadne-BL_53723.xml#m-235" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-205 /data/mei/Ariadne-L638_1.xml#m-238" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-205 data/mei/Ariadne-BL_53723.xml#m-207 data/mei/Ariadne-BL_53723.xml#m-235" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-205 data/mei/Ariadne-L638_1.xml#m-238" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-218 /data/mei/Ariadne-BL_53723.xml#m-220" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-218 /data/mei/Ariadne-L638_1.xml#m-221 /data/mei/Ariadne-L638_1.xml#m-223" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-218 data/mei/Ariadne-BL_53723.xml#m-220" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-218 data/mei/Ariadne-L638_1.xml#m-221 data/mei/Ariadne-L638_1.xml#m-223" />
                       </mei:app>
                       <mei:app>
                         <mei:rdg source="#M-BL_53723" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-218 /data/mei/Ariadne-L638_1.xml#m-217" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-218 data/mei/Ariadne-L638_1.xml#m-217" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-245 /data/mei/Ariadne-BL_53723.xml#m-247 /data/mei/Ariadne-BL_53723.xml#m-248" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-248 /data/mei/Ariadne-L638_1.xml#m-249 /data/mei/Ariadne-L638_1.xml#m-251" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-245 data/mei/Ariadne-BL_53723.xml#m-247 data/mei/Ariadne-BL_53723.xml#m-248" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-248 data/mei/Ariadne-L638_1.xml#m-249 data/mei/Ariadne-L638_1.xml#m-251" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-245 /data/mei/Ariadne-BL_53723.xml#m-247 /data/mei/Ariadne-BL_53723.xml#m-248" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-248 /data/mei/Ariadne-L638_1.xml#m-249 /data/mei/Ariadne-L638_1.xml#m-251" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-245 data/mei/Ariadne-BL_53723.xml#m-247 data/mei/Ariadne-BL_53723.xml#m-248" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-248 data/mei/Ariadne-L638_1.xml#m-249 data/mei/Ariadne-L638_1.xml#m-251" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-259 /data/mei/Ariadne-BL_53723.xml#m-260 /data/mei/Ariadne-BL_53723.xml#m-261" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-262 /data/mei/Ariadne-L638_1.xml#m-263" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-259 data/mei/Ariadne-BL_53723.xml#m-260 data/mei/Ariadne-BL_53723.xml#m-261" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-262 data/mei/Ariadne-L638_1.xml#m-263" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-295" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-297" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-295" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-297" />
                       </mei:app>
                       <mei:app>
-                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-317" />
-                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-306" />
+                        <mei:rdg source="#M-BL_53723" target="data/mei/Ariadne-BL_53723.xml#m-317" />
+                        <mei:rdg source="#M-L638_1" target="data/mei/Ariadne-L638_1.xml#m-306" />
                       </mei:app>
                     </mei:score>
                   </mei:mdiv>
