@@ -36705,7 +36705,7 @@ class Sources extends _react.Component {
         this.props.sources.map((s, i) => {
           // TODO fix these string operations
           const label = s.split('-')[1].split('.xml')[0];
-          const url = s.split('/')[3].split('.xml')[0].split('-')[1];
+          const url = s.split('/')[2].split('.xml')[0].split('-')[1];
           const active = s.includes(this.props.active) ? 'active' : 'inactive';
           return _react2.default.createElement(
             'li',
