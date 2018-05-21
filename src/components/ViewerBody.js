@@ -29,8 +29,8 @@ export default class ViewerBody extends Component {
   }
 
   getResources() {
-    this.props.getResource(`/data/tei/${this.props.source}.xml`, 'tei')
-    this.props.getResource(`/data/mei/${this.props.source}.xml`, 'mei')
+    this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei')
+    this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.xml`, 'mei')
   }
 
   render() {

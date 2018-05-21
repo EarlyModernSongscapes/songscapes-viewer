@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+           <title>Ariadne deserted by Theseus Sittinge uppon a Rock in ye Island Naxos thus Complaines</title>
+             <title type="first_line">Theseus, O Theseus, hark! but yet in vain</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Cartwright</author>
+              <date type="publication" when="1626">circa 1626 to 1662</date>.<!-- unsure how to indicate approximate date range -->
+              <!-- need element for library in which a MS is housed -->
+              <idno type="call_number">British Library Additional Manuscript 53723</idno>
+              <biblScope unit="leaf" from="124r" to="127v">leaves 124 recto to 127 recto</biblScope>,
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div>
+        <head>
+          <l>Hen: Lawes / Ariadne deserted by Theseus</l>
+          <l>Sittinge uppon a Rock in y<hi rend="superscript">e</hi> Island Naxos thus Complaines</l>
+        </head>
+          <notatedMusic>
+            <xi:include href="../mei/Ariadne-BL_53723.xml"/>
+          </notatedMusic>
+        <ab>
+          <supplied reason="underlay">
+        <lg type="stanza">
+          <l>Theseous! ô theseus! heark! but yet in vaine,</l>
+          <l rend="indent2">alas <w xml:id="v1">forsaken</w> I Complaine;</l>
+        <l>it was some Neighb'ringe Rock / more softe then he, /</l>
+        <l rend="indent1">whose hollow Bowels pittyed me,</l>
+        <l>&amp; beatinge back y<hi rend="superscript">t</hi> false &amp; cruell Name,</l>
+        <l rend="indent1">did Comfort &amp; revenge my flame;</l>
+        <l rend="indent1">then faithles whither wilt thou flye,</l>
+        <l rend="indent2">stones dare not harbour Cruelty. /</l>
+      </lg>
+        <lg type="stanza">
+          <l>Tell me yee Gods whoe Ere yee are,</l>
+          <l>why, o why, made yee him soe faire;</l>
+          <l rend="indent1">&amp; tell me wretch why thou,</l>
+          <l rend="indent1">madst not thy <!-- folio 124v -->selfe more true, /</l>
+          <l>beautye from him might Coppies take,</l>
+          <l>&amp; more majestick Heroes make,</l>
+          <l rend="indent1">&amp; falshood learne a wyle,</l>
+          <l rend="indent1">from him too, to beguile!</l>
+          <l rend="indent2">restore my Clue,</l>
+          <l rend="indent2">tis heer most due,</l>
+          <l>for tis a labrinth of more subtle Art,</l>
+          <l>to haue soe faire a face soe fowle a hart. /</l>
+        </lg>
+        <lg type="stanza">
+          <l>the Rav’nous Vulture teare his breast,</l>
+          <l>y<hi rend="superscript">e</hi> Rowlinge stone disturbe his rest,</l>
+          <l rend="indent2">let him next feele</l>
+          <l rend="indent2">Ixions wheele,</l>
+          <l rend="indent1">&amp; Ad one fable more</l>
+          <l rend="indent1">to Cursing Poets store,</l>
+          <l>&amp; then - yet rather let him liue, &amp; <!-- folio 125r -->Twyne</l>
+          <l>his woofe of dayes w<hi rend="superscript">th</hi> some thred stolne from Myne.</l>
+          <l rend="indent1">but if you’le Torture him how Ere,</l>
+          <l>Torture my hart, you’le finde him there;</l>
+          <l rend="indent2">till myne Eyes dranke vp his,</l>
+          <l rend="indent3">&amp; his dranke myne,</l>
+          <l rend="indent2">I ne’re thought souls might kiss,</l>
+          <l rend="indent3">&amp; spirrits Joine</l>
+          <l rend="indent3">Pictures till then,</l>
+          <l rend="indent2">tooke mee as Much as Men,</l>
+          <l rend="indent3">Nature &amp; Art,</l>
+          <l rend="indent2">Movinge a like my hart;</l>
+          <l>but his faire visage made me finde,</l>
+          <l rend="indent4">pleasures &amp; feares</l>
+          <l rend="indent4">hopes, sighes, &amp; teares,</l>
+          <l>as severall seasons of the Mynde;</l>
+          <l rend="indent2">Should thyne Eye Venus, on his dwell</l>
+          <!-- folio 125v -->
+          <l rend="indent2">thou wouldst Invite him to thy shell,</l>
+          <l rend="indent2">&amp; caught by that liue Jett</l>
+          <l rend="indent2">ventur the Second net,</l>
+          <l>&amp; after all thy dangers, faythles hee,</l>
+          <l>shouldst thou but slumber would forsake Eu’n thee;</l>
+        </lg>
+        <lg type="stanza">
+          <l>the streames soe Court y<hi rend="superscript">e</hi> yieldinge bancks,</l>
+          <l>And glydinge thence Nere pay their thankes,</l>
+          <l rend="indent3">the wynds soe wooe the flowres</l>
+          <l rend="indent3">whispringe a monge fresh bowrs;</l>
+          <l rend="indent1">&amp; hauinge Robd them of their smels,</l>
+          <l rend="indent1">fly thence perfum’d to Other Cels;</l>
+          <l>this is familliar hate to Smyle &amp; kill,</l>
+          <l>though <!-- folio 126r -->nothinge please thee yet my Ruine will;</l>
+          <l rend="indent2">death! houer, houer Ore me then</l>
+          <l rend="indent2">waues let yo<hi rend="superscript">r</hi> Christall wombe,</l>
+          <l rend="indent2">be both my fate &amp; Tombe;</l>
+          <l rend="indent1">I’le sooner trust the Sea then men. /</l>
+    </lg>   
+    <lg type="stanza">
+      <l rend="indent2">Yet for revenge to heau'n Ile call,</l>
+      <l rend="indent2">&amp; breath One Curs before I fall;</l>
+      <l>proud of two Conquests Minautor &amp; mee,</l>
+      <l>that by my faith, this by thy perjurye;</l>
+      <l>maiest thou forget to wing thy ships w<hi rend="superscript">th</hi> whyte,</l>
+      <l>y<hi rend="superscript">t</hi> the blacke sailes may to the longinge sight</l>
+      <l>of thy graye father tell thy fate, &amp; <!-- folio 126v -->he</l>
+      <l>bequeath that sea his name falling like me,</l>
+      <l>Nature &amp; loue thus brand thee, whylst I dye</l>
+      <l>cause thou forsakst Eugevs cause thou drawst Nighe /</l>
+    </lg>
+    <lg type="stanza">
+      <l rend="indent2">And yee, O nimphs below whoe Sitt,</l>
+      <l rend="indent2">in whose Swift floods his vowes he writt,</l>
+      <l>Snatch A Sharp diamond from yo<hi rend="superscript">r</hi> Richer Mynes,</l>
+      <l>&amp; in Some Mirror grave these Sader lynes,</l>
+      <l rend="indent3">wh<hi rend="superscript">ch</hi> let som God convey</l>
+      <l rend="indent3">to him, y<hi rend="superscript">t</hi> soe he may,</l>
+      <l rend="indent2">in y<hi rend="superscript">t</hi> both reade at Once &amp; see,</l>
+      <l rend="indent2">those lookes y<hi rend="superscript">t</hi> <!-- folio 127r -->caus’d my destinye. /</l>
+    </lg>
+         
+    <lg type="stanza">
+      <l>In Thetis Armes, I Ariadne sleep,</l>
+      <l>drownd first in myne Owne tears, then in the deep /</l>
+      <l>twice Banished, first by loue, &amp; then by hate,</l>
+      <l>the life y<hi rend="superscript">t</hi> I preseru’d became my fate,</l>
+      <l>whoe leauinge all was by him left a lone,</l>
+      <l>y<hi rend="superscript">t</hi> from A Monster freed, him selfe proou'ed One. /</l>
+      <l>Thus then I f–- but look</l>
+  </lg>
+          </supplied>
+          </ab>
+        </div>
+      </body>
+  </text>
+</TEI>

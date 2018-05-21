@@ -10,6 +10,8 @@ export const SET_MUSIC_POPOUT_POSITION = 'SET_MUSIC_POPOUT_POSITION'
 export const UNSET_POPOUT_POSITION = 'UNSET_POPOUT_POSITION'
 
 const parser = new window.DOMParser()
+const serializer = new window.XMLSerializer()
+serializer
 
 function uuid() {
   let value = ''
@@ -201,70 +203,105 @@ export function getMusicVariants(app, lemma) {
   return dispatch => {
     const variants = []
     const promises = []
+    // Identify groups
+    const groups = {}
     for (const reading of Array.from(app.querySelectorAll('app > *'))) {
-      if (reading.tagName === 'mei:rdg') {
-        const source = reading.getAttribute('source')
-        if (source.match(/#/gi).length > 1) {
-          // This is a "group"
-          const values = []
-          for (const [i, wit] of source.split(/\s+/).entries()) {
-            const isLemma = wit === lemma ? true : false
-            const target = reading.getAttribute('target').split(/\s+/)[i]
-            const sourceAndId = target.split('#')
-            promises.push(
-              fetch(sourceAndId[0])
-                .then(response => response.text())
-                .then(text => {
-                  const meisource = parser.parseFromString(text, 'text/xml')
-                  window.meisource = meisource
-                  const variant = meisource.querySelector(`[*|id="${sourceAndId[1]}"]`)
-                  const staffNumber = variant.closest('staff').getAttribute('n')
-
-                  const scoreDef = getScoreDefFor(variant, staffNumber)
-
-                  values.push({
-                    scoreDef,
-                    eventData: variant,
-                    sourceUrl: sourceAndId[0],
-                    wit,
-                    isLemma
-                  })
-                })
-            )
+      const sameAs = reading.getAttribute('sameas')
+      const xmlid = reading.getAttribute('xml:id')
+      if (sameAs) {
+        // is there a group with this id as member already?
+        let found = false
+        for (const gId of Object.keys(groups)) {
+          const pos = groups[gId].needed.indexOf(`#${xmlid}`)
+          if (pos > -1) {
+            groups[gId].rdgs.push(reading)
+            groups[gId].needed.splice(pos, 1)
+            found = true
           }
-          variants.push({ group: uuid(), values })
-        } else {
-          // Not a group
-          const wit = source
-          const isLemma = wit === lemma ? true : false
-          const sourceAndId = reading.getAttribute('target').split('#')
-          promises.push(
-            fetch(sourceAndId[0])
-              .then(response => response.text())
-              .then(text => {
-                const meisource = parser.parseFromString(text, 'text/xml')
-                window.meisource = meisource
-                const variant = meisource.querySelector(`[*|id="${sourceAndId[1]}"]`)
-                const staffNumber = variant.closest('staff').getAttribute('n')
-
-                const scoreDef = getScoreDefFor(variant, staffNumber)
-
-                variants.push({
-                  group: uuid(),
-                  values: [
-                    {
-                      scoreDef,
-                      eventData: variant,
-                      sourceUrl: sourceAndId[0],
-                      wit,
-                      isLemma
-                    }
-                  ]
-                })
-              })
-          )
+        }
+        if (!found) {
+          // start new group and add sameAs ids as 'needed'
+          groups[uuid()] = {
+            needed: sameAs.split(' '),
+            rdgs: [reading]
+          }
+        }
+      } else {
+        groups[uuid()] = {
+          needed: [],
+          rdgs: [reading]
         }
       }
+    }
+    // Now loop on groups and genereate score snippets
+    for (const groupId of Object.keys(groups)) {
+      const values = []
+      const group = groups[groupId]
+      for (const reading of group.rdgs) {
+        const wit = reading.getAttribute('source')
+        const isLemma = wit === lemma ? true : false
+        const targets = reading.getAttribute('target').split(/\s+/)
+        const meiUrl = targets[0].split('#')[0] // Get MEI url from first target; they must all point ot the same file
+        promises.push(
+          fetch(meiUrl)
+            .then(response => response.text())
+            .then(text => {
+              const meisource = parser.parseFromString(text, 'text/xml')
+              const variantParts = []
+              let isMeasure = false
+              let isStaff = false
+              let isLayer = false
+              let scoreDef = ''
+              let staffNumber = ''
+
+              for (const [idx, target] of targets.entries()) {
+                const sourceAndId = target.split('#')
+                const variant = meisource.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                switch (variant.tagName) {
+                  case 'measure':
+                    isMeasure = true
+                  case 'staff':
+                    isStaff = true
+                  case 'layer':
+                    isLayer = true
+                  default:
+                }
+                variantParts.push(variant)
+                if (idx === 0) {
+                  // TODO: allow measure variants: scoreDef is tied to staff at the moment.
+                  if (isStaff) {
+                    staffNumber = variant.getAttribute('n')
+                  } else {
+                    staffNumber = variant.closest('staff').getAttribute('n')
+                  }
+                  scoreDef = serializer.serializeToString(getScoreDefFor(variant, staffNumber))
+                }
+              }
+
+              let variant = ''
+              for (const v of variantParts) {
+                variant += serializer.serializeToString(v)
+              }
+
+              if (isMeasure) {
+                variant = `<section>${variant}</section>`
+              } else if (isStaff) {
+                variant = `<section><measure>${variant}</measure></section>`
+              } else if (isLayer) {
+                variant = `<section><measure><layer>${variant}</layer></measure></section>`
+              }
+
+              values.push({
+                scoreDef,
+                eventData: variant,
+                sourceUrl: targets[0].split('#')[0],
+                wit,
+                isLemma
+              })
+            })
+        )
+      }
+      variants.push({ group: groupId, values })
     }
     Promise.all(promises).then(() => {
       dispatch(setMusicVariants(variants))

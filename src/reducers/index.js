@@ -5,7 +5,6 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
 const parser = new window.DOMParser()
-const serializer = new window.XMLSerializer()
 
 function reduceResource(state = {}, action) {
   let newState = {}
@@ -84,16 +83,8 @@ function musicVariants(state = [], action) {
                   <body>
                       <mdiv>
                           <score>
-                              ${serializer.serializeToString(value.scoreDef)}
-                              <section>
-                                  <measure>
-                                      <staff>
-                                          <layer>
-                                              ${serializer.serializeToString(value.eventData)}
-                                          </layer>
-                                      </staff>
-                                  </measure>
-                              </section>
+                              ${value.scoreDef}
+                              ${value.eventData}
                           </score>
                       </mdiv>
                   </body>

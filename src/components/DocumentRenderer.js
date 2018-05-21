@@ -53,15 +53,18 @@ export default class DocumentRenderer extends Component {
         // Make links for music variants
         for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
           for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
-            const targets = rdg.getAttribute('target').split(/\s+/)
-            for (const [i, target] of targets.entries()) {
-              const sourceAndId = target.split('#')
-              if (sourceAndId[0].includes(this.props.source)) {
-                const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`)
-                musVariant.classList.add('musVariant')
-                musVariant.onclick = () => {
-                  this.props.getMusicVariants(app, rdg.getAttribute('source').split(/\s+/)[i])
-                  this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+            const mTargets = rdg.getAttribute('target')
+            if (mTargets) {
+              const targets = mTargets.split(/\s+/)
+              for (const target of targets) {
+                const sourceAndId = target.split('#')
+                if (sourceAndId[0].includes(this.props.source)) {
+                  const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`)
+                  musVariant.classList.add('musVariant')
+                  musVariant.onclick = () => {
+                    this.props.getMusicVariants(app, rdg.getAttribute('source'))
+                    this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                  }
                 }
               }
             }
