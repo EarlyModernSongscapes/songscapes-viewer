@@ -16,7 +16,7 @@ export default class MusicVariants extends Component {
   componentDidUpdate() {
     for (const r in this.refs) {
       if (r.includes('vrv-')) {
-        const x = 250
+        const x = 400
         const vrvOptions = {
           pageWidth: x * 100 / 35,
           pageHeight: 1000 * 100 / 35,
@@ -57,7 +57,7 @@ export default class MusicVariants extends Component {
             {this.props.variants.map((group) => {
               return [group.values.map((v, i) => {
                 if (!v.isLemma) {
-                  return (<li className="mdc-list-item" key={i}>
+                  return (<li style={{height: '100px'}} className="mdc-list-item" key={i}>
                     <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
                     <span ref={`vrv-${i}`} data-mei={v.mei}/>
                   </li>)

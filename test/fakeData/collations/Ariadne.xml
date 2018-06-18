@@ -96,8 +96,16 @@
                         <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-297" />
                       </mei:app>
                       <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-324" />
+                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-312 /data/mei/Ariadne-L638_1.xml#m-342" />
+                      </mei:app>
+                      <mei:app>
                         <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-317" />
                         <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-306" />
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="/data/mei/Ariadne-BL_53723.xml#m-337" />
+                        <mei:rdg source="#M-L638_1" target="/data/mei/Ariadne-L638_1.xml#m-336" />
                       </mei:app>
                     </mei:score>
                   </mei:mdiv>

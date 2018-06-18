@@ -249,6 +249,7 @@ export function getMusicVariants(app, lemma) {
               const meisource = parser.parseFromString(text, 'text/xml')
               const variantParts = []
               let isMeasure = false
+              let isMultiStaff = false
               let isStaff = false
               let isLayer = false
               let scoreDef = ''
@@ -261,6 +262,9 @@ export function getMusicVariants(app, lemma) {
                   case 'measure':
                     isMeasure = true
                   case 'staff':
+                    if (isStaff) {
+                      isMultiStaff = true
+                    }
                     isStaff = true
                   case 'layer':
                     isLayer = true
@@ -280,15 +284,19 @@ export function getMusicVariants(app, lemma) {
 
               let variant = ''
               for (const v of variantParts) {
-                variant += serializer.serializeToString(v)
+                if (isMultiStaff) {
+                  variant += `<measure>${serializer.serializeToString(v)}</measure>`
+                } else {
+                  variant += serializer.serializeToString(v)
+                }
               }
 
-              if (isMeasure) {
+              if (isMeasure  || isMultiStaff) {
                 variant = `<section>${variant}</section>`
-              } else if (isStaff) {
+              } else if (isStaff && !isMultiStaff) {
                 variant = `<section><measure>${variant}</measure></section>`
               } else if (isLayer) {
-                variant = `<section><measure><staff>${variant}</staff<</measure></section>`
+                variant = `<section><measure><staff>${variant}</staff></measure></section>`
               } else {
                 variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`
               }
