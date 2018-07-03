@@ -3300,7 +3300,7 @@ function getMusicVariants(app, lemma) {
           } else if (isStaff && !isMultiStaff) {
             variant = `<section><measure>${variant}</measure></section>`;
           } else if (isLayer) {
-            variant = `<section><measure><staff>${variant}</staff></measure></section>`;
+            variant = `<section><measure><staff>${variant}</staff<</measure></section>`;
           } else {
             variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`;
           }
