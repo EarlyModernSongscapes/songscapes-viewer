@@ -18,7 +18,7 @@ export default class ViewerBody extends Component {
     if (!this.props.collation) {
       // Only get the collation once
       // this.props.getCollation(`/data/collations/${this.props.song}.xml`)
-      this.props.getCollation(`http://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/OBJ/view`)
+      this.props.getCollation(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/OBJ/view`)
       this.getResources()
     }
   }
@@ -32,8 +32,8 @@ export default class ViewerBody extends Component {
   getResources() {
     // this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei')
     // this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.xml`, 'mei')
-    this.props.getResource(`http://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei')
-    this.props.getResource(`http://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
+    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei')
+    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
   }
 
   render() {
