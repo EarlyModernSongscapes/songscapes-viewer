@@ -3253,6 +3253,7 @@ function getMusicVariants(app, lemma) {
           const meisource = parser.parseFromString(text, 'text/xml');
           const variantParts = [];
           let isMeasure = false;
+          let isMultiStaff = false;
           let isStaff = false;
           let isLayer = false;
           let scoreDef = '';
@@ -3265,6 +3266,9 @@ function getMusicVariants(app, lemma) {
               case 'measure':
                 isMeasure = true;
               case 'staff':
+                if (isStaff) {
+                  isMultiStaff = true;
+                }
                 isStaff = true;
               case 'layer':
                 isLayer = true;
@@ -3284,15 +3288,19 @@ function getMusicVariants(app, lemma) {
 
           let variant = '';
           for (const v of variantParts) {
-            variant += serializer.serializeToString(v);
+            if (isMultiStaff) {
+              variant += `<measure>${serializer.serializeToString(v)}</measure>`;
+            } else {
+              variant += serializer.serializeToString(v);
+            }
           }
 
-          if (isMeasure) {
+          if (isMeasure || isMultiStaff) {
             variant = `<section>${variant}</section>`;
-          } else if (isStaff) {
+          } else if (isStaff && !isMultiStaff) {
             variant = `<section><measure>${variant}</measure></section>`;
           } else if (isLayer) {
-            variant = `<section><measure><staff>${variant}</staff<</measure></section>`;
+            variant = `<section><measure><staff>${variant}</staff></measure></section>`;
           } else {
             variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`;
           }
@@ -36611,7 +36619,8 @@ class ViewerBody extends _react.Component {
   componentDidMount() {
     if (!this.props.collation) {
       // Only get the collation once
-      this.props.getCollation(`/data/collations/${this.props.song}.xml`);
+      // this.props.getCollation(`/data/collations/${this.props.song}.xml`)
+      this.props.getCollation(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/OBJ/view`);
       this.getResources();
     }
   }
@@ -36623,8 +36632,10 @@ class ViewerBody extends _react.Component {
   }
 
   getResources() {
-    this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei');
-    this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.xml`, 'mei');
+    // this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei')
+    // this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.xml`, 'mei')
+    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei');
+    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei');
   }
 
   render() {
@@ -36705,16 +36716,17 @@ class Sources extends _react.Component {
         'ul',
         { className: 'sourceList' },
         this.props.sources.map((s, i) => {
-          // TODO fix these string operations
-          const label = s.split('-')[1].split('.xml')[0];
-          const url = s.split('/')[2].split('.xml')[0].split('-')[1];
+          // TODO fix these string operations -- can we get these data from Islandora?
+          // const label = s.split('-')[1].split('.xml')[0]
+          // const url = s.split('/')[3].split('.xml')[0].split('-')[1]
+          const label = s.match(/datastream\/(.*?)\//)[1].split('-')[1];
           const active = s.includes(this.props.active) ? 'active' : 'inactive';
           return _react2.default.createElement(
             'li',
             { key: i, className: active },
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: url },
+              { to: label },
               label
             )
           );
@@ -36942,7 +36954,7 @@ class MusicVariants extends _react.Component {
   componentDidUpdate() {
     for (const r in this.refs) {
       if (r.includes('vrv-')) {
-        const x = 250;
+        const x = 400;
         const vrvOptions = {
           pageWidth: x * 100 / 35,
           pageHeight: 1000 * 100 / 35,
@@ -36988,7 +37000,7 @@ class MusicVariants extends _react.Component {
               if (!v.isLemma) {
                 return _react2.default.createElement(
                   'li',
-                  { className: 'mdc-list-item', key: i },
+                  { style: { height: '100px' }, className: 'mdc-list-item', key: i },
                   _react2.default.createElement(
                     'span',
                     { className: 'mdc-list-item__graphic' },
