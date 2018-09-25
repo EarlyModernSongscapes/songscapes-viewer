@@ -1,5 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Route } from 'react-router-dom'
 import Viewer from '../containers/Viewer'
 
@@ -8,11 +9,16 @@ class AppBody extends Component {
     return (<div className="mdc-typography">
       <div>
         <main>
-          <Route exact path="/:song/:source" component={Viewer} />
+          <Route path="/:source?" render={() => <Viewer song={this.props.song} source={this.props.source} />} />
         </main>
       </div>
     </div>)
   }
+}
+
+AppBody.propTypes = {
+  song: PropTypes.string,
+  source: PropTypes.string
 }
 
 export default AppBody

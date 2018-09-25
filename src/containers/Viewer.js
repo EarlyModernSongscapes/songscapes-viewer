@@ -8,9 +8,13 @@ const mapStateToProps = (state, ownProps) => {
   const returnProps = {}
   if (ownProps.match.params.song) {
     returnProps.song = ownProps.match.params.song
+  } else if (ownProps.song) {
+    returnProps.song = ownProps.song
   }
   if (ownProps.match.params.source) {
     returnProps.source = ownProps.match.params.source
+  } else if (ownProps.source) {
+    returnProps.source = ownProps.source
   }
   if (state.resources.tei) {
     if (!state.resources.tei.isFetching) {
