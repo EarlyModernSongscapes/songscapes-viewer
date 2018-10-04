@@ -24,13 +24,12 @@ const store = createStore(
 
 const containerEl = document.getElementById('ems_viewer')
 const song = containerEl.getAttribute('data-song')
-const source = containerEl.getAttribute('data-source')
 
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <HashRouter>
-        <App song={song} source={source}/>
+        <App song={song}/>
       </HashRouter>
     </ConnectedRouter>
   </Provider>,

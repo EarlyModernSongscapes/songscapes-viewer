@@ -19,12 +19,14 @@ export default class ViewerBody extends Component {
       // Only get the collation once
       // this.props.getCollation(`/data/collations/${this.props.song}.xml`)
       this.props.getCollation(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/OBJ/view`)
-      this.getResources()
+      if (this.props.source) {
+        this.getResources()
+      }
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.source !== this.props.source) {
+    if (this.props.source && prevProps.source !== this.props.source) {
       this.getResources()
     }
   }
@@ -37,29 +39,32 @@ export default class ViewerBody extends Component {
   }
 
   render() {
-    return [
-      (<div className="mdc-layout-grid" key="grid">
-        <div className="mdc-layout-grid__inner">
-          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-            <Sources sources={this.props.sources || []} active={this.props.source}/>
+    if (this.props.source) {
+      return [
+        (<div className="mdc-layout-grid" key="grid">
+          <div className="mdc-layout-grid__inner">
+            <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
+              <Sources sources={this.props.sources || []} active={this.props.source}/>
+            </div>
+            <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-10">
+              <DocumentRenderer
+                source={this.props.source}
+                tei={this.props.tei}
+                mei={this.props.mei}
+                collation={this.props.collation}
+                vrv={this.state.vrv}
+                setPopoutPosition={this.props.setPopoutPosition}
+                setMusicPopoutPosition={this.props.setMusicPopoutPosition}
+                getVariants={this.props.getVariants}
+                getMusicVariants={this.props.getMusicVariants}/>
+            </div>
           </div>
-          <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-10">
-            <DocumentRenderer
-              source={this.props.source}
-              tei={this.props.tei}
-              mei={this.props.mei}
-              collation={this.props.collation}
-              vrv={this.state.vrv}
-              setPopoutPosition={this.props.setPopoutPosition}
-              setMusicPopoutPosition={this.props.setMusicPopoutPosition}
-              getVariants={this.props.getVariants}
-              getMusicVariants={this.props.getMusicVariants}/>
-          </div>
-        </div>
-      </div>),
-      <VariantsContainer key="popout" />,
-      <MusicVariantsContainer vrv={this.state.vrv} key="muspopout" />
-    ]
+        </div>),
+        <VariantsContainer key="popout" />,
+        <MusicVariantsContainer vrv={this.state.vrv} key="muspopout" />
+      ]
+    }
+    return null
   }
 }
 

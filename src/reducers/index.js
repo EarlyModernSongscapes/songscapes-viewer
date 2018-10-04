@@ -30,7 +30,10 @@ function getCollationSources(state = {}) {
   const colDoc = parser.parseFromString(state.data, 'text/xml')
   const rdgs = colDoc.getElementsByTagName('app')[0].getElementsByTagName('rdg')
   const sources = Array.from(rdgs).reduce((srcs, rdg) => {
-    srcs.push(rdg.children[0].getAttribute('target').split('#')[0])
+    srcs.push({
+      source: rdg.getAttribute('wit').split('#')[1],
+      url: rdg.children[0].getAttribute('target').split('#')[0]
+    })
     return srcs
   }, [])
   return Object.assign({}, state, {sources})

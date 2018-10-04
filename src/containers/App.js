@@ -4,8 +4,7 @@ import AppBody from '../components/AppBody'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    song: ownProps.song,
-    source: ownProps.source,
+    song: ownProps.song
   }
 }
 
