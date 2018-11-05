@@ -28,14 +28,21 @@ function reduceResource(state = {}, action) {
 
 function getCollationSources(state = {}) {
   const colDoc = parser.parseFromString(state.data, 'text/xml')
-  const rdgs = colDoc.getElementsByTagName('app')[0].getElementsByTagName('rdg')
-  const sources = Array.from(rdgs).reduce((srcs, rdg) => {
-    srcs.push({
-      source: rdg.getAttribute('wit').split('#')[1],
-      url: rdg.children[0].getAttribute('target').split('#')[0]
-    })
-    return srcs
-  }, [])
+  const teiWits = colDoc.getElementsByTagName('witness')
+  const tei = Array.from(teiWits).map(teiWit => {
+    return {
+      source: teiWit.getAttribute('xml:id'),
+      url: teiWit.children[0].getAttribute('target')
+    }
+  })
+  const meiWits = colDoc.getElementsByTagName('mei:source')
+  const mei = Array.from(meiWits).map(meiWit => {
+    return {
+      source: meiWit.getAttribute('xml:id').split('M-')[1],
+      url: meiWit.getAttribute('target')
+    }
+  })
+  const sources = {tei, mei}
   return Object.assign({}, state, {sources})
 }
 
@@ -72,6 +79,10 @@ function musicVariants(state = [], action) {
         const values = Array.from(variant.values)
         variant.values = []
         for (const value of values) {
+          if (value.isOmitted) {
+            variant.values.push(value)
+            continue
+          }
           value.mei = `<?xml version="1.0" encoding="UTF-8"?>
           <mei xmlns="http://www.music-encoding.org/ns/mei">
               <meiHead>

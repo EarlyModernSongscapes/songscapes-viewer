@@ -39,13 +39,13 @@ $mdc-theme-background: #fff;
 
 // TEI formatting
 
-tei-supplied > tei-lg > tei-l:first-child:before {
-  content: "[";
- }
+// tei-supplied > tei-lg > tei-l:first-child:before {
+//   content: "[";
+//  }
 
-tei-supplied > tei-lg > tei-l:last-child:after {
-  content: "]";
-}
+// tei-supplied > tei-lg > tei-l:last-child:after {
+//   content: "]";
+// }
 
 tei-body .variant {
   text-shadow: 0px 0px 5px #337ab7;
@@ -82,4 +82,148 @@ ul.sourceList {
 .variant-popout {
   position: absolute;
   background-color: white;
+}
+
+tei-div[type='underlay'] tei-l:nth-child(1)::before {
+  content: '[';    
+}
+
+tei-div[type='underlay'] tei-l:nth-last-child(1)::after {
+  content: ']';    
+}
+
+tei-signed[rend='right'] {
+  text-align: right;
+}
+
+tei-hi[rend*='italic'] {
+  font-style: italic;
+}
+
+tei-hi[rend*='right'] {
+  float: right;
+}
+
+*[rend*='center'] {
+  text-align: center;
+}
+
+tei-list[type='litany'] {
+  display: table;
+  border-bottom: 1px solid Black;
+}
+
+tei-list[type='litany'] tei-head {
+  display: table-caption;
+  border-bottom: 1px solid Black;
+}
+
+tei-list[type='litany'] tei-item {
+  display: table-row;
+}
+
+tei-list[type='litany'] tei-item:before {
+  content: attr(n);
+  display: table-cell;
+  font-style: italic;
+}
+
+tei-list[type='litany'] tei-title {
+  display: table-cell;
+  padding-left: 10px;
+}
+
+tei-list[type='litany'] tei-seg[type='toc_page'] {
+  display: table-cell;
+  border-right: 1px solid black;
+  text-align: right;
+  padding-right: 10px;
+}
+
+tei-list[type='litany'] tei-name[type='poet'] {
+  display: table-cell;
+  padding-left: 10px;
+}
+
+tei-choice tei-abbr {
+  display: none;
+}
+
+tei-choice tei-abbr + tei-expan:before,
+tei-choice tei-expan + tei-abbr:before {
+  content: ' [';
+}
+
+tei-choice tei-abbr + tei-expan:after,
+tei-choice tei-expan + tei-abbr:after {
+  content: ']';
+}
+
+tei-docTitle, tei-byline, tei-docEdition, tei-docImprint  {
+  display: block;
+}
+
+tei-div:not([type='underlay'][type='headnote']) {
+  display: block;
+  margin-bottom: 5em;
+}
+
+*[*|lang] {
+  font-style: italic;
+}
+
+*[*|lang='en'] {
+  font-style: normal;
+}
+
+tei-signed {
+  margin-top: 0px;
+}
+
+tei-ab {
+  margin-bottom: 0px;
+}
+
+*[rend*='indent'] {
+  display: block;
+}
+
+*[rend*='indent1'] {
+  padding-left: 2em;
+}
+
+*[rend*='indent2'] {
+  padding-left: 3em;
+}
+
+*[rend*='indent3'] {
+  padding-left: 4em;
+}
+
+*[rend*='indent4'] {
+  padding-left: 5em;
+}
+
+*[rend*='indent5'] {
+  padding-left: 6em;
+}
+
+*[rend*='indent6'] {
+  padding-left: 7em;
+}
+
+*[rend*='indent7'] {
+  padding-left: 8em;
+}
+
+*[rend*='indent8'] {
+  padding-left: 9em;
+}
+
+*[rend*='indent9'] {
+  padding-left: 10em;
+}
+
+*[rend*='indent10'] {
+  padding-left: 10em;
 }

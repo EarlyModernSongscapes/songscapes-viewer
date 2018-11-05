@@ -11,10 +11,8 @@ const mapStateToProps = (state, ownProps) => {
   } else if (ownProps.song) {
     returnProps.song = ownProps.song
   }
-  if (ownProps.match.params.source) {
-    returnProps.source = ownProps.match.params.source
-  } else if (ownProps.source) {
-    returnProps.source = undefined
+  if (ownProps.urlsource) {
+    returnProps.source = ownProps.urlsource
   }
   if (state.resources.tei) {
     if (!state.resources.tei.isFetching) {
@@ -32,9 +30,9 @@ const mapStateToProps = (state, ownProps) => {
     }
     if (state.resources.collation.sources) {
       returnProps.sources = state.resources.collation.sources
-      // if a source hasn't been set yet, pick first
-      if (!ownProps.match.params.source && !ownProps.source) {
-        returnProps.source = state.resources.collation.sources[0].source
+      // if a source hasn't been set yet, pick first (give TEI preference)
+      if (!ownProps.urlsource && !ownProps.source) {
+        returnProps.source = state.resources.collation.sources.tei[0].source
       }
     }
   }

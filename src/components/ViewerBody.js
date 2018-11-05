@@ -19,7 +19,7 @@ export default class ViewerBody extends Component {
       // Only get the collation once
       // https://ems.digitalscholarship.utsc.utoronto.ca/
       this.props.getCollation(`/islandora/object/${this.props.song}/datastream/OBJ/view`)
-      if (this.props.source) {
+      if (this.props.source && this.props.sources) {
         this.getResources()
       }
     }
@@ -28,13 +28,21 @@ export default class ViewerBody extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.source && prevProps.source !== this.props.source) {
       this.getResources()
+    } else if (!prevProps.sources && this.props.sources) {
+      this.getResources()
     }
   }
 
   getResources() {
     // https://ems.digitalscholarship.utsc.utoronto.ca/
     this.props.getResource(`/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei')
-    this.props.getResource(`/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
+    // MEI sources are not always present. Check in this.props.sources
+    const msource = this.props.sources.mei.filter(s => s.source === this.props.source)[0]
+    if (msource) {
+      this.props.getResource(`/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
+    } else {
+      this.props.getResource(null, 'mei')
+    }
   }
 
   render() {
@@ -43,7 +51,7 @@ export default class ViewerBody extends Component {
         (<div className="mdc-layout-grid" key="grid">
           <div className="mdc-layout-grid__inner">
             <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-2">
-              <Sources sources={this.props.sources || []} active={this.props.source}/>
+              <Sources sources={this.props.sources || {}} active={this.props.source}/>
             </div>
             <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-10">
               <DocumentRenderer
@@ -75,7 +83,7 @@ ViewerBody.propTypes = {
   tei: PropTypes.string,
   mei: PropTypes.string,
   collation: PropTypes.string,
-  sources: PropTypes.array,
+  sources: PropTypes.object,
   song: PropTypes.string,
   source: PropTypes.string,
   setPopoutPosition: PropTypes.func,

@@ -9,7 +9,7 @@ class AppBody extends Component {
     return (<div className="mdc-typography">
       <div>
         <main>
-          <Route path="/:source?" render={() => <Viewer song={this.props.song} />} />
+          <Route path="/:source?" render={(params) => <Viewer song={this.props.song} urlsource={params.match.params.source}/>} />
         </main>
       </div>
     </div>)

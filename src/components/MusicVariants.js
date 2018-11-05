@@ -56,7 +56,12 @@ export default class MusicVariants extends Component {
             <hr className="mdc-list-divider"/>
             {this.props.variants.map((group) => {
               return [group.values.map((v, i) => {
-                if (!v.isLemma) {
+                if (v.isOmitted) {
+                  return (<li style={{height: '100px'}} className="mdc-list-item" key={i}>
+                    <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
+                    <span>[omitted.]</span>
+                  </li>)
+                } else if (!v.isLemma) {
                   return (<li style={{height: '100px'}} className="mdc-list-item" key={i}>
                     <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
                     <span ref={`vrv-${i}`} data-mei={v.mei}/>

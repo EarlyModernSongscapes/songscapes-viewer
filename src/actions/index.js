@@ -90,6 +90,11 @@ export function unsetPopoutPosition() {
  ******** **/
 
 export function getResource(url, docType) {
+  if (!url && docType === 'mei') {
+    return dispatch => {
+      dispatch(receiveResource('nodata', docType))
+    }
+  }
   return dispatch => {
     dispatch(requestResource(url, docType))
     return fetch(url)
@@ -113,46 +118,69 @@ export function getVariants(app, lemma) {
       if (reading.tagName === 'rdg') {
         const wit = reading.getAttribute('wit')
         const isLemma = wit === lemma ? true : false
-        const sourceAndId = reading.children[0].getAttribute('target').split('#')
-        promises.push(
-          fetch(sourceAndId[0])
-            .then(response => response.text())
-            .then(text => {
-              const source = parser.parseFromString(text, 'text/xml')
-              const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
-              variants.push({
-                group: uuid(),
-                values: [
-                  {
-                    text: variant.textContent,
-                    sourceUrl: sourceAndId[0],
-                    wit,
-                    isLemma
-                  }
-                ]
+        if (reading.children.length > 0) {
+          const sourceAndId = reading.children[0].getAttribute('target').split('#')
+          const teiUrl = sourceAndId[0]
+          promises.push(
+            fetch(teiUrl)
+              .then(response => response.text())
+              .then(text => {
+                const source = parser.parseFromString(text, 'text/xml')
+                const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                variants.push({
+                  group: uuid(),
+                  values: [
+                    {
+                      text: variant.textContent,
+                      sourceUrl: sourceAndId[0],
+                      wit,
+                      isLemma
+                    }
+                  ]
+                })
               })
-            })
-        )
+          )
+        } else {
+          variants.push({
+            group: uuid(),
+            values: [
+              {
+                text: '[omitted.]',
+                wit,
+                isLemma
+              }
+            ]
+          })
+        }
       } else {
         const values = []
         for (const rdg of Array.from(reading.getElementsByTagName('rdg'))) {
           const wit = rdg.getAttribute('wit')
           const isLemma = wit === lemma ? true : false
-          const sourceAndId = rdg.children[0].getAttribute('target').split('#')
-          promises.push(
-            fetch(sourceAndId[0])
-              .then(response => response.text())
-              .then(text => {
-                const source = parser.parseFromString(text, 'text/xml')
-                const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
-                values.push({
-                  text: variant.textContent,
-                  sourceUrl: sourceAndId[0],
-                  wit,
-                  isLemma
+          if (rdg.children.length > 0) {
+            const sourceAndId = rdg.children[0].getAttribute('target').split('#')
+            const teiUrl = sourceAndId[0]
+            promises.push(
+              fetch(teiUrl)
+                .then(response => response.text())
+                .then(text => {
+                  const source = parser.parseFromString(text, 'text/xml')
+                  const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                  values.push({
+                    text: variant.textContent,
+                    sourceUrl: sourceAndId[0],
+                    wit,
+                    isLemma
+                  })
                 })
-              })
-          )
+            )
+          } else {
+            values.push({
+              text: '[omitted.]',
+              wit,
+              isLemma
+            })
+          }
         }
         const group = reading.getAttribute('n') ? reading.getAttribute('n') : uuid()
         variants.push({ group, values })
@@ -240,70 +268,102 @@ export function getMusicVariants(app, lemma) {
       for (const reading of group.rdgs) {
         const wit = reading.getAttribute('source')
         const isLemma = wit === lemma ? true : false
-        const targets = reading.getAttribute('target').split(/\s+/)
+        if (!reading.getAttribute('target')) {
+          values.push({isOmitted: true})
+          continue
+        }
+        const targets = reading.getAttribute('target').trim().split(/\s+/m)
         const meiUrl = targets[0].split('#')[0] // Get MEI url from first target; they must all point ot the same file
         promises.push(
           fetch(meiUrl)
             .then(response => response.text())
             .then(text => {
               const meisource = parser.parseFromString(text, 'text/xml')
-              const variantParts = []
-              let isMeasure = false
-              let isMultiStaff = false
-              let isStaff = false
-              let isLayer = false
-              let scoreDef = ''
-              let staffNumber = ''
+
+              const section = parser.parseFromString('<section></section>', 'text/xml')
+              let scoreDef
 
               for (const [idx, target] of targets.entries()) {
                 const sourceAndId = target.split('#')
                 const variant = meisource.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                let m
+                let s
+                let l
+
+                const curMeasure = variant.tagName === 'measure' ? variant.getAttribute('n') : variant.closest('measure').getAttribute('n')
+                let curStaff
+                if (variant.tagName === 'staff' || variant.closest('staff')) {
+                  curStaff = variant.tagName === 'staff' ? variant.getAttribute('n') : variant.closest('staff').getAttribute('n')
+                }
+                let curLayer
+                if (variant.tagName === 'layer' || variant.closest('layer')) {
+                  curLayer = variant.tagName === 'layer' ? variant.getAttribute('n') : variant.closest('layer').getAttribute('n')
+                }
+
                 switch (variant.tagName) {
                   case 'measure':
-                    isMeasure = true
+                    section.documentElement.appendChild(variant.cloneNode(true))
+                    break
                   case 'staff':
-                    if (isStaff) {
-                      isMultiStaff = true
+                    m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0]
+                    if (!m) {
+                      m = section.createElement('measure')
+                      m.setAttribute('n', curMeasure)
+                      section.documentElement.appendChild(m)
                     }
-                    isStaff = true
+                    m.appendChild(variant.cloneNode(true))
+                    break
                   case 'layer':
-                    isLayer = true
+                    m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0]
+                    if (!m) {
+                      m = section.createElement('measure')
+                      m.setAttribute('n', curMeasure)
+                      section.documentElement.appendChild(m)
+                    }
+                    s = m.querySelectorAll(`staff[n='${curStaff}']`)[0]
+                    if (!s) {
+                      s = section.createElement('staff')
+                      s.setAttribute('n', variant.closest('staff').getAttribute('n'))
+                      m.appendChild(s)
+                    }
+                    s.appendChild(variant.cloneNode(true))
+                    break
                   default:
+                    m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0]
+                    if (!m) {
+                      m = section.createElement('measure')
+                      m.setAttribute('n', curMeasure)
+                      section.documentElement.appendChild(m)
+                    }
+                    // check that this is somthing that is on staff
+                    if (variant.closest('staff')) {
+                      s = m.querySelectorAll(`staff[n='${curStaff}']`)[0]
+                      if (!s) {
+                        s = section.createElement('staff')
+                        s.setAttribute('n', variant.closest('staff').getAttribute('n'))
+                        m.appendChild(s)
+                      }
+                      l = s.querySelectorAll(`layer[n='${curLayer}']`)[0]
+                      if (!l) {
+                        l = section.createElement('layer')
+                        l.setAttribute('n', variant.closest('layer').getAttribute('n'))
+                        s.appendChild(l)
+                      }
+                      l.appendChild(variant.cloneNode(true))
+                    } else {
+                      m.appendChild(variant.cloneNode(true))
+                    }
                 }
-                variantParts.push(variant)
+
+                const staffNumber = section.querySelectorAll('staff')[0].getAttribute('n')
                 if (idx === 0) {
-                  // TODO: allow measure variants: scoreDef is tied to staff at the moment.
-                  if (isStaff) {
-                    staffNumber = variant.getAttribute('n')
-                  } else {
-                    staffNumber = variant.closest('staff').getAttribute('n')
-                  }
                   scoreDef = serializer.serializeToString(getScoreDefFor(variant, staffNumber))
                 }
               }
 
-              let variant = ''
-              for (const v of variantParts) {
-                if (isMultiStaff) {
-                  variant += `<measure>${serializer.serializeToString(v)}</measure>`
-                } else {
-                  variant += serializer.serializeToString(v)
-                }
-              }
-
-              if (isMeasure  || isMultiStaff) {
-                variant = `<section>${variant}</section>`
-              } else if (isStaff && !isMultiStaff) {
-                variant = `<section><measure>${variant}</measure></section>`
-              } else if (isLayer) {
-                variant = `<section><measure><staff>${variant}</staff></measure></section>`
-              } else {
-                variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`
-              }
-
               values.push({
                 scoreDef,
-                eventData: variant,
+                eventData: serializer.serializeToString(section),
                 sourceUrl: targets[0].split('#')[0],
                 wit,
                 isLemma
