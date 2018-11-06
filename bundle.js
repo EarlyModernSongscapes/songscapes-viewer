@@ -3140,13 +3140,13 @@ function getVariants(app, lemma) {
           let teiUrl = sourceAndId[0];
           // THESE ARE FOR TESTING
           if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view') {
-            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
+            teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
           }
           if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view') {
-            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
+            teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
           }
           if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view') {
-            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
+            teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
           }
           // REMOVE ABOVE
           promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
@@ -3182,13 +3182,13 @@ function getVariants(app, lemma) {
             let teiUrl = sourceAndId[0];
             // THESE ARE FOR TESTING
             if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view') {
-              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
+              teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
             }
             if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view') {
-              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
+              teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
             }
             if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view') {
-              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
+              teiUrl = 'data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
             }
             // REMOVE ABOVE
             promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
@@ -3304,10 +3304,10 @@ function getMusicVariants(app, lemma) {
         let meiUrl = targets[0].split('#')[0]; // Get MEI url from first target; they must all point ot the same file
         // THESE ARE FOR TESTING
         if (meiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view') {
-          meiUrl = '/data/mei/Theseus,_O_Theseus,_hark!-BL_53723.mei';
+          meiUrl = 'data/mei/Theseus,_O_Theseus,_hark!-BL_53723.mei';
         }
         if (meiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view') {
-          meiUrl = '/data/mei/Theseus,_O_Theseus,_hark!-L638_1.mei';
+          meiUrl = 'data/mei/Theseus,_O_Theseus,_hark!-L638_1.mei';
         }
         // REMOVE ABOVE
         promises.push((0, _isomorphicFetch2.default)(meiUrl).then(response => response.text()).then(text => {
