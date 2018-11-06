@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To Cælia, inviting her to Marriage</title>
+              <title type="first_line">Tis true (Fair Celia) that by thee I live</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Henry Bathurst</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="I1r">leaf I1 recto</biblScope>,
+              <biblScope unit="page" from="29">page 29</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song28">
+          <head rend="italic">To <hi rend="roman">Cælia</hi>, inviting her to Marriage.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Tis true (Fair <hi rend="italic">Celia</hi>) that by thee I live,</l>
+            <l rend="indent1">that every kisse, and every fond embrace</l>
+            <l>form's a new Soul within me, and doth give</l>
+            <l rend="indent1">a balsome to the wound made by thy face:</l>
+            <l rend="indent5">Yet still me thinks I misse</l>
+            <l rend="indent8">that blisse</l>
+            <l rend="indent3">which Lovers dare not name,</l>
+            <l rend="indent2">and only then described is,</l>
+            <l rend="indent3">when flame doth meet with flame.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Those favours which do blesse me every day,</l>
+            <l rend="indent1">Are yet but Empty, and Platonicall.</l>
+            <l>Think not to please your servants with halfe pay,</l>
+            <l rend="indent1">Good Gamesters never stick to throw at all.</l>
+            <l rend="indent5">Who can endure to misse</l>
+            <l rend="indent8">That blisse</l>
+            <l rend="indent3">Which Lovers dare not name,</l>
+            <l rend="indent2">And only then described is,</l>
+            <l rend="indent3">When flame doth meet with flame?</l>
+          </lg>
+          <lg type="stanza">
+            <l>If all those sweets within you must remaine</l>
+            <l rend="indent1">Unknown, and ne'r enjoy'd, like hidden treasure,</l>
+            <l>Nature, as well as I, will lose her name;</l>
+            <l rend="indent1">And you, as well as I, your youthfull pleasure.</l>
+            <l rend="indent5">We wrong our selves to misse</l>
+            <l rend="indent8">That blisse</l>
+            <l rend="indent3">Which Lovers dare not name,</l>
+            <l rend="indent2">And only then described is,</l>
+            <l rend="indent3">When flame doth meet with flame.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Our Souls, which long have peep'd at one another</l>
+            <l rend="indent1">Out of the narrow Casements of our Eyes,</l>
+            <l>Shall now, by Love conducted, meet together</l>
+            <l rend="indent1">In secret Cavern's, where all pleasure lyes.</l>
+            <l rend="indent5">There, there we shall not misse</l>
+            <l rend="indent8">That blisse</l>
+            <l rend="indent3">Which Lovers dare not name,</l>
+            <l rend="indent2">And only then described is,</l>
+            <l rend="indent3">When flame doth meet with flame.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Youth and Beauty</title>
+              <title type="first_line">Thou art so fair, and yong withall</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Aurelian Townshend</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="I2r">leaf I2 recto</biblScope>,
+              <biblScope unit="page" from="31">page 31</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song30">
+          <head rend="italic">Youth and Beauty.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>THou art so fair, and yong withall,</l>
+            <l rend="indent1">thou kindl'st yong desires in me,</l>
+            <l>restoreing life to leaves that fall,</l>
+            <l rend="indent1">and sight to Eyes that hardly see,</l>
+            <l rend="indent1">halfe those fresh Beauties bloom in thee.</l>
+          </lg>
+        </div>
+        <div>
+            <lg type="stanza">
+              <l>Those under sev'rall Hearbs and Flowr's,</l>
+              <l rend="indent1">Disguis'd, were all <hi rend="italic">Medea</hi> gave,</l>
+              <l>When she recal'd Times flying howrs,</l>
+              <l rend="indent1">And aged <hi rend="italic">Æson</hi> from his grave,</l>
+              <l rend="indent1">For Beauty can both kill and save.</l>
+            </lg>
+            <lg type="stanza">
+              <l>Youth it enflames, but age it cheers,</l>
+              <l rend="indent1">I would go back, but not return,</l>
+              <l>To twenty but to twice those yeers;</l>
+              <l rend="indent1">Not blaze, but ever constant burn,</l>
+              <l rend="indent1">For fear my Cradle prove my Urn.</l>
+            </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

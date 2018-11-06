@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:mei="http://www.music-encoding.org/ns/mei">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+           <title>Stand-off apparatus for <title>Theseus, O Theseus, hark!</title></title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes Project - 2018</p>
+         </publicationStmt>
+         <sourceDesc>
+            <listWit>
+              <witness xml:id="L638_1">
+                TEI Digital Edition located at <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view"/>
+              </witness>
+              <witness xml:id="C709">
+                TEI Digital Edition located at <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view"/>
+              </witness>
+              <witness xml:id="BL_53723">
+                TEI Digital Edition located at <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view"/>
+              </witness>              
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div>
+          <head>Text Collation</head>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v1"/>
+            </rdg>
+            <rdgGrp>
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v2"/>
+            </rdg>
+            <rdgGrp>
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v3"/>
+            </rdg>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v3"/>
+            </rdg>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v3"/>
+            </rdg>
+          </app>
+          <app>
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v4"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v4"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v4"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v6"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v6"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v6"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v7"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v7"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v7"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v8"/>
+            </rdg>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v8"/>
+            </rdg>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v8"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v9"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v9"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v5"/>
+            </rdg>            
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v11"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v11"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>
+            <rdgGrp>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v12"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v12"/>
+              </rdg>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v13"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v13"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v14"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v14"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#C709"/>
+            </rdgGrp>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v15"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>              
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v16"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v17"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v17"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>
+            <rdgGrp>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v18"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v18"/>
+              </rdg>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdgGrp>    
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v19a"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>
+            <rdgGrp>    
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v19b"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v19b"/>
+              </rdg>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v20"/>
+            </rdg>
+            <rdgGrp>    
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>
+            <rdgGrp>    
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v21"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v21"/>
+              </rdg>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v22"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v22"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v23"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v23"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v24"/>
+            </rdg>
+            <rdgGrp>    
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v25"/>
+            </rdg>
+            <rdgGrp>    
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#C709"/>              
+            </rdgGrp>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v26"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v27"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v27"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v28"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v28"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>              
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v29"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>              
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v30"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v31"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v31"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v32"/>
+            </rdg>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v32"/>
+            </rdg>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v32"/>
+            </rdg>
+          </app>
+          <app>
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v33"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v33"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v33"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v34"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v35"/>
+              </rdg>
+              <rdg wit="#C709">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v35"/>
+              </rdg>
+            </rdgGrp>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v36"/>
+            </rdg>
+            <rdgGrp>              
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>            
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v37"/>
+            </rdg>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v37"/>
+            </rdg>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v37"/>
+            </rdg>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v37"/>
+            </rdg>
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v37"/>
+            </rdg>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v37"/>
+            </rdg>
+          </app>
+          <app>
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v38"/>
+              </rdg>    
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v38"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v38"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v39"/>
+            </rdg>
+            <rdgGrp>              
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>            
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v40"/>
+            </rdg>
+            <rdgGrp>
+              <rdg wit="#C709"/>
+              <rdg wit="#BL_53723"/>
+            </rdgGrp>
+          </app>
+          <app type="punct">            
+            <rdgGrp>              
+              <rdg wit="#L638_1"/>
+              <rdg wit="#C709"/>              
+            </rdgGrp>           
+            <rdg wit="#BL_53723">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v41"/>
+            </rdg>
+          </app>
+          <app>
+            <rdgGrp>
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v42"/>
+              </rdg>    
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v42"/>
+              </rdg>              
+            </rdgGrp>
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v42"/>
+            </rdg>
+          </app>
+          <app type="punct">            
+            <rdgGrp>              
+              <rdg wit="#L638_1"/>
+              <rdg wit="#BL_53723"/>              
+            </rdgGrp>           
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v43"/>
+            </rdg>
+          </app>
+          <app type="punct">            
+            <rdgGrp>              
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v44"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v44"/>
+              </rdg>              
+            </rdgGrp>           
+            <rdg wit="#C709"/>
+          </app>
+          <app>            
+            <rdgGrp>              
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v45"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v45"/>
+              </rdg>              
+            </rdgGrp>           
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v45"/>
+            </rdg>
+          </app>
+          <app>            
+            <rdgGrp>              
+              <rdg wit="#L638_1">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v46"/>
+              </rdg>
+              <rdg wit="#BL_53723">
+                <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view#v46"/>
+              </rdg>              
+            </rdgGrp>           
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v46"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v47"/>
+            </rdg>         
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v47"/>
+            </rdg>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v48"/>
+            </rdg>         
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v48"/>
+            </rdg>
+            <rdg wit="#BL_53723"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>         
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v49"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v50"/>
+            </rdg>         
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v51"/>
+            </rdg>         
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>         
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v52"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1"/>         
+            <rdg wit="#C709">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view#v53a"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v53b"/>
+            </rdg>         
+            <rdg wit="#C709"/>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view#song01v54"/>
+            </rdg>         
+            <rdg wit="#C709"/>
+          </app>
+        </div>
+        <div>
+          <head>Music Collation</head>
+          <notatedMusic>
+            <mei:mei>
+              <mei:meiHead>
+                <mei:fileDesc>
+                  <mei:titleStmt>
+                    <mei:title></mei:title>
+                  </mei:titleStmt>
+                  <mei:pubStmt></mei:pubStmt>
+                  <mei:sourceDesc>
+                    <mei:source xml:id="M-L638_1" target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view" />
+                    <mei:source xml:id="M-BL_53723" target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view"/>
+                  </mei:sourceDesc>
+                </mei:fileDesc>
+              </mei:meiHead>
+              <mei:music>
+                <mei:body>
+                  <mei:mdiv>
+                    <mei:score>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-98
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-100
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-114
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-120
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-127"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-101
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-103
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-117"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-111
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-142"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-114
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-141"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-205
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-210
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-236"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-204
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-238"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-236"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-209
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-217"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-246
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-248"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-248
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-250"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-259
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-261"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-261"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-297
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-326
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-330"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-298
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-313
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-343"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-342
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-330a"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-349"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-348
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-349
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-362"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-355
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-356
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-370
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-381"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-387"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-401"/>
+                      </mei:app>
+                      <mei:app type="barline">
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-426"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-438
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-451"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-441
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-458
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-481
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-490
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-501
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-526"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-453
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-473
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-495
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-510
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-536"/>
+                      </mei:app>
+                      <mei:app>
+                        <mei:rdg source="#M-BL_53723" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-486
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-497
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view#m-522"/>
+                        <mei:rdg source="#M-L638_1" target="
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-505
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-531
+                          https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view#m-532"/>
+                      </mei:app>
+                    </mei:score>
+                  </mei:mdiv>
+                </mei:body>
+              </mei:music>
+            </mei:mei>
+          </notatedMusic>
+        </div>
+      </body>
+  </text>
+</TEI>

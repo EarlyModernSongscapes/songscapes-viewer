@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Upon a Crowned Heart sent to a Cruell Mistress</title>
+              <title type="first_line">Go thou Emblem of my heart</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Henry Harrington</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2C1v" to="2C2r">leaves Cc1 verso to Cc1 recto</biblScope>,
+              <biblScope unit="page" from="10" to="11">pages 10 to 11</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song41">
+            <head rend="italic">Vpon a Crown'd Heart sent to a Cruell Mistress.</head>
+            <head type="voice" rend="italic">A. 2. Voc. Basse. &amp; Cant.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Go thou Emblem of my heart,</l>
+            <l rend="indent1">tell my Mistress whose thou art;</l>
+            <l>if with Love she do receive thee,</l>
+            <l rend="indent1">happy then thou art to leave me:</l>
+          </lg>
+          <lg type="stanza">
+            <l>But if she do chance to Frown,</l>
+            <l rend="indent1">let her only spoyl that Crown,</l>
+            <l>and all wounded home return thee,</l>
+            <l rend="indent1">where no other flame shall burn thee;</l>
+            <l>for empaled in my brest,</l>
+            <l rend="indent1">though thou break my peacefull rest;</l>
+            <l>yet I vow in thy defence,</l>
+            <l rend="indent1">Love no more shall fire thee hence.</l>
+          </lg>
+        </div>
+    <pb n="2C2r"/>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Love and Musick</title>
+              <title type="first_line">Come my Sweet, whilst every strain</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Cartwright</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="I2v">leaf I2 verso</biblScope>,
+              <biblScope unit="page" from="32">page 32</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song31">
+          <head rend="italic">Love and Musick.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Come my Sweet, whilst ev'ry strain</l>
+            <l rend="indent1">cals our souls into the Eare,</l>
+            <l>where the greedy listning fain</l>
+            <l rend="indent1">would turn into the sound they heare;</l>
+            <l rend="indent3">lest in desire</l>
+            <l rend="indent3">to fill the quire</l>
+            <l rend="indent3">themselves they tye</l>
+            <l rend="indent3">to harmony,</l>
+            <l>let's kiss &amp; call them back again.</l>
+          </lg>
+        </div>
+        <div>
+        <lg type="stanza">
+          <l>Now let's orderly convey</l>
+          <l rend="indent1">Our Souls into each other's Brest,</l>
+          <l>Where enterchanged let them stay</l>
+          <l rend="indent1">Slumb'ring in a melting rest:</l>
+          <l rend="indent3">Then with new fire</l>
+          <l rend="indent3">Let them retire,</l>
+          <l rend="indent3">And still present</l>
+          <l rend="indent3">Sweet fresh content</l>
+          <l>Youthfull as the early day.</l>
+        </lg>
+        <lg type="stanza">
+          <l>Then let us a Tumult make,</l>
+          <l rend="indent1">Shuffling so our souls, that we</l>
+          <l>Careless who did give or take,</l>
+          <l rend="indent1">May not know in whom they be,</l>
+          <l rend="indent3">Then let each smother</l>
+          <l rend="indent3">And stifle the other,</l>
+          <l rend="indent3">Till we expire</l>
+          <l rend="indent3">In gentle fire,</l>
+          <l>Scorning the forgetfull Lake.</l>
+        </lg>
+      </div>
+        </div>
+      </body>
+  </text>
+</TEI>

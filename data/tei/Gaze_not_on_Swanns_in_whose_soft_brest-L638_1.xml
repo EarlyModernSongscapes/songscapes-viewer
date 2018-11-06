@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Beauties Excellency</title>
+              <title type="first_line">Gaze not on Swanns in whose soft brest</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Henry Noel</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="E2r">leaf E2 recto</biblScope>,
+              <biblScope unit="page" from="15">page 15</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song10">
+          <head rend="italic">Beauties Excellency.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Gaze not on Swanns in whose soft brest,</l>
+            <l>a full hatcht beauty seems to nest:</l>
+            <l>nor show which falling from the skye,</l>
+            <l>hovers in it's virginity.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Gaze not on Roses, though new blown,</l>
+            <l>Grac'd with a fresh complexion,</l>
+            <l>Nor Lillies which no subtle Bee</l>
+            <l>Hath rob'd by kissing Chymistry.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Gaze not on that pure mikly way</l>
+            <l>Where night uses splendor with the day,</l>
+            <l>Nor Pearle whose silver walls confine</l>
+            <l>The Riches of an Indian Mine.</l>
+          </lg>
+          <lg type="stanza">
+            <l>For if my Emp'ress appears,</l>
+            <l>Swanns moultring dye, snow melts to tears,</l>
+            <l>Roses do blush and hang their heads,</l>
+            <l>Pale Lillies shrink into their beds.</l>
+          </lg>
+          <lg type="stanza">
+            <l>The mikly way Rides post, to shroud</l>
+            <l>It's baffled glory in a Cloud,</l>
+            <l>And Pearls do climb into her eare,</l>
+            <l>To hang themselves for Envy there.</l>
+          </lg>
+          <lg type="stanza">
+            <l>So have I seen Stars bigg with light</l>
+            <l>Prove Lanthorns to the Moon-ey'd night,</l>
+            <l>Which when <hi rend="italic">Sol's</hi> Rayes were once display'd,</l>
+            <l>Sink in their Sockets, and decay'd.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To a Lady putting off her veile</title>
+              <title type="first_line">Keep on your veile and hide your eye</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Strode</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2E2r">leaf Ee2 recto</biblScope>,
+              <biblScope unit="page" from="19">page 19</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song47">
+          <head rend="italic">To a Lady putting off her veile.</head>
+            <head type="voice" rend="italic">For one, two or three voyces.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+            <l>Keep on your veile &amp; hide your eye,</l>
+            <l>for with beholding you I dye,</l>
+            <l>your fatall Beauty <hi rend="italic">Gorgon</hi> like,</l>
+            <l>dead with astonishment will strike,</l>
+            <l>your piercing eyes, if them I see,</l>
+            <l>are worse then <hi rend="italic">Basilisks</hi> to me.</l>
+          </lg>
+        </div>
+        <div>
+           <lg type="stanza">
+             <l>Hide from my sight those Hils of Snow,</l>
+             <l>Their melting Vally do not show;</l>
+             <l>Those Azure paths lead to dispair,</l>
+             <l>O vex me not, forbear, forbear;</l>
+             <l>For while I thus in torments dwell</l>
+             <l>The sight of Heav'n is worse then Hell.</l>
+           </lg>
+           <lg type="stanza">
+             <l>Your dainty voice and warbling breath</l>
+             <l>Sounds like a sentence past for death,</l>
+             <l>Your dangling tresses are become</l>
+             <l>Like Instruments of finall doome;</l>
+             <l>Or if an Angell torture so!</l>
+             <l>When li<corr>f</corr>e is done, where shall I go?</l>
+         </lg>
+       </div>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Chlrois taking the Ayre</title>
+              <title type="first_line">Come Chloris hie we to the Bower</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Henry Reynolds</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2D2v">leaf Dd2 verso</biblScope>,
+              <biblScope unit="page" from="16">page 16</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song44">
+          <head rend="italic"><hi rend="roman">Chloris</hi> taking the Ayre.</head>
+           <head type="voice" rend="italic">for one, two or three Voyces.</head> <!-- present in division heading, supplied again here for individual song -->
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+            <l>Come <hi rend="italic">Chloris</hi> hie we to the Bow'r</l>
+            <l rend="indent1">to sport us e're the day be done;</l>
+            <l>such is thy Pow'r, that ev'ry Flow'r</l>
+            <l rend="indent1">will ope to thee as to the Sun.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>And if a Flow'r but chance to dye</l>
+            <l rend="indent1">With my sighs blasts, or mine eyes raine,</l>
+            <l>Thou can'st revive it with thine Eye,</l>
+            <l rend="indent1">And with thy breath mak't sweet again.</l>
+          </lg>
+          <lg type="stanza">
+            <l>The wanton Suckling and the Vine</l>
+            <l rend="indent1">Will strive for th'honour, who first may</l>
+            <l>With their green Arms incircle thine</l>
+            <l rend="indent1">To keep the burning Sun away.</l>
+          </lg>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Disdaine returned</title>
+              <title type="first_line">He that loves a rosie cheek</title>
+         </titleStmt>
+         <publicationStmt>
+             <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+             <bibl>
+               <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+               <author role="composer">Henry Lawes</author>
+               <author role="poet">Thomas Carew</author>
+               <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+               <idno type="wing">L638</idno>
+               <idno type="call_number">Folger L638, copy 1</idno>
+               <biblScope unit="leaf" from="D2v">leaf D2 verso</biblScope>,
+               <biblScope unit="page" from="12">page 12</biblScope>
+              </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song07">
+          <head rend="italic">Disdaine returned.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+            </notatedMusic>
+          <div type="underlay">
+            <lg type="stanza">
+              <l>He that love's a rosie cheek,</l>
+              <l rend="indent1">or a Corall lip admires;</l>
+              <l>or from Star-like eyes doth seek</l>
+              <l rend="indent1">fuell to maintain his fires,</l>
+              <l>as old time makes these decay,</l>
+              <l>so his flames must waste away.</l>
+            </lg>
+          </div>
+          <div>
+            <lg type="stanza">
+              <l>But a smooth and steadfast minde,</l>
+              <l rend="indent1">Gentle thoughts, and calme desires,</l>
+              <l>Hearts with equall love combin'd,</l>
+              <l rend="indent1">Kindle never-dying fires:</l>
+              <l>Where these are not, I dispise</l>
+              <l>Lovely Cheekes, or Lips, or Eyes.</l>
+            </lg>
+            <lg type="stanza">
+              <l><hi rend="italic">Celia,</hi> now no tears can win</l>
+              <l rend="indent1">My resolv'd heart to return;</l>
+              <l>I have search'd thy soul within,</l>
+              <l rend="indent1">And find nought but pride and scorn:</l>
+              <l>I have learn'd those Arts, and now</l>
+              <l>Can disdaine as much as thou.</l>
+            </lg>
+        </div>
+          <notatedMusic>
+          <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+              <l>Some God in my revenge convey</l>
+              <l>that Love to her I cast away.</l>
+            </lg>
+          </div>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The fickle state of Lovers</title>
+              <title type="first_line">O the fickle state of Lovers</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Francis Quarles</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2C2v" to="2D1r">leaves Cc2 verso to Dd1 recto</biblScope>,
+              <biblScope unit="page" from="12" to="13">pages 12 to 13</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song42">
+            <head rend="italic">The fickle state of Lovers.</head>
+            <head type="voice" rend="italic">A. 2. Voc. Basse. &amp; Cant.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>O the fickle state of Lovers,</l>
+            <l rend="indent1">a heart perplext with hopes and fears;</l>
+            <l>to day a world of Joy discover's,</l>
+            <l rend="indent1">and tomorrow's drown'd in tears:</l>
+            <l>a Lovers state's like <hi rend="italic">April's</hi> weather,</l>
+            <l rend="indent1">Rain and Sunshine both together:</l>
+          </lg>
+          <lg type="stanza">
+            <l>If his Mistress do but smile,</l>
+            <l rend="indent1">a Heav'n of Joy is in his heart,</l>
+            <l>if her Brow but frown a while,</l>
+            <l rend="indent1">Hell can send no greater smart;</l>
+            <l>in a Lovers brest doth dwell</l>
+            <l rend="indent1">very Heav'n, or very Hell.</l>
+          </lg>
+        </div>
+    <pb n="2D1r"/>
+        </div>
+      </body>
+  </text>
+</TEI>

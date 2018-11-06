@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+              <title type="first_line">Sing fair Clorinda whilst you move</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Davenant</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2F1v" to="2F2r">leaves Ff1 verso to Ff2 recto</biblScope>,
+              <biblScope unit="page" from="22" to="23">pages 22 to 23</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song50">
+          <head type="voice" rend="italic">a. 3. voc.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+              <l>Sing fair <hi rend="italic">Clorinda</hi> whilst you move</l>
+              <l rend="indent1">those that attend the Throne above,</l>
+              <l>to leave their holy business there;</l>
+              <l rend="indent1">till each with his obedient eare</l>
+              <l>shall so much harmony attain,</l>
+              <l rend="indent1">to think the sphears were made in vain:</l>
+            </lg>
+            <lg type="stanza">
+              <l>Since heer's a voyce quickens the sloth</l>
+              <l rend="indent1">of natures age, it comforts growth</l>
+              <l>in all her works, and can provoke</l>
+              <l rend="indent1">a Lilly to outlive an Oake.</l>
+            </lg>
+         </div>
+   <pb n="2F2r"/>
+      </div>
+    </body>
+  </text>
+</TEI>

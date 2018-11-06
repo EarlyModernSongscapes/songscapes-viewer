@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>No Constancy in Man</title>
+              <title type="first_line">Be gone, be gone thou perjured man</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Henry Lawes</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="K2r">leaf K2 recto</biblScope>,
+              <biblScope unit="page" from="35">page 35</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song34">
+          <head rend="italic">No Constancy in Man.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+            </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Be gone, be gone thou perjur'd man,</l>
+            <l rend="indent1">and never more return,</l>
+            <l>For know that thy Inconstancy</l>
+            <l rend="indent1">hath chang'd my Love to Scorn:</l>
+            <l>Thou hast awak'd me, and I can</l>
+            <l>see cleerly ther's no Truth in Man.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>My Love to thee was chast and pure,</l>
+            <l rend="indent1">As is the Morning dew,</l>
+            <l>And 'twas alone like to endure,</l>
+            <l rend="indent1">Hadst thou not prov'd untrue;</l>
+            <l>But I'm awak'd, and now I can</l>
+            <l>See cleerly ther's no Truth in Man.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Thou mayst perhaps prevaile upon</l>
+            <l rend="indent1">Some other to believe thee,</l>
+            <l>And since thou canst love more then one,</l>
+            <l rend="indent1">Ne'r think that it shall grieve me;</l>
+            <l>For th' hast awak'd me, and I can</l>
+            <l>See cleerly ther's no Truth in Man.</l>
+          </lg>
+          <lg type="stanza">
+            <l>By thy Apostasie I find</l>
+            <l rend="indent1">That Love is plac'd amiss,</l>
+            <l>And can't continue in the mind</l>
+            <l rend="indent1">Where Vertue wanting is:</l>
+            <l>I'm now resolv'd, and know there can</l>
+            <l>No constant Thought remain in Man.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

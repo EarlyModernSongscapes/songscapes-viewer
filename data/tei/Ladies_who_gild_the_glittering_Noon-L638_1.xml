@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Beauties Eclypsed</title>
+              <title type="first_line">Ladies who gild the glittering Noon</title>
+         </titleStmt>
+         <publicationStmt>
+           <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+           <bibl>
+             <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+             <author role="composer">Henry Lawes</author>
+             <author role="poet">Francis Lenton</author>
+             <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+             <idno type="wing">L638</idno>
+             <idno type="call_number">Folger L638, copy 1</idno>
+             <biblScope unit="leaf" from="K2r">leaf K2 recto</biblScope>,
+             <biblScope unit="page" from="35">page 35</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song35">
+          <head rend="italic">Beauties Eclyps'd.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+            <div type="underlay">
+              <lg type="stanza">
+                <l>Ladies who gild the glitt'ring Noon,</l>
+                <l>and by reflection mend it's Ray,</l>
+                <l>whose lustre makes the sprightfull Sun</l>
+                <l>to dance as on an Easter Day:</l>
+                <l>What are ye now the Queen's away?</l>
+              </lg>
+          </div>
+          <div>
+          <lg type="stanza">
+            <l>Couragious Eagles which have whet</l>
+            <l>Your Eyes upon Majestick light,</l>
+            <l>And thence deriv'd such martiall heat</l>
+            <l>As still your Looks maintain'd the fight,</l>
+            <l>What are ye since the King's good night.</l>
+          </lg>
+            <lg type="stanza">
+              <l>As an obstructed Fountain's head</l>
+              <l>Cut's the Intaile off from the streams,</l>
+              <l>All Brooks are Disinherited,</l>
+              <l>Honour and Beauty are but Dreams,</l>
+              <l>Since <hi rend="italic">Charles</hi> &amp; <hi rend="italic">Mary</hi> lost their Beams.</l>
+            </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

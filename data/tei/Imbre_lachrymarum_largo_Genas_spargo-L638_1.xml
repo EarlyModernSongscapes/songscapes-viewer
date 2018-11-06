@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>An Eccho</title>
+              <title type="first_line">Imbre lachrymarum largo Genas spargo</title>
+         </titleStmt>
+         <publicationStmt>
+           <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+           <bibl>
+             <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+             <author role="composer">Henry Lawes</author>
+             <author role="poet">Thomas Fuller</author>
+             <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+             <idno type="wing">L638</idno>
+             <idno type="call_number">Folger L638, copy 1</idno>
+             <biblScope unit="leaf" from="K2r">leaf K2 verso</biblScope>,
+             <biblScope unit="page" from="36">page 36</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song36">
+          <head rend="italic">An Eccho.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay" xml:lang="lat">
+          <lg type="stanza">
+            <l>Imbre lachrymarum largo Genas spargo, quavis aurorâ;</l>
+            <l>Deus citò tu venito, nunc nunc sine morâ, Ora:</l>
+            <l>Hoc non valet, semper oro, semper ploro, cor deficit dolendo;</l>
+            <l>Te te amo, ad te clamo, dato finem flendo En, do.</l>
+            <l>Peccatorum primus ego, hoc non nego, fateor vero:</l>
+            <l>sed tu Deus esto meus, in te solum spero, ero:</l>
+            <l>vox pergrata satìs, satìs, jam cedam fatis; mortuus; vivam tamen:</l>
+            <l>Hìc cum morior, cælo orior, magnum magnum hoc solamen. Amen.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>An Anniversary on the Nuptials of John Earle of Bridgewater, July 12. 1652.</title>
+              <title type="first_line">The Day's returned, and so are we, to pay</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">John Berkenhead</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="K1r">leaf K1 recto</biblScope>,
+              <biblScope unit="page" from="33">page 33</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song32">
+          <head rend="italic">An Anniversary on the Nuptials of <hi rend="roman">John</hi> Earle of <hi rend="roman">Bridgewater, July 12. 1652</hi>.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>The Day's return'd, and so are we, to pay</l>
+            <l>our Offering on this great <hi rend="italic">Thanksgiving-day</hi>.</l>
+            <l rend="indent1">'Tis His, 'tis Her's, 'tis Both, 'tis All;</l>
+            <l rend="indent1">Though now it rise, it ne'r did fall;</l>
+            <l rend="indent1">Whose Honour shall as lasting prove,</l>
+            <l rend="indent1">as our Devotion or Their Love:</l>
+          </lg>
+            <lg type="refrain" xml:id="refrain1">
+              <l>Then let's rejoyce, and by our Joy appear,</l>
+              <l>In this one Day we offer all the Year.</l>
+          </lg>
+        </div>
+        <div>
+            <lg type="stanza">
+              <head rend="center">2</head>
+              <l>See the bright Pair, how amiably kind,</l>
+              <l>As if their Souls were but this Morning joyn'd:</l>
+              <l rend="indent1">As the same Heart in Pulses cleft,</l>
+              <l rend="indent1">This for the Right Arme, that the Left;</l>
+              <l rend="indent1">So His and Her's in sever'd parts</l>
+              <l rend="indent1">Are but two Pulses, not two Hearts:</l>
+            </lg>
+            <lg type="refrain" sameAs="first.refrain">
+              <l>Then Let's, &amp;c.</l>
+            </lg>
+            <lg type="stanza">
+              <head rend="center">3</head>
+              <l>Let no bold Forraign noise their Peace remove,</l>
+              <l>Since nothing's strong enogh to shake their Love,</l>
+              <l rend="indent1">Blesse Him in Her's, Her in His Arms,</l>
+              <l rend="indent1">From suddain (true or fals) Alarms;</l>
+              <l rend="indent1">Let ev'ry Year fill up a score,</l>
+              <l rend="indent1">Born to be One, but to Make more:</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain1">
+              <l>Then let's, &amp;c.</l>
+            </lg>
+            <lg type="stanza">
+              <head rend="center">4</head>
+              <l>This Day Ten years to Him and Her did grant</l>
+              <l>What Angels joy, and Joyes which Angels want:</l>
+              <l rend="indent1">Our Lady-Day, and our Lord's too,</l>
+              <l rend="indent1">'Twere sin to rob it of its due,</l>
+              <l rend="indent1">'Tis of both Genders, Her's and His,</l>
+              <l rend="indent1">We stay'd twelve Months to welcome this.</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain1">
+              <l>Then let's rejoyce, and by our Joy appear</l>
+              <l>In this one Day we offer all the Year.</l>
+            </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

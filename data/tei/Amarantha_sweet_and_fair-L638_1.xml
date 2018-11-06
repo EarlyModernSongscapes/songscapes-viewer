@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To Amarantha, To dishevell her haire</title>
+              <title type="first_line">Amarantha sweet &amp; fair,</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Richard Lovelace</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="E2r">leaf E2 recto</biblScope>,
+              <biblScope unit="page" from="15">page 15</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song11">
+          <head rend="italic">To <hi rend="roman">Amarantha</hi>, To dishevell her haire.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l><hi rend="italic">Amarantha</hi> sweet &amp; fair,</l>
+            <l>forbear to brade that shining hair,</l>
+            <l>as my curious hand or eye,</l>
+            <l>hov'ring round thee let it flye;</l>
+            <l>let it flye as unconfin'd,</l>
+            <l>as it's calm ravisher the wind,</l>
+            <l>who ha's left his Darling the East,</l>
+            <l>to wanton o're this spicy Nest.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Ev'ry Tress must be confest,</l>
+            <l>But neatly tangled at best,</l>
+            <l>Like a clew of golden thread</l>
+            <l>Most excellently ravelled;</l>
+            <l>Do not then wind up that light</l>
+            <l>In Ribbands, and o're-cloud in Night,</l>
+            <l>Like the Sun in's early Ray,</l>
+            <l>But shake yor head and scatter Day.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

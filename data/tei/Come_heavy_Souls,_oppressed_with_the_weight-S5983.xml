@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+              <title type="first_line">Come heavy Souls, oppressed with the weight</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>The Floating Island: A Tragi-Comedy, Acted before his Majesty at Oxford</title>
+              <author role="poet">William Strode</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1655">1655</date>.
+              <idno type="wing">S5983</idno>
+              <distributor>Early English Books Online, copy from British Library</distributor>
+              <biblScope unit="leaf" from="F2r">leaf F2 recto</biblScope>,
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div>
+          <head rend="italic" xml:id="v2ch">An Attendant sings in a base.</head>
+            <lg type="stanza">
+            <l rend="indent2">Come heavy souls oppressed with the weight</l>
+            <l rend="indent2">Of Crimes, or Pangs, or want of your delight,</l>
+            <l rend="indent3">Come <seg xml:id="v3ch">down</seg> in <hi rend="italic" xml:id="v4ch">Lethe's,</hi> sleepy lake</l>
+            <l rend="indent4">Whatever makes you ake.</l>
+            <l rend="indent4">Drink <seg xml:id="v5ch">health</seg> from poyson'd bowles</l>
+            <l>Breathe out your cares together with your souls.</l>
+            <l rend="indent5">Cool Death's a salve</l>
+            <l rend="indent5"><seg xml:id="v6ch">Which</seg> all may have</l>
+            <l rend="indent2">There's no distinction in the grave;</l>
+            <l rend="indent1" xml:id="v7ch">Lay down your loads before deaths iron dore,</l>
+            <l>Sigh, and sigh out, groan once, and groan no more.</l>
+          </lg>
+        </div>
+      </body>
+  </text>
+</TEI>

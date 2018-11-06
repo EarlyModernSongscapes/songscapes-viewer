@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <title type="description">Songbook</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="writer">Henry Lawes</author>
+              <author role="poet">Edmund Waller</author>
+              <author role="poet">Francis Finch</author>
+              <author role="poet">Edmund Waller</author>
+              <author role="poet">Will Barker</author>
+              <author role="poet">Thomas Norton</author>
+              <author role="poet">John Cobb</author>
+              <author role="poet">John Phillips</author>
+              <author role="poet">John Carwarden</author>
+              <author role="poet">Edmund Waller</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="a1r" to="2G2v">leaves a1 recto to GG2 verso</biblScope>,
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+  <front>
+          <titlePage rend="center">
+            <docTitle>
+              <titlePart type="main">AYRES AND DIALOGUES, For One, Two, and Three Voyces.</titlePart>
+            </docTitle>
+            <byline>BY <graphic url="#"><!-- engraving --></graphic> HENRY LAWES Servant to his late <choice><abbr>Ma:<hi rend="sup">tie</hi></abbr><expan>Majestie</expan></choice> in his publick and private Musick. W. Faitharne fecit</byline>
+            <docEdition>The First Booke.</docEdition>
+            <docImprint>LONDON, Printed by <hi rend="italic">T. H<corr>.</corr></hi> for <hi rend="italic">John Playford</hi>, and are to be sold at his Shop, in the Inner Temple, near the Church door. <date>1653</date>.</docImprint>
+          </titlePage>
+        <div type="epistles"> <!--dedicatory epistles-->
+  <pb n="a1v"/><pb n="a2r"/>
+          <div type="epistle">
+            <salute rend="center">
+              <lb/>To the Right Honorable,
+              <lb/>The two most Excellent Sisters,
+              <lb/><hi rend="italic">ALICE</hi> Countesse of <hi rend="italic">CARBERY</hi>,
+              <lb/>And
+              <lb/><hi rend="italic">MARY</hi> Lady <hi rend="italic">HERBERT</hi> of <hi rend="italic">Cherbury</hi> and <hi rend="italic">Castle-Island</hi>,
+              <lb/>Daughters to the Right Honorable, <hi rend="italic">John</hi> Earle of <hi rend="italic">Bridgewater,</hi> Lord President of <hi rend="italic">WALES,</hi> &amp;c.
+          </salute>
+            <ab rend="italic">I need not tell Your <hi rend="roman">Ladiships,</hi> that since my Attendance on His late <hi rend="roman">MAJESTY</hi> (my most Gracious Master) I have neglected the exercise of my Profession. Yet, to debarr Idlenesse (which, without vanity I may say, I was never passionatly in love with)
+              I have made some <hi rend="roman">Compositions,</hi> which now I resolve to publish to the World. What Grounds and Motives lead me to this Publication, I conceive not so proper for your Ladiships notice, having elsewhere told it <hi rend="roman">to the Reader.</hi> But no sooner I thought of making these
+              Publick, than of inscribing them to Your <hi rend="roman">Ladiships</hi>, most of them being Composed when I was employed by Your ever Honour'd Parents to attend Your <hi rend="roman">Ladishipp's</hi> Education in <hi rend="roman">Musick</hi>; who (as in other Accomplishments fit for Persons of Your Quality)
+              excell'd most Ladies, especially in <hi rend="roman">Vocall Musick,</hi> wherin You were so absolute, that You gave Life and Honour to all I set and taught You; and that with more Vnderstanding than a new Generation pretending to Skil (I dare say) are Capable of. I could therefore do nothing more becomming
+              my Gratitude than a Dedication of These (so much Your own) to both Your <hi rend="roman">Ladiships</hi>; and to manifest that Honour I bear to the Memory of Your deceased Parents, whose Favors it is impossible should ever be forgotten by</ab>
+          <signed rend="center">
+            <lb/>Your Ladiships most humbly devoted
+            Servant,
+            <lb/><hi rend="italic right">HENRY LAWES.</hi>
+          </signed>
+        </div>
+  <pb n="a2v"/>
+        <div type="epistle">
+          <salute rend="center">
+            <lb/>To all Understanders or Lovers of
+            <lb/>MUSICK.
+          </salute>
+            <ab rend="italic">It is easie to say I have been much importun'd, by Persons of Quality, to
+              Publish my <hi rend="roman">Compositions</hi>: But though I could plead it (and without vain
+              Pretensions) yet now I shall wave it. Nor was I drawn to it by any little thoughts of private Gain;
+              though men of my Relations (as the World now goes) are justly presum'd not to overflow; and perhaps
+              the matter will not reach that value, let the <hi rend="roman">Stationer</hi> look to that, who
+              himselfe hath undergone the Charge and Trouble of the whole Impression; who yet (by his favour)
+              hath lately made bold to print, in one Book, above twenty of my Songs, whereof I had no knowledge
+              till his Book was in the Presse; and it seems he found those so acceptable that he is ready for more.
+              Therefore now the Question is not, whether or no my <hi rend="roman">Compositions</hi> shall be Publick,
+              but whether they shall come forth from me, or from some other hand; and which of the two is likeliest to
+              afford the true correct Copies, I leave others to judge. In this Book I reprint none that were publish'd
+              in the former, or ever in print before. I could tell ye also, I have often found many of mine that have
+              walkt abroad in other mens names: how they came to lose their Relations and be Anabaptiz'd, I think not
+              worth examining. Only I shall say, that some who so adopted and owned my Songs had greater kindnesse for the
+              Children than for the Father; else sure they had not bestow'd some other late Ayres (which themsleves could not own)
+              upon Forrainers and Strangers, because I <hi rend="roman">compos'd</hi> them to <hi rend="roman">Italian</hi> and
+              <hi rend="roman">Spanish</hi> words. I should think such an Injury an unreasonable piece of
+              Injustice, since now we live in so sullen an Age, that our Prefession it selfe hath lost its
+              Incouragement. But Wise men have observ'd our Generation so giddy, that whatsoever is Native
+              (be it never so excellent) must lose its taste, because themselves have lost theirs. For my part,
+              I professe (and such as know me can bear me witnesse) I desire to render every man his due, whether
+              Strangers or Natives. I acknowledge the <hi rend="roman">Italians</hi> the greatest Masters of
+              Musick, but yet not all. And (without depressing the Honour of other Countries) I may say our own
+              Nation hath had and yet hath as able Musitians as any in <hi rend="roman">Europe</hi>; and many
+              now living (whose  names I forbear) are excellent both for the Voyce and Instruments. But as in
+              Musick the <hi rend="roman">Unison</hi> and <hi rend="roman">Diapason</hi> are the sweetest of
+              all <hi rend="roman">Chords</hi>, yet a <hi rend="roman">Second</hi> and a
+              <hi rend="roman">Seventh</hi>, which stand next to them, are more <hi rend="roman">Discordant</hi>
+              from them than any other Notes in all the <hi rend="roman">Scale</hi>: So to Musicians, a man's
+              next Neighbour is the farthest from him, and none give so harsh a Report of the
+              <hi rend="roman">English</hi> as the <hi rend="roman">English</hi> themselves. We should not think
+              Musick any stranger to this Island, since our Ancestors tell us that the
+              <hi rend="roman">Britains</hi> had Musicians before they had Books; and the
+              <hi rend="roman">Romans</hi> that invaded us (who were not too forward to magnifie other Nations)
+              confesse what power the <hi rend="roman">Druids</hi> and <hi rend="roman">Bards</hi> had over the
+              Peoples affections by recording in Songs the Deeds of Heroick Spirits, their very
+              <hi rend="roman">Laws</hi> and <hi rend="roman">Religion</hi> being sung in Tunes, and so
+              (without Letters) transmitted to Posterity; wherein it seems they were so dexterous, that their
+              Neighbours out of <hi rend="roman">Gaul</hi> came hither to learn it. How their Successors held it
+               up I know not: But King <hi rend="roman">Henry</hi> the Eight did much advance it, especially in
+                the former part of his Reign, when his minde was more intent upon Arts and Sciences, at which
+                time he invited all the greatest Masters out of <hi rend="roman">Italy</hi> and other Countries,
+                and Himselfe gave example by <hi rend="roman">Composing</hi> with his own hand two intire
+                 <hi rend="roman">Services</hi>, which were often sung in his Chappell, as the Lord
+                 <hi rend="roman">Herbert</hi> of <hi rend="roman">Cherbury</hi> (who writ his Life) hath
+                 left upon Record. Since whose time it prosper'd much in the Reign of Queen
+                 <hi rend="roman">Elizabeth</hi>, King <hi rend="roman">James</hi>, and His late
+                 <hi rend="roman">Majesty</hi>. I confesse the Italian Language may have some advantage by being
+                 better smooth'd and <hi rend="roman">vowell'd</hi> for Musick, which I found by many Songs which
+                 I set to <hi rend="roman">Italian</hi> words: and our English seems a
+<pb n="b1r"/>
+            little over-clogg'd with <hi rend="roman">Consonants</hi>; but that's much the <hi rend="roman">Composer's</hi>
+            fault, who by judicious setting and right tuning the words may make it smooth enough. And since our palates are
+            so much after Novelties, I desir'd to try the <hi rend="roman">Greek</hi>, having never seen any thing <hi rend="roman">Set</hi>
+             in that Language by our own Musicians or Strangers; and (by <hi rend="roman">Composing</hi> some of <hi rend="roman">Anacreon's</hi>
+              Odes) I found the Greek Tongue full as good as any for Musick, and in some particulars sweeter than the <hi rend="roman">Latine</hi>,
+              or those Moderne ones that descended from <hi rend="roman">Latine</hi>. I never lov'd to <hi rend="roman">Set</hi> or sing words
+              which I do not understand; and where I cannot, I desir'd help of others who were able to interpret. But this present Generation
+              is so sated with what's Native, that nothing takes their eare but what's sung in a Language which (commonly) they understand as
+              little as they do the Musick. And to make them a little sensible of this ridiculous humour, I took a <hi rend="roman">Table</hi>
+              or <hi rend="roman">Index</hi> of old <hi rend="roman">Italian</hi> Songs (for one, two, and three Voyces) and this
+              <hi rend="roman">Index</hi> (which read together made a strange medley of Non-sense) I set to a varyed Ayre, and gave out that
+              it came from <hi rend="roman">Italy</hi>, whereby it hath passed for a rare <hi rend="roman">Italian Song</hi>. This very Song
+              I have now here printed. And if this First Book shall find acceptance, I intend yearly to publish the like; for I confess I have
+              a sufficient Stock lying by me (and shall compose more) having had the Honour to <hi rend="roman">Set</hi> the Verses of the most
+              and chiefest Poets of our Times. As for those Copies of Verses in this Book, I have rendred their Names who made them, from whose
+              hands I received them. These Reasons (with some other not here mentioned) drew me forth to this Publication, which if receiv'd with
+              the same heart that I offer it, with be further Encouragement for</ab>
+          <signed rend="center">
+            H.L.
+          </signed>
+        </div>
+        </div>
+    <pb n="b1v"/>
+    <div type="commendatory_verse">
+      <div type="commendatory">
+          <salute rend="center">
+            To Mr. HENRY LAWES, who had then newly set a Song of mine in the Year, 1635.
+          </salute>
+          <lg type="stanza" rend="italic">
+            <l>Verse makes Heroick Vertue live,</l>
+            <l>But you can life to Verses give:</l>
+            <l>As when in open aire we blow</l>
+            <l>The breath (though strain'd) sounds flat and low,</l>
+            <l>But if a Trumpet take the blast,</l>
+            <l>It lifts it high, and makes it last:</l>
+            <l>So in your Ayres our Numbers drest</l>
+            <l>Make a shrill sally from the Brest</l>
+            <l>Of Nymphs, who singing what we pen'd,</l>
+            <l>Our Passions to themselves commend,</l>
+            <l>While Love Victorious with thy Art</l>
+            <l>Governs at once their Voyce and Heart.</l>
+            <l>You by the help of Tune and Time</l>
+            <l>Can make that Song which was but Rime.</l>
+            <l> <hi rend="roman">NOY</hi> pleading, no man doubts the Cause,</l>
+            <l>Or questions Verses set by <hi rend="roman">LAWES</hi>.</l>
+            <l>For as a window thick with paint</l>
+            <l>Lets in a light but dim and faint,</l>
+            <l>So others with Division hide</l>
+            <l>The Light of Sense, the Poets Pride,</l>
+            <l>But you alone may truly boast</l>
+            <l>That not a syllable is lost;</l>
+            <l>The Writer's and the Setter's skill</l>
+            <l>At once the ravish't Eare do fill.</l>
+            <l>Let those which only warble long,</l>
+            <l>And gargle in their throats a Song,</l>
+            <l>Content themselves with <hi rend="roman">Ut, re, mi,</hi></l>
+            <l>Let words and sense by set by Thee.</l>
+          </lg>
+        <signed rend="right">
+          ED. WALLER, <hi rend="italic">Esquire.</hi>
+        </signed>
+      </div>
+      <pb n="b2r"/>
+        <div type="commendatory">
+          <salute rend="center">
+          To his Honour'd F. Mr. <hi rend="italic">HENRY LAWES</hi>, on his <hi rend="italic">Ayres</hi> and <hi rend="italic">Dialogues</hi>.
+          </salute>
+          <lg type="stanza" rend="italic">
+            <l>Those happy few who apprehend thy flight,</l>
+            <l>Ever above the Cloud, yet still in sight,</l>
+            <l>Cannot by all their Numbers and Addresse</l>
+            <l>Swell or advance thy praises, but confesse.</l>
+            <l>For thou art fix'd beyond the Power of Fate,</l>
+            <l>Since nothing that is Mortal can Create.</l>
+            <l>And it is possible that thou should'st dye</l>
+            <l>Who can'st bestow such Immortality?</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>I have not sought the Rules by which yee try</l>
+            <l>When a <hi rend="roman">Chord's</hi> broke, or holds in <hi rend="roman">Harmony;</hi></l>
+            <l>But I am sure Thou hast a Soul within</l>
+            <l>As if created for a <hi rend="roman">Cherubin</hi>;</l>
+            <l>Brim full of Candour and wise Innocence,</l>
+            <l>And is not Musick a Resultance thence?</l>
+            <l>For sure the blunt-bill'd Swan's first fame to sing</l>
+            <l>Sprung from the motion of her spotless Wing.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>But sole Integrity winns not the Cause,</l>
+            <l>For then each honest man would be a <hi rend="roman">LAWES</hi>:</l>
+            <l>Thou hast deep Iudgement, Phansie, and high Sence;</l>
+            <l>Old and new Wit, steady Experience;</l>
+            <l>A Soul unbrib'd by any thing but Fame;</l>
+            <l>Grasping to get nought but a good great Name.</l>
+            <l>Hence all thy <hi rend="roman">Ayres</hi> flow pure and unconfin'd,</l>
+            <l>Blown by no Mercenary <hi rend="roman">Lapland</hi> Wind,</l>
+            <l>No stoln or plunder'd Phansies, but born free,</l>
+            <l>And so transmitted to Posteritie,</l>
+            <l>Which never shall their well-grown Honor blast,</l>
+            <l>Since they  have Thy, that's the best, Iudgement past.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>Yet Some, who forc'd t'admire Thee, must repine</l>
+            <l>That all Theirs are out-done by thy Each Line;</l>
+            <l>The Sence so humour'd, and those Humours hit,</l>
+            <l>Will call them acts of  <hi rend="roman">Fortune</hi>, not of <hi rend="roman">Wit</hi>;</l>
+            <l>Hoping their want of Skill may be thy Brand</l>
+            <l>'Cause they have not the Luck to Understand;</l>
+            <l>Cry up the  <hi rend="roman">Words</hi> to cry  <hi rend="roman">Thee</hi> down, and sweare</l>
+            <l>Thou  <hi rend="roman">sett'st</hi> more  <hi rend="roman">Sence</hi> then they can meet elsewhere,</l>
+            <l>Concluding could themselves such  <hi rend="roman">Verses</hi> show</l>
+            <l>They could produce such  <hi rend="roman">Compositions</hi> too.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>But is't thy fault if the great Witts whole Quire</l>
+            <l>Before all Others still prefer Thy Lyre?</l>
+            <l>They tasted All, and Thine among the rest,</l>
+            <l>But then return'd to Thee, 'cause Best was Best.</l>
+            <l>Bid such attach Thy Old <hi rend="roman">Anacreon's</hi> Greek,</l>
+            <l>Where the least <hi rend="roman">Accent</hi> will cost Them a Week,</l>
+            <l>Six Months a <hi rend="roman">Verse,</hi> and that Verse tun'd and scann'd</l>
+            <l>(Though short) twelve Years, an Age to <hi rend="roman">Understand</hi>:</l>
+            <l>But thy Lute, like th'last Trump, hath rais'd His Head,</l>
+            <l>Who, er'e the <hi rend="roman">Græcian Empire</hi> born, was dead.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>Then let all Poetts bring all Verse, which They</l>
+            <l>May on thy Desk as on an Altar lay,</l>
+            <l>Where kindled by that Touch thy Hand hath given,</l>
+            <l>'Twill climb (whence Musick first came down) to Heaven.</l>
+          </lg>
+          <signed rend="right">
+            FRANCIS FINCH, <hi rend="italic">Esquire.</hi>
+          </signed>
+        </div>
+      <pb n="b2v"/>
+        <div type="commendatory">
+          <salute rend="center">
+            To the much honour'd Mr. <hi rend="italic">HENRY LAWES</hi> on his Book of <hi rend="italic">Ayres</hi>.
+          </salute>
+          <lg type="stanza" rend="italic">
+            <l>That Princes dye not, they to Poetts owe;</l>
+            <l>Poetts themselves do owe their Lives to You;</l>
+            <l>Whose Phansies soon would stifle, and declare</l>
+            <l>They could not breath unlesse you lent them Ayre.</l>
+            <l>'Tis that inspires their Feet, which else but crawle</l>
+            <l>As <hi rend="roman">Judges</hi> walk th' old Measures round the <hi rend="roman">Hall</hi>,</l>
+            <l>Untill the feather'd heels of Youth advance</l>
+            <l>And raise their dull pace up into a Dance:</l>
+            <l>Your Art such Motion to our Verses brings</l>
+            <l>We can but give them Feet, You give them Wings.</l>
+          </lg>
+          <signed rend="right">
+            WILL. BARKER
+          </signed>
+        </div>
+        <div type="commendatory">
+          <salute>
+            To his much honour'd F. M<hi rend="sup">r.</hi> <hi rend="italic">HENRY LAWES</hi>, on his Book of <hi rend="italic">Ayres</hi>.
+          </salute>
+          <lg type="stanza" rend="italic">
+            <l>Father of Numbers, who hast still thought fit</l>
+            <l>To tune thy selfe, and then <hi rend="roman">Set</hi> others Wit;</l>
+            <l>Forgive my Zeale, who with my Sprig of Bayes</l>
+            <l>Do crowd into the <hi rend="roman">Chorus</hi> of thy Praise.</l>
+            <l>For Silence were, when <hi rend="roman">LAWES</hi> is nam'd, a wrong,</l>
+            <l>The Subject and the Master of all Song;</l>
+            <l>Who ne'r dost dive for Pebbles, undermine</l>
+            <l>Mountains to make old rusty Iron shine:</l>
+            <l>But hast made Great things Greater, do'st dispense</l>
+            <l>Lustre to Wit, by adding Sence to Sence.</l>
+            <l>For Passions are not Passions, 'till they be</l>
+            <l>Rais'd to that height, which they expect from Thee;</l>
+            <l>And all this is thy selfe; Thy Name's not grown</l>
+            <l>Broader by putting on a Cap or Gown;</l>
+            <l>Who like those Jockies that do often sell</l>
+            <l>An old worn Jade, because he's saddled well:</l>
+            <l>No; Thou can'st humour all that Wit can teach,</l>
+            <l>Which those that are but Note-men cannot reach:</l>
+            <l>Thou'rt all so fit, that some have pass'd their Votes,</l>
+            <l>Thy Notes beget the Words, not Words thy Notes.</l>
+          </lg>
+          <signed rend="right">
+            T. NORTON.
+          </signed>
+        </div>
+      <pb n="A1r"/>
+        <div type="commendatory">
+          <salute>
+            To my ever honour'd Friend &amp; Father, Mr. <hi rend="italic">HENRY LAWES</hi>, on his Book of <hi rend="italic">Ayres</hi> and <hi rend="italic">Dialogues</hi>.
+          </salute>
+          <lg type="stanza" rend="italic">
+            <l>Father of <hi rend="roman">Musick</hi> and <hi rend="roman">Musitians</hi> too,</l>
+            <l>And Father of the <hi rend="roman">Muses</hi>, All's thy due:</l>
+            <l>For not a drop that flows from <hi rend="roman">Helicon</hi></l>
+            <l>But <hi rend="roman">Ayr'd</hi> by thee grows streight into a Song.</l>
+            <l>So as when Light about the World was spread,</l>
+            <l>All kind of Colours, Black, White, Green, and Red,</l>
+            <l>Soon mixt with Substances, and grew to be,</l>
+            <l>Plants, Grasse, and Flowrs, which All's but <hi rend="roman">Harmony</hi>.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>Thou mak'st the <hi rend="roman">Grave</hi> and <hi rend="roman">Light</hi> together chime,</l>
+            <l>Both joyntly dance, yet keep their own true time;</l>
+            <l>The winning <hi rend="roman">Dorick</hi>, that best loves the Harp;</l>
+            <l>The <hi rend="roman">Phrygian</hi>, thats as sweet, though far more sharp;</l>
+            <l>The brisk <hi rend="roman">Ionick</hi>, sober <hi rend="roman">Lydian</hi> Mood,</l>
+            <l>Which every eare sucks in, and cryes, 'tis good:</l>
+            <l>Thou hitt'st them all; their <hi rend="roman">Spirit, Tone,</hi> and <hi rend="roman">Pause</hi>,</l>
+            <l>Have all conspir'd to meet and honour <hi rend="roman">LAWES</hi>.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>No pointing <hi rend="roman">Comma, Colon</hi>, halfe so well</l>
+            <l>Renders the Breath of Sense; they cannot tell</l>
+            <l>The just Proportion how each word should go,</l>
+            <l>To rise and fall, run swiftly or march slow;</l>
+            <l>Thou shew'st 'tis <hi rend="roman">Musick</hi> only must do this,</l>
+            <l>Which as though handlest it can never miss;</l>
+            <l>All may be <hi rend="roman">Sung</hi> or <hi rend="roman">Read</hi>, which thou hast drest,</l>
+            <l>Both are the same, save that the <hi rend="roman">Singing's</hi> best.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>Thy Muse can make this sad, raise that to Life,</l>
+            <l>Inflaming one, smoothing down th' others Strife,</l>
+            <l>Meer Words, when measur'd best, are Words alone,</l>
+            <l>Till quickned by their nearest Friend a Tone:</l>
+            <l>And then, when <hi rend="roman">Sense</hi> and perfect <hi rend="roman">Concords</hi> mee<corr>t</corr></l>
+            <l>Though th' Story bitter be, Tunes make it sweet:</l>
+            <l>Thy <hi rend="roman">Ariadne's</hi> Grief's so fitly shown</l>
+            <l>As bring's us <hi rend="roman">Pleasure</hi> from her saddest <hi rend="roman">Groan</hi>.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>And all this is thine own, thy true-born Heir;</l>
+            <l>Nor stoln at home, nor Forrain far-fetcht Ware</l>
+            <l>Made good by Mountebanks, who loud must cry</l>
+            <l>Till some believe, and do as dearly buy;</l>
+            <l>Which when they've try'd, not better nor yet more</l>
+            <l>They find, than what does grown at their own door.</l>
+            <l>For when such Mountains swell with mighty Birth,</l>
+            <l>Wee find some poor small petty thing creep forth.</l>
+          </lg>
+          <lg type="stanza" rend="italic">
+            <l>But I'm too short to speak thee, I've no Praise</l>
+            <l>To give, but what I gather from thy Bayes:</l>
+            <l>My narrow Hive's supply'd from they full Flow'r,</l>
+            <l>Nor does thy Ocean Praise know Bank or Shoar:</l>
+            <l>Yet this I dare attest, that who shall look</l>
+            <l>And understand as well as read thy Book</l>
+            <l>Must say that here both <hi rend="roman">Wit</hi> and <hi rend="roman">Musick</hi> meet;</l>
+            <l>Like the great Giant's Riddle <hi rend="roman">Strong and Sweet</hi>.</l>
+          </lg>
+        <signed rend="right">
+        JOHN COBB.
+        </signed>
+      </div>
+      <pb n="A1v"/>
+      <div type="commendatory">
+        <salute>
+          To his Honour'd Friend, Mr. <hi rend="italic">Henry Lawes</hi>, upon his Book of <hi rend="italic">Ayres</hi>.
+        </salute>
+        <lg type="stanza" rend="italic">
+          <l>Musick thou Soul of Verse, gently inspire</l>
+          <l rend="indent1">My untun'd Phansie with some sprightly <hi rend="roman">Ayre</hi>,</l>
+          <l>'Tis fittest now that I thy ayd require</l>
+          <l rend="indent1">While I to sing thee and thy <hi rend="roman">Lawes</hi> prepare:</l>
+          <l rend="indent3">For the high Raptures of a lofty strain</l>
+          <l rend="indent3">Charm equall with the Bowr's <hi rend="roman">Aonian</hi>.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>'Twere in me rudeness, not to blazon forth</l>
+          <l rend="indent1">(Father in <hi rend="roman">Musick</hi>) thy deserved praise,</l>
+          <l>Who oft have been, to witness thy rare worth,</l>
+          <l rend="indent1">A ravish't hearer of thy skilfull Lay's.</l>
+          <l rend="indent3">Thy Lay's that wont to lend a soaring wing,</l>
+          <l rend="indent3">And to my tardy Muse fresh ardour bring.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>While brightest <hi rend="roman">Dames</hi>, the splendour of the Court,</l>
+          <l rend="indent1">Themselves a silent <hi rend="roman">Musick</hi> to the Eye,</l>
+          <l>Would oft to hear thy solemn <hi rend="roman">Ayres</hi> resort,</l>
+          <l rend="indent1">Making thereby a double Harmony:</l>
+          <l rend="indent3">'Tis hard to judge which adds the most delight,</l>
+          <l rend="indent3">To th' Eare thy Charms, or theirs unto the Sight.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>But this is sure, had <hi rend="roman">Strada's</hi> Nightingale</l>
+          <l rend="indent1">Heard the soft murmurs of thy <hi rend="roman">Ayry Lute</hi>,</l>
+          <l>She doubting left her own sweet voyce should fail</l>
+          <l rend="indent1">To hear thy sweeter <hi rend="roman">Ayres</hi>, had quite been mute.</l>
+          <l rend="indent3">Such Vertue dwels in Harmony divine</l>
+          <l rend="indent3">(Admired <hi rend="roman">LAWES</hi>) and above all in thine.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>The <hi rend="roman">Dorick</hi> Sage, and the mild <hi rend="roman">Lydian</hi>,</l>
+          <l rend="indent1">The sad <hi rend="roman">Laconick</hi> unto Wars exciting,</l>
+          <l>Th' <hi rend="roman">Aeolian</hi> Grave, the <hi rend="roman">Phrygian</hi> mournfull strain,</l>
+          <l rend="indent1">The smooth <hi rend="roman">Jonick</hi> carelesly delighting,</l>
+          <l rend="indent3">There calmly meet, and chearfully agree,</l>
+          <l rend="indent3">Various themselves, to maek one Symphony.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>If we long since could boast thy purest vain,</l>
+          <l rend="indent1">More then old <hi rend="roman">Greece</hi> the <hi rend="roman">Rhodopsian</hi> Lyre,</l>
+          <l>Or <hi rend="roman">Latian</hi> Bowres of late <hi rend="roman">Marenzo's</hi> strain,</l>
+          <l rend="indent1">How much must our applause advance thee higher?</l>
+          <l rend="indent3">When thy yet more harmonious birth shall bring</l>
+          <l rend="indent3">To us new Joyes, new Pleasures to the Spring.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>The Woods wild Songsters, wonder will surprize</l>
+          <l rend="indent1">Hearing the sweet Art of they well tun'd Notes,</l>
+          <l>What new unwonted chime? 'tis that outvies</l>
+          <l rend="indent1">The Native sweetness of their liquid throats,</l>
+          <l rend="indent3">Which while in vain they strive to æmulate</l>
+          <l rend="indent3">Anothers <hi rend="roman">Musick's</hi> Duell they'l create.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>Whether pure Anthem's fill the sacred Quire,</l>
+          <l rend="indent1">Or Lady's Chambers the Lute's trembling voice,</l>
+          <l>Or Rurall Song's the Country Swains admire,</l>
+          <l rend="indent1">Thy large Invention still affords us choice;</l>
+          <l rend="indent3">'Tis to thy Skill, that we indebted are,</l>
+          <l rend="indent3">What ever Musick hath of neat and rare.</l>
+        </lg>
+        <lg type="stanza" rend="italic">
+          <l>To thee the choycest Witts of <hi rend="roman">England</hi> owe</l>
+          <l rend="indent1">The Life of their fam'd Verse, that ne'r shall dye,</l>
+          <l>For thou hast made their rich conceits to flow</l>
+          <l rend="indent1">In streams more rich to lasting memory,</l>
+          <l rend="indent3">Such <hi rend="roman">Musick</hi> needs must steal our souls away,</l>
+          <l rend="indent3">Where Voice and Verse do meet, where Love and Phansie play.</l>
+        </lg>
+        <signed rend="right">
+          EDWARD PHILLIPS.
+        </signed>
+      </div>
+      <pb n="A2r"/>
+      <div type="commendatory">
+        <salute>
+          To my Honour'd Friend, Mr. <hi rend="italic">Henry Lawes</hi>, upon his Book of <hi rend="italic">Ayres</hi>.
+        </salute>
+        <lg type="stanza" rend="italic">
+          <l>To calm the rugged Ocean, and asswage</l>
+          <l>The horrid tempests in their highest rage,</l>
+          <l>To tame the wildest Beasts, to still the Winds</l>
+          <l>And quell the fury of distemper'd minds,</l>
+          <l>Making the Pensive merry, th' overjolly</l>
+          <l>Composing to a sober Melancholy:</l>
+          <l>These are th'effects of sacred harmonie;</l>
+          <l>Which being an Art so well attain'd by thee,</l>
+          <l>(Most Honour'd <hi rend="roman">Laws</hi>) what can we less then number</l>
+          <l>Thy Works with theirs who were the Ancients wonder?</l>
+          <l>And give thee equall praise; but I forget;</l>
+          <l>For we do owe thee a far greater debt,</l>
+          <l>The charming sweetness of whose shorter Lay's,</l>
+          <l>Not only we do hear with great amaze,</l>
+          <l>But they have low descended to the deep,</l>
+          <l>And wak'ned <hi rend="roman">Theseus</hi> Queen from <hi rend="roman">Stygian</hi> sleep;</l>
+          <l>Who slighting <hi rend="roman">Orpheus</hi>, comes to beg of thee</l>
+          <l>To ayd her with thy pow'rfull harmonie,</l>
+          <l>Knowing thy strains more truly can expresse</l>
+          <l>Her sense of <hi rend="roman">Theseus</hi> strange forgetfulnesse;</l>
+          <l>Which makes us here to double thy Renown;</l>
+          <l>Hereafter thou shalt wear fair <hi rend="roman">Ariadne's</hi> Crown.</l>
+        </lg>
+        <signed rend="right">
+          JOHN PHILLIPS.
+        </signed>
+      </div>
+      <div type="commendatory">
+        <salute rend="italic">
+          To my Dear and Honour'd Friend, Mr. <hi rend="roman">HENRY LAWES</hi>, upon his Incomparable Book of Songs.
+        </salute>
+        <lg type="stanza">
+          <l>I am no Poet, yet I will rhearse</l>
+          <l>My Virgin Muse, though in unpolisht Verse.</l>
+          <l>Perhaps the immature and lib'rall sence,</l>
+          <l>(Yet better than those Ignorants commence,</l>
+          <l>Who boldly dare their scandalous censures throw,</l>
+          <l>And judge of things (I'le swear) they do not know)</l>
+          <l>Will be to some unpleasing; but what then?</l>
+          <l>Must they not know their wild pretensions, when</l>
+          <l>Unnat'rally they'l raise a Forrain Name,</l>
+          <l>And blast the Honour of their Native Fame?</l>
+          <l>But stay; Will this reclaim them? No, th'are mad;</l>
+          <l>Their Reason is infatuate, and clad</l>
+          <l>In such a stupified ignorance:</l>
+          <l>Nothing will please that is not come from <hi rend="italic">France</hi></l>
+          <l>Or <hi rend="italic">Italy</hi>; but let them have their will,</l>
+          <l>Whilst we unto thy Noble Art and Skill</l>
+          <l>Do sacrifice our admirations:</l>
+          <l>The tribute's j<corr>u</corr>st, and other Nations</l>
+          <l>Cannot but pay it too, when they shall see</l>
+          <l>Their best of Labours thus outdone by Thee;</l>
+          <l>Or else amaz'd to see thy <hi rend="italic">English</hi> Ayre</l>
+          <l>Past imitation; they will dispaire,</l>
+          <l>And wonder we can surfeit with such meat,</l>
+          <l>So rare, so rich, so pleasant, so compleat.</l>
+          <l>Be happy then; Thou art above all hate;</l>
+          <l>Thy great abil'ties have out-grown thy Fate.</l>
+          <l>Thy Fortune soars aloft; thou art renown'd:</l>
+          <l>Thy Fame's with Judgements approbation crown'd.</l>
+          <l>And in this Verse, (as I disclaim all Wit)</l>
+          <l>So 'twas thy worth, oblig'd my fancy t'it.</l>
+        </lg>
+        <signed rend="right">
+        <hi rend="italic">JO. CARWARDEN</hi>
+      </signed>
+    </div>
+</div>
+  <pb n="A2v"/>
+    <div type="table">
+      <list type="litany" rend="simple">
+        <head rend="center"><hi rend="italic">The </hi>TABLE, <hi rend="italic">With the Names of those who were Authors of the Verses</hi>.</head>
+        <item n="A."><title><hi rend="italic">Ariadne</hi></title> <seg type="toc_page"><hi rend="italic">Pag.</hi> 1</seg> <name type="poet">- Mr. <hi rend="italic">William Cartwright</hi> of <hi rend="italic">Christ-Church Oxford</hi>.</name></item>
+        <item><title>Am <hi rend="italic">I</hi> dispis'd because you say</title> <seg type="toc_page">19</seg> <name type="poet">- Mr. <hi rend="italic">Robert Herick</hi>.</name></item>
+        <item><title><hi rend="italic">Amarantha</hi> sweet and fair</title> <seg type="toc_page">15</seg> <name type="poet">- Col. <hi rend="italic">Richard Lovelace</hi>.</name></item>
+        <item><title>Ask me why I send you here</title> <seg type="toc_page">24</seg> <name type="poet">- Mr. <hi rend="italic">Herick</hi>.</name></item>
+        <item n="B."><title>Be gone, be gone thou perjur'd man</title> <seg type="toc_page">35</seg> <name type="poet">- <hi rend="italic">Henry Lawes</hi>.</name></item>
+        <item n="C."><title>Careless of Love, and free from Fears</title> <seg type="toc_page">11</seg> <name type="poet">- <hi rend="italic">Carew Raleigh</hi>, Esquire.</name></item>
+        <item><title><hi rend="italic">Chloris</hi> your self you so excell</title> <seg type="toc_page">14</seg> <name type="poet">- <hi rend="italic">Edmond Waller</hi>, Esquire.</name></item>
+        <item><title><hi rend="italic">Cælia</hi> thy bright Angel's Face</title> <seg type="toc_page">17</seg> <name type="poet">- <hi rend="italic">Thomas</hi> Earle of <hi rend="italic">Winchilsea</hi>.</name></item>
+        <item><title>Canst thou love me, and yet doubt</title> <seg type="toc_page">23</seg> <name type="poet">- <hi rend="italic">William</hi> Earle of <hi rend="italic">Pembrooke</hi>.</name></item>
+        <item><title>Come my <hi rend="italic">Lucasta</hi></title> <seg type="toc_page">25</seg> <name type="poet">- Sir <hi rend="italic">Charles Lucas</hi>.</name></item>
+        <item><title>Come heavy Souls</title> <seg type="toc_page">28</seg> <name type="poet">- Dr. <hi rend="italic">William Stroud</hi>, Oratour of the University of <hi rend="italic">Oxford</hi>.</name></item>
+        <item><title>Come, come thou glorious Object</title> <seg type="toc_page">30</seg> <name type="poet">- Sir <hi rend="italic">William Killigrew</hi>.</name></item>
+        <item><title>Come my Sweet whilst every strain</title> <seg type="toc_page">32</seg> <name type="poet">- Mr. <hi rend="italic">Cartwright</hi>.</name></item>
+        <item n="D."><title>Dearest do not now delay me</title> <seg type="toc_page">20</seg> <name type="poet">- Mr. <hi rend="italic">Henry Harington</hi>, Son to <hi rend="italic">Henry Harington</hi>.</name></item>
+        <item n="F."><title>Farewell fair Saint</title> <seg type="toc_page">10</seg> <name type="poet">- Mr, <hi rend="italic">Tho. Cary</hi>, Son to the Earle of Monmouth, and of the Bedchamber to his late Majesty.</name></item>
+        <item n="G."><title>Gaze not on Swann's</title> <seg type="toc_page">15</seg> <name type="poet">- Mr. <hi rend="italic">Henry Noel</hi>, Son to the L. Viscount <hi rend="italic">Cambden</hi>.</name></item>
+        <item><title>Give me more Love or more Disdain</title> <seg type="toc_page">21</seg> <name type="poet">- Mr. <hi rend="italic">Tho. Carew</hi>, Gentleman of the Privy Chamber, and Sewer to his late Majesty.</name></item>
+        <item n="H."><title>He that love's a Rosie Cheek</title> <seg type="toc_page">12</seg> <name type="poet">- Mr. <hi rend="italic">Carew</hi>.</name></item>
+        <item n="I."><title>I long to sing the Seidge of <hi rend="italic">Troy</hi></title> <seg type="toc_page">27</seg> <name type="poet">- Mr. <hi rend="italic">John Berkenhead</hi>.</name></item>
+        <item><title>If when the Sun at Noon</title> <seg type="toc_page">18</seg> <name type="poet">- Mr. <hi rend="italic">Carew</hi>.</name></item>
+        <item><title>It is not that I love you lesse</title> <seg type="toc_page">22</seg> <name type="poet">- Mr. <hi rend="italic">Waller</hi>.</name></item>
+        <item><title xml:lang="lat">Imbre lachrymarum largo</title> <seg type="toc_page">36</seg> <name type="poet">- Mr. <hi rend="italic">Thomas Fuller</hi>, Batch. Divinity.</name></item>
+        <item n="L."><title>Ladies who gild the glitt'ring Noon</title> <seg type="toc_page">35</seg> <name type="poet">- Mr. <hi rend="italic">Francis Lenton</hi>.</name></item>
+        <item><title>Lately on yonder swelling Bush</title> <seg type="toc_page">24</seg> <name type="poet">- Mr. <hi rend="italic">Waller</hi>.</name></item>
+        <item><title>Lovely <hi rend="italic">Chloris</hi> though thine eyes</title> <seg type="toc_page">20</seg> <name type="poet">- Mr. <hi rend="italic">Henry Reynolds</hi>.</name></item>
+        <item n="T."><title>The Day's return'd</title> <seg type="toc_page">33</seg> <name type="poet">- Mr. <hi rend="italic">Berkenhead</hi>.</name></item>
+        <item><title>Till now I never did believe</title> <seg type="toc_page">16</seg> <name type="poet">- Sir <hi rend="italic">Thomas Nevill</hi>.</name></item>
+        <item><title>Till I beheld fair <hi rend="italic">Cælia's</hi> Face</title> <seg type="toc_page">25</seg> <name type="poet">- <hi rend="italic">Francis Finch</hi>, Esquire.</name></item>
+        <item><title>'Tis true fair <hi rend="italic">Cælia</hi></title> <seg type="toc_page">29</seg> <name type="poet">- Mr. <hi rend="italic">Henry Bathurst</hi>.</name></item>
+        <item><title>Thou art so Fair and Yong</title> <seg type="toc_page">31</seg> <name type="poet">- Mr. <hi rend="italic">Aurelian Townshend</hi>.</name></item>
+        <item><title>'Tis Wine that inspir's</title> <seg type="toc_page">32</seg> <name type="poet">- Lord <hi rend="italic">Broughall</hi>.</name></item>
+        <item><title>Two hundred minutes are run down</title> <seg type="toc_page">34</seg> <name type="poet">- Mr. <hi rend="italic">Berkenhead</hi>.</name></item>
+        <item n="V."><title><hi rend="italic">Venus</hi> redress a wrong</title> <seg type="toc_page">7</seg> <name type="poet">- Mr. <hi rend="italic">Cartwright</hi>.</name></item>
+        <item n="W."><title>When thou poor Excommunicate</title> <seg type="toc_page">8</seg> <name type="poet">- Mr. <hi rend="italic">Carew</hi><corr>.</corr></name></item>
+        <item><title>When on the Altar of my hand</title> <seg type="toc_page">9</seg> <name type="poet">- Mr. <hi rend="italic">Carew</hi>.</name></item>
+        <item><title>While I listen to thy Voyce</title> <seg type="toc_page">13</seg> <name type="poet">- Mr. <hi rend="italic">Waller</hi>,</name></item>
+        <item><title xml:lang="grc">Θέλω λέγειν Ἀτρείδας</title> <seg type="toc_page">26</seg> <name type="poet">- <hi rend="italic">Anacreon's Ode,</hi> call'd the Lute.</name></item>
+        <item><title xml:lang="it">Inquel gelato core (TAVOLA)</title> <seg type="toc_page">Last Pag. in the Book</seg> <name type="poet">- By divers and sundry Authors.</name></item>
+      </list>
+      <list type="litany" rend="simple">
+        <head rend="center"><hi rend="italic">Dialogues and Songs for two Voyces</hi>.</head>
+        <item><title>Distressed Pilgrim, A Dialogue betwixt <hi rend="italic">Cordanus</hi> and an <hi rend="italic">Amorest</hi></title> <seg type="toc_page"><hi rend="italic">Pag.</hi> 1</seg> <name type="poet">- Col. <hi rend="italic">Francis Lovelace</hi>.</name></item>
+        <item><title>Aged man that mowes these Fields, A Dialogue betwixt <hi rend="italic">Time</hi> and a <hi rend="italic">Pilgrim</hi></title> <seg type="toc_page">3</seg> <name type="poet">- Mr. <hi rend="italic">Aurelian Townshend</hi>.</name></item>
+        <item><title>As <hi rend="italic">Cælia</hi> rested in the shade, A Dialogue betwixt <hi rend="italic">Cleon</hi> and <hi rend="italic">Cælia</hi></title> <seg type="toc_page">5</seg> <name type="poet">- Mr. <hi rend="italic">Tho. Carew</hi>.</name></item>
+        <item><title><hi rend="italic">Bacebus I'acchus</hi> fill our brains</title> <seg type="toc_page">9</seg> <name type="poet">- Mr. <hi rend="italic">Townshend</hi>.</name></item>
+        <item><title>Go thou Emblem of my heart</title> <seg type="toc_page">10</seg> <name type="poet">- Mr. <hi rend="italic">Harington</hi>.</name></item>
+        <item><title>O the Fickle state of Lovers</title> <seg type="toc_page">12</seg> <name type="poet">- Mr. <hi rend="italic">Francis Quarles</hi>.</name></item>
+        <item><title>Musick thou Queen of Souls</title> <seg type="toc_page">14</seg> <name type="poet">- Mr. <hi rend="italic">Tho. Randolph</hi> of Trinity College <hi rend="italic">Cambridge</hi>.</name></item>
+      </list>
+      <list type="litany" rend="simple">
+        <head rend="center"><hi rend="italic">Ayres and Songs for three Voyces</hi>.</head>
+        <item><title>Come <hi rend="italic">Chloris</hi>, hie we to the Bower</title> <seg type="toc_page">16</seg> <name type="poet">- Mr. <hi rend="italic">Henry Reynolds</hi>.</name></item>
+        <item><title>Though my Torment far exceeds</title> <seg type="toc_page">17</seg> <name type="poet">- Mr. <hi rend="italic">Harington</hi>.</name></item>
+        <item><title>If my Mistress fix her Eye</title> <seg type="toc_page">18</seg> <name type="poet">- Mr. <hi rend="italic">Harington</hi>.</name></item>
+        <item><title>Keep on your Vaile</title> <seg type="toc_page">19</seg> <name type="poet">- Dr. <hi rend="italic">Stroud</hi>.</name></item>
+        <item><title>Thou Shepheard whose intentive eye</title> <seg type="toc_page">20</seg> <name type="poet">- Mr. <hi rend="italic">Townshend</hi>.</name></item>
+        <item><title>O now the certain Cause I know</title> <seg type="toc_page">21</seg> <name type="poet">- Mr. <hi rend="italic">Cartwright</hi>.</name></item>
+        <item><title>Sing Fair <hi rend="italic">Clorinda</hi></title> <seg type="toc_page">22</seg> <name type="poet">- Sr. <hi rend="italic">William Davenant</hi>.</name></item>
+        <item><title>Grieve not Dear Love</title> <seg type="toc_page">24</seg> <name type="poet">- <hi rend="italic">John</hi> Earle of <hi rend="italic">Bristoll</hi>.</name></item>
+        <item><title>Ladyes whose smooth and Dainty Skin.</title> <seg type="toc_page">26</seg> <name type="poet">- Mr. <hi rend="italic">Harington</hi>.</name></item>
+      </list>
+</div>
+</front>
+  <body>
+   <div type="ayres">
+     <div type="section">
+     <pb n="B1r"/>
+        <xi:include href="Theseus,_O_Theseus,_hark!-L638_1.xml" xpointer="song01"/>
+        <xi:include href="Venus,_redress_a_wrong_that's_done-L638_1.xml" xpointer="song02"/>
+     <pb n="C2v"/>
+        <xi:include href="When_thou,_poor_Excommunicate-L638_1.xml" xpointer="song03"/>
+     <pb n="D1v"/>
+        <xi:include href="When_on_the_Altar_of_my_hand-L638_1.xml" xpointer="song04"/>
+     <pb n="D1r"/>
+        <xi:include href="Farewell_fair_Saint_may_not_the_sea_and_wind-L638_1.xml" xpointer="song05"/>
+        <xi:include href="Careless_of_Love_and_free_from_Fears-L638_1.xml" xpointer="song06"/>
+    <pb n="D2v"/>
+        <xi:include href="He_that_loves_a_rosie_cheek-L638_1.xml" xpointer="song07"/>
+    <pb n="E1r"/>
+        <xi:include href="While_I_listen_to_thy_voyce-L638_1.xml" xpointer="song08"/>
+    <pb n="E1v"/>
+        <xi:include href="Cloris_your_selfe_you_so_excell-L638_1.xml" xpointer="song09"/>
+    <pb n="E2r"/>
+        <xi:include href="Gaze_not_on_Swanns_in_whose_soft_brest-L638_1.xml" xpointer="song10"/>
+        <xi:include href="Amarantha_sweet_and_fair-L638_1.xml" xpointer="song11"/>
+    <pb n="E2v"/>
+        <xi:include href="Till_now_I_never_did_believe-L638_1.xml" xpointer="song12"/>
+    <pb n="F1r"/>
+        <xi:include href="Cælia,_thy_bright_Angel's_face-L638_1.xml" xpointer="song13"/>
+    <pb n="F1v"/>
+        <xi:include href="If_when_the_Sun_at_Noon_displayes-L638_1.xml" xpointer="song14"/>
+    <pb n="F2r"/>
+        <xi:include href="Am_I_dispised_because_you_say-L638_1.xml" xpointer="song15"/>
+    <pb n="F2v"/>
+        <xi:include href="Dearest_do_not_now_delay_me-L638_1.xml" xpointer="song16"/>
+        <xi:include href="Lovely_Chloris_through_thine_eyes-L638_1.xml" xpointer="song17"/>
+    <pb n="G1r"/>
+        <xi:include href="Give-me-more-Love,-or-more-Disdain-L638_1.xml" xpointer="song18"/>
+    <pb n="G1v"/>
+        <xi:include href="It_is_not_that_I_love_you lesse-L638_1.xml" xpointer="song19"/>
+    <pb n="G2r"/>
+        <xi:include href="Canst_thou_love_me_and_yet_doubt-L638_1.xml" xpointer="song20"/>
+    <pb n="G2v"/>
+        <xi:include href="Lately_on_yonder_swelling_Bush-L638_1.xml" xpointer="song21"/>
+        <xi:include href="Aske_me_why_I_send_you_here-L638_1.xml" xpointer="song22"/>
+    <pb n="H1r"/>
+        <xi:include href="Till_I_beheld_fair_Calia's_face-L638_1.xml" xpointer="song23"/>
+        <xi:include href="Come_my_Lucasta_heer's_the_Grove-L638_1.xml" xpointer="song24"/>
+    <pb n="H1v"/>
+        <xi:include href="Θέλω_λέγειν_Ἀτρείδας-L638_1.xml" xpointer="song25"/>
+    <pb n="H2r"/>
+       <xi:include href="I_long_to_sing_the_seidge_of_Troy-L638_1.xml" xpointer="song26"/>
+    <pb n="H2v"/>
+       <xi:include href="Come_heavy_Souls,_oppressed_with_the_weight-L638_1.xml" xpointer="song27"/>
+    <pb n="I1r"/>
+        <xi:include href="Tis_true_(Fair_Celia)_that_by_thee_I_live-L638_1.xml" xpointer="song28"/>
+    <pb n="I1v"/>
+        <xi:include href="Come,_come,_thou_glorious_object_of_my_sight-L638_1.xml" xpointer="song29"/>
+        <xi:include href="Thou_art_so_fair,_and_yong_withall-L638_1.xml" xpointer="song30"/>
+    <pb n="I2v"/>
+        <xi:include href="Come_my_Sweet,_whilst_every_strain-L638_1.xml" xpointer="song31"/>
+       <xi:include href="Tis_Wine_that_inspires-L638_1.xml" xpointer="song31a"/>
+     <trailer rend="center">FINIS.</trailer>
+     </div>
+     <div type="section">
+    <pb n="K1r"/>
+        <xi:include href="The_Day's_returned,_and_so_are_we,_to_pay-L638_1.xml" xpointer="song32"/>
+    <pb n="K1v"/>
+        <xi:include href="Two_hundred_minutes_are_run_down-L638_1.xml" xpointer="song33"/>
+    <pb n="K2r"/>
+        <xi:include href="Be_gone,_be_gone_thou_perjured_man-L638_1.xml" xpointer="song34"/>
+        <xi:include href="Ladies_who_gild_the_glittering_Noon-L638_1.xml" xpointer="song35"/>
+    <pb n="K2v"/>
+        <xi:include href="Imbre_lachrymarum_largo_Genas_spargo-L638_1.xml" xpointer="song36"/>
+      <trailer rend="center">FINIS.</trailer>
+     </div>
+     </div>
+     <div type="dialogues">
+      <head rend="center">PASTORALL DIALOGVES.</head>
+    <pb n="2A1r"/>
+        <xi:include href="Distressed_Pilgrim_whose_dark_clouded_eyes-L638_1.xml" xpointer="song37"/>
+        <xi:include href="Aged_man_that_moves_these_fields-L638_1.xml" xpointer="song38"/>
+    <pb n="2B1r"/>
+        <xi:include href="As_Cælia_rested_in_the_shade-L638_1.xml" xpointer="song39"/>
+    <pb n="2C1r"/>
+        <xi:include href="Bacchus,_I-acchus,_fill_our_Brains-L638_1.xml" xpointer="song40"/>
+    <pb n="2C1v"/>
+        <xi:include href="Go_thou_Emblem_of_my_heart-L638_1.xml" xpointer="song41"/>
+    <pb n="2C2v"/>
+        <xi:include href="O_the_fickle_state_of_lovers-L638_1.xml" xpointer="song42"/>
+    <pb n="2D1v"/>
+        <xi:include href="Musick,_thou_Queen_of_souls-L638_1.xml" xpointer="song43"/>
+      </div>
+      <div type="short_Ayres">
+        <head rend="italic center">Heere beginneth short Ayres for one, two or three Voyces</head>
+    <pb n="2D2v"/>
+        <xi:include href="Come_Chloris_hie_we_to_the_Bower-L638_1.xml" xpointer="song44"/>
+    <pb n="2E1r"/>
+        <xi:include href="Though_my_torment_far_exceeds-L638_1.xml" xpointer="song45"/>
+    <pb n="2E1v"/>
+        <xi:include href="If_my_Mistress_fix_her_eye-L638_1.xml" xpointer="song46"/>
+    <pb n="2E2r"/>
+        <xi:include href="Keep_on_your_veile_and_hide_your_eye-L638_1.xml" xpointer="song47"/>
+    <pb n="2E2v"/>
+        <xi:include href="Thou_Shepheard_whose_intentive_eye-L638_1.xml" xpointer="song48"/>
+    <pb n="2F1r"/>
+        <xi:include href="O_now_the_certain_cause_I_know-L638_1.xml" xpointer="song49"/>
+    <pb n="2F1v"/>
+        <xi:include href="Sing_fair_Clorinda_whilst_you_move-L638_1.xml" xpointer="song50"/>
+    <pb n="2F2v"/>
+        <xi:include href="Grieve_not,_dear_Love,_although_we_often_part-L638_1.xml" xpointer="song51"/>
+    <pb n="2F2v"/>
+        <xi:include href="Ladies,_you_whose_smooth_and_dainty_Skin-L638_1.xml" xpointer="song52"/>
+    <pb n="2G2v"/>
+        <xi:include href="Inquel_gelato_core-L638_1.xml" xpointer="song53"/>
+      </div>
+    </body>
+    <back>
+        <docImprint>Musick Books Printed for <hi rend="italic">John Playford</hi>, and are to be sold at his Shop in the Inner Temple near the Church Doore.</docImprint>
+        <div>
+          <list>
+            <item><hi rend="italic">The first Set of Psalms for three Voyces</hi>, with a Thorough Basse for the <hi rend="italic">Organ</hi>, or <hi rend="italic">Theorbo Lute</hi>, Composed by Mr. <hi rend="italic">William Child</hi>, late <hi rend="italic">Organist</hi> of <hi rend="italic">Windsor</hi>, the which are Engraven upon <hi rend="italic">Copper</hi>.</item>
+            <item><hi rend="italic">Select Musicall Ayres and Dialogues in fol.</hi> for 1. 2. and 3. Voyces, Composed by Dr. <hi rend="italic">John Wilson</hi>, Dr. <hi rend="italic">Charles Colman</hi>, Mr. <hi rend="italic">Henry Lawes</hi>, Mr. <hi rend="italic">Nich. Lanear</hi>, Mr. <hi rend="italic">William Cæser</hi>, and others, newly re-printed with Large Additions.</item>
+            <item><hi rend="italic">Musicks Recreation</hi>, or a choice Collection of Excellent Lessons for the <hi rend="italic">Lyra Violl</hi>, containing 117. Lessons, Composed to severall new Tunings, by the most Eminent Masters now living.</item>
+            <item>Also Dr <hi rend="italic">Campian's</hi> Book of Ayres, for 2. 3 and 4 Voyces.</item>
+            <item><hi rend="italic">The first Book of Ayres and Dialogues in fol.</hi> for 1. 2. and 3, Voyces, by Mr. <hi rend="italic">Henry Lawes</hi>.</item>
+            <item><hi rend="italic">Catch that Catch can</hi>, or an new Collection of <hi rend="italic">Catches, Rounds</hi>, and <hi rend="italic">Cannons</hi>, containing 150. Published by Mr. <hi rend="italic">John Hilton</hi> Batchelor in Musick.</item>
+            <item><hi rend="italic">Orlando Gibbons</hi> 3. Part Fantazies, for 2. Trebles and a Basse engraven uppon Copper.</item>
+            <item>Mr. <hi rend="italic">Michael Easts</hi> 7. <hi rend="italic">Set of Fantazes</hi> for the <hi rend="italic">Violls</hi> of 2. 3. and 4. Parts.</item>
+            <item><hi rend="italic">The Dancing Master</hi>, or plain and easie Rules for the Dancing of <hi rend="italic">Country Dances</hi>, with the <hi rend="italic">Tunes</hi> before each Dance to play on the <hi rend="italic">Treble Violin</hi>, containing 112 Dances.</item>
+            <item>A New Book of Lessons with Instructions for the <hi rend="italic">Cithern</hi> and <hi rend="italic">Gittern</hi>.</item>
+            <item>Also all sorts of Rul'd Paper and Ruled Books ready bound up, are sold at his Shop.</item>
+          </list>
+        <trailer>FINIS.</trailer></div>
+    </back>
+</text>
+</TEI>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Bud</title>
+              <title type="first_line">Lately on yonder swelling Bush</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Edmund Waller</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="G2v">leaf G2 verso</biblScope>,
+              <biblScope unit="page" from="24">page 24</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song21">
+          <head rend="italic">The Bud.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Lately on yonder swelling Bush,</l>
+            <l rend="indent1">big with many a comming Rose,</l>
+            <l>this early Bud began to blush,</l>
+            <l rend="indent1">and did but halfe it selfe disclose:</l>
+            <l>I pluckt it though no better Grow'n,</l>
+            <l>yet now you see how full 'tis blow'n.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Still as I did the Leaves Inspire</l>
+            <l rend="indent1">With such a purple Light they shone,</l>
+            <l>As if they had been made of fire,</l>
+            <l rend="indent1">And spreading so would flame anon,</l>
+            <l>All that was meant by Ayre, or Sun,</l>
+            <l>To this yong Flow'r, my breath ha's done.</l>
+          </lg>
+          <lg type="stanza">
+            <l>If our loose Breath so much can do,</l>
+            <l rend="indent1">What may the same in forms of Love?</l>
+            <l>Of purest Love and Musick too,</l>
+            <l rend="indent1">When <hi rend="italic">Flavia</hi> it aspires to move:</l>
+            <l>When that which liveless Buds perswades</l>
+            <l>To wax more soft, her youth invades.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

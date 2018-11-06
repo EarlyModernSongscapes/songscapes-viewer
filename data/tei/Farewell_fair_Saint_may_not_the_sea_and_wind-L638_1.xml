@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To his Mistress going to Sea</title>
+              <title type="first_line">Farewell fair Saint, may not the sea and wind</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Carew</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="D1v" to="D2r">leaves D1 verso to D2 recto</biblScope>,
+              <biblScope unit="page" from="10" to="11">pages 10-11</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song05">
+          <head rend="italic">To his Mistress going to Sea.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Farewell fair Saint, may not the sea and wind</l>
+            <l>swell like the hearts and eyes you leave behind,</l>
+            <l>but calme and gentle as the looks you beare,</l>
+            <l>smile in your face and whisper in your eare:</l>
+          </lg>
+          <lg type="stanza">
+            <l>Let no bold Billow offer to arise,</l>
+            <l>that it may never look upon your eyes,</l>
+            <l>lest winde and wave, enamour'd of your Forme,</l>
+            <l>should throng and crowd themselves into a storme:</l>
+            <l>But if it be your Fate, vaste Seas, to love;</l>
+            <l>of my becalmed breast learn how to move;</l>
+            <l>move then, but in a gentle Lovers pace,</l>
+            <l>no furrows nor no wrinkles in your face;</l>
+            <l>and ye fierce
+      <pb n="D2r"/>winds, see that you tell your tale</l>
+            <l>in such a breath as may but fill her Sail:</l>
+            <l>So whilst ye court her each your sev'rall way,</l>
+            <l>ye may her safely to her Port convay;</l>
+            <l>and lose but in a noble way of wooing,</l>
+            <l>whilst both contribute to your owne undoing</l>
+          </lg>
+        </div>
+      </div>
+      </body>
+  </text>
+</TEI>

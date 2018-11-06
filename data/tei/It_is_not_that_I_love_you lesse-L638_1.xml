@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The self Banished</title>
+              <title type="first_line">It is not that I love you lesse</title>
+         </titleStmt>
+         <publicationStmt>
+           <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+           <bibl>
+             <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+             <author role="composer">Henry Lawes</author>
+             <author role="poet">Edmund Waller</author>
+             <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+             <idno type="wing">L638</idno>
+             <idno type="call_number">Folger L638, copy 1</idno>
+             <biblScope unit="leaf" from="G1v">leaf G1 verso</biblScope>,
+             <biblScope unit="page" from="22">page 22</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song19">
+          <head rend="italic">The Selfe Banished.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>It is not that I love you lesse,</l>
+            <l rend="indent1">then when before your feet I lay,</l>
+            <l>but to prevent the sad encrease</l>
+            <l rend="indent1">of hopeless Love I keep away:</l>
+            <l>In vain alas for ev'ry thing</l>
+            <l rend="indent1">that I have known belong to you,</l>
+            <l>your form dares to my fancy bring,</l>
+            <l rend="indent1">and make my old wounds bleed anew.</l>
+            <lg type="refrain" xml:id="first.refrain">
+              <l>But I have vow'd, and never must</l>
+              <l rend="indent1">your banish'd servant trouble you</l>
+              <l>for if he break you may distrust,</l>
+              <l rend="indent1">the vow he made to love you too.</l>
+            </lg>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Who in the Spring from the new Sun</l>
+            <l rend="indent1">Already hath a Feaver got;</l>
+            <l>Too late begins those shafts to shun</l>
+            <l rend="indent1">Which <emph rend="italic">Phabus</emph> through his veines hath shot,</l>
+            <l>Too late he would the pains aswage,</l>
+            <l rend="indent1">And to thick shadows does retire,</l>
+            <l>About with him he bears the rage,</l>
+            <l rend="indent1">And in his tainted bloud the fire.</l>
+            <lg type="refrain" sameAs="first.refrain">
+              <l rend="indent3">But I have vow'd, &amp;c.</l>
+            </lg>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

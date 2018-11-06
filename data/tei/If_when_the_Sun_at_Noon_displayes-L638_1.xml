@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Night and Day to his Mistress</title>
+              <title type="first_line">If when the Sun at Noon displayes</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Carew</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="F1v">leaf F1 verso</biblScope>,
+              <biblScope unit="page" from="18">page 18</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song14">
+          <head rend="italic">Night and Day to his Mistress.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>If when the Sun at Noon displayes</l>
+            <l rend="indent3">his brighter rayes</l>
+            <l rend="indent3">thou but appear;</l>
+            <l>he then all pale with shame and fear,</l>
+            <l rend="indent3">quencheth his light,</l>
+            <l rend="indent3">and grows more dimne,</l>
+            <l>compos'd to thee, then Stars to him.</l>
+          </lg>
+          <lg type="stanza">
+            <l>If thou but show thy face again,</l>
+            <l>when darkness doth at midnight reign;</l>
+            <l>darkness fly's, and light is hurl'd</l>
+            <l>round about the silent world;</l>
+            <l>so as alike thou driv'st away</l>
+            <l>both light and darkness, night and day.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

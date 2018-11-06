@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>In the Person of a Lady to her inconstant servant</title>
+              <title type="first_line">When on the Altar of my hand</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Carew</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="D1r">leaf D1 recto</biblScope>,
+              <biblScope unit="page" from="9">page 9</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song04">
+          <head rend="italic">In the Person of a Lady to her inconstant servant.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>When on the Altar of my hand</l>
+            <l>(bedwe'd with many' a kisse and teare,)</l>
+            <l>thy now revolted heart did stand</l>
+            <l>an humble Martyr, thou didst swear,</l>
+            <l>thus, and the God of Love did hear;</l>
+            <l>By those bright glances of thine eye,</l>
+            <l>unlesse thou pitty me I dye.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>When first those perjur'd lips of thine,</l>
+            <l>Bepal'd with blasting sighs, did seale</l>
+            <l>Their violated faith on mine,</l>
+            <l>From the bosome, that did heale</l>
+            <l>Thee, thou my melting heart didst steale:</l>
+            <l>My soule enflam'd with thy false breath,</l>
+            <l>Poyson'd with kisses, suck't in death.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Yet I nor hand nor lip will move,</l>
+            <l>Revenge or Mercy to procure</l>
+            <l>From the offended God of Love,</l>
+            <l>My curse is fatall, and my pure</l>
+            <l>Love shall beyond thy scorn endure,</l>
+            <l>If I implore the Godds, they'l find</l>
+            <l>Thee too ingratefull, me too kind.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

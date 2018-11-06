@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Anacreon's Ode, called, The Lute, Englished and to be sung by a Basse alone</title>
+              <title type="first_line">I long to sing the seidge of Troy</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Anacreon</author>
+              <author role="translator">John Birkenhead</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="H2r">leaf H2 recto</biblScope>,
+              <biblScope unit="page" from="27">page 27</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song26">
+          <head rend="italic"><hi rend="roman">Anacreon's</hi> Ode, call'd, The <hi rend="roman">Lute,</hi> Englished and to be sung by a Basse alone.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>I long to sing the seidge of <hi rend="italic">Troy;</hi></l>
+            <l>or <hi rend="italic">Thebe's</hi> which <hi rend ="italic">Cadmus</hi> rear'd so high;</l>
+            <l>but though with hand &amp; voice I strove,</l>
+            <l>my Lute will sound nothing but <hi rend="italic">Love.</hi></l>
+            <l>I chang'd the strings, but 'twould not do't;</l>
+            <l>at last I took an other Lute;</l>
+            <l>&amp; then I tri'd to sing the praise</l>
+            <l>of All-performing <hi rend="italic">Hercules.</hi></l>
+            <l>But when I sung <hi rend="italic">Alcide's</hi> name,</l>
+            <l>my Lute resounds <hi rend="italic">Love, Love</hi> again.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Then farewell all ye <hi rend="italic">Gracian</hi> Peers,</l>
+            <l>and all true <hi rend="italic">Trojan</hi> Cavalleers:</l>
+            <l>Nor Godds nor men my Lute can move;</l>
+            <l>'Tis dumb to all but <hi rend="italic">Love, Love, Love.</hi></l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

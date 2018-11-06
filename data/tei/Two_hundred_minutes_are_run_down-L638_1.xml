@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Staying in London after the Act for BAnishment, and going to meet a Friend who sailed the hour appoynted</title>
+              <title type="first_line">Two hundred minutes are run down</title>
+         </titleStmt>
+         <publicationStmt>
+           <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+           <bibl>
+             <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+             <author role="composer">Henry Lawes</author>
+             <author role="poet">John Berkenhead</author>
+             <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+             <idno type="wing">L638</idno>
+             <idno type="call_number">Folger L638, copy 1</idno>
+             <biblScope unit="leaf" from="K1v">leaf K1 verso</biblScope>,
+             <biblScope unit="page" from="34">page 34</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song33">
+          <head rend="italic">Staying in <hi rend="roman">London</hi> after the Act for Banishment, and going to meet a Friend who sail'd the hour appoynted.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Two hundred minutes are run down,</l>
+            <l rend="indent1">since I and all my Grief sate here;</l>
+            <l>(Whom yet you will nor save nor drown)</l>
+            <l rend="indent1">In a long Gasp 'twixt Hope and Fear:</l>
+            <l rend="indent3">Thus <hi rend="italic">Lucian's</hi> tortur'd Fool did cry,</l>
+            <l rend="indent3">He could not live, and durst not dye.</l>
+          </lg>
+        </div>
+        <div>
+            <lg type="stanza">
+              <l>How full of Mischief is this Coast!</l>
+              <l rend="indent1">Villains and Fooles peep every way;</l>
+              <l>If once these <hi rend="italic">Seekers</hi> find, I'm lost;</l>
+              <l rend="indent1">I dare not go, I dare not stay:</l>
+              <l rend="indent3">Here I am Rooted 'till the Sky</l>
+              <l rend="indent3">Be hung as full of Clouds as I.</l>
+            </lg>
+            <lg type="stanza">
+              <l>All Islanders are prisoners Born,</l>
+              <l rend="indent1">We, Slaves to Slaves, in Five-mile Chaines;</l>
+              <l>I Theirs, and Yours, but most forlorn</l>
+              <l rend="indent1">Where Purgatory Hell out-pain's:</l>
+              <l rend="indent3">I'm in a new third Dungeon here,</l>
+              <l rend="indent3">Shackles on Shackles who can wear?</l>
+            </lg>
+            <lg type="stanza">
+              <l>Sad and unseen I view the Rowt,</l>
+              <l rend="indent1">Which trough this Street do ebb and flow;</l>
+              <l>Some few have Business, most without;</l>
+              <l rend="indent1">Their Pace this trundling Rithm does go:</l>
+              <l rend="indent3">O tear me hence, for I am grow'n</l>
+              <l rend="indent3">As empty-base as all this Town!</l>
+            </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

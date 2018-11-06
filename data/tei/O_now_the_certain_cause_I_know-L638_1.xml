@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To a Lady weeping</title>
+              <title type="first_line">O now the certain cause I know</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Cartwright</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2F1r">leaf Ff1 recto</biblScope>,
+              <biblScope unit="page" from="21">page 21</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div xml:id="song49">
+        <head rend="italic">To a Lady weeping.</head>
+         <head type="voice" rend="italic">For one, two or three Voyces.</head>
+          <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+              <l>O now the certain cause I know,</l>
+              <l>whence the Rose and Lilly grow</l>
+              <l>in your fair cheeks, the often showr's,</l>
+              <l>which you thus weep do breed those Flow'rs.</l>
+            </lg>
+         </div>
+         <div>
+           <lg type="stanza">
+             <l>If that the flouds could <hi rend="italic">Venus</hi> bring,</l>
+             <l>Or warlike <hi rend="italic">Mars</hi> from Flowers spring;</l>
+             <l>Why may not hence two Gods arise?</l>
+             <l>This from your Cheeks, that from your Eyes.</l>
+           </lg>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

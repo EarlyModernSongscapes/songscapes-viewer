@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:mei="http://www.music-encoding.org/ns/mei">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+           <title>Stand-off apparatus for <title>Come heavy Souls, oppressed with the weight</title></title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes Project - 2018</p>
+         </publicationStmt>
+         <sourceDesc>
+            <listWit>
+              <witness xml:id="L638_1"/>
+              <witness xml:id="S5983"/>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div>
+          <head>Text Collation</head>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v1ch"/>
+            </rdg>
+            <rdg wit="#S5983"/>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v2ch"/>
+            </rdg>
+            <rdg wit="#S5983">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-S5983/view#v2ch"/>
+            </rdg>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v3ch"/>
+            </rdg>
+            <rdg wit="#S5983">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-S5983/view#v3ch"/>
+            </rdg>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v4ch"/>
+            </rdg>
+            <rdg wit="#S5983">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-S5983/view#v4ch"/>
+            </rdg>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v8ch"/>
+            </rdg>
+            <rdg wit="#S5983"/>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v5ch"/>
+            </rdg>
+            <rdg wit="#S5983">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-S5983/view#v5ch"/>
+            </rdg>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v9ch"/>
+            </rdg>
+            <rdg wit="#S5983"/>
+          </app>
+          <app>
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v6ch"/>
+            </rdg>
+            <rdg wit="#S5983">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-S5983/view#v6ch"/>
+            </rdg>
+          </app>
+          <app type="punct">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v10ch"/>
+            </rdg>
+            <rdg wit="#S5983"/>
+          </app>
+          <app type="stanza_break">
+            <rdg wit="#L638_1">
+              <ptr target="https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Achsowtw/datastream/TEI-L638_1/view#song27v7ch"/>
+            </rdg>
+            <rdg wit="#S5983"/>
+          </app>
+        </div>
+        <div>
+          <head>Music Collation</head>
+          <notatedMusic>
+            <mei:mei>
+              <mei:meiHead>
+                <mei:fileDesc>
+                  <mei:titleStmt>
+                    <mei:title></mei:title>
+                  </mei:titleStmt>
+                  <mei:pubStmt></mei:pubStmt>
+                  <mei:sourceDesc>
+                    <mei:source xml:id="M-L638_1"/>
+                  </mei:sourceDesc>
+                </mei:fileDesc>
+              </mei:meiHead>
+              <mei:music/>
+            </mei:mei>
+          </notatedMusic>
+        </div>
+      </body>
+  </text>
+</TEI>

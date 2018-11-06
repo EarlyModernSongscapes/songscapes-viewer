@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Surprise</title>
+              <title type="first_line">Careless of Love and free from Fears</title>
+         </titleStmt>
+         <publicationStmt>
+             <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+             <bibl>
+               <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+               <author role="composer">Henry Lawes</author>
+               <author role="poet">Carew Raleigh</author>
+               <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+               <idno type="wing">L638</idno>
+               <idno type="call_number">Folger L638, copy 1</idno>
+               <biblScope unit="leaf" from="D2r">leaf D2 recto</biblScope>,
+               <biblScope unit="page" from="11">page 11</biblScope>
+              </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song06">
+          <head rend="italic">The Surprise.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Careless of Love &amp; free from Fears,</l>
+            <l rend="indent1">I sate &amp; gaz'd on <hi rend="italic">Stella's</hi> eyes,</l>
+            <l>thinking my Reason or my Years</l>
+            <l rend="indent1">might keep me safe from all surprize.</l>
+          </lg>
+        </div>
+        <div>
+        <lg type="stanza">
+          <l>But Love, that hath been long despis'd,</l>
+          <l rend="indent1">And made the Baud to others trust,</l>
+          <l>Finding his Deity surpriz'd,</l>
+          <l rend="indent1">And chang'd into degenerate Lust,</l>
+        </lg>
+        <lg type="stanza">
+          <l>Summon'd up all his strength and power,</l>
+          <l rend="indent1">Making her face his Magazine,</l>
+          <l>Where Virtue's grace, and Beauty's flowre</l>
+          <l rend="indent1">He plac'd his Godhead to redeem.</l>
+        </lg>
+        <lg type="stanza">
+          <l>So that too late (alas) I finde</l>
+          <l rend="indent1">No steeled Armour is of proof,</l>
+          <l>Nor can the best resolved minde</l>
+          <l rend="indent1">Resist her Beauty and her Youth.</l>
+        </lg>
+        <lg type="stanza">
+          <l>But yet the folly to untwist,</l>
+          <l rend="indent1">That loving I deserve no blame;</l>
+          <l>Were it not Atheisme to resist</l>
+          <l rend="indent1">Where Godds themselves conspire her flame.</l>
+        </lg>
+      </div>
+        </div>
+      </body>
+  </text>
+</TEI>

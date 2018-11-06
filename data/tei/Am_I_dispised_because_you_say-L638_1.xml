@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To his Mistress objecting his Age</title>
+              <title type="first_line">Am I dispised because you say</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Robert Herrick</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="F2r">leaf F2 recto</biblScope>,
+              <biblScope unit="page" from="19">page 19</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song15">
+          <head rend="italic">To his Mistress objecting his Age.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Am I dispis'd because you say,</l>
+            <l>and I believe, that I am gray?</l>
+            <l>know, Lady, you have but your day,</l>
+            <l>and night will come, when men will swear</l>
+            <l>Time has spilt snow upon your hair:</l>
+            <l>Then when in your glass you seek,</l>
+            <l>bu<corr>t</corr> find no Rose-bud in your cheek,</l>
+            <l>no, nor the bed to give the shew,</l>
+            <l>where such a rare Carnation grew;</l>
+            <l>and such a smiling Tulip too.</l>
+            <l>Ah, then, too late, close in your chamber keeping,</l>
+            <l rend="indent3">it will be told,</l>
+            <l rend="indent3">that you are old,</l>
+            <l>by those true tears y'are Weeping</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

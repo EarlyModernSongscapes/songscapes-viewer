@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Beauty Paramont</title>
+              <title type="first_line">Come, come, thou glorious object of my sight</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Killigrew</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="I1v" to="I2r">leaves I1 verso to I2 recto</biblScope>,
+              <biblScope unit="page" from="30" to="31">pages 30 to 31</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song29">
+          <head rend="italic">Beauty Paramont.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Come, come, thou glorious object of my sight,</l>
+            <l>O my Joy, my life, my only delight!</l>
+            <l rend="indent2">may this glad minute be</l>
+            <l rend="indent2">blest to eternity.</l>
+            <l>See how thw glim'ring Tapers of the sky</l>
+            <l>do gaze and wonder at our constancy!</l>
+            <l rend="indent2">how they crowd to behold</l>
+            <l rend="indent2">what our Arms do enfold!</l>
+            <l>how all do envy our felicity,</l>
+            <l>and grudge the triumph of <hi rend="italic">Selindras</hi> eyes!</l>
+            <l rend="indent2">how <hi rend="italic">Cinthia</hi> seeks to shrowd</l>
+            <l rend="indent2">her crescent in yond cloud,</l>
+            <l>where sad night puts her sable mantle on,</l>
+            <l>thy light mistaking, hasteth to be gone,</l>
+            <l rend="indent2">her gloomy shades give way</l>
+            <l rend="indent2">as at th' approach of day,</l>
+            <l>and all the Planets shrink for fear to be</l>
+            <l>ecclips'd by a brighter Deity.</l>
+     <pb n="I2r"/>
+            <l rend="indent2">Look, O look</l>
+            <l rend="indent4">how the pale</l>
+            <l rend="indent4">lights do fall</l>
+            <l rend="indent4">&amp; adore</l>
+            <l rend="indent4">what before</l>
+            <l>the Heavens have not shown,</l>
+            <l>nor their God-head known,</l>
+            <l>such a love, as may move</l>
+            <l>mighty <hi rend="italic">Jove</hi> from above,</l>
+            <l rend="indent2">to discend and remain</l>
+            <l rend="indent2">among Mortals again.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

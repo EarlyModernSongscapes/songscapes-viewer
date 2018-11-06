@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>In praise of his Mistress</title>
+              <title type="first_line">Thou Shepheard whose intentive eye</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Aurelian Townshend</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2E2v">leaf Ee2 verso</biblScope>,
+              <biblScope unit="page" from="20">page 20</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div xml:id="song48">
+        <head rend="italic">In praise of his Mistress.</head>
+         <head type="voice" rend="italic">For one, two or three Voyces:</head>
+          <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+        <div type="underlay">
+            <lg type="stanza">
+              <l>Thou Shepheard whose intentive eye,</l>
+              <l>on ev'ry Lamb is such a spy,</l>
+              <l>no wily Fox can make them lesse,</l>
+              <l>where may I find my Shepheardess?</l>
+            </lg>
+         </div>
+         <div>
+           <lg type="stanza">
+             <l>A little pausing then sayd hee,</l>
+             <l>How can that Jewell stray from thee</l>
+             <l>In Summers heat, In Winters cold,</l>
+             <l>I thought thy brest had been her fold?</l>
+           </lg>
+           <lg type="stanza">
+             <l>That is indeed the constant place</l>
+             <l>Wherein my thoughts still see her face,</l>
+             <l>And print her Image in my heart,</l>
+             <l>But yet my fond eyes crave a part.</l>
+           </lg>
+           <lg type="stanza">
+             <l>With that he smiling sayd, I might</l>
+             <l>Of Chloris partly have a sight,</l>
+             <l>And some of her perfections meet</l>
+             <l>In ev'ry flow'r was fresh and sweet.</l>
+           </lg>
+           <lg type="stanza">
+             <l>The growing Lilly bears her skin,</l>
+             <l>The Violet her blew veins within,</l>
+             <l>The blushing Rose new blown, and spread</l>
+             <l>Her sweeter cheek, her lips, the red.</l>
+           </lg>
+           <lg type="stanza">
+             <l>The Winds that wanton with the Spring,</l>
+             <l>Such Odours as her breathing bring,</l>
+             <l>But the resemblance of her eyes</l>
+             <l>Was never found beneath the skies.</l>
+           </lg>
+           <lg type="stanza">
+             <l>Her charming voyce who strives to hit,</l>
+             <l>His Object must be higher yet;</l>
+             <l>For Heav'n and Earth, and all we see</l>
+             <l>Dispierc'd, collected, is but shee.</l>
+           </lg>
+           <lg type="stanza">
+             <l>Amaz'd at this discourse, me thought</l>
+             <l>Love both Ambition in me wrought,</l>
+             <l>And made me covet to eng<corr>r</corr>osse</l>
+             <l>A Wealth would prove a Publick lesse.</l>
+           </lg>
+           <lg type="stanza">
+             <l>With that I sigh'd asham'd to see</l>
+             <l>Such worth in her, such want in mee;</l>
+             <l>And closing both mine eyes, forbid</l>
+             <l>The World my sight since she was hid.</l>
+           </lg>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>

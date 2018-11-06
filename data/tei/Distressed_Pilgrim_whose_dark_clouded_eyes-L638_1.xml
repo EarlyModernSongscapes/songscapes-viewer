@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>A Dialogue betwixt Cordanus and Amoret, on a Lost Heart</title>
+              <title type="first_line">Distressed Pilgrim whose dark clouded eyes</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Francis Lovelace</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2A1r" to="2A2r">leaves Aa1 recto to Aa2 recto</biblScope>,
+              <biblScope unit="page" from="1" to="3">pages 1 to 3</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song37">
+          <head rend="italic">A Dialogue betwixt <hi rend="roman">Cordanus</hi> and <hi rend="roman">Amoret</hi>, on a Lost Heart.</head>
+          <head type="voice">For two trebles.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+            <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+              <lg type="stanza" part="I">
+                <l rend="indent1">Distressed Pilgrim whose dark clouded eyes</l>
+                <l>speaks thee a Martyr to Love's cruelties;</l>
+                <l>wither away?</l>
+             </lg>
+            </sp>
+             <sp>
+                <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+             <lg type="stanza" part="M">
+                <l rend="indent1">What pittying voyce I hear</l>
+                <l>cals back my flying steps?</l>
+             </lg>
+            </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+            <lg type="stanza" part="M">
+              <l rend="indent1">Prithee draw near<corr>.</corr></l>
+            </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+            <lg type="stanza" part="M">
+              <l rend="indent1">I shall but say kind Swain what doth become</l>
+              <l>of a lost heart, e're to <hi rend="italic">Elizium</hi></l>
+              <l part="I">it wounded walks?</l>
+            </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+            <lg type="stanza" part="M">
+              <l part="F" rend="indent1">First, it does freely fly</l>
+              <l>into the pleasures of a Lov<corr>e</corr>rs eye,</l>
+              <l>but once condemn'd to scorn, it fetter' lies</l>
+              <l>an ever bowing slave to tyranies.</l>
+            </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+              <lg type="stanza" part="M">
+                <l rend="indent1">I pitty its sad Fate, since its offence</l>
+                <l>was but for Love, can't tears recall it thence?</l>
+              </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+             <lg type="stanza" part="M">
+              <l rend="indent1">O no, such tears as do for pitty call,</l><pb n="2A2v"/>
+              <l>she proudly scorns, &amp; glories at their fall.</l>
+             </lg>
+           </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+              <lg type="stanza" part="M">
+                <l rend="indent1">Since neither sighs nor tears, kind Shepheard tell,</l>
+                <l part="I">will not a kisse prevaile?</l>
+              </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+              <lg type="stanza" part="M">
+                <l part="F" rend="indent1">Thou may'st as well</l>
+                <l part="I">court Eccho with a kisse.</l>
+              </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+            <lg type="stanza" part="M">
+              <l part="F" rend="indent1">Can no Art move</l>
+              <l>a sacred violence to make her love?</l>
+            </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+              <lg type="stanza" part="M">
+                <l rend="indent1">O no, 'tis only Destiny and Fate</l>
+                <l>fashions our Wils<corr>,</corr> Either to love or hate.</l>
+              </lg>
+          </sp>
+           <sp>
+            <speaker rend="italic"><choice><abbr>Am</abbr><expan>Amoret</expan></choice>.</speaker>
+             <lg type="stanza" part="M">
+               <l rend="indent1">Then captive heart, since that no humane spell</l>
+                <l part="I">hath pow'r to graspe thee his farewell.</l>
+             </lg>
+          </sp>
+          <sp>
+            <speaker rend="italic"><choice><abbr>Cord</abbr><expan>Cordanus</expan></choice>.</speaker>
+            <lg type="stanza" part="M">
+              <l part="F" rend="indent10">farewell.</l>
+            </lg>
+          </sp>
+            <sp>
+              <speaker><choice><abbr>Cho</abbr><expan>Chorus</expan></choice>.</speaker>
+              <lg type="stanza">
+                <l>Lost hearts like Lambs drove from their Folds by fears,</l><pb n="2A2r"/>
+                <l>may back returne by chance, but ne'r by tears.</l>
+              </lg>
+            </sp>
+          </div>
+        </div>
+      </body>
+  </text>
+</TEI>

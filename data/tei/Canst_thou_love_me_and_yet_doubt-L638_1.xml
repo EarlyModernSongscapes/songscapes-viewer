@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Heart entire</title>
+              <title type="first_line">Canst thou love me and yet doubt</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">William Herbert, Third Earl of Pembroke</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="G2r">leaf G2 recto</biblScope>,
+              <biblScope unit="page" from="23">page 23</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song20">
+          <head rend="italic">The Heart entire.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Canst thou love me and yet doubt</l>
+            <l>so much Falshood in my heart,</l>
+            <l>that a way I should find out</l>
+            <l rend="indent3">to impart</l>
+            <l>fragments of a broken Love to you,</l>
+            <l>more than all b'ing lesse then due:</l>
+            <l>O, no! Love must clear Distrust,</l>
+            <l>or be eaten with that Rust;</l>
+            <l>short Love liking may find Jarrs,</l>
+            <l>the Love that lastesth knows no Warrs.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>There, Reliefe begets Delight,</l>
+            <l>And so satisfies Desire<corr>,</corr></l>
+            <l>That in them it shines as Light</l>
+            <l rend="indent3">No more Fire;</l>
+            <l>All the burning Qualities appeas'd,</l>
+            <l>Each in others joying pleas'd,</l>
+            <l>Not a whisper, not a thought</l>
+            <l>But 'twixt Both in comon's brought,</l>
+            <l>Even to seem Two they are loath,</l>
+            <l>Love being only Soul to both.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

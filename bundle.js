@@ -187,7 +187,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(395);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 7 */
@@ -235,6 +235,41 @@ module.exports = function (it) {
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(406)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(407)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -424,41 +459,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(406)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(407)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
-
-/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -535,7 +535,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 14 */
@@ -743,7 +743,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 23 */
@@ -2075,7 +2075,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 58 */
@@ -2650,7 +2650,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 77 */
@@ -2719,7 +2719,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 78 */
@@ -2732,7 +2732,7 @@ module.exports = warning;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -3110,6 +3110,11 @@ function unsetPopoutPosition() {
  ******** **/
 
 function getResource(url, docType) {
+  if (!url && docType === 'mei') {
+    return dispatch => {
+      dispatch(receiveResource('nodata', docType));
+    };
+  }
   return dispatch => {
     dispatch(requestResource(url, docType));
     return (0, _isomorphicFetch2.default)(url).then(response => response.text()).then(data => dispatch(receiveResource(data, docType)));
@@ -3130,36 +3135,79 @@ function getVariants(app, lemma) {
       if (reading.tagName === 'rdg') {
         const wit = reading.getAttribute('wit');
         const isLemma = wit === lemma ? true : false;
-        const sourceAndId = reading.children[0].getAttribute('target').split('#');
-        promises.push((0, _isomorphicFetch2.default)(sourceAndId[0]).then(response => response.text()).then(text => {
-          const source = parser.parseFromString(text, 'text/xml');
-          const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+        if (reading.children.length > 0) {
+          const sourceAndId = reading.children[0].getAttribute('target').split('#');
+          let teiUrl = sourceAndId[0];
+          // THESE ARE FOR TESTING
+          if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view') {
+            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
+          }
+          if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view') {
+            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
+          }
+          if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view') {
+            teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
+          }
+          // REMOVE ABOVE
+          promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
+            const source = parser.parseFromString(text, 'text/xml');
+            const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+            variants.push({
+              group: uuid(),
+              values: [{
+                text: variant.textContent,
+                sourceUrl: sourceAndId[0],
+                wit,
+                isLemma
+              }]
+            });
+          }));
+        } else {
           variants.push({
             group: uuid(),
             values: [{
-              text: variant.textContent,
-              sourceUrl: sourceAndId[0],
+              text: '[omitted.]',
               wit,
               isLemma
             }]
           });
-        }));
+        }
       } else {
         const values = [];
         for (const rdg of Array.from(reading.getElementsByTagName('rdg'))) {
           const wit = rdg.getAttribute('wit');
           const isLemma = wit === lemma ? true : false;
-          const sourceAndId = rdg.children[0].getAttribute('target').split('#');
-          promises.push((0, _isomorphicFetch2.default)(sourceAndId[0]).then(response => response.text()).then(text => {
-            const source = parser.parseFromString(text, 'text/xml');
-            const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+          if (rdg.children.length > 0) {
+            const sourceAndId = rdg.children[0].getAttribute('target').split('#');
+            let teiUrl = sourceAndId[0];
+            // THESE ARE FOR TESTING
+            if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-BL_53723/view') {
+              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-BL_53723.xml';
+            }
+            if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-L638_1/view') {
+              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-L638_1.xml';
+            }
+            if (teiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/TEI-C709/view') {
+              teiUrl = '/data/tei/Theseus,_O_Theseus,_hark!-C709.xml';
+            }
+            // REMOVE ABOVE
+            promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
+              const source = parser.parseFromString(text, 'text/xml');
+              const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+              values.push({
+                text: variant.textContent,
+                sourceUrl: sourceAndId[0],
+                wit,
+                isLemma
+              });
+            }));
+          } else {
             values.push({
-              text: variant.textContent,
-              sourceUrl: sourceAndId[0],
+              text: '[omitted.]',
               wit,
               isLemma
             });
-          }));
+          }
         }
         const group = reading.getAttribute('n') ? reading.getAttribute('n') : uuid();
         variants.push({ group, values });
@@ -3210,6 +3258,7 @@ function getMusicVariants(app, lemma) {
   return dispatch => {
     const variants = [];
     const promises = [];
+    const appType = app.getAttribute('type');
     // Identify groups
     const groups = {};
     for (const reading of Array.from(app.querySelectorAll('app > *'))) {
@@ -3247,67 +3296,119 @@ function getMusicVariants(app, lemma) {
       for (const reading of group.rdgs) {
         const wit = reading.getAttribute('source');
         const isLemma = wit === lemma ? true : false;
-        const targets = reading.getAttribute('target').split(/\s+/);
-        const meiUrl = targets[0].split('#')[0]; // Get MEI url from first target; they must all point ot the same file
+        if (!reading.getAttribute('target')) {
+          values.push({ isOmitted: true });
+          continue;
+        }
+        const targets = reading.getAttribute('target').trim().split(/\s+/m);
+        let meiUrl = targets[0].split('#')[0]; // Get MEI url from first target; they must all point ot the same file
+        // THESE ARE FOR TESTING
+        if (meiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-BL_53723/view') {
+          meiUrl = '/data/mei/Theseus,_O_Theseus,_hark!-BL_53723.mei';
+        }
+        if (meiUrl === 'https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/ems%3Atoth/datastream/MEI-L638_1/view') {
+          meiUrl = '/data/mei/Theseus,_O_Theseus,_hark!-L638_1.mei';
+        }
+        // REMOVE ABOVE
         promises.push((0, _isomorphicFetch2.default)(meiUrl).then(response => response.text()).then(text => {
           const meisource = parser.parseFromString(text, 'text/xml');
-          const variantParts = [];
-          let isMeasure = false;
-          let isMultiStaff = false;
-          let isStaff = false;
-          let isLayer = false;
-          let scoreDef = '';
-          let staffNumber = '';
+
+          const section = parser.parseFromString('<section></section>', 'text/xml');
+          let scoreDef;
 
           for (const [idx, target] of targets.entries()) {
             const sourceAndId = target.split('#');
             const variant = meisource.querySelector(`[*|id="${sourceAndId[1]}"]`);
+            let m;
+            let s;
+            let l;
+
+            const curMeasure = variant.tagName === 'measure' ? variant.getAttribute('n') : variant.closest('measure').getAttribute('n');
+            let curStaff;
+            if (variant.tagName === 'staff' || variant.closest('staff')) {
+              curStaff = variant.tagName === 'staff' ? variant.getAttribute('n') : variant.closest('staff').getAttribute('n');
+            }
+            let curLayer;
+            if (variant.tagName === 'layer' || variant.closest('layer')) {
+              curLayer = variant.tagName === 'layer' ? variant.getAttribute('n') : variant.closest('layer').getAttribute('n');
+            }
+
             switch (variant.tagName) {
               case 'measure':
-                isMeasure = true;
-              case 'staff':
-                if (isStaff) {
-                  isMultiStaff = true;
+                if (appType === 'barline') {
+                  m = section.createElement('measure');
+                  for (const att of Array.from(variant.attributes)) {
+                    m.setAttribute(att.name, att.value);
+                  }
+                  s = section.createElement('staff');
+                  s.setAttribute('n', '1');
+                  m.appendChild(s);
+                  section.documentElement.appendChild(m);
+                } else {
+                  section.documentElement.appendChild(variant.cloneNode(true));
                 }
-                isStaff = true;
+                break;
+              case 'staff':
+                m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0];
+                if (!m) {
+                  m = section.createElement('measure');
+                  m.setAttribute('n', curMeasure);
+                  section.documentElement.appendChild(m);
+                }
+                m.appendChild(variant.cloneNode(true));
+                break;
               case 'layer':
-                isLayer = true;
+                m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0];
+                if (!m) {
+                  m = section.createElement('measure');
+                  m.setAttribute('n', curMeasure);
+                  section.documentElement.appendChild(m);
+                }
+                s = m.querySelectorAll(`staff[n='${curStaff}']`)[0];
+                if (!s) {
+                  s = section.createElement('staff');
+                  s.setAttribute('n', variant.closest('staff').getAttribute('n'));
+                  m.appendChild(s);
+                }
+                s.appendChild(variant.cloneNode(true));
+                break;
               default:
+                m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0];
+                if (!m) {
+                  m = section.createElement('measure');
+                  m.setAttribute('n', curMeasure);
+                  section.documentElement.appendChild(m);
+                }
+                // check that this is something that is on staff
+                if (variant.closest('staff')) {
+                  s = m.querySelectorAll(`staff[n='${curStaff}']`)[0];
+                  if (!s) {
+                    s = section.createElement('staff');
+                    s.setAttribute('n', variant.closest('staff').getAttribute('n'));
+                    m.appendChild(s);
+                  }
+                  l = s.querySelectorAll(`layer[n='${curLayer}']`)[0];
+                  if (!l) {
+                    l = section.createElement('layer');
+                    l.setAttribute('n', variant.closest('layer').getAttribute('n'));
+                    s.appendChild(l);
+                  }
+                  l.appendChild(variant.cloneNode(true));
+                } else {
+                  m.appendChild(variant.cloneNode(true));
+                }
             }
-            variantParts.push(variant);
+
+            const staff = section.querySelectorAll('staff')[0];
+            const staffNumber = staff ? staff.getAttribute('n') : '1';
             if (idx === 0) {
-              // TODO: allow measure variants: scoreDef is tied to staff at the moment.
-              if (isStaff) {
-                staffNumber = variant.getAttribute('n');
-              } else {
-                staffNumber = variant.closest('staff').getAttribute('n');
-              }
               scoreDef = serializer.serializeToString(getScoreDefFor(variant, staffNumber));
             }
           }
 
-          let variant = '';
-          for (const v of variantParts) {
-            if (isMultiStaff) {
-              variant += `<measure>${serializer.serializeToString(v)}</measure>`;
-            } else {
-              variant += serializer.serializeToString(v);
-            }
-          }
-
-          if (isMeasure || isMultiStaff) {
-            variant = `<section>${variant}</section>`;
-          } else if (isStaff && !isMultiStaff) {
-            variant = `<section><measure>${variant}</measure></section>`;
-          } else if (isLayer) {
-            variant = `<section><measure><staff>${variant}</staff></measure></section>`;
-          } else {
-            variant = `<section><measure><staff><layer>${variant}</layer></staff></measure></section>`;
-          }
-
           values.push({
             scoreDef,
-            eventData: variant,
+            eventData: serializer.serializeToString(section),
             sourceUrl: targets[0].split('#')[0],
             wit,
             isLemma
@@ -4286,7 +4387,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 109 */
@@ -4370,7 +4471,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 }
 
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 112 */
@@ -4715,7 +4816,7 @@ var createTransitionManager = function createTransitionManager() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(80);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -6058,7 +6159,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 156 */
@@ -6253,7 +6354,7 @@ module.exports = focusNode;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subscriptionShape; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return storeShape; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
 
 
@@ -6573,7 +6674,7 @@ selectorFactory) {
     return __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default()(Connect, WrappedComponent);
   };
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 162 */
@@ -7063,7 +7164,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
     return proxy;
   };
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 168 */
@@ -7124,7 +7225,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
@@ -7311,7 +7412,7 @@ function valueEqual(a, b) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
@@ -7402,7 +7503,7 @@ Prompt.contextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
@@ -7580,7 +7681,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
@@ -7759,7 +7860,7 @@ StaticRouter.childContextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
@@ -7853,7 +7954,7 @@ Switch.propTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
@@ -8356,7 +8457,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
@@ -8524,6 +8625,9 @@ const history = (0, _createBrowserHistory2.default)();
 
 const store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)((0, _reactRouterRedux.routerMiddleware)(history), _reduxThunk2.default));
 
+const containerEl = document.getElementById('ems_viewer');
+const song = containerEl.getAttribute('data-song');
+
 (0, _reactDom.render)(_react2.default.createElement(
   _reactRedux.Provider,
   { store: store },
@@ -8533,10 +8637,10 @@ const store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddle
     _react2.default.createElement(
       _reactRouterDom.HashRouter,
       null,
-      _react2.default.createElement(_App2.default, null)
+      _react2.default.createElement(_App2.default, { song: song })
     )
   )
-), document.getElementById('ems_viewer'));
+), containerEl);
 
 /***/ }),
 /* 187 */
@@ -8578,7 +8682,7 @@ exports = module.exports = __webpack_require__(119)(undefined);
 exports.i(__webpack_require__(189), "");
 
 // module
-exports.push([module.i, "/* Set custom theme colors */\n.mdc-elevation--z0 {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z1 {\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z2 {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z3 {\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z4 {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z5 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z6 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z7 {\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z8 {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z9 {\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z10 {\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z11 {\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z12 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z13 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z14 {\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z15 {\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z16 {\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z17 {\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z18 {\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z19 {\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z20 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z21 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z22 {\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z23 {\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z24 {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation-transition {\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow;\n}\n\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px;\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px);\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px);\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px);\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12;\n    }\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n}\n\n.mdc-layout-grid__cell--order-1 {\n  order: 1;\n}\n\n.mdc-layout-grid__cell--order-2 {\n  order: 2;\n}\n\n.mdc-layout-grid__cell--order-3 {\n  order: 3;\n}\n\n.mdc-layout-grid__cell--order-4 {\n  order: 4;\n}\n\n.mdc-layout-grid__cell--order-5 {\n  order: 5;\n}\n\n.mdc-layout-grid__cell--order-6 {\n  order: 6;\n}\n\n.mdc-layout-grid__cell--order-7 {\n  order: 7;\n}\n\n.mdc-layout-grid__cell--order-8 {\n  order: 8;\n}\n\n.mdc-layout-grid__cell--order-9 {\n  order: 9;\n}\n\n.mdc-layout-grid__cell--order-10 {\n  order: 10;\n}\n\n.mdc-layout-grid__cell--order-11 {\n  order: 11;\n}\n\n.mdc-layout-grid__cell--order-12 {\n  order: 12;\n}\n\n.mdc-layout-grid__cell--align-top {\n  align-self: flex-start;\n}\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    align-self: start;\n  }\n}\n\n.mdc-layout-grid__cell--align-middle {\n  align-self: center;\n}\n\n.mdc-layout-grid__cell--align-bottom {\n  align-self: flex-end;\n}\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    align-self: end;\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2);\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2);\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2);\n  }\n}\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0;\n}\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto;\n}\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n  }\n  to {\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  }\n}\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    animation-timing-function: linear;\n    opacity: 0;\n  }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0);\n  }\n}\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0);\n  }\n  to {\n    opacity: 0;\n  }\n}\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden;\n}\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var);\n}\n\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  color: rgba(0, 0, 0, 0.87);\n  /* @alternate */\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  /* @alternate */\n  line-height: 1.5rem;\n  list-style-type: none;\n}\n\n.mdc-list-item__secondary-text {\n  color: rgba(0, 0, 0, 0.54);\n  /* @alternate */\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));\n}\n\n.mdc-list-item__graphic {\n  background-color: transparent;\n}\n\n.mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.38);\n  /* @alternate */\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n}\n\n.mdc-list-item__meta {\n  color: rgba(0, 0, 0, 0.38);\n  /* @alternate */\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38));\n}\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem;\n}\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden;\n}\n\n.mdc-list-item:focus {\n  outline: none;\n}\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  color: #225688;\n  /* @alternate */\n  color: var(--mdc-theme-primary, #225688);\n}\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  color: #225688;\n  /* @alternate */\n  color: var(--mdc-theme-primary, #225688);\n}\n\n.mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 32px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list-item__meta {\n  /* @noflip */\n  margin-left: auto;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__meta,\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__meta {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: auto;\n}\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block;\n}\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.01786em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit;\n}\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px;\n}\n\n.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 36px;\n  width: 20px;\n  height: 20px;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--dense .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 36px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px;\n}\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 16px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\";\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear;\n  z-index: 1;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  transform: scale(var(--mdc-ripple-fg-scale, 1));\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  /* @noflip */\n  left: 0;\n  transform: scale(0);\n  transform-origin: center center;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  /* @noflip */\n  left: var(--mdc-ripple-left, 0);\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  animation: 225ms :local(mdc-ripple-fg-radius-in) forwards, 75ms :local(mdc-ripple-fg-opacity-in) forwards;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  animation: 150ms :local(mdc-ripple-fg-opacity-out);\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  /* @noflip */\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%);\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: black;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  background-color: #225688;\n}\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    /* @alternate */\n    background-color: var(--mdc-theme-primary, #225688);\n  }\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  background-color: #225688;\n}\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    /* @alternate */\n    background-color: var(--mdc-theme-primary, #225688);\n  }\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24;\n}\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px;\n}\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px;\n}\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px;\n}\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 20px;\n  width: 36px;\n  height: 36px;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 20px;\n  /* @noflip */\n  margin-right: 0;\n}\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none;\n}\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n}\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12);\n}\n\n.mdc-list-divider--padded {\n  margin: 0 16px;\n}\n\n.mdc-list-divider--inset {\n  /* @noflip */\n  margin-left: 72px;\n  /* @noflip */\n  margin-right: 0;\n  width: calc(100% - 72px);\n}\n\n.mdc-list-group[dir=\"rtl\"] .mdc-list-divider--inset,\n[dir=\"rtl\"] .mdc-list-group .mdc-list-divider--inset {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 72px;\n}\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px);\n}\n\n.mdc-list-group .mdc-list {\n  padding: 0;\n}\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px;\n}\n\n.mdc-list-group__subheader {\n  color: rgba(0, 0, 0, 0.87);\n  /* @alternate */\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n}\n\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.mdc-typography--headline1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 6rem;\n  line-height: 6rem;\n  font-weight: 300;\n  letter-spacing: -0.01562em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.75rem;\n  line-height: 3.75rem;\n  font-weight: 300;\n  letter-spacing: -0.00833em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3rem;\n  line-height: 3.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: 0.00735em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline5 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline6 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.0125em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--subtitle1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--subtitle2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.375rem;\n  font-weight: 500;\n  letter-spacing: 0.00714em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.03125em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.01786em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.03333em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.08929em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\n.mdc-typography--overline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.16667em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\ntei-supplied > tei-lg > tei-l:first-child:before {\n  content: \"[\";\n}\n\ntei-supplied > tei-lg > tei-l:last-child:after {\n  content: \"]\";\n}\n\ntei-body .variant {\n  text-shadow: 0px 0px 5px #337ab7;\n  cursor: pointer;\n}\n\ntei-body .variant.active {\n  text-shadow: 0px 0px 5px #f80;\n}\n\nsvg .musVariant {\n  fill: #337ab7;\n  cursor: pointer;\n}\n\nsvg .musVariant.active {\n  fill: #f80;\n}\n\nul.sourceList li {\n  list-style: none;\n}\n\nul.sourceList li a {\n  text-decoration: none;\n  color: inherit;\n}\n\nul.sourceList li.active {\n  color: white;\n  background-color: #337ab7;\n}\n\n.variant-popout {\n  position: absolute;\n  background-color: white;\n}\n", ""]);
+exports.push([module.i, "/* Set custom theme colors */\n.mdc-elevation--z0 {\n  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z1 {\n  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z2 {\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z3 {\n  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z4 {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z5 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z6 {\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z7 {\n  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z8 {\n  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z9 {\n  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z10 {\n  box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z11 {\n  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z12 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z13 {\n  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z14 {\n  box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z15 {\n  box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z16 {\n  box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z17 {\n  box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z18 {\n  box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z19 {\n  box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z20 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z21 {\n  box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z22 {\n  box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z23 {\n  box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation--z24 {\n  box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);\n}\n\n.mdc-elevation-transition {\n  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  will-change: box-shadow;\n}\n\n:root {\n  --mdc-layout-grid-margin-desktop: 24px;\n  --mdc-layout-grid-gutter-desktop: 24px;\n  --mdc-layout-grid-column-width-desktop: 72px;\n  --mdc-layout-grid-margin-tablet: 16px;\n  --mdc-layout-grid-gutter-tablet: 16px;\n  --mdc-layout-grid-column-width-tablet: 72px;\n  --mdc-layout-grid-margin-phone: 16px;\n  --mdc-layout-grid-gutter-phone: 16px;\n  --mdc-layout-grid-column-width-phone: 72px;\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 24px;\n    padding: var(--mdc-layout-grid-margin-desktop, 24px);\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-tablet, 16px);\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid {\n    box-sizing: border-box;\n    margin: 0 auto;\n    padding: 16px;\n    padding: var(--mdc-layout-grid-margin-phone, 16px);\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 24px;\n      grid-gap: var(--mdc-layout-grid-gutter-desktop, 24px);\n      grid-template-columns: repeat(12, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-tablet, 16px);\n      grid-template-columns: repeat(8, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__inner {\n    display: flex;\n    flex-flow: row wrap;\n    align-items: stretch;\n    margin: -8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2 * -1);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__inner {\n      display: grid;\n      margin: 0;\n      grid-gap: 16px;\n      grid-gap: var(--mdc-layout-grid-gutter-phone, 16px);\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n    }\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid__cell {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n    box-sizing: border-box;\n    margin: 12px;\n    margin: calc(var(--mdc-layout-grid-gutter-desktop, 24px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n    width: calc(8.33333% - 24px);\n    width: calc(8.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-desktop {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n    width: calc(16.66667% - 24px);\n    width: calc(16.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-desktop {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n    width: calc(25% - 24px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-desktop {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n    width: calc(33.33333% - 24px);\n    width: calc(33.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-desktop {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n    width: calc(41.66667% - 24px);\n    width: calc(41.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-desktop {\n      width: auto;\n      grid-column-end: span 5;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n    width: calc(50% - 24px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-desktop {\n      width: auto;\n      grid-column-end: span 6;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n    width: calc(58.33333% - 24px);\n    width: calc(58.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-desktop {\n      width: auto;\n      grid-column-end: span 7;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n    width: calc(66.66667% - 24px);\n    width: calc(66.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-desktop {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n    width: calc(75% - 24px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-desktop {\n      width: auto;\n      grid-column-end: span 9;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n    width: calc(83.33333% - 24px);\n    width: calc(83.33333% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-desktop {\n      width: auto;\n      grid-column-end: span 10;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n    width: calc(91.66667% - 24px);\n    width: calc(91.66667% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-desktop {\n      width: auto;\n      grid-column-end: span 11;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n    width: calc(100% - 24px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-desktop, 24px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-desktop {\n      width: auto;\n      grid-column-end: span 12;\n    }\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid__cell {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-tablet, 16px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n    width: calc(12.5% - 16px);\n    width: calc(12.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-tablet {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-tablet {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n    width: calc(37.5% - 16px);\n    width: calc(37.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-tablet {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-tablet {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n    width: calc(62.5% - 16px);\n    width: calc(62.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-tablet {\n      width: auto;\n      grid-column-end: span 5;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-tablet {\n      width: auto;\n      grid-column-end: span 6;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n    width: calc(87.5% - 16px);\n    width: calc(87.5% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-tablet {\n      width: auto;\n      grid-column-end: span 7;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-tablet, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-tablet {\n      width: auto;\n      grid-column-end: span 8;\n    }\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid__cell {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n    box-sizing: border-box;\n    margin: 8px;\n    margin: calc(var(--mdc-layout-grid-gutter-phone, 16px) / 2);\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell {\n      margin: 0;\n    }\n  }\n  .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n    width: calc(25% - 16px);\n    width: calc(25% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-1, .mdc-layout-grid__cell--span-1-phone {\n      width: auto;\n      grid-column-end: span 1;\n    }\n  }\n  .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n    width: calc(50% - 16px);\n    width: calc(50% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-2, .mdc-layout-grid__cell--span-2-phone {\n      width: auto;\n      grid-column-end: span 2;\n    }\n  }\n  .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n    width: calc(75% - 16px);\n    width: calc(75% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-3, .mdc-layout-grid__cell--span-3-phone {\n      width: auto;\n      grid-column-end: span 3;\n    }\n  }\n  .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-4, .mdc-layout-grid__cell--span-4-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-5, .mdc-layout-grid__cell--span-5-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-6, .mdc-layout-grid__cell--span-6-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-7, .mdc-layout-grid__cell--span-7-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-8, .mdc-layout-grid__cell--span-8-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-9, .mdc-layout-grid__cell--span-9-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-10, .mdc-layout-grid__cell--span-10-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-11, .mdc-layout-grid__cell--span-11-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n  .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n    width: calc(100% - 16px);\n    width: calc(100% - var(--mdc-layout-grid-gutter-phone, 16px));\n  }\n  @supports (display: grid) {\n    .mdc-layout-grid__cell--span-12, .mdc-layout-grid__cell--span-12-phone {\n      width: auto;\n      grid-column-end: span 4;\n    }\n  }\n}\n\n.mdc-layout-grid__cell--order-1 {\n  order: 1;\n}\n\n.mdc-layout-grid__cell--order-2 {\n  order: 2;\n}\n\n.mdc-layout-grid__cell--order-3 {\n  order: 3;\n}\n\n.mdc-layout-grid__cell--order-4 {\n  order: 4;\n}\n\n.mdc-layout-grid__cell--order-5 {\n  order: 5;\n}\n\n.mdc-layout-grid__cell--order-6 {\n  order: 6;\n}\n\n.mdc-layout-grid__cell--order-7 {\n  order: 7;\n}\n\n.mdc-layout-grid__cell--order-8 {\n  order: 8;\n}\n\n.mdc-layout-grid__cell--order-9 {\n  order: 9;\n}\n\n.mdc-layout-grid__cell--order-10 {\n  order: 10;\n}\n\n.mdc-layout-grid__cell--order-11 {\n  order: 11;\n}\n\n.mdc-layout-grid__cell--order-12 {\n  order: 12;\n}\n\n.mdc-layout-grid__cell--align-top {\n  align-self: flex-start;\n}\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-top {\n    align-self: start;\n  }\n}\n\n.mdc-layout-grid__cell--align-middle {\n  align-self: center;\n}\n\n.mdc-layout-grid__cell--align-bottom {\n  align-self: flex-end;\n}\n\n@supports (display: grid) {\n  .mdc-layout-grid__cell--align-bottom {\n    align-self: end;\n  }\n}\n\n@media (min-width: 840px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 1176px;\n    width: calc( var(--mdc-layout-grid-column-width-desktop, 72px) * 12 + var(--mdc-layout-grid-gutter-desktop, 24px) * 11 + var(--mdc-layout-grid-margin-desktop, 24px) * 2);\n  }\n}\n\n@media (min-width: 480px) and (max-width: 839px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 720px;\n    width: calc( var(--mdc-layout-grid-column-width-tablet, 72px) * 8 + var(--mdc-layout-grid-gutter-tablet, 16px) * 7 + var(--mdc-layout-grid-margin-tablet, 16px) * 2);\n  }\n}\n\n@media (max-width: 479px) {\n  .mdc-layout-grid--fixed-column-width {\n    width: 368px;\n    width: calc( var(--mdc-layout-grid-column-width-phone, 72px) * 4 + var(--mdc-layout-grid-gutter-phone, 16px) * 3 + var(--mdc-layout-grid-margin-phone, 16px) * 2);\n  }\n}\n\n.mdc-layout-grid--align-left {\n  margin-right: auto;\n  margin-left: 0;\n}\n\n.mdc-layout-grid--align-right {\n  margin-right: 0;\n  margin-left: auto;\n}\n\n@keyframes mdc-ripple-fg-radius-in {\n  from {\n    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1);\n  }\n  to {\n    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n  }\n}\n\n@keyframes mdc-ripple-fg-opacity-in {\n  from {\n    animation-timing-function: linear;\n    opacity: 0;\n  }\n  to {\n    opacity: var(--mdc-ripple-fg-opacity, 0);\n  }\n}\n\n@keyframes mdc-ripple-fg-opacity-out {\n  from {\n    animation-timing-function: linear;\n    opacity: var(--mdc-ripple-fg-opacity, 0);\n  }\n  to {\n    opacity: 0;\n  }\n}\n\n.mdc-ripple-surface--test-edge-var-bug {\n  --mdc-ripple-surface-test-edge-var: 1px solid #000;\n  visibility: hidden;\n}\n\n.mdc-ripple-surface--test-edge-var-bug::before {\n  border: var(--mdc-ripple-surface-test-edge-var);\n}\n\n.mdc-list {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  color: rgba(0, 0, 0, 0.87);\n  /* @alternate */\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n  margin: 0;\n  padding: 8px 0;\n  /* @alternate */\n  line-height: 1.5rem;\n  list-style-type: none;\n}\n\n.mdc-list-item__secondary-text {\n  color: rgba(0, 0, 0, 0.54);\n  /* @alternate */\n  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));\n}\n\n.mdc-list-item__graphic {\n  background-color: transparent;\n}\n\n.mdc-list-item__graphic {\n  color: rgba(0, 0, 0, 0.38);\n  /* @alternate */\n  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38));\n}\n\n.mdc-list-item__meta {\n  color: rgba(0, 0, 0, 0.38);\n  /* @alternate */\n  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38));\n}\n\n.mdc-list--dense {\n  padding-top: 4px;\n  padding-bottom: 4px;\n  font-size: .812rem;\n}\n\n.mdc-list-item {\n  display: flex;\n  position: relative;\n  align-items: center;\n  justify-content: flex-start;\n  height: 48px;\n  padding: 0 16px;\n  overflow: hidden;\n}\n\n.mdc-list-item:focus {\n  outline: none;\n}\n\n.mdc-list-item--selected,\n.mdc-list-item--activated {\n  color: #225688;\n  /* @alternate */\n  color: var(--mdc-theme-primary, #225688);\n}\n\n.mdc-list-item--selected .mdc-list-item__graphic,\n.mdc-list-item--activated .mdc-list-item__graphic {\n  color: #225688;\n  /* @alternate */\n  color: var(--mdc-theme-primary, #225688);\n}\n\n.mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 32px;\n  width: 24px;\n  height: 24px;\n  display: inline-flex;\n  flex-shrink: 0;\n  align-items: center;\n  justify-content: center;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 32px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list-item__meta {\n  /* @noflip */\n  margin-left: auto;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list-item__meta,\n[dir=\"rtl\"] .mdc-list-item .mdc-list-item__meta {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: auto;\n}\n\n.mdc-list-item__text,\n.mdc-list-item__secondary-text {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: block;\n}\n\n.mdc-list-item__secondary-text {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.01786em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-list--dense .mdc-list-item__secondary-text {\n  font-size: inherit;\n}\n\n.mdc-list--dense .mdc-list-item {\n  height: 40px;\n}\n\n.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 36px;\n  width: 20px;\n  height: 20px;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--dense .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 36px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n.mdc-list--avatar-list .mdc-list-item {\n  height: 56px;\n}\n\n.mdc-list--avatar-list .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 16px;\n  width: 40px;\n  height: 40px;\n  border-radius: 50%;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 16px;\n  /* @noflip */\n  margin-right: 0;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item {\n  --mdc-ripple-fg-size: 0;\n  --mdc-ripple-left: 0;\n  --mdc-ripple-top: 0;\n  --mdc-ripple-fg-scale: 1;\n  --mdc-ripple-fg-translate-end: 0;\n  --mdc-ripple-fg-translate-start: 0;\n  -webkit-tap-highlight-color: transparent;\n  will-change: transform, opacity;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  position: absolute;\n  border-radius: 50%;\n  opacity: 0;\n  pointer-events: none;\n  content: \"\";\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before {\n  transition: opacity 15ms linear, background-color 15ms linear;\n  z-index: 1;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before {\n  transform: scale(var(--mdc-ripple-fg-scale, 1));\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  top: 0;\n  /* @noflip */\n  left: 0;\n  transform: scale(0);\n  transform-origin: center center;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after {\n  top: var(--mdc-ripple-top, 0);\n  /* @noflip */\n  left: var(--mdc-ripple-left, 0);\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after {\n  animation: 225ms :local(mdc-ripple-fg-radius-in) forwards, 75ms :local(mdc-ripple-fg-opacity-in) forwards;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after {\n  animation: 150ms :local(mdc-ripple-fg-opacity-out);\n  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  top: calc(50% - 100%);\n  /* @noflip */\n  left: calc(50% - 100%);\n  width: 200%;\n  height: 200%;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after {\n  width: var(--mdc-ripple-fg-size, 100%);\n  height: var(--mdc-ripple-fg-size, 100%);\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after {\n  background-color: #000;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before {\n  opacity: 0.04;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before {\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n  background-color: #225688;\n}\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after {\n    /* @alternate */\n    background-color: var(--mdc-theme-primary, #225688);\n  }\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before {\n  opacity: 0.16;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.24;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.28;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.28;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before {\n  opacity: 0.08;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n  background-color: #225688;\n}\n\n@supports not (-ms-ime-align: auto) {\n  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after {\n    /* @alternate */\n    background-color: var(--mdc-theme-primary, #225688);\n  }\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before {\n  opacity: 0.12;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before {\n  transition-duration: 75ms;\n  opacity: 0.2;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after {\n  transition: opacity 150ms linear;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after {\n  transition-duration: 75ms;\n  opacity: 0.24;\n}\n\n:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded {\n  --mdc-ripple-fg-opacity: 0.24;\n}\n\n.mdc-list--two-line .mdc-list-item {\n  height: 72px;\n}\n\n.mdc-list--two-line.mdc-list--dense .mdc-list-item {\n  height: 60px;\n}\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item {\n  height: 48px;\n}\n\n.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 20px;\n  width: 36px;\n  height: 36px;\n}\n\n.mdc-list-item[dir=\"rtl\"] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic,\n[dir=\"rtl\"] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic {\n  /* @noflip */\n  margin-left: 20px;\n  /* @noflip */\n  margin-right: 0;\n}\n\na.mdc-list-item {\n  color: inherit;\n  text-decoration: none;\n}\n\n.mdc-list-divider {\n  height: 0;\n  margin: 0;\n  border: none;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n}\n\n.mdc-list-divider {\n  border-bottom-color: rgba(0, 0, 0, 0.12);\n}\n\n.mdc-list-divider--padded {\n  margin: 0 16px;\n}\n\n.mdc-list-divider--inset {\n  /* @noflip */\n  margin-left: 72px;\n  /* @noflip */\n  margin-right: 0;\n  width: calc(100% - 72px);\n}\n\n.mdc-list-group[dir=\"rtl\"] .mdc-list-divider--inset,\n[dir=\"rtl\"] .mdc-list-group .mdc-list-divider--inset {\n  /* @noflip */\n  margin-left: 0;\n  /* @noflip */\n  margin-right: 72px;\n}\n\n.mdc-list-divider--inset.mdc-list-divider--padded {\n  width: calc(100% - 72px - 16px);\n}\n\n.mdc-list-group .mdc-list {\n  padding: 0;\n}\n\n.mdc-list-group__subheader {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n  margin: 0.75rem 16px;\n}\n\n.mdc-list-group__subheader {\n  color: rgba(0, 0, 0, 0.87);\n  /* @alternate */\n  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87));\n}\n\n.mdc-typography {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.mdc-typography--headline1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 6rem;\n  line-height: 6rem;\n  font-weight: 300;\n  letter-spacing: -0.01562em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3.75rem;\n  line-height: 3.75rem;\n  font-weight: 300;\n  letter-spacing: -0.00833em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline3 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 3rem;\n  line-height: 3.125rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline4 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 2.125rem;\n  line-height: 2.5rem;\n  font-weight: 400;\n  letter-spacing: 0.00735em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline5 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.5rem;\n  line-height: 2rem;\n  font-weight: 400;\n  letter-spacing: normal;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--headline6 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1.25rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.0125em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--subtitle1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.75rem;\n  font-weight: 400;\n  letter-spacing: 0.00937em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--subtitle2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.375rem;\n  font-weight: 500;\n  letter-spacing: 0.00714em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--body1 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 1rem;\n  line-height: 1.5rem;\n  font-weight: 400;\n  letter-spacing: 0.03125em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--body2 {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.01786em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--caption {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 1.25rem;\n  font-weight: 400;\n  letter-spacing: 0.03333em;\n  text-decoration: inherit;\n  text-transform: inherit;\n}\n\n.mdc-typography--button {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.875rem;\n  line-height: 2.25rem;\n  font-weight: 500;\n  letter-spacing: 0.08929em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\n.mdc-typography--overline {\n  font-family: Roboto, sans-serif;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-size: 0.75rem;\n  line-height: 2rem;\n  font-weight: 500;\n  letter-spacing: 0.16667em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\ntei-body .variant {\n  text-shadow: 0px 0px 5px #337ab7;\n  cursor: pointer;\n}\n\ntei-body .variant.active {\n  text-shadow: 0px 0px 5px #f80;\n}\n\nsvg .musVariant {\n  fill: #337ab7;\n  cursor: pointer;\n}\n\nsvg .musVariant path {\n  stroke: #337ab7 !important;\n}\n\nsvg .musVariant.active {\n  fill: #f80;\n}\n\nul.sourceList li {\n  list-style: none;\n}\n\nul.sourceList li a {\n  text-decoration: none;\n  color: inherit;\n}\n\nul.sourceList li.active {\n  color: white;\n  background-color: #337ab7;\n}\n\n.variant-popout {\n  position: absolute;\n  background-color: white;\n}\n\ntei-div[type='underlay'] tei-l:nth-child(1)::before {\n  content: '[';\n}\n\ntei-div[type='underlay'] tei-l:nth-last-child(1)::after {\n  content: ']';\n}\n\ntei-signed[rend='right'] {\n  text-align: right;\n}\n\ntei-hi[rend*='italic'] {\n  font-style: italic;\n}\n\ntei-hi[rend*='right'] {\n  float: right;\n}\n\n*[rend*='center'] {\n  text-align: center;\n}\n\ntei-list[type='litany'] {\n  display: table;\n  border-bottom: 1px solid Black;\n}\n\ntei-list[type='litany'] tei-head {\n  display: table-caption;\n  border-bottom: 1px solid Black;\n}\n\ntei-list[type='litany'] tei-item {\n  display: table-row;\n}\n\ntei-list[type='litany'] tei-item:before {\n  content: attr(n);\n  display: table-cell;\n  font-style: italic;\n}\n\ntei-list[type='litany'] tei-title {\n  display: table-cell;\n  padding-left: 10px;\n}\n\ntei-list[type='litany'] tei-seg[type='toc_page'] {\n  display: table-cell;\n  border-right: 1px solid black;\n  text-align: right;\n  padding-right: 10px;\n}\n\ntei-list[type='litany'] tei-name[type='poet'] {\n  display: table-cell;\n  padding-left: 10px;\n}\n\ntei-choice tei-abbr {\n  display: none;\n}\n\ntei-choice tei-abbr + tei-expan:before,\ntei-choice tei-expan + tei-abbr:before {\n  content: ' [';\n}\n\ntei-choice tei-abbr + tei-expan:after,\ntei-choice tei-expan + tei-abbr:after {\n  content: ']';\n}\n\ntei-docTitle, tei-byline, tei-docEdition, tei-docImprint {\n  display: block;\n}\n\ntei-div:not([type='underlay'][type='headnote']) {\n  display: block;\n  margin-bottom: 5em;\n}\n\n*[*|lang] {\n  font-style: italic;\n}\n\n*[*|lang='en'] {\n  font-style: normal;\n}\n\ntei-signed {\n  margin-top: 0px;\n}\n\ntei-ab {\n  margin-bottom: 0px;\n}\n\n*[rend*='indent'] {\n  display: block;\n}\n\n*[rend*='indent1'] {\n  padding-left: 2em;\n}\n\n*[rend*='indent2'] {\n  padding-left: 3em;\n}\n\n*[rend*='indent3'] {\n  padding-left: 4em;\n}\n\n*[rend*='indent4'] {\n  padding-left: 5em;\n}\n\n*[rend*='indent5'] {\n  padding-left: 6em;\n}\n\n*[rend*='indent6'] {\n  padding-left: 7em;\n}\n\n*[rend*='indent7'] {\n  padding-left: 8em;\n}\n\n*[rend*='indent8'] {\n  padding-left: 9em;\n}\n\n*[rend*='indent9'] {\n  padding-left: 10em;\n}\n\n*[rend*='indent10'] {\n  padding-left: 10em;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -15894,7 +15998,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 396 */
@@ -15940,7 +16044,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(400);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 397 */
@@ -31638,7 +31742,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 401 */
@@ -31804,7 +31908,7 @@ module.exports = camelize;
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = createProvider;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_PropTypes__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(110);
@@ -31880,7 +31984,7 @@ function createProvider() {
 }
 
 /* harmony default export */ __webpack_exports__["b"] = (createProvider());
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 406 */
@@ -32430,7 +32534,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 407 */
@@ -33241,7 +33345,7 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 425 */
@@ -33430,7 +33534,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = ([whenMergePropsIsFunction, whenMergePropsIsOmitted]);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 429 */
@@ -33543,7 +33647,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(11)))
 
 /***/ }),
 /* 430 */
@@ -33606,7 +33710,7 @@ exports['default'] = thunk;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reducer__ = __webpack_require__(179);
@@ -35191,7 +35295,7 @@ function routerMiddleware(history) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
@@ -35258,7 +35362,7 @@ BrowserRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(444);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
@@ -35663,7 +35767,7 @@ exports.default = createHashHistory;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(183);
@@ -35844,11 +35948,21 @@ function reduceResource(state = {}, action) {
 
 function getCollationSources(state = {}) {
   const colDoc = parser.parseFromString(state.data, 'text/xml');
-  const rdgs = colDoc.getElementsByTagName('app')[0].getElementsByTagName('rdg');
-  const sources = Array.from(rdgs).reduce((srcs, rdg) => {
-    srcs.push(rdg.children[0].getAttribute('target').split('#')[0]);
-    return srcs;
-  }, []);
+  const teiWits = colDoc.getElementsByTagName('witness');
+  const tei = Array.from(teiWits).map(teiWit => {
+    return {
+      source: teiWit.getAttribute('xml:id'),
+      url: teiWit.children[0].getAttribute('target')
+    };
+  });
+  const meiWits = colDoc.getElementsByTagName('mei:source');
+  const mei = Array.from(meiWits).map(meiWit => {
+    return {
+      source: meiWit.getAttribute('xml:id').split('M-')[1],
+      url: meiWit.getAttribute('target')
+    };
+  });
+  const sources = { tei, mei };
   return Object.assign({}, state, { sources });
 }
 
@@ -35881,6 +35995,10 @@ function musicVariants(state = [], action) {
         const values = Array.from(variant.values);
         variant.values = [];
         for (const value of values) {
+          if (value.isOmitted) {
+            variant.values.push(value);
+            continue;
+          }
           value.mei = `<?xml version="1.0" encoding="UTF-8"?>
           <mei xmlns="http://www.music-encoding.org/ns/mei">
               <meiHead>
@@ -36437,8 +36555,10 @@ var _AppBody2 = _interopRequireDefault(_AppBody);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state, ownProps) => {
+  return {
+    song: ownProps.song
+  };
 };
 
 const mapDispatchToProps = () => {
@@ -36464,6 +36584,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(10);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactRouterDom = __webpack_require__(117);
 
 var _Viewer = __webpack_require__(458);
@@ -36483,12 +36607,16 @@ class AppBody extends _react.Component {
         _react2.default.createElement(
           'main',
           null,
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:song/:source', component: _Viewer2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/:source?', render: params => _react2.default.createElement(_Viewer2.default, { song: this.props.song, urlsource: params.match.params.source }) })
         )
       )
     );
   }
 }
+
+AppBody.propTypes = {
+  song: _propTypes2.default.string
+};
 
 exports.default = AppBody;
 
@@ -36519,9 +36647,11 @@ const mapStateToProps = (state, ownProps) => {
   const returnProps = {};
   if (ownProps.match.params.song) {
     returnProps.song = ownProps.match.params.song;
+  } else if (ownProps.song) {
+    returnProps.song = ownProps.song;
   }
-  if (ownProps.match.params.source) {
-    returnProps.source = ownProps.match.params.source;
+  if (ownProps.urlsource) {
+    returnProps.source = ownProps.urlsource;
   }
   if (state.resources.tei) {
     if (!state.resources.tei.isFetching) {
@@ -36539,6 +36669,10 @@ const mapStateToProps = (state, ownProps) => {
     }
     if (state.resources.collation.sources) {
       returnProps.sources = state.resources.collation.sources;
+      // if a source hasn't been set yet, pick first (give TEI preference)
+      if (!ownProps.urlsource && !ownProps.source) {
+        returnProps.source = state.resources.collation.sources.tei[0].source;
+      }
     }
   }
   return returnProps;
@@ -36586,7 +36720,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(11);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -36619,53 +36753,68 @@ class ViewerBody extends _react.Component {
   componentDidMount() {
     if (!this.props.collation) {
       // Only get the collation once
-      // this.props.getCollation(`/data/collations/${this.props.song}.xml`)
-      this.props.getCollation(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/OBJ/view`);
-      this.getResources();
+      // https://ems.digitalscholarship.utsc.utoronto.ca/
+      // this.props.getCollation(`/islandora/object/${this.props.song}/datastream/OBJ/view`)
+      this.props.getCollation(`/data/collations/${this.props.song}.xml`);
+      if (this.props.source && this.props.sources) {
+        this.getResources();
+      }
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.source !== this.props.source) {
+    if (this.props.source && prevProps.source !== this.props.source) {
+      this.getResources();
+    } else if (!prevProps.sources && this.props.sources) {
       this.getResources();
     }
   }
 
   getResources() {
-    // this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei')
-    // this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.xml`, 'mei')
-    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei');
-    this.props.getResource(`https://ems.digitalscholarship.utsc.utoronto.ca/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei');
+    // https://ems.digitalscholarship.utsc.utoronto.ca/
+    // this.props.getResource(`/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei')
+    // this.props.getResource(`/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
+    this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei');
+    // MEI sources are not always present. Check in this.props.sources
+    const msource = this.props.sources.mei.filter(s => s.source === this.props.source)[0];
+    if (msource) {
+      this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.mei`, 'mei');
+    } else {
+      this.props.getResource(null, 'mei');
+    }
   }
 
   render() {
-    return [_react2.default.createElement(
-      'div',
-      { className: 'mdc-layout-grid', key: 'grid' },
-      _react2.default.createElement(
+    if (this.props.source) {
+      return [_react2.default.createElement(
         'div',
-        { className: 'mdc-layout-grid__inner' },
+        { className: 'mdc-layout-grid', key: 'grid' },
         _react2.default.createElement(
           'div',
-          { className: 'mdc-layout-grid__cell mdc-layout-grid__cell--span-2' },
-          _react2.default.createElement(_Sources2.default, { sources: this.props.sources || [], active: this.props.source })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'mdc-layout-grid__cell mdc-layout-grid__cell--span-10' },
-          _react2.default.createElement(_DocumentRenderer2.default, {
-            source: this.props.source,
-            tei: this.props.tei,
-            mei: this.props.mei,
-            collation: this.props.collation,
-            vrv: this.state.vrv,
-            setPopoutPosition: this.props.setPopoutPosition,
-            setMusicPopoutPosition: this.props.setMusicPopoutPosition,
-            getVariants: this.props.getVariants,
-            getMusicVariants: this.props.getMusicVariants })
+          { className: 'mdc-layout-grid__inner' },
+          _react2.default.createElement(
+            'div',
+            { className: 'mdc-layout-grid__cell mdc-layout-grid__cell--span-2' },
+            _react2.default.createElement(_Sources2.default, { sources: this.props.sources || {}, active: this.props.source })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'mdc-layout-grid__cell mdc-layout-grid__cell--span-10' },
+            _react2.default.createElement(_DocumentRenderer2.default, {
+              source: this.props.source,
+              tei: this.props.tei,
+              mei: this.props.mei,
+              collation: this.props.collation,
+              vrv: this.state.vrv,
+              setPopoutPosition: this.props.setPopoutPosition,
+              setMusicPopoutPosition: this.props.setMusicPopoutPosition,
+              getVariants: this.props.getVariants,
+              getMusicVariants: this.props.getMusicVariants })
+          )
         )
-      )
-    ), _react2.default.createElement(_VariantsContainer2.default, { key: 'popout' }), _react2.default.createElement(_MusicVariantsContainer2.default, { vrv: this.state.vrv, key: 'muspopout' })];
+      ), _react2.default.createElement(_VariantsContainer2.default, { key: 'popout' }), _react2.default.createElement(_MusicVariantsContainer2.default, { vrv: this.state.vrv, key: 'muspopout' })];
+    }
+    return null;
   }
 }
 
@@ -36678,7 +36827,7 @@ ViewerBody.propTypes = {
   tei: _propTypes2.default.string,
   mei: _propTypes2.default.string,
   collation: _propTypes2.default.string,
-  sources: _propTypes2.default.array,
+  sources: _propTypes2.default.object,
   song: _propTypes2.default.string,
   source: _propTypes2.default.string,
   setPopoutPosition: _propTypes2.default.func,
@@ -36700,7 +36849,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(11);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -36711,27 +36860,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class Sources extends _react.Component {
   render() {
     let sources = 'loading';
-    if (this.props.sources.length > 0) {
-      sources = _react2.default.createElement(
-        'ul',
-        { className: 'sourceList' },
-        this.props.sources.map((s, i) => {
-          // TODO fix these string operations -- can we get these data from Islandora?
-          // const label = s.split('-')[1].split('.xml')[0]
-          // const url = s.split('/')[3].split('.xml')[0].split('-')[1]
-          const label = s.match(/datastream\/(.*?)\//)[1].split('-')[1];
-          const active = s.includes(this.props.active) ? 'active' : 'inactive';
-          return _react2.default.createElement(
-            'li',
-            { key: i, className: active },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { to: label },
-              label
-            )
-          );
-        })
-      );
+    if (this.props.sources) {
+      if (this.props.sources.tei) {
+        sources = _react2.default.createElement(
+          'ul',
+          { className: 'sourceList' },
+          this.props.sources.tei.map((s, i) => {
+            // TODO fix these string operations -- can we get these data from Islandora?
+            // const label = s.split('-')[1].split('.xml')[0]
+            // const url = s.split('/')[3].split('.xml')[0].split('-')[1]
+            const label = s.url.match(/datastream\/(.*?)\//)[1].split('-')[1];
+            const active = s.url.includes(this.props.active) ? 'active' : 'inactive';
+            return _react2.default.createElement(
+              'li',
+              { key: i, className: active },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: label },
+                label
+              )
+            );
+          })
+        );
+      }
     }
     return _react2.default.createElement(
       'div',
@@ -36748,7 +36899,7 @@ class Sources extends _react.Component {
 
 exports.default = Sources;
 Sources.propTypes = {
-  sources: _propTypes2.default.array,
+  sources: _propTypes2.default.object,
   active: _propTypes2.default.string
 };
 
@@ -36806,7 +36957,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(11);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -36933,7 +37084,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(11);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -36951,28 +37102,24 @@ class MusicVariants extends _react.Component {
     document.addEventListener('mousedown', this.handleClickOutside);
   }
 
-  componentDidUpdate() {
-    for (const r in this.refs) {
-      if (r.includes('vrv-')) {
-        const x = 400;
-        const vrvOptions = {
-          pageWidth: x * 100 / 35,
-          pageHeight: 1000 * 100 / 35,
-          ignoreLayout: 1,
-          adjustPageHeight: 1,
-          border: 10,
-          scale: 35
-        };
-        this.props.vrv.setOptions(vrvOptions);
-        this.props.vrv.loadData(this.refs[r].getAttribute('data-mei') + '\n', '');
-        const svg = this.props.vrv.renderPage(1);
-        this.refs[r].innerHTML = svg;
-      }
-    }
-  }
-
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  renderMEI(mei) {
+    const x = 400;
+    const vrvOptions = {
+      pageWidth: x * 100 / 35,
+      pageHeight: 1000 * 100 / 35,
+      ignoreLayout: 1,
+      adjustPageHeight: 1,
+      border: 10,
+      scale: 35
+    };
+    this.props.vrv.setOptions(vrvOptions);
+    this.props.vrv.loadData(mei + '\n', '');
+    const svg = this.props.vrv.renderPage(1);
+    return new DOMParser().parseFromString(svg, 'text/xml');
   }
 
   handleClickOutside(event) {
@@ -36997,16 +37144,33 @@ class MusicVariants extends _react.Component {
           _react2.default.createElement('hr', { className: 'mdc-list-divider' }),
           this.props.variants.map(group => {
             return [group.values.map((v, i) => {
-              if (!v.isLemma) {
+              if (v.isOmitted) {
                 return _react2.default.createElement(
                   'li',
-                  { style: { height: '100px' }, className: 'mdc-list-item', key: i },
+                  { style: { height: '100px', width: '50px' }, className: 'mdc-list-item', key: i },
                   _react2.default.createElement(
                     'span',
                     { className: 'mdc-list-item__graphic' },
                     v.wit.replace('#', '')
                   ),
-                  _react2.default.createElement('span', { ref: `vrv-${i}`, 'data-mei': v.mei })
+                  _react2.default.createElement(
+                    'span',
+                    null,
+                    '[omitted.]'
+                  )
+                );
+              } else if (!v.isLemma) {
+                const svgDoc = this.renderMEI(v.mei);
+                const height = svgDoc.documentElement.getAttribute('height');
+                return _react2.default.createElement(
+                  'li',
+                  { className: 'mdc-list-item', key: i, style: { height } },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'mdc-list-item__graphic' },
+                    v.wit.replace('#', '')
+                  ),
+                  _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: new XMLSerializer().serializeToString(svgDoc) } })
                 );
               }
               return null;
@@ -37042,7 +37206,7 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(11);
+var _propTypes = __webpack_require__(10);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -37056,14 +37220,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // NB Verovio must be available as global variable
 
 class DocumentRenderer extends _react.Component {
-  shouldComponentUpdate(nextProps) {
-    if (this.props.tei || nextProps.tei) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   componentDidUpdate() {
     this.refs.teiData.innerHTML = 'Loading...';
     const x = this.refs.teiData.offsetWidth;
@@ -37077,52 +37233,76 @@ class DocumentRenderer extends _react.Component {
     };
     this.props.vrv.setOptions(vrvOptions);
     if (this.props.collation && this.props.tei && this.props.mei) {
+      let svgDoc;
+      const parser = new window.DOMParser();
       // Render TEI with CETEIcean
       const cc = new _CETEI2.default();
       cc.makeHTML5(this.props.tei, teiData => {
-        // Render MEI with Verovio
-        this.props.vrv.loadData(this.props.mei + '\n', '');
-        const svg = this.props.vrv.renderPage(1);
-        const parser = new window.DOMParser();
-        const svgDoc = parser.parseFromString(svg, 'text/xml');
-
+        // Render MEI with Verovio if present
+        if (this.props.mei !== 'nodata') {
+          this.props.vrv.loadData(this.props.mei + '\n', '');
+          const svg = this.props.vrv.renderPage(1);
+          svgDoc = parser.parseFromString(svg, 'text/xml');
+        }
         const colDoc = parser.parseFromString(this.props.collation, 'text/xml');
         // Make links for text variants
         for (const app of Array.from(colDoc.getElementsByTagName('app'))) {
           for (const rdg of Array.from(app.getElementsByTagName('rdg'))) {
-            const sourceAndId = rdg.children[0].getAttribute('target').split('#');
-            if (sourceAndId[0].includes(this.props.source)) {
-              const variant = teiData.querySelector(`#${sourceAndId[1]}`);
-              variant.classList.add('variant');
-              variant.onclick = () => {
-                this.props.getVariants(app, rdg.getAttribute('wit'));
-                this.props.setPopoutPosition(variant.getBoundingClientRect());
-              };
-            }
-          }
-        }
-        // Make links for music variants
-        for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
-          for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
-            const mTargets = rdg.getAttribute('target');
-            if (mTargets) {
-              const targets = mTargets.split(/\s+/);
-              for (const target of targets) {
-                const sourceAndId = target.split('#');
-                if (sourceAndId[0].includes(this.props.source)) {
-                  const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`);
-                  musVariant.classList.add('musVariant');
-                  musVariant.onclick = () => {
-                    this.props.getMusicVariants(app, rdg.getAttribute('source'));
-                    this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect());
+            // TODO deal with empty readings
+            if (rdg.children.length > 0) {
+              const sourceAndId = rdg.children[0].getAttribute('target').split('#');
+              if (sourceAndId[0].includes(this.props.source)) {
+                const variant = teiData.querySelector(`#${sourceAndId[1]}`);
+                if (variant) {
+                  variant.classList.add('variant');
+                  variant.onclick = () => {
+                    this.props.getVariants(app, rdg.getAttribute('wit'));
+                    this.props.setPopoutPosition(variant.getBoundingClientRect());
                   };
                 }
               }
             }
           }
         }
-        const xi = teiData.getElementsByTagName('xi:include')[0];
-        xi.parentNode.replaceChild(svgDoc.documentElement, xi);
+        // Make links for music variants
+        if (this.props.mei !== 'nodata') {
+          for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
+            const appType = app.getAttribute('type');
+            for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
+              const mTargets = rdg.getAttribute('target');
+              if (mTargets) {
+                const targets = mTargets.split(/\s+/);
+                for (const target of targets) {
+                  const sourceAndId = target.split('#');
+                  if (sourceAndId[0].includes(this.props.source)) {
+                    const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`);
+                    if (musVariant) {
+                      if (appType === 'barline') {
+                        const barline = musVariant.querySelector('.barLineAttr');
+                        if (barline) {
+                          barline.classList.add('musVariant');
+                          barline.onclick = () => {
+                            this.props.getMusicVariants(app, rdg.getAttribute('source'));
+                            this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect());
+                          };
+                        }
+                        break;
+                      } else {
+                        musVariant.classList.add('musVariant');
+                        musVariant.onclick = () => {
+                          this.props.getMusicVariants(app, rdg.getAttribute('source'));
+                          this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect());
+                        };
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          const xi = teiData.getElementsByTagName('xi:include')[0];
+          xi.parentNode.replaceChild(svgDoc.documentElement, xi);
+        }
         this.refs.teiData.innerHTML = '';
         this.refs.teiData.appendChild(teiData);
       });
@@ -37163,9 +37343,10 @@ class CETEI {
 
     constructor(base){
         this.els = [];
-        this.behaviors = [];
+        this.namespaces = new Map();
+        this.behaviors = {};
         this.hasStyle = false;
-        this.prefixes = [];
+        this.prefixDefs = [];
         if (base) {
           this.base = base;
         } else {
@@ -37177,27 +37358,25 @@ class CETEI {
             this.base = "";
           }
         }
-        this.behaviors.push(__WEBPACK_IMPORTED_MODULE_0__behaviors__["a" /* default */]);
+        this.addBehaviors(__WEBPACK_IMPORTED_MODULE_0__behaviors__["a" /* default */]);
         this.shadowCSS;
         this.supportsShadowDom = document.head.createShadowRoot || document.head.attachShadow;
     }
 
     // public method
-    /* Returns a Promise that fetches a TEI source document from the URL
+    /* Returns a Promise that fetches an XML source document from the URL
        provided in the first parameter and then calls the makeHTML5 method
        on the returned document.
      */
-    getHTML5(TEI_url, callback, perElementFn){
-        if (window.location.href.startsWith(this.base) && (TEI_url.indexOf("/") >= 0)) {
-          this.base = TEI_url.replace(/\/[^\/]*$/, "/");
+    getHTML5(XML_url, callback, perElementFn){
+        if (window.location.href.startsWith(this.base) && (XML_url.indexOf("/") >= 0)) {
+          this.base = XML_url.replace(/\/[^\/]*$/, "/");
         }
-        // Get TEI from TEI_url and create a promise
+        // Get XML from XML_url and create a promise
         let promise = new Promise( function (resolve, reject) {
             let client = new XMLHttpRequest();
-
-            client.open('GET', TEI_url);
+            client.open('GET', XML_url);
             client.send();
-
             client.onload = function () {
               if (this.status >= 200 && this.status < 300) {
                 resolve(this.response);
@@ -37214,63 +37393,50 @@ class CETEI {
             console.log(reason);
         });
 
-        return promise.then((TEI) => {
-            return this.makeHTML5(TEI, callback, perElementFn);
+        return promise.then((XML) => {
+            return this.makeHTML5(XML, callback, perElementFn);
         });
 
     }
 
-    /* Converts the supplied TEI string into HTML5 Custom Elements. If a callback
+    /* Converts the supplied XML string into HTML5 Custom Elements. If a callback
        function is supplied, calls it on the result.
      */
-    makeHTML5(TEI, callback, perElementFn){
-      // TEI is assumed to be a string
-      let TEI_dom = ( new DOMParser() ).parseFromString(TEI, "text/xml");
-      return this.domToHTML5(TEI_dom, callback, perElementFn);
+    makeHTML5(XML, callback, perElementFn){
+      // XML is assumed to be a string
+      let XML_dom = ( new DOMParser() ).parseFromString(XML, "text/xml");
+      return this.domToHTML5(XML_dom, callback, perElementFn);
     }
 
-    /* Converts the supplied TEI DOM into HTML5 Custom Elements. If a callback
+    /* Converts the supplied XML DOM into HTML5 Custom Elements. If a callback
        function is supplied, calls it on the result.
     */
-    domToHTML5(TEI_dom, callback, perElementFn){
+    domToHTML5(XML_dom, callback, perElementFn){
 
-      this._fromTEI(TEI_dom);
+      this._learnElementNames(XML_dom);
 
       let convertEl = (el) => {
-          // Create new element. TEI elements get prefixed with 'tei-',
-          // TEI example elements with 'teieg-'. All others keep
+          // Elements with defined namespaces get the prefix mapped to that element. All others keep
           // their namespaces and are copied as-is.
           let newElement;
-          let copy = false;
-          switch (el.namespaceURI) {
-            case "http://www.tei-c.org/ns/1.0":
-              newElement = document.createElement("tei-" + el.tagName);
-              break;
-            case "http://www.tei-c.org/ns/Examples":
-              if (el.tagName == "egXML") {
-                newElement = document.createElement("teieg-" + el.tagName);
-                break;
-              }
-            case "http://relaxng.org/ns/structure/1.0":
-              newElement = document.createElement("rng-" + el.tagName);
-              break;
-            default:
-              newElement = document.importNode(el, false);
-              copy = true;
+          if (this.namespaces.has(el.namespaceURI)) {
+            let prefix = this.namespaces.get(el.namespaceURI);
+            newElement = document.createElement(prefix + "-" + el.localName);
+          } else {
+            newElement = document.importNode(el, false);
           }
           // Copy attributes; @xmlns, @xml:id, @xml:lang, and
           // @rendition get special handling.
           for (let att of Array.from(el.attributes)) {
-              if (!att.name.startsWith("xmlns") || copy) {
-                newElement.setAttribute(att.name, att.value);
-              } else {
-                if (att.name == "xmlns")
+              if (att.name == "xmlns") {
                 newElement.setAttribute("data-xmlns", att.value); //Strip default namespaces, but hang on to the values
+              } else {
+                newElement.setAttribute(att.name, att.value);
               }
-              if (att.name == "xml:id" && !copy) {
+              if (att.name == "xml:id") {
                 newElement.setAttribute("id", att.value);
               }
-              if (att.name == "xml:lang" && !copy) {
+              if (att.name == "xml:lang") {
                 newElement.setAttribute("lang", att.value);
               }
               if (att.name == "rendition") {
@@ -37278,7 +37444,7 @@ class CETEI {
               }
           }
           // Preserve element name so we can use it later
-          newElement.setAttribute("data-teiname", el.localName);
+          newElement.setAttribute("data-origname", el.localName);
           // If element is empty, flag it
           if (el.childNodes.length == 0) {
             newElement.setAttribute("data-empty", "");
@@ -37308,8 +37474,8 @@ class CETEI {
           }
           // Get prefix definitions
           if (el.localName == "prefixDef") {
-            this.prefixes.push(el.getAttribute("ident"));
-            this.prefixes[el.getAttribute("ident")] =
+            this.prefixDefs.push(el.getAttribute("ident"));
+            this.prefixDefs[el.getAttribute("ident")] =
               {"matchPattern": el.getAttribute("matchPattern"),
               "replacementPattern": el.getAttribute("replacementPattern")};
           }
@@ -37327,19 +37493,27 @@ class CETEI {
           return newElement;
       }
 
-      this.dom = convertEl(TEI_dom.documentElement);
+      this.dom = convertEl(XML_dom.documentElement);
 
-      if (document.registerElement) {
-        this.registerAll(this.els);
-      } else {
-        this.fallback(this.els);
-      }
+      this.applyBehaviors();
       this.done = true;
       if (callback) {
-          callback(this.dom, this);
+        callback(this.dom, this);
+        window.dispatchEvent(ceteiceanLoad);
+      } else {
+        window.dispatchEvent(ceteiceanLoad);
+        return this.dom;
       }
-      else {
-          return this.dom;
+    }
+
+    /*  Define or apply behaviors for the document
+     *
+     */
+    applyBehaviors() {
+      if (window.customElements) {
+        this.define(this.els);
+      } else {
+        this.fallback(this.els);
       }
     }
 
@@ -37353,7 +37527,7 @@ class CETEI {
     }
 
     /* If a URL where CSS for styling Shadow DOM elements lives has been defined,
-       insert it into the Shadow DOM.
+       insert it into the Shadow DOM. DEPRECATED
      */
     addShadowStyle(shadow) {
       if (this.shadowCSS) {
@@ -37366,11 +37540,53 @@ class CETEI {
        same name.
     */
     addBehaviors(bhvs){
-      if (bhvs["handlers"] || bhvs ["fallbacks"]) {
-        this.behaviors.push(bhvs);
-      } else {
-        console.log("No handlers or fallback methods found.");
+      if (bhvs.namespaces) {
+        for (let prefix of Object.keys(bhvs.namespaces)) {
+          if (!this.namespaces.has(bhvs.namespaces[prefix]) && !Array.from(this.namespaces.values()).includes(prefix)) {
+            this.namespaces.set(bhvs.namespaces[prefix], prefix);
+          }
+        }
       }
+      for (let prefix of this.namespaces.values()) {
+        if (bhvs[prefix]) {
+          for (let b of Object.keys(bhvs[prefix])) {
+            this.behaviors[prefix + ":" + b] = bhvs[prefix][b];
+          }
+        }
+      }
+      // Support old-style TEI-specific behaviors
+      if (bhvs.handlers) {
+        for (let b of Object.keys(bhvs.handlers)) {
+          if (b !== "egXML") {
+            this.behaviors["tei:" + b] = bhvs.handlers[b];
+          } else {
+            this.behaviors["teieg:egXML"] = bhvs.handlers[b];
+          }
+        }
+      } 
+      if (bhvs["fallbacks"]) {
+        console.log("Fallback behaviors are no longer used.")
+      }
+    }
+
+    /* Adds or replaces an individual behavior. Takes a namespace prefix or namespace definition,
+     * the element name, and the behavior. E.g.
+     * addBehavior("tei", "add", ["`","`"]) for an already-declared namespace or
+     * addBehavior({"doc": "http://docbook.org/ns/docbook"}, "note", ["[","]"]) for a new one
+     */
+    addBehavior(ns, element, b) {
+      let p;
+      if (ns === Object(ns)) {
+        for (let prefix of Object.keys(ns)) {
+          if (!this.namespaces.has(ns[prefix])) {
+            this.namespaces.set(ns[prefix], prefix);
+            p = prefix;
+          }
+        }
+      } else {
+        p = ns;
+      }
+      this.behaviors[p + ":" + element] = b;
     }
 
     /* Sets the base URL for the document. Used to rewrite relative links in the
@@ -37382,41 +37598,50 @@ class CETEI {
     }
 
     // "private" method
-    _fromTEI(TEI_dom) {
-        let root_el = TEI_dom.documentElement;
-        this.els = new Set( Array.from(root_el.getElementsByTagNameNS("http://www.tei-c.org/ns/1.0", "*"), x => x.tagName) );
-        this.els.add("egXML"); // Special case—not in TEI namespace, but needs to be handled
-        this.els.add(root_el.tagName); // Add the root element to the array
+    _learnElementNames(XML_dom) {
+        let root = XML_dom.documentElement;
+        this.els = new Set( Array.from(root.querySelectorAll("*"), e => (this.namespaces.has(e.namespaceURI)?this.namespaces.get(e.namespaceURI) + ":":"") + e.localName) );
+        this.els.add((this.namespaces.has(root.namespaceURI)?this.namespaces.get(root.namespaceURI)+":":"") + root.localName); // Add the root element to the array
     }
 
     // private method
     _insert(elt, strings) {
       let span = document.createElement("span");
-      if (strings.length > 1) {
-        if (strings[0].includes("<") && strings[1].includes("</")) {
-          span.innerHTML = strings[0] + elt.innerHTML + strings[1];
-        } else {
-          span.innerHTML = "<span>" + strings[0] + "</span>" + elt.innerHTML + "<span>" + strings[1] + "</span>";
-        }
-      } else {
-        if (strings[0].includes("<")) {
-          span.innerHTML = strings[0] + elt.innerHTML;
-        } else {
-          span.innerHTML = "<span>" + strings[0] + "</span>" + elt.innerHTML;
+      for (let node of Array.from(elt.childNodes)) {
+        if (node.nodeType === Node.ELEMENT_NODE && !node.hasAttribute("data-processed")) {
+          this._processElement(node);
         }
       }
-      if (span.children.length > 1) {
-        return span;
+      if (strings.length > 1) {
+        span.innerHTML = strings[0] + elt.innerHTML + strings[1];
       } else {
-        return span.children[0];
+        span.innerHTML = strings[0] + elt.innerHTML;
+      }
+      return span;
+      
+    }
+
+    // private method. Runs behaviors recursively on the supplied element and children
+    _processElement(elt) {
+      if (elt.hasAttribute("data-origname") && ! elt.hasAttribute("data-processed")) {
+        let fn = this.getFallback(this._bName(elt));
+        if (fn) {
+          this.append(fn,elt);
+          elt.setAttribute("data-processed","");
+        }
+      }
+      for (let node of Array.from(elt.childNodes)) {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          this._processElement(node);
+        }
       }
     }
 
     // private method
     _template(str, elt) {
       let result = str;
-      if (str.search(/$(\w*)@(\w+)/)) {
-        let re = /\$(\w*)@(\w+)/g;
+      if (str.search(/\$(\w*)(@([a-zA-Z:]+))/ )) {
+        let re = /\$(\w*)@([a-zA-Z:]+)/g;
         let replacements;
         while (replacements = re.exec(str)) {
           if (elt.hasAttribute(replacements[2])) {
@@ -37431,21 +37656,47 @@ class CETEI {
       return result;
     }
 
-    tagName(name) {
-      if (name == "egXML") {
-        return "teieg-" + name;
+    // Private method. Given a qualified name (e.g. tei:text), return the element name
+    _tagName(name) {
+      if (name.includes(":"), 1) {
+        return name.replace(/:/,"-").toLowerCase();;
       } else {
-        return "tei-" + name;
+        return "ceteicean-" + name.toLowerCase();
       }
     }
 
-    /* Takes a template in the form of an array of 1 or 2 strings and
-       returns a closure around a function that can be called as
-       a createdCallback or applied to an individual element.
+    // Private method. Given an element, return its qualified name as defined in a behaviors object
+    _bName(e) {
+      return e.tagName.substring(0,e.tagName.indexOf("-")).toLowerCase() + ":" + e.getAttribute("data-origname");
+    }
+
+    /* Takes a template in the form of either an array of 1 or 2 
+       strings or an object with CSS selector keys and either functions
+       or arrays as described above. Returns a closure around a function 
+       that can be called in the element constructor or applied to an 
+       individual element.
 
        Called by the getHandler() and getFallback() methods
     */
-    decorator(strings) {
+    decorator(template) {
+      if (Array.isArray(template) && !Array.isArray(template[0])) {
+        return this._decorator(template)
+      } 
+      let ceteicean = this;
+      return function(elt) {
+        for (let rule of template) {
+          if (elt.matches(rule[0]) || rule[0] === "_") {
+            if (Array.isArray(rule[1])) {
+              return ceteicean._decorator(rule[1]).call(ceteicean, elt);
+            } else {
+              return rule[1].call(ceteicean, elt);
+            }
+          }
+        }
+      }
+    }
+
+    _decorator(strings) {
       let ceteicean = this;
       return function (elt) {
         let copy = [];
@@ -37458,32 +37709,27 @@ class CETEI {
 
     /* Returns the handler function for the given element name
 
-       Called by registerAll().
+       Called by define().
      */
     getHandler(fn) {
-      for (let i = this.behaviors.length - 1; i >= 0; i--) {
-        if (this.behaviors[i]["handlers"][fn]) {
-          if (Array.isArray(this.behaviors[i]["handlers"][fn])) {
-            return this.append(this.decorator(this.behaviors[i]["handlers"][fn]));
-          } else {
-            return this.append(this.behaviors[i]["handlers"][fn]);
-          }
+      if (this.behaviors[fn]) {
+        if ({}.toString.call(this.behaviors[fn]) === '[object Function]') {
+          return this.append(this.behaviors[fn]);
+        } else {
+          return this.append(this.decorator(this.behaviors[fn]));
         }
       }
     }
 
     /* Returns the fallback function for the given element name.
-
        Called by fallback().
      */
     getFallback(fn) {
-      for (let i = this.behaviors.length - 1; i >= 0; i--) {
-        if (this.behaviors[i]["handlers"][fn]) {
-          if (Array.isArray(this.behaviors[i]["handlers"][fn])) {
-            return this.decorator(this.behaviors[i]["handlers"][fn]);
-          } else {
-            return this.behaviors[i]["handlers"][fn];
-          }
+      if (this.behaviors[fn]) {
+        if ({}.toString.call(this.behaviors[fn]) === '[object Function]') {
+          return this.behaviors[fn];
+        } else {
+          return this.decorator(this.behaviors[fn]);
         }
       }
     }
@@ -37498,34 +37744,41 @@ class CETEI {
     append(fn, elt) {
       if (elt) {
         let content = fn.call(this, elt);
-        if (content && !(elt.querySelector(":scope > " + content.nodeName))) {
-          if (this.supportsShadowDom) {
-            this._appendShadow(elt, content);
-          } else {
-            this._appendBasic(elt, content);
-          }
+        if (content && !this._childExists(elt.firstElementChild, content.nodeName)) {
+          this._appendBasic(elt, content);
         }
       } else {
         let self = this;
-        if (this.supportsShadowDom) {
-          return function() {
-            let content = fn.call(self, this);
-            if (content) {
-              self._appendShadow(this, content);
-            }
-          }
-        } else {
-          return function() {
-            let content = fn.call(self, this);
-            if (content && !(this.querySelector(":scope > " + content.nodeName))) {
-              self._appendBasic(this, content);
-            }
+        return function() {
+          let content = fn.call(self, this);
+          if (content && !self._childExists(this.firstElementChild, content.nodeName)) {
+            self._appendBasic(this, content);
           }
         }
       }
     }
 
-    /* Private method called by append() if the browser supports Shadow DOM
+    attach(elt, fn, node) {
+      elt[fn].call(elt, node);
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        for (let e of Array.from(node.childNodes)) {
+          this._processElement(e);
+        }
+      } 
+    }
+
+    /* Private method called by append(). Takes a child element and a name, and recurses through the
+     * child's siblings until an element with that name is found, returning true if it is and false if not.
+     */
+    _childExists(elt, name) {
+      if (elt && elt.nodeName == name) {
+        return true;
+      } else {
+        return elt && elt.nextElementSibling && this._childExists(elt.nextElementSibling, name);
+      }
+    }
+
+    /* DEPRECATED. Private method called by append() if the browser supports Shadow DOM. 
      */
     _appendShadow(elt, content) {
       var shadow = elt.attachShadow({mode:'open'});
@@ -37533,12 +37786,17 @@ class CETEI {
       shadow.appendChild(content);
     }
 
-    /* Private method called by append() if the browser does not support
-     * Shadow DOM
+    /* Private method called by append() 
      */
     _appendBasic(elt, content) {
       this.hideContent(elt);
       elt.appendChild(content);
+    }
+
+    /* Wrapper for deprecated method now known as define()
+     */
+    registerAll(names) {
+      this.define(names);
     }
 
     /* Registers the list of elements provided with the browser.
@@ -37546,18 +37804,34 @@ class CETEI {
        Called by makeHTML5(), but can be called independently if, for example,
        you've created Custom Elements via an XSLT transformation instead.
      */
-    registerAll(names) {
+    // Need to come up with a new way to get tag name from name. Possibly prefixed names in behaviors?
+    define(names) {
       for (let name of names) {
-        let proto = Object.create(HTMLElement.prototype);
-        let fn = this.getHandler(name);
-        if (fn) {
-          proto.createdCallback = fn;
-        }
-        let prefixedName = this.tagName(name);
         try {
-          document.registerElement(prefixedName, {prototype: proto});
+          let fn = this.getHandler(name);
+          window.customElements.define(this._tagName(name), class extends HTMLElement {
+            constructor() {
+              super(); 
+              if (!this.matches(":defined")) { // "Upgraded" undefined elements can have attributes & children; new elements can't
+                if (fn) {
+                  fn.call(this);
+                }
+                // We don't want to double-process elements, so add a flag
+                this.setAttribute("data-processed","");
+              }
+            }
+            // Process new elements when they are connected to the browser DOM
+            connectedCallback() {
+              if (!this.hasAttribute("data-processed")) {
+                if (fn) {
+                  fn.call(this);
+                }
+                this.setAttribute("data-processed","");
+              }
+            };
+          });
         } catch (error) {
-          console.log(prefixedName + " couldn't be registered or is already registered.");
+          console.log(this._tagName(name) + " couldn't be registered or is already registered.");
           console.log(error);
         }
 
@@ -37567,15 +37841,17 @@ class CETEI {
     /* Provides fallback functionality for browsers where Custom Elements
        are not supported.
 
-       Like registerAll(), this is called by makeHTML5(), but can be called
+       Like define(), this is called by makeHTML5(), but can be called
        independently.
     */
     fallback(names) {
       for (let name of names) {
         let fn = this.getFallback(name);
         if (fn) {
-          for (let elt of Array.from(this.dom.getElementsByTagName(this.tagName(name)))) {
-            this.append(fn, elt);
+          for (let elt of Array.from((this.dom && !this.done?this.dom:document).getElementsByTagName(this._tagName(name)))) {
+            if (!elt.hasAttribute("data-processed")) {
+              this.append(fn, elt);
+            }
           }
         }
       }
@@ -37602,13 +37878,63 @@ class CETEI {
       return urls.replace(/ .*$/, "");
     }
 
-    /* Takes an element and serializes it to a string or, if the stripElt
+    normalizeURI(urls) {
+      return this.rw(this.first(urls))
+    }
+
+    /* Takes a string and a number and returns the original string
+       printed that number of times.
+    */
+    repeat(str, times) {
+      let result = "";
+      for (let i = 0; i < times; i++) {
+        result += str;
+      }
+      return result;
+    }
+
+    /* Performs a deep copy operation of the input node while stripping
+     * out child elements introduced by CETEIcean.
+     */ 
+    copyAndReset(node) {
+      let _clone = (n) => {
+        let result = n.nodeType === Node.ELEMENT_NODE?document.createElement(n.nodeName):n.cloneNode(true);
+        if (n.attributes) {
+          for (let att of Array.from(n.attributes)) {
+            if (att.name !== "data-processed") {
+              result.setAttribute(att.name,att.value);
+            }
+          }
+        }
+        for (let nd of Array.from(n.childNodes)){
+          if (nd.nodeType == Node.ELEMENT_NODE) {
+            if (!n.hasAttribute("data-empty")) {
+              if (nd.hasAttribute("data-original")) {
+                for (let childNode of Array.from(nd.childNodes)) {
+                  result.appendChild(_clone(childNode));
+                }
+                return result;
+              } else {
+                result.appendChild(_clone(nd));
+              }
+            }
+          }
+          else {
+            result.appendChild(nd.cloneNode());
+          }
+        }
+        return result;
+      }
+      return _clone(node);
+    }
+
+    /* Takes an element and serializes it to an XML string or, if the stripElt
        parameter is set, serializes the element's content.
      */
     serialize(el, stripElt) {
       let str = "";
       if (!stripElt) {
-        str += "&lt;" + el.getAttribute("data-teiname");
+        str += "&lt;" + el.getAttribute("data-origname");
         for (let attr of Array.from(el.attributes)) {
           if (!attr.name.startsWith("data-") && !(["id", "lang", "class"].includes(attr.name))) {
             str += " " + attr.name + "=\"" + attr.value + "\"";
@@ -37623,6 +37949,7 @@ class CETEI {
           str += "/>";
         }
       }
+
       for (let node of Array.from(el.childNodes)) {
         switch (node.nodeType) {
           case Node.ELEMENT_NODE:
@@ -37639,23 +37966,26 @@ class CETEI {
         }
       }
       if (!stripElt && el.childNodes.length > 0) {
-        str += "&lt;/" + el.getAttribute("data-teiname") + ">";
+        str += "&lt;/" + el.getAttribute("data-origname") + ">";
       }
       return str;
     }
 
-    /* Wraps the content of the element parameter in a <span class="hide">
+    /* Wraps the content of the element parameter in a <span data-original>
      * with display set to "none".
      */
     hideContent(elt) {
       if (elt.childNodes.length > 0) {
-        let content = elt.innerHTML;
-        elt.innerHTML = "";
         let hidden = document.createElement("span");
-        hidden.setAttribute("style", "display:none;");
-        hidden.setAttribute("class", "hide");
-        hidden.innerHTML = content;
         elt.appendChild(hidden);
+        hidden.setAttribute("hidden", "");
+        hidden.setAttribute("data-original", "");
+        for (let node of Array.from(elt.childNodes)) {
+          if (node !== hidden) {
+            hidden.appendChild(elt.removeChild(node));
+          }
+        }
+        
       }
     }
 
@@ -37666,13 +37996,21 @@ class CETEI {
                 .replace(/&amp;/, "&");
     }
 
-    savePosition() {
-      localStorage.setItem("scroll",window.scrollY);
+    static savePosition() {
+      window.localStorage.setItem("scroll",window.scrollY);
     }
 
-    restorePosition() {
-      if (localStorage.getItem("scroll")) {
-        window.scrollTo(0, localStorage.getItem("scroll"));
+    static restorePosition() {
+      if (!window.location.hash) {
+        if (window.localStorage.getItem("scroll")) {
+          setTimeout(function() {
+            window.scrollTo(0, localStorage.getItem("scroll"));
+          }, 100);
+        }
+      } else {
+        setTimeout(function() {
+          document.querySelector(window.location.hash).scrollIntoView();
+        }, 100);
       }
     }
 
@@ -37694,8 +38032,9 @@ class CETEI {
 try {
   if (window) {
       window.CETEI = CETEI;
-      window.unload = CETEI.savePosition;
-      window.load = CETEI.restorePosition;
+      window.addEventListener("beforeunload", CETEI.savePosition);
+      var ceteiceanLoad = new Event("ceteiceanload");
+      window.addEventListener("ceteiceanload", CETEI.restorePosition);
   }
 } catch (e) {
   // window not defined;
@@ -37710,7 +38049,12 @@ try {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  "handlers": {
+  "namespaces": {
+    "tei": "http://www.tei-c.org/ns/1.0",
+    "teieg": "http://www.tei-c.org/ns/Examples",
+    "rng": "http://relaxng.org/ns/structure/1.0"  
+  },
+  "tei": {
     "eg": ["<pre>","</pre>"],
     // inserts a link inside <ptr> using the @target; the link in the
     // @href is piped through the rw (rewrite) function before insertion
@@ -37721,15 +38065,16 @@ try {
       let content = new Image();
       content.src = this.rw(elt.getAttribute("url"));
       if (elt.hasAttribute("width")) {
-        content.width = elt.getAttribute("width").replace(/[^.0-9]/g, "");
+        content.setAttribute("width",elt.getAttribute("width"));
       }
       if (elt.hasAttribute("height")) {
-        content.height = elt.getAttribute("height").replace(/[^.0-9]/g, "");
+        content.setAttribute("height",elt.getAttribute("height"));
       }
       return content;
     },
-    "list": function(elt) {
-      if (elt.hasAttribute("type") && elt.getAttribute("type") == "gloss") {
+    "list": [
+      // will only run on a list where @type="gloss"
+      ["[type=gloss]", function(elt) {
         let dl = document.createElement("dl");
         for (let child of Array.from(elt.children)) {
           if (child.nodeType == Node.ELEMENT_NODE) {
@@ -37746,10 +38091,37 @@ try {
           }
         }
         return dl;
-      } else {
-        return null;
       }
-    },
+    ]],
+    "note": [
+      // Make endnotes
+      ["[place=end]", function(elt){
+        if (!this.noteIndex){
+          this["noteIndex"] = 1;
+        } else {
+          this.noteIndex++;
+        }
+        let id = "_note_" + this.noteIndex;
+        let link = document.createElement("a");
+        link.setAttribute("id", "src" + id);
+        link.setAttribute("href", "#" + id);
+        link.innerHTML = this.noteIndex;
+        let content = document.createElement("sup");
+        content.appendChild(link);
+        let notes = this.dom.querySelector("ol.notes");
+        if (!notes) {
+          notes = document.createElement("ol");
+          notes.setAttribute("class", "notes");
+          this.dom.appendChild(notes);
+        }
+        let note = document.createElement("li");
+        note.id = id;
+        note.innerHTML = elt.innerHTML
+        notes.appendChild(note);
+        return content;
+      }],
+      ["_", ["(",")"]]
+    ],
     "table": function(elt) {
       let table = document.createElement("table");
       table.innerHTML = elt.innerHTML;
@@ -37781,6 +38153,18 @@ try {
       }
       return table;
     },
+    "teiHeader": function(e) {
+      this.hideContent(e);
+    },
+    "title": [
+      ["tei-titlestmt>tei-title", function(elt) {
+        let title = document.createElement("title");
+        title.innerHTML = elt.innerText;
+        document.querySelector("head").appendChild(title);
+      }]
+    ]
+  },
+  "teieg": {
     "egXML": function(elt) {
       let pre = document.createElement("pre");
       pre.innerHTML = this.serialize(elt, true);

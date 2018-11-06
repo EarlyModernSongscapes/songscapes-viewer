@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Story of Theseus and Ariadne</title>
+            <title type="first_line">Theseus, O Theseus, hark! but yet in vain</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+               <author role="composer">Henry Lawes</author>
+               <author role="poet">William Cartwright</author>
+               <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+               <idno type="call_number">Folger L638, copy 1</idno>
+               <biblScope unit="leaf" from="B1r" to="C2r">leaves B1 recto to C2 recto</biblScope>,
+              <biblScope unit="page" from="1" to="7">pages 1 to 7</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div xml:id="song01">
+            <div type="headnote">
+               <head>
+                  <seg xml:id="song01v1">The Story of <hi rend="italic">Theseus</hi> and <hi rend="italic">Ariadne,</hi> as much as concerns the ensuing Relation, is this.</seg>
+               </head>
+               <p>
+                  <seg xml:id="song01v2">Theseus <hi rend="italic">going over into </hi>Creet<hi rend="italic"> to fight with the</hi> Minotaure, <hi rend="italic">made his Father </hi>Ægeus<hi rend="italic"> this promise, that if he came off with Life and Victory, he would set up white sailes at his comming back, the Ship as he went out having black sailes in token of griefe: being come into </hi>Creet, Ariadne<hi rend="italic"> the Kings Daughter there fell in love with him, and gave him a Clew of thread, by which after he had slain the </hi>Minotaure<hi rend="italic"> he extricated himselfe out of that perplexed Labyrinth: having thus obtained the Victory he carryed her along with him into the Island </hi>Naxos,<hi rend="italic"> where he tooke occasion to leave her as she was a sleep, and so hasting homeward, forgot to hoist the white sails; his Father </hi>Ægeus,<hi rend="italic"> therefore, who stood upon a Rock, expecting his return, as soon as he percieved the black sailes, cast himselfe headlong into the Sea, from whom it was called the </hi>Ægean<hi rend="italic"> Sea. In this while, </hi>Ariadne<hi rend="italic"> complaining of </hi>Theseus<hi rend="italic"> his Infidelity, resolving to destroy her selfe, having made her own Epitaph, was comforted by </hi>Bacchus,<hi rend="italic"> who comming thither was enamoured of her Beauty, and took her to his protection.</hi>
+                  </seg>
+               </p>
+            </div>
+            <div>
+               <head xml:id="song01v3">Ariadne <hi rend="italic">sitting upon a Rock in the Island </hi>Naxos, <hi rend="italic">deserted by </hi>Theseus,<hi rend="italic"> thus complains.</hi></head>
+               <notatedMusic>
+                  <xi:include href="../mei/Theseus,_O_Theseus,_hark!-L638_1.mei"/>
+               </notatedMusic>
+               <div type="underlay">
+                  <lg type="stanza">
+                     <l>
+                        <hi rend="italic">Theseus,</hi> O <hi rend="italic">Theseus,</hi> hark! but yet in vain;</l>
+                     <l rend="indent2">Alas <seg xml:id="song01v4">deserted</seg> I complain;</l>
+                     <l>it was some neighb'ring Rock, more soft than he,</l>
+                     <l rend="indent1">whose hollow bowels pitty’d me,</l>
+                     <l>and beating back that false &amp; cruell name,</l>
+                     <l rend="indent1">did comfort and revenge my flame,</l>
+                     <l rend="indent1">then faithless whither wilt thou flye<seg xml:id="song01v6">?</seg>
+                     </l>
+                     <pb n="B1v"/>
+                     <l rend="indent2">stones dare not harbour cruelty.</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l>Tell me ye Gods, who e’re ye are,</l>
+                     <l>why, O why, made ye him so faire?</l>
+                     <l rend="indent1">&amp; tell me wretch why thou</l>
+                     <l rend="indent1">mad’st not thy selfe more true<seg xml:id="song01v7">?</seg>
+                     </l>
+                     <l>Beauty from him might copies take,</l>
+                     <l>&amp; more majestick <hi rend="italic">Heroes</hi> make,</l>
+                     <l rend="indent1">and falshood learn a wile</l>
+                     <l rend="indent1">from him too, to beguile<seg xml:id="song01v8">:</seg>
+                     </l>
+                     <l rend="indent2">restore my Clue,</l>
+                     <l rend="indent2">’tis here most due,</l>
+                     <l>for ‘tis a Labrinth of more subtle Art,</l>
+                     <l>to have so faire a face<seg xml:id="song01v9">,</seg> so fowle a heart:</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l>The rav’nous Vulter tear his breast,</l>
+                     <l>the rowling stone disturbe his rest;</l>
+                     <l rend="indent2">let him next feele</l>
+                     <l>
+                        <hi rend="italic">Ixions</hi> wheel,</l>
+                     <l rend="indent1">&amp; add one fable more</l>
+                     <l rend="indent1">to, cursing Poets store,</l>
+                     <l>&amp; then yet rather let him live &amp; twine</l>
+                     <l>his woof of <pb n="B2r"/>days with some thread stoln from mine;</l>
+                     <l rend="indent1">but if you’l torture him<seg xml:id="song01v11">,</seg> how e’re
+                     </l>
+                     <l>torture my heart, you’l find him there:</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l rend="indent2">Till mine eyes drank up his,</l>
+                     <l rend="indent3">and his drank mine,</l>
+                     <l rend="indent2">I ne’r thought souls might kiss,</l>
+                     <l rend="indent3">&amp; spirits joyne<seg xml:id="song01v13">:</seg>
+                     </l>
+                     <l rend="indent3">Pictures till then<seg xml:id="song01v14">,</seg>
+                     </l>
+                     <l rend="indent2">took me as much as men,</l>
+                     <l rend="indent3">Nature and Art
+                     </l>
+                     <l rend="indent2">moveing alike my heart;</l>
+                     <l>but his faire visage made me find
+                     </l>
+                     <l rend="indent4">pleasures and fears<seg xml:id="song01v17">,</seg>
+                     </l>
+                     <l rend="indent4">hopes, sighs and tears,</l>
+                     <l>as severall seasons of the mind.</l>
+                     <l rend="indent2">Should thine Eye <hi rend="italic">Venus</hi> on his dwell,</l>
+                     <l rend="indent2">thou wouldst invite him to thy shell,</l>
+                     <l rend="indent2">&amp; caught by that live jet<seg xml:id="song01v20">,</seg>
+                     </l>
+                     <l rend="indent2">venture the second net,</l>
+                     <l>and after all thy dangers faithlesse he;</l>
+                     <l>shouldst thou but slumber<seg xml:id="song01v22">,</seg> would forsake ev’n thee.</l>
+                  </lg>
+                  <pb n="B2v"/>
+                  <lg type="stanza">
+                     <l>The streams so court the yielding bankes,</l>
+                     <l>and gliding thence ne’re pay their thankes,</l>
+                     <l rend="indent3">the winds so woo the flowers<seg xml:id="song01v23">,</seg>
+                     </l>
+                     <l rend="indent3">whisp’ring among fresh bowers,</l>
+                     <l rend="indent1">and having rob’d them of their smels,</l>
+                     <l rend="indent1">flye thence perfum’d to other Cels;</l>
+                     <l>this is familiar hate<seg xml:id="song01v24">,</seg> to smile, &amp; kill,</l>
+                     <l>though nothing pleas thee<seg xml:id="song01v25">,</seg> yet my ruine will:</l>
+                     <l rend="indent2">Death hover, hover, o’re me then<seg xml:id="song01v27">,</seg>
+                     </l>
+                     <l rend="indent2">waves let your christall womb<seg xml:id="song01v28">,</seg>
+                     </l>
+                     <l rend="indent2">be both my fate<seg xml:id="song01v29"/> and tomb,</l>
+                     <l rend="indent1">I’le sooner trust the sea then men.</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l rend="indent2">Yet for revenge to heav’n I’le call<seg xml:id="song01v31">,</seg>
+                     </l>
+                     <l rend="indent2">and breath one curse before I fall;</l>
+                     <l>proud of two Conquests<seg xml:id="song01v32">, <hi rend="italic">Minotaure</hi>
+                        </seg> and me,</l>
+                     <l>that by my faith, this by thy perjurie.</l>
+                     <pb n="C1r"/>
+                     <l>May’st thou forget to wing thy ships with white,</l>
+                     <l>that the black <seg xml:id="song01v33">sails</seg> may to the longing sight</l>
+                     <l>of thy gray Father tell thy fate, and he</l>
+                     <l>bequeath that sea his name<seg xml:id="song01v35">,</seg> falling like me.</l>
+                     <l>Nature &amp; Love thus brand thee, whilst I dye<seg xml:id="song01v36">,</seg>
+                     </l>
+                     <l>'cause thou forsak'st <hi rend="italic">Ægeus,</hi> 'cause thou draw'st nigh.</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l rend="indent2">And <seg xml:id="song01v37">ye,</seg> O Nimphs below who sit,</l>
+                     <l rend="indent2">in whose swift floods his vows he writ,</l>
+                     <l>snatch a sharp Diamond from <seg xml:id="song01v38">your</seg> richer Mines,</l>
+                     <l>&amp; in some Mirror grave these sadder lines;</l>
+                     <l rend="indent3">which let some God convey</l>
+                     <l rend="indent3">to him, that so he may</l>
+                     <l rend="indent2">in that both read at once and see</l>
+                     <l rend="indent2">those lookes that caus’d my destiny.</l>
+                  </lg>
+                  <lg type="stanza">
+                     <head rend="italic" xml:id="song01v40">Her Epitaph</head>
+                     <l>In <hi rend="italic">Thetis</hi> Armes I <hi rend="italic">Ariadne</hi> sleep,</l>
+                     <pb n="C1v"/>
+                     <l>drown'd: First <seg xml:id="song01v42">in</seg> mine own tears, then in the deep:</l>
+                     <l>Twice banish'd, first by love, and then by hate,</l>
+                     <l>the life that I preserv’d became my fate,</l>
+                     <l>who leaving all was by him left alone,</l>
+                     <l>that from a Monster fre’d<seg xml:id="song01v44">,</seg> himselfe prov’d one:</l>
+                  </lg>
+                  <lg type="stanza">
+                     <l rend="indent1">
+                        <seg xml:id="song01v45">Thus</seg> then I <seg xml:id="song01v46">F―</seg> but looke<seg xml:id="song01v47">,</seg>
+                        <seg xml:id="song01v48">O mine eyes</seg>,</l>
+                     <l rend="indent4">be now true spies,</l>
+                     <l rend="indent4">yonder, yonder
+                     </l>
+                     <l rend="indent4">comes my dear,</l>
+                     <l rend="indent4">now my wonder,</l>
+                     <l rend="indent4">once my fear;</l>
+                     <l rend="indent2">see Satyrs dance along</l>
+                     <l rend="indent2">in a confused throng,</l>
+                     <l rend="indent2">whilst horns and pipes rude noice<seg xml:id="song01v50">,</seg>
+                     </l>
+                     <l rend="indent2">do mad their lusty joyes;</l>
+                     <l rend="indent1">Roses his forehead crown,</l>
+                     <l rend="indent1">&amp; that re-crowns the flowers;</l>
+                     <l rend="indent1">where he walks up and down<seg xml:id="song01v51">,</seg>
+                     </l>
+                     <l rend="indent1">he makes the Desarts Bowers;</l>
+                     <l rend="indent2">the Ivy and the <pb n="C2r"/>Grape</l>
+                     <l rend="indent2">hide not<seg xml:id="song01v53b">,</seg> adorne his shape,</l>
+                     <l>and green leaves cloath his waving Rod,</l>
+                     <l>
+                        <seg xml:id="song01v54">'tis he;</seg> 'tis either <hi rend="italic">Theseus</hi>, or some God.</l>
+                  </lg>
+               </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

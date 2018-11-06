@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Mediocrity in Love rejected</title>
+              <title type="first_line">Give me more Love, or more Disdain</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Carew</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="G1r">leaf G1 recto</biblScope>,
+              <biblScope unit="page" from="21">page 21</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song18">
+          <head rend="italic">Mediocrity in Love rejected.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Give me more Love, or more Disdain,</l>
+            <l rend="indent1">the Torrid or the Frozen Zone</l>
+            <l>bring equall ease unto my pain,</l>
+            <l rend="indent1">the Temperate affords me none;</l>
+            <l>either extream of Love or Hate</l>
+            <l>is sweeter then a calme Estate.</l>
+          </lg>
+          <lg type="stanza">
+            <l>Give me a storm, if it be Love,</l>
+            <l rend="indent1">like <hi rend="italic">Dana</hi> in that golden showre,</l>
+            <l>I swim in pleasure; if it prove</l>
+            <l rend="indent1">Disdain, that torrent will devoure</l>
+            <l>my vulture hopes, and he's possest</l>
+            <l>of Heav'n, that's but hell releast;</l>
+          </lg>
+          <lg type="stanza">
+            <l rend="indent1">then Crown my joyes or Cure my pain,</l>
+            <l>give me more Love or more Disdain.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

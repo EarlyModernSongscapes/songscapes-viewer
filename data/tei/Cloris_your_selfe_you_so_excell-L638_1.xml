@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>To the same Lady, singing the former Song</title>
+              <title type="first_line">Cloris your selfe you so excell</title>
+         </titleStmt>
+         <publicationStmt>
+             <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+             <bibl>
+               <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+               <author role="composer">Henry Lawes</author>
+               <author role="poet">Edmund Waller</author>
+               <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+               <idno type="wing">L638</idno>
+               <idno type="call_number">Folger L638, copy 1</idno>
+               <biblScope unit="leaf" from="E1v">leaf E1 verso</biblScope>,
+               <biblScope unit="page" from="14">page 14</biblScope>
+              </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song09">
+          <head rend="italic">To the same Lady, singing the former Song.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+            </notatedMusic>
+          <div type="underlay">
+            <lg type="stanza">
+              <l><hi rend="italic">Cloris</hi> your selfe you so excell,</l>
+              <l>when you vouchsafe to breath my thought,</l>
+              <l>that like a spirit with this spell</l>
+              <l>of mine own teaching I am caught.</l>
+            </lg>
+            <lg type="stanza">
+              <l>That Eagle's Fate and mine is one,</l>
+              <l>that on the shaft that made him dye,</l>
+              <l>espy'd a Feather of his own,</l>
+              <l>wherewith he wont to soare so high.</l>
+              <l>Had Eccho with so swete a grace,</l>
+              <l><hi rend="italic">Narcissus</hi> lowd complaints return'd,</l>
+              <l>not for reflection of his face,</l>
+              <l>but of his voyce the boy had mourn'd.</l>
+            </lg>
+          </div>
+        </div>
+      </body>
+  </text>
+</TEI>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Primrose</title>
+              <title type="first_line">Aske me why I send you here</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Robert Herrick</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="G2v">leaf G2 verso</biblScope>,
+              <biblScope unit="page" from="24">page 24</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song22">
+          <head rend="italic">The Primrose.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Aske me why I send you here,</l>
+            <l>this firstling of the Infant yeere;</l>
+            <l>aske me why I send to you,</l>
+            <l>this Primrose all bepearl'd with dew,</l>
+            <l rend="indent1">I must whisper to your Eares,</l>
+            <l rend="indent1">the sweets of Love are wash'd with teares.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Aske me why this Rose doth show</l>
+            <l>All yellow, green, and sickly too?</l>
+            <l>Aske me why the stalk is weak,</l>
+            <l>And yielding each way, yet not break?</l>
+            <l rend="indent1">I must tell you, these discover</l>
+            <l rend="indent1">What doubts and fears, are in a Lover.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

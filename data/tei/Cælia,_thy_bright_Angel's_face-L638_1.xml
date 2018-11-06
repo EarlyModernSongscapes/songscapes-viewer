@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Celestiall Mistress</title>
+              <title type="first_line">Cælia, thy bright Angel's face</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Finch, Earl of Winchilsea</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="F1r">leaf F1 recto</biblScope>,
+              <biblScope unit="page" from="17">page 17</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song13">
+          <head rend="italic">The Celestiall Mistress.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Cælia, thy bright Angels face</l>
+            <l>may be cal'd a heav'nly place:</l>
+            <l>the whiteness of the starry way</l>
+            <l>nature did on thy forehead lay:</l>
+            <l>but thine eyes have brightness woon,</l>
+            <l>not from Stars, but from the Sun:</l>
+            <l rend="indent1">the blushing of the Morn</l>
+            <l>in thy Rosie cheek is worn,</l>
+            <l>the Musick of the heav'nly Sphears</l>
+            <l>in thy soul's winning voyce appears:</l>
+            <l>happy were I, had I (like <hi rend="italic">Atlas</hi>) grace,</l>
+            <l>so faire a heav'n within mine Arms t'imbrace.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

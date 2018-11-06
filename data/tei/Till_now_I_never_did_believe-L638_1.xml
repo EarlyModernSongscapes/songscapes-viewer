@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Reformed Lover</title>
+              <title type="first_line">Till now I never did believe</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Thomas Nevill</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="E2v">leaf E2 verso</biblScope>,
+              <biblScope unit="page" from="16">page 16</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song12">
+          <head rend="italic">The Reform'd Lover.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Till now I never did believe</l>
+            <l>a man could love for vertues sake;</l>
+            <l>nor thought the absence of one Love</l>
+            <l>could grieve the man that freely might another take.</l>
+            <l>But since mine eyes betroth'd my heart to you,</l>
+            <l rend="indent2">I find both true,</l>
+            <l>thine Innocence hath so my Love refin'd,</l>
+            <l>I mourn thy body's absence for thy mind.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Tell now I never made an Oath</l>
+            <l>But with a purpose to forswear,</l>
+            <l>For to be fix'd upon one face were sloath,</l>
+            <l>When every Ladyes eye is Cupids sphear;</l>
+            <l>But if the merits faith from every brest</l>
+            <l rend="indent2">Who is the best</l>
+            <l>Of woman-kind? how then can I be free</l>
+            <l>To love another, having once lov'd thee?</l>
+          </lg>
+          <lg type="stanza">
+            <l>Such is the rare and happy pow'r</l>
+            <l>Of Goodness, that it can diltate</l>
+            <l>It selfe to make one vertuous in an houre,</l>
+            <l>Who liv'd before, perhaps a reprobate;</l>
+            <l>Then since on me this wonder thou hast done,</l>
+            <l rend="indent2">Prithee work on</l>
+            <l>Upon thy selfe, thy Sex doth want that grace</l>
+            <l>My truth to love more then a better face.</l>
+          </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

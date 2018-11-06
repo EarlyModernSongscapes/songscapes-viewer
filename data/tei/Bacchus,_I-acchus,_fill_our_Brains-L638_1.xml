@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>A Bacchanall</title>
+              <title type="first_line">Bacchus, I-acchus, fill our Brains</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Aurelian Townshend</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="2C1r">leaf Cc1 recto</biblScope>,
+              <biblScope unit="page" from="9">page 9</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song40">
+          <head rend="italic">A Bacchanall.</head>
+          <head type="voice" rend="italic">For one or two Voyces</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+            <div type="underlay">
+              <lg type="refrain" xml:id="refrain.first">
+                <l><hi rend="italic">Bacchus, I-acchus</hi>, fill our Brains</l>
+                <l rend="indent1">as well as Bowls with sprightly strains:</l>
+              </lg>
+              <lg type="stanza">
+                <l>Let Souldiers fight for pay or praise,</l>
+                <l rend="indent1">and mony be the Misers wish,</l>
+                <l>poor Schollers study all their dayes,</l>
+                <l rend="indent1">and Gluttons glory in their dish:</l>
+              </lg>
+              <lg type="refrain" xml:id="refrain.second">
+                <l>'Tis wine, pure wine, revives sad souls,</l>
+                <l rend="indent1">therefore give us the cheer in Bowls.</l>
+              </lg>
+              <lg type="refrain" sameAs="refrain.first">
+                <l><hi rend="italic">Bacchus, I-acchus</hi>, &amp;c.</l>
+              </lg>
+          </div>
+          <div>
+            <lg type="refrain" sameAs="refrain.first">
+              <l><hi rend="italic">Bacchus, I-acchus, &amp;c.</hi></l>
+            </lg>
+            <lg type="stanza">
+              <l>Let Minions Marshall ev'ry hair,</l>
+              <l rend="indent1">Or in a Lovers lock delight,</l>
+              <l>And Artificiall colours wear,</l>
+              <l rend="indent1">We have the Native Red and White:</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.second">
+              <l rend="indent3">'Tis Wine, pure Wine, &amp;c.</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.first">
+              <l><hi rend="italic">Bacchus, I-acchus, &amp;c.</hi></l>
+            </lg>
+            <lg type="stanza">
+              <l>Take Phesant Poults, and calved Sammon,</l>
+              <l rend="indent1">Or how to please your pallats think,</l>
+              <l>Give us a salt West-phalia Gammon,</l>
+              <l rend="indent1">Not meat to eat, but meat to drink:</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.second">
+              <l rend="indent3">'Tis Wine, pure Wine, &amp;c.</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.first">
+              <l><hi rend="italic">Bacchus, I-acchus, &amp;c.</hi></l>
+          </lg>
+          <lg type="stanza">
+            <l>Some have the Ptisick, some the Rhume,</l>
+            <l rend="indent1">Some have Palsie, some the Gout,</l>
+            <l>Some swell with fat, and some consume,</l>
+            <l rend="indent1">But they are sound that drink all out:</l>
+          </lg>
+          <lg type="refrain" sameAs="refrain.second">
+            <l rend="indent3">'Tis Wine, pure Wine, &amp;c.</l>
+          </lg>
+          <lg type="refrain" sameAs="refrain.first">
+            <l><hi rend="italic">Bacchus, I-acchus, &amp;c.</hi></l>
+          </lg>
+            <lg type="stanza">
+              <l>The backward spirit it makes brave,</l>
+              <l rend="indent1">That forward which before was dull;</l>
+              <l>Those grow good fellows that were grave,</l>
+              <l rend="indent1">And kindness flows from cups brim full:</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.second">
+              <l rend="indent3">'Tis Wine, pure Wine, &amp;c.</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.first">
+              <l><hi rend="italic">Bacchus, I-acchus, &amp;c.</hi></l>
+            </lg>
+            <lg type="stanza">
+              <l>Some men want Youth, and some want health,</l>
+              <l rend="indent1">Some want a Wife, and some a Punke,</l>
+              <l>Some men want wit, and some want wealth,</l>
+              <l rend="indent1">But they want nothing that are drunke:</l>
+            </lg>
+            <lg type="refrain" sameAs="refrain.second">
+              <l rend="indent3">'Tis Wine, pure Wine, &amp;c.</l>
+            </lg>
+        </div>
+        </div>
+      </body>
+  </text>
+</TEI>

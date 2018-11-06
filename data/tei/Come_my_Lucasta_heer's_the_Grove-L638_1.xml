@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../schema/songscapes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Love and Loyalty</title>
+              <title type="first_line">Come my Lucasta heer's the Grove</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Early Modern Songscapes</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+              <title>Ayres and Dialogues, For One, Two, and Three Voyces</title>
+              <author role="composer">Henry Lawes</author>
+              <author role="poet">Charles Lucas</author>
+              <pubPlace>London</pubPlace>, <date type="publication" when="1653">1653</date>.
+              <idno type="wing">L638</idno>
+              <idno type="call_number">Folger L638, copy 1</idno>
+              <biblScope unit="leaf" from="H1r">leaf H1 recto</biblScope>,
+              <biblScope unit="page" from="25">page 25</biblScope>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+        <div xml:id="song24">
+          <head rend="italic">Love and Loyalty.</head>
+            <notatedMusic>
+            <!-- MEI goes here -->
+          </notatedMusic>
+          <div type="underlay">
+          <lg type="stanza">
+            <l>Come my <hi rend="roman">Lucasta</hi> heer's the Grove,</l>
+            <l rend="indent1">where Nightingales perfume the Ayre;</l>
+            <l>why dost thou start? O 'tis not Love,</l>
+            <l rend="indent1">for perfect Lovers dare not fear.</l>
+            <l>No dangers in this Arbour ly,</l>
+            <l rend="indent1">our courage keeps all others hence,</l>
+            <l>ther's none shal dare approach but I;</l>
+            <l rend="indent1">the strongest Love is best defence.</l>
+          </lg>
+        </div>
+        <div>
+          <lg type="stanza">
+            <l>Here we'l discourse, and think, and smile,</l>
+            <l rend="indent1">Let guilty men seek how to scape;</l>
+            <l>He cannot love that can beguile,</l>
+            <l rend="indent1">And none but Foes commit a Rape.</l>
+          </lg>
+          <lg type="stanza">
+            <l>This Evening's worth Ten Thousand yeere,</l>
+            <l rend="indent1">Then let's resolve since thou must go,</l>
+            <l>We'l meet again to morrow here,</l>
+            <l rend="indent1">Would Kings and Queens might do so too.</l>
+        </lg>
+      </div>
+        </div>
+      </body>
+  </text>
+</TEI>
