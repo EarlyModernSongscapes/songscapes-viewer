@@ -36755,7 +36755,7 @@ class ViewerBody extends _react.Component {
       // Only get the collation once
       // https://ems.digitalscholarship.utsc.utoronto.ca/
       // this.props.getCollation(`/islandora/object/${this.props.song}/datastream/OBJ/view`)
-      this.props.getCollation(`/data/collations/${this.props.song}.xml`);
+      this.props.getCollation(`data/collations/${this.props.song}.xml`);
       if (this.props.source && this.props.sources) {
         this.getResources();
       }
@@ -36774,11 +36774,11 @@ class ViewerBody extends _react.Component {
     // https://ems.digitalscholarship.utsc.utoronto.ca/
     // this.props.getResource(`/islandora/object/${this.props.song}/datastream/TEI-${this.props.source}/view`, 'tei')
     // this.props.getResource(`/islandora/object/${this.props.song}/datastream/MEI-${this.props.source}/view`, 'mei')
-    this.props.getResource(`/data/tei/${this.props.song}-${this.props.source}.xml`, 'tei');
+    this.props.getResource(`data/tei/${this.props.song}-${this.props.source}.xml`, 'tei');
     // MEI sources are not always present. Check in this.props.sources
     const msource = this.props.sources.mei.filter(s => s.source === this.props.source)[0];
     if (msource) {
-      this.props.getResource(`/data/mei/${this.props.song}-${this.props.source}.mei`, 'mei');
+      this.props.getResource(`data/mei/${this.props.song}-${this.props.source}.mei`, 'mei');
     } else {
       this.props.getResource(null, 'mei');
     }
