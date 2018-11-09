@@ -37241,7 +37241,13 @@ class DocumentRenderer extends _react.Component {
         // Render MEI with Verovio if present
         if (this.props.mei !== 'nodata') {
           this.props.vrv.loadData(this.props.mei + '\n', '');
-          const svg = this.props.vrv.renderPage(1);
+          let svg = '<span>';
+          for (const [pg, n] of Array(this.props.vrv.getPageCount()).entries()) {
+            n;
+            svg += this.props.vrv.renderPage(pg + 1);
+          }
+          svg += '</span>';
+          // const svg = this.props.vrv.renderPage(1)
           svgDoc = parser.parseFromString(svg, 'text/xml');
         }
         const colDoc = parser.parseFromString(this.props.collation, 'text/xml');
