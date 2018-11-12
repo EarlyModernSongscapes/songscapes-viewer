@@ -126,7 +126,10 @@ export function getVariants(app, lemma) {
               .then(response => response.text())
               .then(text => {
                 const source = parser.parseFromString(text, 'text/xml')
-                const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                let variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                if (variant.querySelector('expan')) {
+                  variant = variant.querySelector('expan')
+                }
                 variants.push({
                   group: uuid(),
                   values: [
@@ -165,7 +168,10 @@ export function getVariants(app, lemma) {
                 .then(response => response.text())
                 .then(text => {
                   const source = parser.parseFromString(text, 'text/xml')
-                  const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                  let variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`)
+                  if (variant.querySelector('expan')) {
+                    variant = variant.querySelector('expan')
+                  }
                   values.push({
                     text: variant.textContent,
                     sourceUrl: sourceAndId[0],
@@ -231,6 +237,7 @@ export function getMusicVariants(app, lemma) {
   return dispatch => {
     const variants = []
     const promises = []
+    const appType = app.getAttribute('type')
     // Identify groups
     const groups = {}
     for (const reading of Array.from(app.querySelectorAll('app > *'))) {
@@ -269,7 +276,7 @@ export function getMusicVariants(app, lemma) {
         const wit = reading.getAttribute('source')
         const isLemma = wit === lemma ? true : false
         if (!reading.getAttribute('target')) {
-          values.push({isOmitted: true})
+          values.push({isOmitted: true, wit})
           continue
         }
         const targets = reading.getAttribute('target').trim().split(/\s+/m)
@@ -302,7 +309,18 @@ export function getMusicVariants(app, lemma) {
 
                 switch (variant.tagName) {
                   case 'measure':
-                    section.documentElement.appendChild(variant.cloneNode(true))
+                    if (appType === 'barline') {
+                      m = section.createElement('measure')
+                      for (const att of Array.from(variant.attributes)) {
+                        m.setAttribute(att.name, att.value)
+                      }
+                      s = section.createElement('staff')
+                      s.setAttribute('n', '1')
+                      m.appendChild(s)
+                      section.documentElement.appendChild(m)
+                    } else {
+                      section.documentElement.appendChild(variant.cloneNode(true))
+                    }
                     break
                   case 'staff':
                     m = section.querySelectorAll(`measure[n='${curMeasure}']`)[0]
@@ -335,7 +353,7 @@ export function getMusicVariants(app, lemma) {
                       m.setAttribute('n', curMeasure)
                       section.documentElement.appendChild(m)
                     }
-                    // check that this is somthing that is on staff
+                    // check that this is something that is on staff
                     if (variant.closest('staff')) {
                       s = m.querySelectorAll(`staff[n='${curStaff}']`)[0]
                       if (!s) {
@@ -355,7 +373,8 @@ export function getMusicVariants(app, lemma) {
                     }
                 }
 
-                const staffNumber = section.querySelectorAll('staff')[0].getAttribute('n')
+                const staff = section.querySelectorAll('staff')[0]
+                const staffNumber = staff ? staff.getAttribute('n') : '1'
                 if (idx === 0) {
                   scoreDef = serializer.serializeToString(getScoreDefFor(variant, staffNumber))
                 }

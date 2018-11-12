@@ -26,7 +26,13 @@ export default class DocumentRenderer extends Component {
         // Render MEI with Verovio if present
         if (this.props.mei !== 'nodata') {
           this.props.vrv.loadData( this.props.mei + '\n', '' )
-          const svg = this.props.vrv.renderPage(1)
+          let svg = '<span>'
+          for (const [pg, n] of Array(this.props.vrv.getPageCount()).entries()) {
+            n
+            svg += this.props.vrv.renderPage(pg + 1)
+          }
+          svg += '</span>'
+          // const svg = this.props.vrv.renderPage(1)
           svgDoc = parser.parseFromString(svg, 'text/xml')
         }
         const colDoc = parser.parseFromString(this.props.collation, 'text/xml')
@@ -52,6 +58,7 @@ export default class DocumentRenderer extends Component {
         // Make links for music variants
         if (this.props.mei !== 'nodata') {
           for (const app of Array.from(colDoc.getElementsByTagName('mei:app'))) {
+            const appType = app.getAttribute('type')
             for (const rdg of Array.from(app.getElementsByTagName('mei:rdg'))) {
               const mTargets = rdg.getAttribute('target')
               if (mTargets) {
@@ -61,10 +68,22 @@ export default class DocumentRenderer extends Component {
                   if (sourceAndId[0].includes(this.props.source)) {
                     const musVariant = svgDoc.querySelector(`#${sourceAndId[1]}`)
                     if (musVariant) {
-                      musVariant.classList.add('musVariant')
-                      musVariant.onclick = () => {
-                        this.props.getMusicVariants(app, rdg.getAttribute('source'))
-                        this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                      if (appType === 'barline') {
+                        const barline = musVariant.querySelector('.barLineAttr')
+                        if (barline) {
+                          barline.classList.add('musVariant')
+                          barline.onclick = () => {
+                            this.props.getMusicVariants(app, rdg.getAttribute('source'))
+                            this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                          }
+                        }
+                        break
+                      } else {
+                        musVariant.classList.add('musVariant')
+                        musVariant.onclick = () => {
+                          this.props.getMusicVariants(app, rdg.getAttribute('source'))
+                          this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                        }
                       }
                     }
                   }

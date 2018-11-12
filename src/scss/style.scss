@@ -61,6 +61,10 @@ svg .musVariant {
   cursor: pointer;
 }
 
+svg .musVariant path {
+  stroke: #337ab7 !important;
+}
+
 svg .musVariant.active {
   fill: #f80;
 }

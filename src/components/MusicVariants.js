@@ -13,28 +13,24 @@ export default class MusicVariants extends Component {
     document.addEventListener('mousedown', this.handleClickOutside)
   }
 
-  componentDidUpdate() {
-    for (const r in this.refs) {
-      if (r.includes('vrv-')) {
-        const x = 400
-        const vrvOptions = {
-          pageWidth: x * 100 / 35,
-          pageHeight: 1000 * 100 / 35,
-          ignoreLayout: 1,
-          adjustPageHeight: 1,
-          border: 10,
-          scale: 35
-        }
-        this.props.vrv.setOptions(vrvOptions)
-        this.props.vrv.loadData( this.refs[r].getAttribute('data-mei') + '\n', '' )
-        const svg = this.props.vrv.renderPage(1)
-        this.refs[r].innerHTML = svg
-      }
-    }
-  }
-
   componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside)
+  }
+
+  renderMEI(mei) {
+    const x = 400
+    const vrvOptions = {
+      pageWidth: x * 100 / 35,
+      pageHeight: 1000 * 100 / 35,
+      ignoreLayout: 1,
+      adjustPageHeight: 1,
+      border: 10,
+      scale: 35
+    }
+    this.props.vrv.setOptions(vrvOptions)
+    this.props.vrv.loadData( mei + '\n', '' )
+    const svg = this.props.vrv.renderPage(1)
+    return new DOMParser().parseFromString(svg, 'text/xml')
   }
 
   handleClickOutside(event) {
@@ -57,14 +53,16 @@ export default class MusicVariants extends Component {
             {this.props.variants.map((group) => {
               return [group.values.map((v, i) => {
                 if (v.isOmitted) {
-                  return (<li style={{height: '100px'}} className="mdc-list-item" key={i}>
-                    <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
+                  return (<li style={{height: '100px', width: '100px'}} className="mdc-list-item" key={i}>
+                    <span className="mdc-list-item__graphic">{v.wit.split('#M-')[1]}</span>
                     <span>[omitted.]</span>
                   </li>)
                 } else if (!v.isLemma) {
-                  return (<li style={{height: '100px'}} className="mdc-list-item" key={i}>
-                    <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
-                    <span ref={`vrv-${i}`} data-mei={v.mei}/>
+                  const svgDoc = this.renderMEI(v.mei)
+                  const height = svgDoc.documentElement.getAttribute('height')
+                  return (<li className="mdc-list-item" key={i} style={{height}}>
+                    <span className="mdc-list-item__graphic">{v.wit.split('#M-')[1]}</span>
+                    <div dangerouslySetInnerHTML={{__html: new XMLSerializer().serializeToString(svgDoc)}} />
                   </li>)
                 }
                 return null
