@@ -79,7 +79,7 @@
                                 <note xml:id="m-55" dur="4" dur.ges="256p" oct="5" pname="e" pnum="75" stem.dir="down">
                                     <accid xml:id="m-56" accid="f"/>
                                     <verse xml:id="m-59" n="1">
-                                        <syl xml:id="m-60" wordpos="i">O</syl>
+                                        <syl xml:id="m-60" wordpos="i">ô</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-57" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -107,7 +107,7 @@
                                 <rest xml:id="m-72" dur="4" dur.ges="256p"/>
                                 <note xml:id="m-73" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-80" n="1">
-                                        <syl xml:id="m-81" wordpos="i">hark!</syl>
+                                        <syl xml:id="m-81" wordpos="i">heark!</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-74" dur="8" dur.ges="128p"/>
@@ -198,7 +198,7 @@
                                 <beam xml:id="m-122">
                                     <note xml:id="m-121" dur="8" dur.ges="128p" oct="5" pname="e" pnum="76" stem.dir="down">
                                         <verse xml:id="m-136" n="1">
-                                            <syl xml:id="m-137" con="d" wordpos="i">comp</syl>
+                                            <syl xml:id="m-137" con="d" wordpos="i">Comp</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-123" dur="8" dur.ges="128p" oct="5" pname="f" pnum="77" stem.dir="down"/>
@@ -247,12 +247,12 @@
                                 </beam>
                                 <note xml:id="m-154" dots="1" dur="4" dur.ges="384p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-162" n="1">
-                                        <syl xml:id="m-163" con="d" wordpos="i">neigh</syl>
+                                        <syl xml:id="m-163" con="d" wordpos="i">Neigh</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-155" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-164" n="1">
-                                        <syl xml:id="m-165" wordpos="t">b'ring</syl>
+                                        <syl xml:id="m-165" wordpos="t">b'ringe</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -269,7 +269,7 @@
                             <layer xml:id="m-172" n="1">
                                 <note xml:id="m-173" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-180" n="1">
-                                        <syl xml:id="m-181" wordpos="i">rock</syl>
+                                        <syl xml:id="m-181" wordpos="i">Rock</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-174" dur="4" dur.ges="256p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -281,7 +281,7 @@
                                 <note xml:id="m-176" dots="1" dur="4" dur.ges="384p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-177" accid.ges="f"/>
                                     <verse xml:id="m-184" n="1">
-                                        <syl xml:id="m-185" wordpos="i">soft</syl>
+                                        <syl xml:id="m-185" wordpos="i">softe</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-178" dur="8" dur.ges="128p" oct="4" pname="f" pnum="66" stem.dir="up">
@@ -335,12 +335,12 @@
                             <layer xml:id="m-213" n="1">
                                 <note xml:id="m-214" dots="1" dur="4" dur.ges="384p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-222" n="1">
-                                        <syl xml:id="m-223" con="d" wordpos="i">holl</syl>
+                                        <syl xml:id="m-223" con="d" wordpos="i">hol</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-215" dur="8" dur.ges="128p" oct="4" pname="f" pnum="65" stem.dir="up">
                                     <verse xml:id="m-224" n="1">
-                                        <syl xml:id="m-225" wordpos="t">ow</syl>
+                                        <syl xml:id="m-225" wordpos="t">low</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-217">
@@ -357,12 +357,12 @@
                                     <note xml:id="m-219" dur="8" dur.ges="128p" oct="4" pname="e" pnum="63" stem.dir="up">
                                         <accid xml:id="m-220" accid="f"/>
                                         <verse xml:id="m-230" n="1">
-                                            <syl xml:id="m-231" con="d" wordpos="i">pitt</syl>
+                                            <syl xml:id="m-231" con="d" wordpos="i">pit</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-221" dur="8" dur.ges="128p" oct="4" pname="d" pnum="62" stem.dir="up">
                                         <verse xml:id="m-232" n="1">
-                                            <syl xml:id="m-233" wordpos="t">y'd</syl>
+                                            <syl xml:id="m-233" wordpos="t">tyed</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -402,7 +402,7 @@
                                     </note>
                                     <note xml:id="m-249" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-256" n="1">
-                                            <syl xml:id="m-257" wordpos="t">ing</syl>
+                                            <syl xml:id="m-257" wordpos="t">inge</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -453,7 +453,7 @@
                                     <note xml:id="m-276" dur="8" dur.ges="128p" oct="4" pname="b" pnum="71" stem.dir="down">
                                         <accid xml:id="m-277" accid="n"/>
                                         <verse xml:id="m-288" n="1">
-                                            <syl xml:id="m-289" wordpos="t">el</syl>
+                                            <syl xml:id="m-289" wordpos="t">ell</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -496,7 +496,7 @@
                                     <note xml:id="m-305" dur="8" dur.ges="128p" oct="4" pname="b" pnum="71" stem.dir="down">
                                         <accid xml:id="m-306" accid="n"/>
                                         <verse xml:id="m-316" n="1">
-                                            <syl xml:id="m-317" wordpos="i">and</syl>
+                                            <syl xml:id="m-317" wordpos="i">&amp;</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-307" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -562,7 +562,7 @@
                                 </note>
                                 <note xml:id="m-349" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-354" n="1">
-                                        <syl xml:id="m-355" wordpos="t">lesse</syl>
+                                        <syl xml:id="m-355" wordpos="t">les</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -694,7 +694,7 @@
                             <layer xml:id="m-428" n="1">
                                 <note xml:id="m-429" dur="1" dur.ges="1024p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-434" n="1">
-                                        <syl xml:id="m-435" wordpos="t">ty!</syl>
+                                        <syl xml:id="m-435" wordpos="t">ty.</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -721,7 +721,7 @@
                                     </note>
                                     <note xml:id="m-445" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                         <verse xml:id="m-450" n="1">
-                                            <syl xml:id="m-451" wordpos="i">ye</syl>
+                                            <syl xml:id="m-451" wordpos="i">yee</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -747,18 +747,18 @@
                                     <note xml:id="m-463" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-464" accid.ges="f"/>
                                         <verse xml:id="m-470" n="1">
-                                            <syl xml:id="m-471" wordpos="i">who</syl>
+                                            <syl xml:id="m-471" wordpos="i">whoe</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-465" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                         <verse xml:id="m-472" n="1">
-                                            <syl xml:id="m-473" wordpos="i">e're</syl>
+                                            <syl xml:id="m-473" wordpos="i">Ere</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-466" dur="8" dur.ges="128p" oct="4" pname="f" pnum="66" stem.dir="up">
                                         <accid xml:id="m-467" accid="s"/>
                                         <verse xml:id="m-474" n="1">
-                                            <syl xml:id="m-475" wordpos="i">ye</syl>
+                                            <syl xml:id="m-475" wordpos="i">yee</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -831,7 +831,7 @@
                                     <note xml:id="m-510" dur="16" dur.ges="64p" oct="4" pname="b" pnum="71" stem.dir="down">
                                         <accid xml:id="m-511" accid="n"/>
                                         <verse xml:id="m-518" n="1">
-                                            <syl xml:id="m-519" wordpos="i">ye</syl>
+                                            <syl xml:id="m-519" wordpos="i">yee</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -855,12 +855,12 @@
                                 <note xml:id="m-528" dur="8" dur.ges="128p" oct="4" pname="f" pnum="66" stem.dir="up">
                                     <accid xml:id="m-529" accid="s"/>
                                     <verse xml:id="m-533" n="1">
-                                        <syl xml:id="m-534" wordpos="i">so</syl>
+                                        <syl xml:id="m-534" wordpos="i">soe</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-530" dur="2" dur.ges="512p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-535" n="1">
-                                        <syl xml:id="m-536" wordpos="i">faire,</syl>
+                                        <syl xml:id="m-536" wordpos="i">faire;</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -932,7 +932,7 @@
                                 </note>
                                 <note xml:id="m-577" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-583" n="1">
-                                        <syl xml:id="m-584" wordpos="i">mad'st</syl>
+                                        <syl xml:id="m-584" wordpos="i">madst</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-579">
@@ -974,7 +974,7 @@
                                 </note>
                                 <note xml:id="m-600" dur="2" dur.ges="512p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-606" n="1">
-                                        <syl xml:id="m-607" wordpos="i">true?</syl>
+                                        <syl xml:id="m-607" wordpos="i">true,</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -995,13 +995,13 @@
                             <layer xml:id="m-616" n="1">
                                 <note xml:id="m-617" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-624" n="1">
-                                        <syl xml:id="m-625" con="d" wordpos="i">Beau</syl>
+                                        <syl xml:id="m-625" con="d" wordpos="i">beau</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-619">
                                     <note xml:id="m-618" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-626" n="1">
-                                            <syl xml:id="m-627" wordpos="t">ty</syl>
+                                            <syl xml:id="m-627" wordpos="t">tye</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-620" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
@@ -1150,7 +1150,7 @@
                                 <beam xml:id="m-715">
                                     <note xml:id="m-714" dur="8" dur.ges="128p" oct="5" pname="f" pnum="77" stem.dir="down">
                                         <verse xml:id="m-724" n="1">
-                                            <syl xml:id="m-725" con="d" wordpos="i">false</syl>
+                                            <syl xml:id="m-725" con="d" wordpos="i">fals</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-716" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -1209,10 +1209,14 @@
                                 <beam xml:id="m-747">
                                     <note xml:id="m-746" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-768" n="1">
+                                            <syl xml:id="m-769" con="d">to</syl>
+                                        </verse>
+                                    </note>
+                                    <note xml:id="m-748" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
+                                        <verse xml:id="m-768" n="1">
                                             <syl xml:id="m-769" con="d" wordpos="i">be</syl>
                                         </verse>
                                     </note>
-                                    <note xml:id="m-748" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down"/>
                                 </beam>
                             </layer>
                         </staff>
@@ -1230,7 +1234,7 @@
                             <layer xml:id="m-760" n="1">
                                 <note xml:id="m-761" dur="2" dur.ges="512p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-770" n="1">
-                                        <syl xml:id="m-771" wordpos="t">guile:</syl>
+                                        <syl xml:id="m-771" wordpos="t">guile!</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-763" dur="8" dur.ges="128p"/>
@@ -1274,12 +1278,12 @@
                                 <rest xml:id="m-788" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-789" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-794" n="1">
-                                        <syl xml:id="m-795" wordpos="i">'tis</syl>
+                                        <syl xml:id="m-795" wordpos="i">tis</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-790" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-796" n="1">
-                                        <syl xml:id="m-797" wordpos="i">here</syl>
+                                        <syl xml:id="m-797" wordpos="i">heer</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-791" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -1320,7 +1324,7 @@
                                 <beam xml:id="m-816">
                                     <note xml:id="m-815" dur="8" dur.ges="128p" oct="5" pname="e" pnum="76" stem.dir="down">
                                         <verse xml:id="m-822" n="1">
-                                            <syl xml:id="m-823" wordpos="i">'tis</syl>
+                                            <syl xml:id="m-823" wordpos="i">tis</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-817" dur="8" dur.ges="128p" oct="5" pname="e" pnum="76" stem.dir="down">
@@ -1403,7 +1407,7 @@
                                 <beam xml:id="m-867">
                                     <note xml:id="m-866" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-878" n="1">
-                                            <syl xml:id="m-879" wordpos="i">have</syl>
+                                            <syl xml:id="m-879" wordpos="i">haue</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-868" dur="8" dur.ges="128p" oct="5" pname="e" pnum="75" stem.dir="down">
@@ -1446,7 +1450,7 @@
                             <layer xml:id="m-896" n="1">
                                 <note xml:id="m-897" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-903" n="1">
-                                        <syl xml:id="m-904" wordpos="i">face,</syl>
+                                        <syl xml:id="m-904" wordpos="i">face</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-898" dur="8" dur.ges="128p"/>
@@ -1483,7 +1487,7 @@
                             <layer xml:id="m-919" n="1">
                                 <note xml:id="m-920" dur="1" dur.ges="1024p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-921" n="1">
-                                        <syl xml:id="m-922" wordpos="i">hart:</syl>
+                                        <syl xml:id="m-922" wordpos="i">hart.</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -1506,7 +1510,7 @@
                                 </note>
                                 <note xml:id="m-932" dots="1" dur="4" dur.ges="384p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-936" n="1">
-                                        <syl xml:id="m-937" con="d" wordpos="i">rav'</syl>
+                                        <syl xml:id="m-937" con="d" wordpos="i">Rav'</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-933" dur="8" dur.ges="128p" oct="4" pname="f" pnum="65" stem.dir="up">
@@ -1540,7 +1544,7 @@
                                 <beam xml:id="m-950">
                                     <note xml:id="m-949" dots="1" dur="8" dur.ges="192p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-960" n="1">
-                                            <syl xml:id="m-961" wordpos="i">tear</syl>
+                                            <syl xml:id="m-961" wordpos="i">teare</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-951" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -1558,7 +1562,7 @@
                                 <rest xml:id="m-954" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-955" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-966" n="1">
-                                        <syl xml:id="m-967" wordpos="i">ye</syl>
+                                        <syl xml:id="m-967" wordpos="i">the</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -1577,7 +1581,7 @@
                                 <beam xml:id="m-977">
                                     <note xml:id="m-976" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-990" n="1">
-                                            <syl xml:id="m-991" con="d" wordpos="i">roll</syl>
+                                            <syl xml:id="m-991" con="d" wordpos="i">Rowl</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-978" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down"/>
@@ -1586,7 +1590,7 @@
                                     </note>
                                     <note xml:id="m-981" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="down">
                                         <verse xml:id="m-992" n="1">
-                                            <syl xml:id="m-993" wordpos="t">ing</syl>
+                                            <syl xml:id="m-993" wordpos="t">inge</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -1770,7 +1774,7 @@
                                 </beam>
                                 <note xml:id="m-1087" dots="1" dur="4" dur.ges="384p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-1097" n="1">
-                                        <syl xml:id="m-1098" con="d" wordpos="i">po</syl>
+                                        <syl xml:id="m-1098" con="d" wordpos="i">Po</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1088" dur="8" dur.ges="128p" oct="4" pname="f" pnum="65" stem.dir="up">
@@ -1862,7 +1866,7 @@
                                 </beam>
                                 <note xml:id="m-1145" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-1156" n="1">
-                                        <syl xml:id="m-1157" wordpos="i">live,</syl>
+                                        <syl xml:id="m-1157" wordpos="i">liue,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-1146" dur="8" dur.ges="128p"/>
@@ -1943,7 +1947,7 @@
                                 <note xml:id="m-1196" dur="4" dur.ges="256p" oct="5" pname="e" pnum="75" stem.dir="down">
                                     <accid xml:id="m-1197" accid.ges="f"/>
                                     <verse xml:id="m-1204" n="1">
-                                        <syl xml:id="m-1205" wordpos="i">thread</syl>
+                                        <syl xml:id="m-1205" wordpos="i">thred</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -1960,7 +1964,7 @@
                             <layer xml:id="m-1212" n="1">
                                 <note xml:id="m-1213" dots="1" dur="4" dur.ges="384p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-1217" n="1">
-                                        <syl xml:id="m-1218" wordpos="i">stol'n</syl>
+                                        <syl xml:id="m-1218" wordpos="i">stolne</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1214" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -1971,7 +1975,7 @@
                                 </note>
                                 <note xml:id="m-1216" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-1221" n="1">
-                                        <syl xml:id="m-1222" wordpos="i">myne,</syl>
+                                        <syl xml:id="m-1222" wordpos="i">Myne.</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -2002,7 +2006,7 @@
                                     </note>
                                     <note xml:id="m-1236" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-1248" n="1">
-                                            <syl xml:id="m-1249" wordpos="i">you'll</syl>
+                                            <syl xml:id="m-1249" wordpos="i">you'le</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -2010,7 +2014,7 @@
                                     <note xml:id="m-1237" dur="8" dur.ges="128p" oct="4" pname="b" pnum="71" stem.dir="up">
                                         <accid xml:id="m-1238" accid="n"/>
                                         <verse xml:id="m-1250" n="1">
-                                            <syl xml:id="m-1251" con="d" wordpos="i">tor</syl>
+                                            <syl xml:id="m-1251" con="d" wordpos="i">Tor</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1240" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -2045,7 +2049,7 @@
                             <layer xml:id="m-1265" n="1">
                                 <note xml:id="m-1266" dur="2" dur.ges="512p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-1271" n="1">
-                                        <syl xml:id="m-1272" wordpos="i">E're,</syl>
+                                        <syl xml:id="m-1272" wordpos="i">Ere,</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-1268">
@@ -2149,7 +2153,7 @@
                                     <note xml:id="m-1321" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-1322" accid.ges="f"/>
                                         <verse xml:id="m-1331" n="1">
-                                            <syl xml:id="m-1332" wordpos="i">up</syl>
+                                            <syl xml:id="m-1332" wordpos="i">vp</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -2274,7 +2278,7 @@
                                     <note xml:id="m-1405" dur="8" dur.ges="128p" oct="4" pname="b" pnum="71" stem.dir="down">
                                         <accid xml:id="m-1406" accid="n"/>
                                         <verse xml:id="m-1415" n="1">
-                                            <syl xml:id="m-1416" con="d" wordpos="i">spi</syl>
+                                            <syl xml:id="m-1416" con="d" wordpos="i">spir</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1408" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -2333,7 +2337,7 @@
                                     </note>
                                     <note xml:id="m-1439" dur="16" dur.ges="64p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-1448" n="1">
-                                            <syl xml:id="m-1449" wordpos="i">me</syl>
+                                            <syl xml:id="m-1449" wordpos="i">mee</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1440" dur="16" dur.ges="64p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -2345,7 +2349,7 @@
                                 <note xml:id="m-1441" dots="1" dur="4" dur.ges="384p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-1442" accid="f"/>
                                     <verse xml:id="m-1452" n="1">
-                                        <syl xml:id="m-1453" wordpos="i">much</syl>
+                                        <syl xml:id="m-1453" wordpos="i">Much</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1443" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
@@ -2368,7 +2372,7 @@
                             <layer xml:id="m-1463" n="1">
                                 <note xml:id="m-1464" dur="2" dur.ges="512p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-1469" n="1">
-                                        <syl xml:id="m-1470" wordpos="i">men,</syl>
+                                        <syl xml:id="m-1470" wordpos="i">Men,</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1465" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -2408,7 +2412,7 @@
                                 <beam xml:id="m-1486">
                                     <note xml:id="m-1485" dur="16" dur.ges="64p" oct="5" pname="e" pnum="76" stem.dir="down">
                                         <verse xml:id="m-1495" n="1">
-                                            <syl xml:id="m-1496" con="d" wordpos="i">mov</syl>
+                                            <syl xml:id="m-1496" con="d" wordpos="i">Mov</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1487" dur="16" dur.ges="64p" oct="5" pname="d" pnum="74" stem.dir="down"/>
@@ -2418,12 +2422,12 @@
                                     <note xml:id="m-1489" dur="8" dur.ges="128p" oct="5" pname="c" pnum="73" stem.dir="down">
                                         <accid xml:id="m-1490" accid="s"/>
                                         <verse xml:id="m-1497" n="1">
-                                            <syl xml:id="m-1498" wordpos="t">ing</syl>
+                                            <syl xml:id="m-1498" wordpos="t">inge</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1492" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-1514" n="1">
-                                            <syl xml:id="m-1515" con="d" wordpos="i">a</syl>
+                                            <syl xml:id="m-1515" con="d">a</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -2444,7 +2448,7 @@
                             <layer xml:id="m-1507" n="1">
                                 <note xml:id="m-1508" dots="1" dur="4" dur.ges="384p" oct="5" pname="e" pnum="76" stem.dir="down">
                                     <verse xml:id="m-1516" n="1">
-                                        <syl xml:id="m-1517" wordpos="t">like</syl>
+                                        <syl xml:id="m-1517">like</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1509" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -2553,7 +2557,7 @@
                                 </beam>
                                 <note xml:id="m-1569" dur="2" dur.ges="512p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-1578" n="1">
-                                        <syl xml:id="m-1579" wordpos="i">fears,</syl>
+                                        <syl xml:id="m-1579" wordpos="i">feares,</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -2572,7 +2576,7 @@
                                 <rest xml:id="m-1588" dur="4" dur.ges="256p"/>
                                 <note xml:id="m-1589" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-1597" n="1">
-                                        <syl xml:id="m-1598" wordpos="i">hopes,</syl>
+                                        <syl xml:id="m-1598" wordpos="i">hopes</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-1590" dur="4" dur.ges="256p"/>
@@ -2580,7 +2584,7 @@
                                     <note xml:id="m-1591" dots="1" dur="8" dur.ges="192p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-1592" accid.ges="f"/>
                                         <verse xml:id="m-1599" n="1">
-                                            <syl xml:id="m-1600" wordpos="i">sighs</syl>
+                                            <syl xml:id="m-1600" wordpos="i">sighes</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1594" dur="16" dur.ges="64p" oct="4" pname="f" pnum="65" stem.dir="up">
@@ -2669,7 +2673,7 @@
                                 </note>
                                 <note xml:id="m-1643" dur="2" dur.ges="512p" oct="4" pname="d" pnum="62" stem.dir="up">
                                     <verse xml:id="m-1649" n="1">
-                                        <syl xml:id="m-1650" wordpos="i">mynde;</syl>
+                                        <syl xml:id="m-1650" wordpos="i">Mynde;</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -2681,6 +2685,7 @@
                             </layer>
                         </staff>
                         <fermata xml:id="m-1644" form="norm" layer="1" shape="curved" staff="1" startid="#m-1643" tstamp="2"/>
+                        <fermata xml:id="m-1644a" form="norm" layer="1" shape="curved" staff="2" startid="#m-1654" tstamp="2"/>
                     </measure>
                     <sb xml:id="m-1656"/>
                     <measure xml:id="m-1655" n="68">
@@ -2695,12 +2700,12 @@
                                 </note>
                                 <note xml:id="m-1662" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-1666" n="1">
-                                        <syl xml:id="m-1667" wordpos="i">thine</syl>
+                                        <syl xml:id="m-1667" wordpos="i">thyne</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1663" dur="4" dur.ges="256p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-1668" n="1">
-                                        <syl xml:id="m-1669" wordpos="i">Eye,</syl>
+                                        <syl xml:id="m-1669" wordpos="i">Eye</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -2774,7 +2779,7 @@
                                     <note xml:id="m-1708" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
                                         <accid xml:id="m-1709" accid.ges="f"/>
                                         <verse xml:id="m-1717" n="1">
-                                            <syl xml:id="m-1718" wordpos="i">would'st</syl>
+                                            <syl xml:id="m-1718" wordpos="i">wouldst</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1711" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -2881,13 +2886,13 @@
                                 <beam xml:id="m-1778">
                                     <note xml:id="m-1777" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-1789" n="1">
-                                            <syl xml:id="m-1790" wordpos="i">live</syl>
+                                            <syl xml:id="m-1790" wordpos="i">liue</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1780" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-1781" accid.ges="f"/>
                                         <verse xml:id="m-1791" n="1">
-                                            <syl xml:id="m-1792" wordpos="i">Jet</syl>
+                                            <syl xml:id="m-1792" wordpos="i">Jett</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -2900,7 +2905,7 @@
                                     </note>
                                     <note xml:id="m-1785" dur="16" dur.ges="64p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-1795" n="1">
-                                            <syl xml:id="m-1796" wordpos="t">ure</syl>
+                                            <syl xml:id="m-1796" wordpos="t">ur</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1786" dur="16" dur.ges="64p" oct="5" pname="c" pnum="72" stem.dir="down">
@@ -2928,7 +2933,7 @@
                                 <beam xml:id="m-1809">
                                     <note xml:id="m-1808" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-1817" n="1">
-                                            <syl xml:id="m-1818" con="d" wordpos="i">sec</syl>
+                                            <syl xml:id="m-1818" con="d" wordpos="i">Sec</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1810" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down"/>
@@ -3004,12 +3009,12 @@
                                 <beam xml:id="m-1843">
                                     <note xml:id="m-1842" dots="1" dur="8" dur.ges="192p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-1857" n="1">
-                                            <syl xml:id="m-1858" con="d" wordpos="i">faith</syl>
+                                            <syl xml:id="m-1858" con="d" wordpos="i">fayth</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1844" dur="16" dur.ges="64p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-1859" n="1">
-                                            <syl xml:id="m-1860" wordpos="t">lesse</syl>
+                                            <syl xml:id="m-1860" wordpos="t">les</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -3028,13 +3033,13 @@
                             <layer xml:id="m-1868" n="1">
                                 <note xml:id="m-1869" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-1876" n="1">
-                                        <syl xml:id="m-1877" wordpos="i">he,</syl>
+                                        <syl xml:id="m-1877" wordpos="i">hee,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-1870" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-1871" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-1878" n="1">
-                                        <syl xml:id="m-1879" wordpos="i">should'st</syl>
+                                        <syl xml:id="m-1879" wordpos="i">shouldst</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-1873">
@@ -3069,12 +3074,12 @@
                                 <note xml:id="m-1894" dots="1" dur="4" dur.ges="384p" oct="4" pname="e" pnum="63" stem.dir="up">
                                     <accid xml:id="m-1895" accid="f"/>
                                     <verse xml:id="m-1906" n="1">
-                                        <syl xml:id="m-1907" con="d" wordpos="i">slumb</syl>
+                                        <syl xml:id="m-1907" con="d" wordpos="i">slum</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-1896" dur="8" dur.ges="128p" oct="4" pname="d" pnum="62" stem.dir="up">
                                     <verse xml:id="m-1908" n="1">
-                                        <syl xml:id="m-1909" wordpos="t">er,</syl>
+                                        <syl xml:id="m-1909" wordpos="t">ber,</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-1898">
@@ -3098,7 +3103,7 @@
                                 <beam xml:id="m-1903">
                                     <note xml:id="m-1902" dots="1" dur="8" dur.ges="192p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-1916" n="1">
-                                            <syl xml:id="m-1917" con="d" wordpos="i">Ev'</syl>
+                                            <syl xml:id="m-1917" con="d" wordpos="i">Eu'</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-1904" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -3109,7 +3114,7 @@
                                 </beam>
                                 <note xml:id="m-1905" dur="2" dur.ges="512p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-1920" n="1">
-                                        <syl xml:id="m-1921" wordpos="i">thee,</syl>
+                                        <syl xml:id="m-1921" wordpos="i">thee;</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -3168,7 +3173,7 @@
                                     <note xml:id="m-1955" dots="1" dur="8" dur.ges="192p" oct="4" pname="d" pnum="62" stem.dir="up"/>
                                     <note xml:id="m-1957" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
                                         <verse xml:id="m-1963" n="1">
-                                            <syl xml:id="m-1964" wordpos="i">ye</syl>
+                                            <syl xml:id="m-1964" wordpos="i">the</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -3181,7 +3186,7 @@
                                     </note>
                                     <note xml:id="m-1961" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
                                         <verse xml:id="m-1967" n="1">
-                                            <syl xml:id="m-1968" wordpos="t">ing</syl>
+                                            <syl xml:id="m-1968" wordpos="t">inge</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -3224,7 +3229,7 @@
                                     </note>
                                     <note xml:id="m-1988" dur="16" dur.ges="64p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-1997" n="1">
-                                            <syl xml:id="m-1998" wordpos="t">ding</syl>
+                                            <syl xml:id="m-1998" wordpos="t">dinge</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -3236,7 +3241,7 @@
                                 </note>
                                 <note xml:id="m-1992" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-2001" n="1">
-                                        <syl xml:id="m-2002" wordpos="i">ne're</syl>
+                                        <syl xml:id="m-2002" wordpos="i">Nere</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -3300,7 +3305,7 @@
                                 </note>
                                 <note xml:id="m-2037" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-2043" n="1">
-                                        <syl xml:id="m-2044" wordpos="i">so</syl>
+                                        <syl xml:id="m-2044" wordpos="i">soe</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-2039">
@@ -3335,7 +3340,7 @@
                                 <note xml:id="m-2059" dur="2" dur.ges="512p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-2060" accid.ges="f"/>
                                     <verse xml:id="m-2072" n="1">
-                                        <syl xml:id="m-2073" wordpos="i">flowr's</syl>
+                                        <syl xml:id="m-2073" wordpos="i">flowres</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-2063">
@@ -3348,13 +3353,13 @@
                                     <note xml:id="m-2064" dur="16" dur.ges="64p" oct="5" pname="e" pnum="75" stem.dir="down">
                                         <accid xml:id="m-2065" accid.ges="f"/>
                                         <verse xml:id="m-2076" n="1">
-                                            <syl xml:id="m-2077" wordpos="t">ring</syl>
+                                            <syl xml:id="m-2077" wordpos="t">ringe</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2066" dur="16" dur.ges="64p" oct="5" pname="e" pnum="75" stem.dir="down">
                                         <accid xml:id="m-2067" accid.ges="f"/>
                                         <verse xml:id="m-2078" n="1">
-                                            <syl xml:id="m-2079" con="d" wordpos="i">a</syl>
+                                            <syl xml:id="m-2079" con="d">a</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -3362,7 +3367,7 @@
                                     <note xml:id="m-2068" dur="8" dur.ges="128p" oct="5" pname="e" pnum="75" stem.dir="down">
                                         <accid xml:id="m-2069" accid.ges="f"/>
                                         <verse xml:id="m-2080" n="1">
-                                            <syl xml:id="m-2081" wordpos="t">monge</syl>
+                                            <syl xml:id="m-2081">monge</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2071" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -3398,7 +3403,7 @@
                                 <beam xml:id="m-2096">
                                     <note xml:id="m-2095" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-2103" n="1">
-                                            <syl xml:id="m-2104" con="d" wordpos="i">hav</syl>
+                                            <syl xml:id="m-2104" con="d" wordpos="i">hau</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2097" dur="8" dur.ges="128p" oct="5" pname="e" pnum="75" stem.dir="down">
@@ -3426,7 +3431,7 @@
                                 <beam xml:id="m-2117">
                                     <note xml:id="m-2116" dots="1" dur="8" dur.ges="192p" oct="5" pname="f" pnum="77" stem.dir="down">
                                         <verse xml:id="m-2126" n="1">
-                                            <syl xml:id="m-2127" wordpos="i">Rob'd</syl>
+                                            <syl xml:id="m-2127" wordpos="i">Robd</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2118" dur="16" dur.ges="64p" oct="5" pname="f" pnum="77" stem.dir="down">
@@ -3499,7 +3504,7 @@
                                 </beam>
                                 <note xml:id="m-2153" dots="1" dur="4" dur.ges="384p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-2164" n="1">
-                                        <syl xml:id="m-2165" con="d" wordpos="i">oth</syl>
+                                        <syl xml:id="m-2165" con="d" wordpos="i">Oth</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2154" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -3660,7 +3665,7 @@
                                 </note>
                                 <note xml:id="m-2255" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-2260" n="1">
-                                        <syl xml:id="m-2261" wordpos="t">thing</syl>
+                                        <syl xml:id="m-2261" wordpos="t">thinge</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -3739,7 +3744,7 @@
                                 <rest xml:id="m-2304" dur="4" dur.ges="256p"/>
                                 <note xml:id="m-2305" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-2324" n="1">
-                                        <syl xml:id="m-2325" con="d" wordpos="i">hov</syl>
+                                        <syl xml:id="m-2325" con="d" wordpos="i">hou</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -3760,12 +3765,12 @@
                                     <note xml:id="m-2317" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up"/>
                                     <note xml:id="m-2319" dur="8" dur.ges="128p" oct="4" pname="e" pnum="64" stem.dir="up">
                                         <verse xml:id="m-2326" n="1">
-                                            <syl xml:id="m-2327" wordpos="t">ver,</syl>
+                                            <syl xml:id="m-2327" wordpos="t">er,</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2320" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-2328" n="1">
-                                            <syl xml:id="m-2329" con="d" wordpos="i">hov</syl>
+                                            <syl xml:id="m-2329" con="d" wordpos="i">hou</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2321" dur="8" dur.ges="128p" oct="4" pname="f" pnum="65" stem.dir="up">
@@ -3776,7 +3781,7 @@
                                 </beam>
                                 <note xml:id="m-2322" dots="1" dur="4" dur.ges="384p" oct="4" pname="f" pnum="65" stem.dir="up">
                                     <verse xml:id="m-2332" n="1">
-                                        <syl xml:id="m-2333" wordpos="i">o'er</syl>
+                                        <syl xml:id="m-2333" wordpos="i">Oer</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2323" dur="8" dur.ges="128p" oct="4" pname="e" pnum="64" stem.dir="up">
@@ -3806,7 +3811,7 @@
                                 <rest xml:id="m-2345" dur="4" dur.ges="256p"/>
                                 <note xml:id="m-2346" dur="2" dur.ges="512p" oct="4" pname="f" pnum="65" stem.dir="up">
                                     <verse xml:id="m-2355" n="1">
-                                        <syl xml:id="m-2356" wordpos="i">waves</syl>
+                                        <syl xml:id="m-2356" wordpos="i">waues</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-2348">
@@ -3824,12 +3829,12 @@
                                 <note xml:id="m-2350" dots="1" dur="4" dur.ges="384p" oct="4" pname="f" pnum="66" stem.dir="up">
                                     <accid xml:id="m-2351" accid="s"/>
                                     <verse xml:id="m-2361" n="1">
-                                        <syl xml:id="m-2362" con="d" wordpos="i">Christ</syl>
+                                        <syl xml:id="m-2362" con="d" wordpos="i">Chris</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2352" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-2363" n="1">
-                                        <syl xml:id="m-2364" wordpos="t">all</syl>
+                                        <syl xml:id="m-2364" wordpos="t">tall</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -3909,7 +3914,7 @@
                             <layer xml:id="m-2410" n="1">
                                 <note xml:id="m-2411" dur="4" dur.ges="256p" oct="4" pname="d" pnum="62" stem.dir="up">
                                     <verse xml:id="m-2421" n="1">
-                                        <syl xml:id="m-2422" wordpos="i">Tombe,</syl>
+                                        <syl xml:id="m-2422" wordpos="i">Tombe;</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-2412" dur="8" dur.ges="128p"/>
@@ -4026,12 +4031,12 @@
                             <layer xml:id="m-2482" n="1">
                                 <note xml:id="m-2483" dots="1" dur="4" dur.ges="384p" oct="5" pname="e" pnum="76" stem.dir="down">
                                     <verse xml:id="m-2489" n="1">
-                                        <syl xml:id="m-2490" wordpos="i">heav'n</syl>
+                                        <syl xml:id="m-2490" wordpos="i">heau'n</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2484" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-2491" n="1">
-                                        <syl xml:id="m-2492" wordpos="i">I'le</syl>
+                                        <syl xml:id="m-2492" wordpos="i">Ile</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2485" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -4196,7 +4201,7 @@
                                 </beam>
                                 <note xml:id="m-2579" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-2588" n="1">
-                                        <syl xml:id="m-2589" wordpos="i">me,</syl>
+                                        <syl xml:id="m-2589" wordpos="i">mee,</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -4290,7 +4295,7 @@
                             <layer xml:id="m-2638" n="1">
                                 <note xml:id="m-2639" dur="1" dur.ges="1024p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-2644" n="1">
-                                        <syl xml:id="m-2645" wordpos="t">y;</syl>
+                                        <syl xml:id="m-2645" wordpos="t">ye;</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -4308,7 +4313,7 @@
                                 <beam xml:id="m-2654">
                                     <note xml:id="m-2653" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                         <verse xml:id="m-2669" n="1">
-                                            <syl xml:id="m-2670" wordpos="i">mai'st</syl>
+                                            <syl xml:id="m-2670" wordpos="i">maist</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2655" dur="16" dur.ges="64p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -4374,7 +4379,7 @@
                             <layer xml:id="m-2692" n="1">
                                 <note xml:id="m-2693" dots="1" dur="4" dur.ges="384p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-2701" n="1">
-                                        <syl xml:id="m-2702" wordpos="i">white,</syl>
+                                        <syl xml:id="m-2702" wordpos="i">whyte,</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-2695">
@@ -4397,7 +4402,7 @@
                                 <note xml:id="m-2698" dur="4" dur.ges="256p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-2699" accid="f"/>
                                     <verse xml:id="m-2709" n="1">
-                                        <syl xml:id="m-2710" wordpos="i">sails</syl>
+                                        <syl xml:id="m-2710" wordpos="i">Sails</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -4483,7 +4488,7 @@
                                 </note>
                                 <note xml:id="m-2752" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-2785" n="1">
-                                        <syl xml:id="m-2786" con="d" wordpos="i">Fath</syl>
+                                        <syl xml:id="m-2786" con="d" wordpos="i">fath</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -4642,7 +4647,7 @@
                             <layer xml:id="m-2856" n="1">
                                 <note xml:id="m-2857" dur="2" dur.ges="512p" oct="4" pname="d" pnum="62" stem.dir="up">
                                     <verse xml:id="m-2862" n="1">
-                                        <syl xml:id="m-2863" wordpos="i">me.</syl>
+                                        <syl xml:id="m-2863" wordpos="i">me,</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2858" dots="1" dur="4" dur.ges="384p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -4677,7 +4682,7 @@
                                 <note xml:id="m-2877" dur="4" dur.ges="256p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-2878" accid.ges="f"/>
                                     <verse xml:id="m-2883" n="1">
-                                        <syl xml:id="m-2884" wordpos="i">love</syl>
+                                        <syl xml:id="m-2884" wordpos="i">loue</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-2879" dur="4" dur.ges="256p" oct="5" pname="e" pnum="75" stem.dir="down">
@@ -4770,13 +4775,13 @@
                                 </beam>
                                 <note xml:id="m-2931" dur="4" dur.ges="256p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-2940" n="1">
-                                        <syl xml:id="m-2941" wordpos="t">sak'st</syl>
+                                        <syl xml:id="m-2941" wordpos="t">sakst</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-2932" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-2933" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-2966" n="1">
-                                        <syl xml:id="m-2967" con="d" wordpos="i">Ea</syl>
+                                        <syl xml:id="m-2967" con="d" wordpos="i">Eu</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -4798,18 +4803,18 @@
                                     <note xml:id="m-2951" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-2952" accid="f"/>
                                         <verse xml:id="m-2968" n="1">
-                                            <syl xml:id="m-2969" con="d" wordpos="m">gi</syl>
+                                            <syl xml:id="m-2969" con="d" wordpos="m">ge</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2954" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-2970" n="1">
-                                            <syl xml:id="m-2971" wordpos="t">us</syl>
+                                            <syl xml:id="m-2971" wordpos="t">vs</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2955" dur="8" dur.ges="128p" oct="4" pname="f" pnum="66" stem.dir="up">
                                         <accid xml:id="m-2956" accid="s"/>
                                         <verse xml:id="m-2972" n="1">
-                                            <syl xml:id="m-2973" wordpos="i">'cause</syl>
+                                            <syl xml:id="m-2973" wordpos="i">cause</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-2957" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -4877,7 +4882,7 @@
                                     <note xml:id="m-3000" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
                                         <accid xml:id="m-3001" accid.ges="f"/>
                                         <verse xml:id="m-3011" n="1">
-                                            <syl xml:id="m-3012" wordpos="i">ye,</syl>
+                                            <syl xml:id="m-3012" wordpos="i">yee,</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3003" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -4917,12 +4922,12 @@
                                 </note>
                                 <note xml:id="m-3024" dur="8" dur.ges="128p" oct="4" pname="f" pnum="65" stem.dir="up">
                                     <verse xml:id="m-3032" n="1">
-                                        <syl xml:id="m-3033" wordpos="i">who</syl>
+                                        <syl xml:id="m-3033" wordpos="i">whoe</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-3025" dur="4" dur.ges="256p" oct="4" pname="f" pnum="65" stem.dir="up">
                                     <verse xml:id="m-3034" n="1">
-                                        <syl xml:id="m-3035" wordpos="i">sit,</syl>
+                                        <syl xml:id="m-3035" wordpos="i">Sitt,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-3026" dur="8" dur.ges="128p"/>
@@ -4953,7 +4958,7 @@
                                 </note>
                                 <note xml:id="m-3048" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-3059" n="1">
-                                        <syl xml:id="m-3060" wordpos="i">swift</syl>
+                                        <syl xml:id="m-3060" wordpos="i">Swift</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-3051">
@@ -4973,7 +4978,7 @@
                                     <note xml:id="m-3053" dots="1" dur="8" dur.ges="192p" oct="4" pname="f" pnum="66" stem.dir="up">
                                         <accid xml:id="m-3054" accid="s"/>
                                         <verse xml:id="m-3065" n="1">
-                                            <syl xml:id="m-3066" wordpos="i">vows</syl>
+                                            <syl xml:id="m-3066" wordpos="i">vowes</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3056" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -4999,7 +5004,7 @@
                             <layer xml:id="m-3077" n="1">
                                 <note xml:id="m-3078" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-3084" n="1">
-                                        <syl xml:id="m-3085" wordpos="i">writ,</syl>
+                                        <syl xml:id="m-3085" wordpos="i">writt,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-3079" dur="4" dur.ges="256p"/>
@@ -5065,7 +5070,7 @@
                                 </note>
                                 <note xml:id="m-3108" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-3119" n="1">
-                                        <syl xml:id="m-3120" wordpos="t">est</syl>
+                                        <syl xml:id="m-3120" wordpos="t">er</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5119,7 +5124,7 @@
                                 <beam xml:id="m-3151">
                                     <note xml:id="m-3150" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                         <verse xml:id="m-3156" n="1">
-                                            <syl xml:id="m-3157" con="d" wordpos="i">mir</syl>
+                                            <syl xml:id="m-3157" con="d" wordpos="i">Mir</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3152" dur="8" dur.ges="128p" oct="4" pname="e" pnum="64" stem.dir="up">
@@ -5131,7 +5136,7 @@
                                 <note xml:id="m-3153" dur="2" dur.ges="512p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-3154" accid.ges="f"/>
                                     <verse xml:id="m-3160" n="1">
-                                        <syl xml:id="m-3161" wordpos="i">grave</syl>
+                                        <syl xml:id="m-3161" wordpos="i">graue</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-3155" dur="4" dur.ges="256p" oct="4" pname="a" pnum="69" stem.dir="up">
@@ -5156,12 +5161,12 @@
                             <layer xml:id="m-3172" n="1">
                                 <note xml:id="m-3173" dots="1" dur="4" dur.ges="384p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-3176" n="1">
-                                        <syl xml:id="m-3177" con="d" wordpos="i">sad</syl>
+                                        <syl xml:id="m-3177" con="d" wordpos="i">Sad</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-3174" dur="8" dur.ges="128p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-3178" n="1">
-                                        <syl xml:id="m-3179" wordpos="t">der</syl>
+                                        <syl xml:id="m-3179" wordpos="t">er</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-3175" dur="2" dur.ges="512p" oct="4" pname="f" pnum="65" stem.dir="up">
@@ -5197,7 +5202,7 @@
                                     </note>
                                     <note xml:id="m-3195" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-3202" n="1">
-                                            <syl xml:id="m-3203" wordpos="i">some</syl>
+                                            <syl xml:id="m-3203" wordpos="i">som</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -5245,13 +5250,13 @@
                                 <rest xml:id="m-3219" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-3220" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-3233" n="1">
-                                        <syl xml:id="m-3234" wordpos="i">yet</syl>
+                                        <syl xml:id="m-3234" wordpos="i">that</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-3222">
                                     <note xml:id="m-3221" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-3235" n="1">
-                                            <syl xml:id="m-3236" wordpos="i">so</syl>
+                                            <syl xml:id="m-3236" wordpos="i">soe</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3223" dur="8" dur.ges="128p" oct="4" pname="b" pnum="70" stem.dir="up">
@@ -5301,7 +5306,7 @@
                                     </note>
                                     <note xml:id="m-3255" dur="8" dur.ges="128p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-3265" n="1">
-                                            <syl xml:id="m-3266" wordpos="i">read</syl>
+                                            <syl xml:id="m-3266" wordpos="i">reade</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3256" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
@@ -5337,7 +5342,7 @@
                                 </note>
                                 <note xml:id="m-3280" dur="4" dur.ges="256p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-3287" n="1">
-                                        <syl xml:id="m-3288" wordpos="i">see</syl>
+                                        <syl xml:id="m-3288" wordpos="i">see,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-3281" dur="8" dur.ges="128p"/>
@@ -5380,7 +5385,7 @@
                                 <note xml:id="m-3306" dur="4" dur.ges="256p" oct="4" pname="b" pnum="71" stem.dir="down">
                                     <accid xml:id="m-3307" accid="n"/>
                                     <verse xml:id="m-3317" n="1">
-                                        <syl xml:id="m-3318" wordpos="i">caused</syl>
+                                        <syl xml:id="m-3318" wordpos="i">caus'd</syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-3308" dur="4" dur.ges="256p" oct="4" pname="b" pnum="70" stem.dir="down">
@@ -5401,7 +5406,7 @@
                                 </note>
                                 <note xml:id="m-3312" dur="2" dur.ges="512p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-3325" n="1">
-                                        <syl xml:id="m-3326" wordpos="t">y!</syl>
+                                        <syl xml:id="m-3326" wordpos="t">ye.</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5499,7 +5504,7 @@
                                 <note xml:id="m-3376" dur="2" dur.ges="512p" oct="4" pname="f" pnum="66" stem.dir="up">
                                     <accid xml:id="m-3377" accid="s"/>
                                     <verse xml:id="m-3386" n="1">
-                                        <syl xml:id="m-3387" wordpos="i">sleepe,</syl>
+                                        <syl xml:id="m-3387" wordpos="i">sleep,</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5520,7 +5525,7 @@
                                 <note xml:id="m-3397" dur="2" dur.ges="512p" oct="4" pname="b" pnum="71" stem.dir="down">
                                     <accid xml:id="m-3398" accid="n"/>
                                     <verse xml:id="m-3399" n="1">
-                                        <syl xml:id="m-3400" wordpos="i">drown'd</syl>
+                                        <syl xml:id="m-3400" wordpos="i">drownd</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5576,7 +5581,7 @@
                             <layer xml:id="m-3431" n="1">
                                 <note xml:id="m-3432" dur="2" dur.ges="512p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-3440" n="1">
-                                        <syl xml:id="m-3441" wordpos="i">teares,</syl>
+                                        <syl xml:id="m-3441" wordpos="i">tears,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-3433" dur="4" dur.ges="256p"/>
@@ -5600,7 +5605,7 @@
                                 </beam>
                                 <note xml:id="m-3439" dur="2" dur.ges="512p" oct="4" pname="e" pnum="64" stem.dir="up">
                                     <verse xml:id="m-3448" n="1">
-                                        <syl xml:id="m-3449" wordpos="i">deep!</syl>
+                                        <syl xml:id="m-3449" wordpos="i">deep</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5639,7 +5644,7 @@
                                 <note xml:id="m-3467" dots="1" dur="4" dur.ges="384p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-3468" accid.ges="f"/>
                                     <verse xml:id="m-3473" n="1">
-                                        <syl xml:id="m-3474" wordpos="t">ish'd</syl>
+                                        <syl xml:id="m-3474" wordpos="t">ished</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5673,7 +5678,7 @@
                                 </beam>
                                 <note xml:id="m-3489" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-3494" n="1">
-                                        <syl xml:id="m-3495" wordpos="i">love,</syl>
+                                        <syl xml:id="m-3495" wordpos="i">loue,</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5771,13 +5776,14 @@
                                 <note xml:id="m-3552" dur="8" dur.ges="128p" oct="3" pname="c" pnum="48" stem.dir="up"/>
                             </layer>
                         </staff>
+                        <fermata startid="#m-3525" xml:id="m-3525a" form="norm" staff="1"/>
                     </measure>
                     <measure xml:id="m-3553" n="145">
                         <staff xml:id="m-3554" n="1">
                             <layer xml:id="m-3555" n="1">
                                 <note xml:id="m-3556" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-3566" n="1">
-                                        <syl xml:id="m-3567" con="u" wordpos="t">serv'd</syl>
+                                        <syl xml:id="m-3567" con="u" wordpos="t">seru'd</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-3559">
@@ -5824,19 +5830,19 @@
                                 <rest xml:id="m-3585" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-3586" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">
                                     <verse xml:id="m-3593" n="1">
-                                        <syl xml:id="m-3594" wordpos="i">who</syl>
+                                        <syl xml:id="m-3594" wordpos="i">whoe</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-3588">
                                     <note xml:id="m-3587" dots="1" dur="8" dur.ges="192p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-3595" n="1">
-                                            <syl xml:id="m-3596" con="d" wordpos="i">leav</syl>
+                                            <syl xml:id="m-3596" con="d" wordpos="i">leau</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3589" dur="16" dur.ges="64p" oct="4" pname="b" pnum="70" stem.dir="up">
                                         <accid xml:id="m-3590" accid.ges="f"/>
                                         <verse xml:id="m-3597" n="1">
-                                            <syl xml:id="m-3598" wordpos="t">ing</syl>
+                                            <syl xml:id="m-3598" wordpos="t">inge</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -5883,7 +5889,7 @@
                                     </note>
                                     <note xml:id="m-3614" dur="16" dur.ges="64p" oct="5" pname="c" pnum="72" stem.dir="down">
                                         <verse xml:id="m-3642" n="1">
-                                            <syl xml:id="m-3643" con="d" wordpos="i">a</syl>
+                                            <syl xml:id="m-3643" con="d">a</syl>
                                         </verse>
                                     </note>
                                 </beam>
@@ -5906,7 +5912,7 @@
                             <layer xml:id="m-3635" n="1">
                                 <note xml:id="m-3636" dur="2" dur.ges="512p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-3644" n="1">
-                                        <syl xml:id="m-3645" wordpos="t">lone,</syl>
+                                        <syl xml:id="m-3645">lone,</syl>
                                     </verse>
                                 </note>
                                 <rest xml:id="m-3637" dur="8" dur.ges="128p"/>
@@ -5961,7 +5967,7 @@
                                 <rest xml:id="m-3665" dur="8" dur.ges="128p"/>
                                 <note xml:id="m-3666" dur="8" dur.ges="128p" oct="5" pname="d" pnum="74" stem.dir="down">
                                     <verse xml:id="m-3690" n="1">
-                                        <syl xml:id="m-3691" con="d" wordpos="i">him</syl>
+                                        <syl xml:id="m-3691" con="d">him</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -5983,13 +5989,13 @@
                                 <note xml:id="m-3683" dur="4" dur.ges="256p" oct="4" pname="b" pnum="70" stem.dir="down">
                                     <accid xml:id="m-3684" accid.ges="f"/>
                                     <verse xml:id="m-3692" n="1">
-                                        <syl xml:id="m-3693" wordpos="t">selfe</syl>
+                                        <syl xml:id="m-3693">selfe</syl>
                                     </verse>
                                 </note>
                                 <beam xml:id="m-3687">
                                     <note xml:id="m-3686" dots="1" dur="8" dur.ges="192p" oct="4" pname="a" pnum="69" stem.dir="up">
                                         <verse xml:id="m-3694" n="1">
-                                            <syl xml:id="m-3695" con="d" wordpos="i">proov</syl>
+                                            <syl xml:id="m-3695" con="d" wordpos="i">proou</syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-3688" dur="16" dur.ges="64p" oct="4" pname="g" pnum="67" stem.dir="up">
@@ -6000,7 +6006,7 @@
                                 </beam>
                                 <note xml:id="m-3689" dur="2" dur.ges="512p" oct="4" pname="g" pnum="67" stem.dir="up">
                                     <verse xml:id="m-3698" n="1">
-                                        <syl xml:id="m-3699" wordpos="i">One!</syl>
+                                        <syl xml:id="m-3699" wordpos="i">One.</syl>
                                     </verse>
                                 </note>
                             </layer>
@@ -6060,7 +6066,7 @@
                                 <note xml:id="m-3733" dur="4" dur.ges="256p" oct="4" pname="f" pnum="66" stem.dir="up">
                                     <accid xml:id="m-3734" accid="s"/>
                                     <verse xml:id="m-3740" n="1">
-                                        <syl xml:id="m-3741" con="b" wordpos="i">f</syl>
+                                        <syl xml:id="m-3741" con="b" wordpos="i">f--</syl>
                                         <syl xml:id="m-3742"/>
                                         <syl xml:id="m-3743"/>
                                         <syl xml:id="m-3744"/>

@@ -44,8 +44,7 @@
                </notatedMusic>
                <div type="underlay">
                   <lg type="stanza">
-                     <l>
-                        <hi rend="italic">Theseus,</hi> O <hi rend="italic">Theseus,</hi> hark! but yet in vain;</l>
+                     <l><hi rend="italic">Theseus,</hi> O <hi rend="italic">Theseus,</hi> hark! but yet in vain;</l>
                      <l rend="indent2">Alas <seg xml:id="song01v4">deserted</seg> I complain;</l>
                      <l>it was some neighb'ring Rock, more soft than he,</l>
                      <l rend="indent1">whose hollow bowels pitty’d me,</l>
@@ -167,8 +166,7 @@
                      <l>that from a Monster fre’d<seg xml:id="song01v44">,</seg> himselfe prov’d one:</l>
                   </lg>
                   <lg type="stanza">
-                     <l rend="indent1">
-                        <seg xml:id="song01v45">Thus</seg> then I <seg xml:id="song01v46">F―</seg> but looke<seg xml:id="song01v47">,</seg>
+                     <l rend="indent1"><seg xml:id="song01v45">Thus</seg> then I <seg xml:id="song01v46">F―</seg> but looke<seg xml:id="song01v47">,</seg>
                         <seg xml:id="song01v48">O mine eyes</seg>,</l>
                      <l rend="indent4">be now true spies,</l>
                      <l rend="indent4">yonder, yonder

@@ -37,7 +37,7 @@
     <body xml:id="m-23">
         <mdiv xml:id="m-24">
             <score xml:id="m-25">
-                <scoreDef xml:id="m-26" lyric.name="Plantin MT Std" meter.count="2" meter.unit="2" music.name="Opus Std" page.botmar="15mm" page.height="279.4mm" page.leftmar="15mm" page.rightmar="15mm" page.topmar="15mm" page.width="215.9mm" ppq="256" text.name="Plantin MT Std">
+                <scoreDef xml:id="m-26" lyric.name="Plantin MT Std" meter.count="4" meter.unit="4" music.name="Opus Std" page.botmar="15mm" page.height="279.4mm" page.leftmar="15mm" page.rightmar="15mm" page.topmar="15mm" page.width="215.9mm" ppq="256" text.name="Plantin MT Std">
                     <staffGrp xml:id="m-27">
                         <staffDef xml:id="m-28" clef.line="2" clef.shape="G" key.mode="major" key.sig="0" lines="5" n="1">
                             <!-- keyboard.piano.grand.bright -->
@@ -1757,7 +1757,7 @@
                         <staff xml:id="m-1083" n="1">
                             <layer xml:id="m-1084" n="1">
                                 <note xml:id="m-1085" dur="4" dur.ges="256p" oct="4" pname="g" pnum="68" stem.dir="up">
-                                    <accid xml:id="m-1086" accid="s"/>
+                                    <accid xml:id="m-1086"/>
                                 </note>
                                 <beam xml:id="m-1088">
                                     <note xml:id="m-1087" dur="8" dur.ges="128p" oct="5" pname="e" pnum="76" stem.dir="down">
@@ -1962,7 +1962,7 @@
                         <staff xml:id="m-1211" n="2">
                             <layer xml:id="m-1212" n="1">
                                 <note xml:id="m-1213" dur="2" dur.ges="512p" oct="3" pname="g" pnum="56" stem.dir="down">
-                                    <accid xml:id="m-1214" accid="s"/>
+                                    <accid xml:id="m-1214"/>
                                 </note>
                                 <rest xml:id="m-1215" dur="4" dur.ges="256p"/>
                                 <note xml:id="m-1216" dur="4" dur.ges="256p" oct="3" pname="a" pnum="57" stem.dir="down">

@@ -1262,7 +1262,7 @@
                                     <note xml:id="m-782" dots="1" dur="8" dur.ges="192p" oct="5" pname="d" pnum="75" stem.dir="down">
                                         <accid xml:id="m-783" accid="s"/>
                                         <verse xml:id="m-789" n="1">
-                                            <syl xml:id="m-790" con="d" wordpos="i"><rend fontstyle="italic">cae</rend></syl>
+                                            <syl xml:id="m-790" con="d" wordpos="i"><rend fontstyle="italic">cæ</rend></syl>
                                         </verse>
                                     </note>
                                     <note xml:id="m-785" dur="16" dur.ges="64p" oct="5" pname="d" pnum="75" stem.dir="down">

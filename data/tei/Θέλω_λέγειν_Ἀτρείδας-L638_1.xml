@@ -28,7 +28,7 @@
   <text>
       <body>
         <div xml:id="song25">
-          <head rend="italic">Τῶν ἈΝΑΚΡΈΟΝΤΟΣ εἴς Λύραν. α´.</head>
+          <head xml:lang="grc">Τῶν ἈΝΑΚΡΈΟΝΤΟΣ εἴς Λύραν. α´.</head>
             <notatedMusic>
             <!-- MEI goes here -->
           </notatedMusic>

@@ -37,7 +37,7 @@
     <body xml:id="m-23">
         <mdiv xml:id="m-24">
             <score xml:id="m-25">
-                <scoreDef xml:id="m-26" lyric.name="Plantin MT Std" meter.count="2" meter.unit="2" music.name="Opus Std" page.botmar="15mm" page.height="279.4mm" page.leftmar="15mm" page.rightmar="15mm" page.topmar="15mm" page.width="215.9mm" ppq="256" text.name="Plantin MT Std">
+                <scoreDef xml:id="m-26" lyric.name="Plantin MT Std" meter.count="4" meter.unit="4" music.name="Opus Std" page.botmar="15mm" page.height="279.4mm" page.leftmar="15mm" page.rightmar="15mm" page.topmar="15mm" page.width="215.9mm" ppq="256" text.name="Plantin MT Std">
                     <staffGrp xml:id="m-27">
                         <staffDef xml:id="m-28" clef.line="2" clef.shape="G" key.mode="major" key.sig="1f" lines="5" n="1">
                             <!-- keyboard.piano.grand.bright -->
@@ -56,7 +56,7 @@
                             <layer xml:id="m-38" n="1">
                                 <note xml:id="m-39" dots="1" dur="4" dur.ges="384p" oct="5" pname="c" pnum="72" stem.dir="down">
                                     <verse xml:id="m-43" n="1">
-                                        <syl xml:id="m-44" con="d" wordpos="i"><rend fontstyle="italic">Cae</rend></syl>
+                                        <syl xml:id="m-44" con="d" wordpos="i"><rend fontstyle="italic">Cæ</rend></syl>
                                     </verse>
                                 </note>
                                 <note xml:id="m-40" dur="8" dur.ges="128p" oct="4" pname="a" pnum="69" stem.dir="up">

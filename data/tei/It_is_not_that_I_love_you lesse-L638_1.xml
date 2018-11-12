@@ -42,13 +42,13 @@
             <l rend="indent1">that I have known belong to you,</l>
             <l>your form dares to my fancy bring,</l>
             <l rend="indent1">and make my old wounds bleed anew.</l>
+          </lg>
             <lg type="refrain" xml:id="first.refrain">
               <l>But I have vow'd, and never must</l>
               <l rend="indent1">your banish'd servant trouble you</l>
               <l>for if he break you may distrust,</l>
               <l rend="indent1">the vow he made to love you too.</l>
             </lg>
-          </lg>
         </div>
         <div>
           <lg type="stanza">
@@ -60,9 +60,9 @@
             <l rend="indent1">And to thick shadows does retire,</l>
             <l>About with him he bears the rage,</l>
             <l rend="indent1">And in his tainted bloud the fire.</l>
+          </lg>
             <lg type="refrain" sameAs="first.refrain">
               <l rend="indent3">But I have vow'd, &amp;c.</l>
-            </lg>
           </lg>
         </div>
         </div>

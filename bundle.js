@@ -3151,7 +3151,10 @@ function getVariants(app, lemma) {
           // REMOVE ABOVE
           promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
             const source = parser.parseFromString(text, 'text/xml');
-            const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+            let variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+            if (variant.querySelector('expan')) {
+              variant = variant.querySelector('expan');
+            }
             variants.push({
               group: uuid(),
               values: [{
@@ -3193,7 +3196,10 @@ function getVariants(app, lemma) {
             // REMOVE ABOVE
             promises.push((0, _isomorphicFetch2.default)(teiUrl).then(response => response.text()).then(text => {
               const source = parser.parseFromString(text, 'text/xml');
-              const variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+              let variant = source.querySelector(`[*|id="${sourceAndId[1]}"]`);
+              if (variant.querySelector('expan')) {
+                variant = variant.querySelector('expan');
+              }
               values.push({
                 text: variant.textContent,
                 sourceUrl: sourceAndId[0],
@@ -3297,7 +3303,7 @@ function getMusicVariants(app, lemma) {
         const wit = reading.getAttribute('source');
         const isLemma = wit === lemma ? true : false;
         if (!reading.getAttribute('target')) {
-          values.push({ isOmitted: true });
+          values.push({ isOmitted: true, wit });
           continue;
         }
         const targets = reading.getAttribute('target').trim().split(/\s+/m);
@@ -37147,11 +37153,11 @@ class MusicVariants extends _react.Component {
               if (v.isOmitted) {
                 return _react2.default.createElement(
                   'li',
-                  { style: { height: '100px', width: '50px' }, className: 'mdc-list-item', key: i },
+                  { style: { height: '100px', width: '100px' }, className: 'mdc-list-item', key: i },
                   _react2.default.createElement(
                     'span',
                     { className: 'mdc-list-item__graphic' },
-                    v.wit.replace('#', '')
+                    v.wit.split('#M-')[1]
                   ),
                   _react2.default.createElement(
                     'span',
@@ -37168,7 +37174,7 @@ class MusicVariants extends _react.Component {
                   _react2.default.createElement(
                     'span',
                     { className: 'mdc-list-item__graphic' },
-                    v.wit.replace('#', '')
+                    v.wit.split('#M-')[1]
                   ),
                   _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: new XMLSerializer().serializeToString(svgDoc) } })
                 );

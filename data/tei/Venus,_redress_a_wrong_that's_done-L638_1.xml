@@ -35,8 +35,7 @@
             <notatedMusic><!-- MEI goes here --></notatedMusic>
             <div type="underlay">
                <lg type="stanza">
-                  <l>
-                     <hi rend="italic">Venus<seg xml:id="song02v2">,</seg>
+                  <l><hi rend="italic">Venus<seg xml:id="song02v2">,</seg>
                      </hi> redress a wrong thats done</l>
                   <l>by that yong sprightful boy<seg xml:id="song02v3"/> thy son;</l>
                   <l>he wounds, and then laughs at the sore,</l>
