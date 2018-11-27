@@ -54,14 +54,14 @@ export default class MusicVariants extends Component {
               return [group.values.map((v, i) => {
                 if (v.isOmitted) {
                   return (<li style={{height: '100px', width: '100px'}} className="mdc-list-item" key={i}>
-                    <span className="mdc-list-item__graphic">{v.wit.split('#M-')[1]}</span>
+                    <span className="mdc-list-item__graphic mus_source_name">{v.wit.split('#M-')[1]}</span>
                     <span>[omitted.]</span>
                   </li>)
                 } else if (!v.isLemma) {
                   const svgDoc = this.renderMEI(v.mei)
                   const height = svgDoc.documentElement.getAttribute('height')
                   return (<li className="mdc-list-item" key={i} style={{height}}>
-                    <span className="mdc-list-item__graphic">{v.wit.split('#M-')[1]}</span>
+                    <span className="mdc-list-item__graphic mus_source_name">{v.wit.split('#M-')[1]}</span>
                     <div dangerouslySetInnerHTML={{__html: new XMLSerializer().serializeToString(svgDoc)}} />
                   </li>)
                 }

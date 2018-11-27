@@ -38,7 +38,7 @@ export default class Variants extends Component {
               return [group.values.map((v, i) => {
                 if (!v.isLemma) {
                   return (<li className="mdc-list-item" key={i}>
-                    <span className="mdc-list-item__graphic">{v.wit.replace('#', '')}</span>
+                    <span className="mdc-list-item__graphic source_name">{v.wit.replace('#', '')}</span>
                     {v.text}
                   </li>)
                 }

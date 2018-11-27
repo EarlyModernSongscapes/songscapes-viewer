@@ -6,228 +6,205 @@ $mdc-theme-background: #fff;
 // CETEIcean
 @import "../../node_modules/CETEIcean/css/CETEIcean.css";
 
-// Styles from MDL not yet implemented in MCW can be added like this
-// @import "material-design-lite/src/chip/_chip";
-
 // Styles from MCW. They're modular, so intall separately as you need them
 
-// @import "@material/animation/mdc-animation";
-// @import "@material/button/mdc-button";
-// @import "@material/card/mdc-card";
-// @import "@material/checkbox/mdc-checkbox";
-// @import "@material/dialog/mdc-dialog";
-// @import "@material/drawer/mdc-drawer";
 @import "@material/elevation/mdc-elevation";
-// @import "@material/fab/mdc-fab";
-// @import "@material/form-field/mdc-form-field";
-// @import "@material/grid-list/mdc-grid-list";
-// @import "@material/icon-toggle/mdc-icon-toggle";
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/list/mdc-list";
-// @import "@material/menu/mdc-menu";
-// @import "@material/radio/mdc-radio";
-// @import "@material/ripple/mdc-ripple";
-// @import "@material/select/mdc-select";
-// @import "@material/snackbar/mdc-snackbar";
-// @import "@material/switch/mdc-switch";
-// @import "@material/textfield/mdc-textfield";
-// @import "@material/theme/mdc-theme";
-// @import "@material/toolbar/mdc-toolbar";
 @import "@material/typography/mdc-typography";
-// @import "@material/tabs/mdc-tabs.scss";
-// @import "@material/linear-progress/mdc-linear-progress";
 
-// TEI formatting
-
-// tei-supplied > tei-lg > tei-l:first-child:before {
-//   content: "[";
-//  }
-
-// tei-supplied > tei-lg > tei-l:last-child:after {
-//   content: "]";
-// }
-
-tei-body .variant {
-  text-shadow: 0px 0px 5px #337ab7;
-  cursor: pointer;
-}
-
-tei-body .variant.active {
-  text-shadow: 0px 0px 5px #f80;
-}
-
-svg .musVariant {
-  fill: #337ab7;
-  cursor: pointer;
-}
-
-svg .musVariant path {
-  stroke: #337ab7 !important;
-}
-
-svg .musVariant.active {
-  fill: #f80;
-}
-
-ul.sourceList {
-  li {
-    list-style: none;
-    a {
-      text-decoration: none;
-      color:inherit;
+#ems_viewer {
+  tei-body .variant {
+    text-shadow: 0px 0px 5px #337ab7;
+    cursor: pointer;
+  }
+  
+  tei-body .variant.active {
+    text-shadow: 0px 0px 5px #f80;
+  }
+  
+  .source_name {
+    width: 40% !important;
+  }
+  
+  .mus_source_name {
+    width: 10% !important;
+  }
+  
+  svg .musVariant {
+    fill: #337ab7;
+    cursor: pointer;
+  }
+  
+  svg .musVariant path {
+    stroke: #337ab7 !important;
+  }
+  
+  svg .musVariant.active {
+    fill: #f80;
+  }
+  
+  ul.sourceList {
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color:inherit;
+      }
+    }
+    li.active {
+      color: white;
+      background-color: #337ab7;
     }
   }
-  li.active {
-    color: white;
-    background-color: #337ab7;
+  
+  .variant-popout {
+    position: absolute;
+    background-color: white;
   }
-}
-
-.variant-popout {
-  position: absolute;
-  background-color: white;
-}
-
-tei-div[type='underlay'] tei-l:nth-child(1)::before {
-  content: '[';    
-}
-
-tei-div[type='underlay'] tei-l:nth-last-child(1)::after {
-  content: ']';    
-}
-
-tei-signed[rend='right'] {
-  text-align: right;
-}
-
-tei-hi[rend*='italic'] {
-  font-style: italic;
-}
-
-tei-hi[rend*='right'] {
-  float: right;
-}
-
-*[rend*='center'] {
-  text-align: center;
-}
-
-tei-list[type='litany'] {
-  display: table;
-  border-bottom: 1px solid Black;
-}
-
-tei-list[type='litany'] tei-head {
-  display: table-caption;
-  border-bottom: 1px solid Black;
-}
-
-tei-list[type='litany'] tei-item {
-  display: table-row;
-}
-
-tei-list[type='litany'] tei-item:before {
-  content: attr(n);
-  display: table-cell;
-  font-style: italic;
-}
-
-tei-list[type='litany'] tei-title {
-  display: table-cell;
-  padding-left: 10px;
-}
-
-tei-list[type='litany'] tei-seg[type='toc_page'] {
-  display: table-cell;
-  border-right: 1px solid black;
-  text-align: right;
-  padding-right: 10px;
-}
-
-tei-list[type='litany'] tei-name[type='poet'] {
-  display: table-cell;
-  padding-left: 10px;
-}
-
-tei-choice tei-abbr {
-  display: none;
-}
-
-tei-choice tei-abbr + tei-expan:before,
-tei-choice tei-expan + tei-abbr:before {
-  content: ' [';
-}
-
-tei-choice tei-abbr + tei-expan:after,
-tei-choice tei-expan + tei-abbr:after {
-  content: ']';
-}
-
-tei-docTitle, tei-byline, tei-docEdition, tei-docImprint  {
-  display: block;
-}
-
-tei-div:not([type='underlay'][type='headnote']) {
-  display: block;
-  margin-bottom: 5em;
-}
-
-*[*|lang] {
-  font-style: italic;
-}
-
-*[*|lang='en'] {
-  font-style: normal;
-}
-
-tei-signed {
-  margin-top: 0px;
-}
-
-tei-ab {
-  margin-bottom: 0px;
-}
-
-*[rend*='indent'] {
-  display: block;
-}
-
-*[rend*='indent1'] {
-  padding-left: 2em;
-}
-
-*[rend*='indent2'] {
-  padding-left: 3em;
-}
-
-*[rend*='indent3'] {
-  padding-left: 4em;
-}
-
-*[rend*='indent4'] {
-  padding-left: 5em;
-}
-
-*[rend*='indent5'] {
-  padding-left: 6em;
-}
-
-*[rend*='indent6'] {
-  padding-left: 7em;
-}
-
-*[rend*='indent7'] {
-  padding-left: 8em;
-}
-
-*[rend*='indent8'] {
-  padding-left: 9em;
-}
-
-*[rend*='indent9'] {
-  padding-left: 10em;
-}
-
-*[rend*='indent10'] {
-  padding-left: 10em;
+  
+  tei-div[type='underlay'] tei-l:nth-child(1)::before {
+    content: '[';    
+  }
+  
+  tei-div[type='underlay'] tei-l:nth-last-child(1)::after {
+    content: ']';    
+  }
+  
+  tei-signed[rend='right'] {
+    text-align: right;
+  }
+  
+  tei-hi[rend*='italic'] {
+    font-style: italic;
+  }
+  
+  tei-hi[rend*='right'] {
+    float: right;
+  }
+  
+  *[rend*='center'] {
+    text-align: center;
+  }
+  
+  tei-list[type='litany'] {
+    display: table;
+    border-bottom: 1px solid Black;
+  }
+  
+  tei-list[type='litany'] tei-head {
+    display: table-caption;
+    border-bottom: 1px solid Black;
+  }
+  
+  tei-list[type='litany'] tei-item {
+    display: table-row;
+  }
+  
+  tei-list[type='litany'] tei-item:before {
+    content: attr(n);
+    display: table-cell;
+    font-style: italic;
+  }
+  
+  tei-list[type='litany'] tei-title {
+    display: table-cell;
+    padding-left: 10px;
+  }
+  
+  tei-list[type='litany'] tei-seg[type='toc_page'] {
+    display: table-cell;
+    border-right: 1px solid black;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  tei-list[type='litany'] tei-name[type='poet'] {
+    display: table-cell;
+    padding-left: 10px;
+  }
+  
+  tei-choice tei-abbr {
+    display: none;
+  }
+  
+  tei-choice tei-abbr + tei-expan:before,
+  tei-choice tei-expan + tei-abbr:before {
+    content: ' [';
+  }
+  
+  tei-choice tei-abbr + tei-expan:after,
+  tei-choice tei-expan + tei-abbr:after {
+    content: ']';
+  }
+  
+  tei-docTitle, tei-byline, tei-docEdition, tei-docImprint  {
+    display: block;
+  }
+  
+  tei-div:not([type='underlay'][type='headnote']) {
+    display: block;
+    margin-bottom: 5em;
+  }
+  
+  *[*|lang] {
+    font-style: italic;
+  }
+  
+  *[*|lang='en'] {
+    font-style: normal;
+  }
+  
+  tei-signed {
+    margin-top: 0px;
+  }
+  
+  tei-ab {
+    margin-bottom: 0px;
+  }
+  
+  *[rend*='indent'] {
+    display: block;
+  }
+  
+  *[rend*='indent1'] {
+    padding-left: 2em;
+  }
+  
+  *[rend*='indent2'] {
+    padding-left: 3em;
+  }
+  
+  *[rend*='indent3'] {
+    padding-left: 4em;
+  }
+  
+  *[rend*='indent4'] {
+    padding-left: 5em;
+  }
+  
+  *[rend*='indent5'] {
+    padding-left: 6em;
+  }
+  
+  *[rend*='indent6'] {
+    padding-left: 7em;
+  }
+  
+  *[rend*='indent7'] {
+    padding-left: 8em;
+  }
+  
+  *[rend*='indent8'] {
+    padding-left: 9em;
+  }
+  
+  *[rend*='indent9'] {
+    padding-left: 10em;
+  }
+  
+  *[rend*='indent10'] {
+    padding-left: 10em;
+  }
+  
 }
