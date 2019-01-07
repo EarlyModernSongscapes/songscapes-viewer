@@ -6,13 +6,20 @@ import ViewerBody from '../components/ViewerBody'
 
 const mapStateToProps = (state, ownProps) => {
   const returnProps = {}
+  let urlsource = ownProps.urlsource
+  if (urlsource) {
+    // Attempt to ignore other fragments for overlays like in Drupal and Wordpress
+    if (urlsource.includes('=') || urlsource.includes('/')) {
+      urlsource = false
+    }
+  }
   if (ownProps.match.params.song) {
     returnProps.song = ownProps.match.params.song
   } else if (ownProps.song) {
     returnProps.song = ownProps.song
   }
-  if (ownProps.urlsource) {
-    returnProps.source = ownProps.urlsource
+  if (urlsource) {
+    returnProps.source = urlsource
   }
   if (state.resources.tei) {
     if (!state.resources.tei.isFetching) {
@@ -31,7 +38,7 @@ const mapStateToProps = (state, ownProps) => {
     if (state.resources.collation.sources) {
       returnProps.sources = state.resources.collation.sources
       // if a source hasn't been set yet, pick first (give TEI preference)
-      if (!ownProps.urlsource && !ownProps.source) {
+      if (!urlsource && !ownProps.source) {
         returnProps.source = state.resources.collation.sources.tei[0].source
       }
     }
