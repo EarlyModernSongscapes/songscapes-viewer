@@ -48,7 +48,7 @@ export default class DocumentRenderer extends Component {
                   variant.classList.add('variant')
                   variant.onclick = () => {
                     this.props.getVariants(app, rdg.getAttribute('wit'))
-                    this.props.setPopoutPosition(variant.getBoundingClientRect())
+                    this.props.setPopoutPosition({top: variant.offsetTop, left: variant.offsetLeft})
                   }
                 }
               }
@@ -74,7 +74,7 @@ export default class DocumentRenderer extends Component {
                           barline.classList.add('musVariant')
                           barline.onclick = () => {
                             this.props.getMusicVariants(app, rdg.getAttribute('source'))
-                            this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                            this.props.setMusicPopoutPosition({top: musVariant.offsetTop, left: musVariant.offsetLeft})
                           }
                         }
                         break
@@ -82,7 +82,7 @@ export default class DocumentRenderer extends Component {
                         musVariant.classList.add('musVariant')
                         musVariant.onclick = () => {
                           this.props.getMusicVariants(app, rdg.getAttribute('source'))
-                          this.props.setMusicPopoutPosition(musVariant.getBoundingClientRect())
+                          this.props.setMusicPopoutPosition({top: musVariant.offsetTop, left: musVariant.offsetLeft})
                         }
                       }
                     }
