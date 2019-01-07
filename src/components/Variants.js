@@ -25,11 +25,12 @@ export default class Variants extends Component {
 
   render() {
     if (this.props.variants.length > 0 && this.props.popoutPosition) {
+      console.log(this.props.popoutPosition, window.scrollY, window.scrollX)
       return (
         <div className="variant-popout mdc-elevation--z10"
           style={{
-            top: this.props.popoutPosition.top + window.pageYOffset + 25,
-            left: this.props.popoutPosition.left  + window.pageXOffset
+            top: this.props.popoutPosition.top - (window.scrollY + this.props.popoutPosition.parentTop),
+            left: this.props.popoutPosition.left - (window.scrollX + this.props.popoutPosition.parentLeft),
           }}
           ref="vpop">
           <ul className="mdc-list mdc-list--dense">

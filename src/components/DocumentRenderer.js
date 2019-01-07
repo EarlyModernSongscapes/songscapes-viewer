@@ -46,9 +46,15 @@ export default class DocumentRenderer extends Component {
                 const variant = teiData.querySelector(`#${sourceAndId[1]}`)
                 if (variant) {
                   variant.classList.add('variant')
-                  variant.onclick = () => {
+                  variant.onclick = (e) => {
                     this.props.getVariants(app, rdg.getAttribute('wit'))
-                    this.props.setPopoutPosition({top: variant.offsetTop, left: variant.offsetLeft})
+                    const parentPos = e.target.offsetParent.getBoundingClientRect()
+                    this.props.setPopoutPosition({
+                      top: e.pageY,
+                      left: e.pageX,
+                      parentTop: parentPos.top,
+                      parentLeft: parentPos.left,
+                    })
                   }
                 }
               }
@@ -72,17 +78,29 @@ export default class DocumentRenderer extends Component {
                         const barline = musVariant.querySelector('.barLineAttr')
                         if (barline) {
                           barline.classList.add('musVariant')
-                          barline.onclick = () => {
+                          barline.onclick = (e) => {
                             this.props.getMusicVariants(app, rdg.getAttribute('source'))
-                            this.props.setMusicPopoutPosition({top: musVariant.offsetTop, left: musVariant.offsetLeft})
+                            const parentPos = e.target.closest('tei-notatedmusic').offsetParent.getBoundingClientRect()
+                            this.props.setMusicPopoutPosition({
+                              top: e.pageY,
+                              left: e.pageX,
+                              parentTop: parentPos.top,
+                              parentLeft: parentPos.left,
+                            })
                           }
                         }
                         break
                       } else {
                         musVariant.classList.add('musVariant')
-                        musVariant.onclick = () => {
+                        musVariant.onclick = (e) => {
                           this.props.getMusicVariants(app, rdg.getAttribute('source'))
-                          this.props.setMusicPopoutPosition({top: musVariant.offsetTop, left: musVariant.offsetLeft})
+                          const parentPos = e.target.closest('tei-notatedmusic').offsetParent.getBoundingClientRect()
+                          this.props.setMusicPopoutPosition({
+                            top: e.pageY,
+                            left: e.pageX,
+                            parentTop: parentPos.top,
+                            parentLeft: parentPos.left,
+                          })
                         }
                       }
                     }

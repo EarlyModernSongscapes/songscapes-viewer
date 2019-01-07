@@ -44,8 +44,8 @@ export default class MusicVariants extends Component {
       return (
         <div className="variant-popout mdc-elevation--z10"
           style={{
-            top: this.props.popoutPosition.top + window.pageYOffset + 25,
-            left: this.props.popoutPosition.left  + window.pageXOffset
+            top: this.props.popoutPosition.top - (window.scrollY + this.props.popoutPosition.parentTop),
+            left: this.props.popoutPosition.left - (window.scrollX + this.props.popoutPosition.parentLeft),
           }}
           ref="vpopmus">
           <ul className="mdc-list mdc-list--dense">
