@@ -6,7 +6,7 @@ $mdc-theme-background: #fff;
 // CETEIcean
 @import "../../node_modules/CETEIcean/css/CETEIcean.css";
 
-// Styles from MCW. They're modular, so intall separately as you need them
+// Styles from MCW. They're modular, so install separately as you need them
 
 @import "@material/elevation/mdc-elevation";
 @import "@material/layout-grid/mdc-layout-grid";
@@ -207,4 +207,14 @@ $mdc-theme-background: #fff;
     padding-left: 10em;
   }
   
+}
+
+html {
+  margin: auto;
+  padding: auto;
+  padding: auto;
+  font-family: auto;
+  font-size: auto;
+  background-color: auto;
+  color: auto;
 }
