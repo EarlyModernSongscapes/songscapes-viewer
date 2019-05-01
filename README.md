@@ -1,4 +1,5 @@
 # Early Modern Songscapes Viewer
+[![DOI](https://zenodo.org/badge/112340739.svg)](https://zenodo.org/badge/latestdoi/112340739)
 
 (Work in progress)
 
